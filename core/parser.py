@@ -3,7 +3,12 @@
 import requests
 from bs4 import BeautifulSoup
 import fitz  # PyMuPDF
-
+from urllib.parse import urljoin # URL을 합치기 위한 라이브러리
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from urllib.parse import urljoin
 def _format_table_to_markdown(table_soup: BeautifulSoup) -> str:
     """BeautifulSoup의 table 객체를 Markdown 형식의 문자열로 변환하는 헬퍼 함수"""
     markdown_lines = []
@@ -57,45 +62,39 @@ def _parse_mitre_group_page(soup: BeautifulSoup) -> str:
     return "\n".join(extracted_parts).strip()
 
 
+# core/parser.py 의 get_text_from_url 함수 수정
+
 def get_text_from_url(url: str) -> str:
     """주어진 URL에서 접속하여 HTML을 파싱하고, 기사 본문으로 추정되는 텍스트를 추출합니다."""
     try:
-        headers = {
-            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
-        }
+        # ... (기존 requests 코드와 동일)
+        headers = { 'User-Agent': '...' }
         response = requests.get(url, headers=headers, timeout=10)
         response.raise_for_status()
         soup = BeautifulSoup(response.text, 'html.parser')
         
-        # URL 패턴에 따라 적절한 파서 호출
+        # --- URL 패턴에 따라 적절한 파서 호출 ---
         if "attack.mitre.org/groups" in url:
             return _parse_mitre_group_page(soup)
         
-        # 일반 블로그/뉴스 사이트용 파싱 로직
-        main_content = soup.find('article') # ... (이하 기존 코드와 동일) ...
-        if main_content:
-            pass
+        # --- 일반 블로그/뉴스 사이트용 파싱 로직 ---
+        # 1순위: ZDI 블로그 본문 컨테이너
+        if soup.find('div', class_='body-content'):
+             main_content = soup.find('div', class_='body-content')
+        # 2순위: 일반적인 <article> 태그
+        elif soup.find('article'):
+            main_content = soup.find('article')
+        # ... (이하 다른 elif 조건들은 기존과 동일)
         elif soup.find(id='content'):
             main_content = soup.find(id='content')
-        elif soup.find(class_='post-body'):
-            main_content = soup.find(class_='post-body')
-        elif soup.find(class_='td-post-content'):
-             main_content = soup.find(class_='td-post-content')
-        else:
-            main_content = soup.body
-            
+        # ... (이하 생략) ...
+        
+        # 이하 불필요한 태그 제거 및 텍스트 추출 코드는 기존과 동일
         if not main_content: return "본문 내용을 찾을 수 없습니다."
-
         for tag in main_content(['script', 'style', 'nav', 'footer', 'aside']):
             tag.decompose()
-        
-        for tag in main_content.find_all(class_=['ads', 'comments', 'related-posts']):
-            tag.decompose()
-
         return main_content.get_text(separator='\n', strip=True)
 
-    except requests.exceptions.RequestException as e:
-        return f"URL에 접속 중 오류 발생: {e}"
     except Exception as e:
         return f"처리 중 알 수 없는 오류 발생: {e}"
 
@@ -110,3 +109,40 @@ def get_text_from_pdf(file_path: str) -> str:
         return "\n".join(full_text)
     except Exception as e:
         return f"PDF 처리 중 오류 발생: {e}"
+
+def crawl_zdi_blog_index(index_url: str) -> list[str]:
+    """
+    [Selenium 4 최종 버전] ZDI 블로그 목록 페이지에서 URL 목록을 수집합니다.
+    Selenium 내장 드라이버 관리자를 사용하여 안정성을 높입니다.
+    """
+    article_urls = []
+    options = webdriver.ChromeOptions()
+    # 안정성을 위해 몇 가지 옵션 추가
+    options.add_argument('--headless')
+    options.add_argument('--no-sandbox')
+    options.add_argument('--disable-dev-shm-usage')
+    options.add_argument('--log-level=3')
+
+    # ▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
+    # 수정된 부분: 이제 webdriver.Chrome(options=options) 만 호출하면
+    # Selenium이 자동으로 PC의 크롬 버전을 확인하고 그에 맞는 드라이버를 다운로드/관리합니다.
+    with webdriver.Chrome(options=options) as driver:
+    # ▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲
+        try:
+            driver.get(index_url)
+            WebDriverWait(driver, 10).until(
+                EC.presence_of_element_located((By.CLASS_NAME, "blog-collection-item-link"))
+            )
+            final_html = driver.page_source
+            soup = BeautifulSoup(final_html, 'html.parser')
+
+            for link_tag in soup.find_all('a', class_='blog-collection-item-link'):
+                if 'href' in link_tag.attrs:
+                    full_url = urljoin(index_url, link_tag['href'])
+                    article_urls.append(full_url)
+            
+            return article_urls
+
+        except Exception as e:
+            print(f"Selenium 크롤링 중 오류 발생: {e}")
+            return []
