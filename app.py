@@ -78,10 +78,25 @@ async def create_rule_from_url(request: RuleRequest):
     if not rule_to_validate:
         print("ERROR: LLM 결과에 Rule이 포함되지 않음")
         raise HTTPException(status_code=500, detail="LLM이 유효한 Rule을 생성하지 못했습니다.")
+    
+    
+    
+  # 👉 검증기 예외를 잡아서 500 방지 + macOS는 스킵 처리
+    try:
+        if sys.platform == "darwin":
+            is_valid = True
+            validation_status = "Skipped on macOS: validator requires WSL/Snort"
+        else:
+            is_valid = validate_rule_syntax(rule_to_validate, engine='snort')  # 'snort' 또는 'suricata'
+            validation_status = "Success: Valid Syntax" if is_valid else "Failed: Invalid Syntax"
+    except Exception as e:
+        print(f"ERROR: validator crashed - {e}")
+        is_valid = False
+        validation_status = f"ValidatorError: {e}"
 
-    is_valid = validate_rule_syntax(rule_to_validate, engine='snort') # 'snort' 또는 'suricata'
-    validation_status = "Success: Valid Syntax" if is_valid else "Failed: Invalid Syntax"
     print(f"INFO: Rule 검증 결과: {validation_status}")
+
+
 
     # 4단계: 최종 응답 생성
     response_data = RuleResponse(

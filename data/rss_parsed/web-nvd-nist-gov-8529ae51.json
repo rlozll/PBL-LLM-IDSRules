@@ -1,0 +1,7 @@
+{
+  "url": "https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2019-10403",
+  "source_domain": "web.nvd.nist.gov",
+  "title": "CVE-2019-10403 (jenkins)",
+  "collected_at": "2025-10-08T11:31:58.732159+00:00",
+  "text": "처리 중 알 수 없는 오류 발생: cannot access local variable 'main_content' where it is not associated with a value"
+}

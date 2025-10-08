@@ -1,0 +1,7 @@
+{
+  "url": "https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-20588",
+  "source_domain": "web.nvd.nist.gov",
+  "title": "CVE-2023-20588 (athlon_gold_3150g_firmware, athlon_gold_3150ge_firmware, athlon_gold_pro_3150g_firmware, athlon_gold_pro_3150ge_firmware, athlon_pro_300ge_firmware, athlon_silver_3050ge_firmware, athlon_silver_pro_3125ge_firmware, debian_linux, epyc_7251_firmware, epyc_7261_firmware, epyc_7281_firmware, epyc_7301_firmware, epyc_7351_firmware, epyc_7351p_firmware, epyc_7371_firmware, epyc_7401_firmware, epyc_7401p_firmware, epyc_7451_firmware, epyc_7501_firmware, epyc_7551_firmware, epyc_7551p_firmware, epyc_7571_firmware, epyc_7601_firmware, fedora, ryzen_3_3200g_firmware, ryzen_3_3200ge_firmware, ryzen_3_pro_3200g_firmware, ryzen_3_pro_3200ge_firmware, ryzen_5_3400g_firmware, ryzen_5_pro_3350g_firmware, ryzen_5_pro_3350ge_firmware, ryzen_5_pro_3400g_firmware, ryzen_5_pro_3400ge_firmware, xen)",
+  "collected_at": "2025-10-08T11:45:08.882233+00:00",
+  "text": "처리 중 알 수 없는 오류 발생: cannot access local variable 'main_content' where it is not associated with a value"
+}

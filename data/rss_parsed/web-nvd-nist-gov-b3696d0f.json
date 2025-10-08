@@ -1,0 +1,7 @@
+{
+  "url": "https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-30011",
+  "source_domain": "web.nvd.nist.gov",
+  "title": "CVE-2022-30011 (hospital_management_system)",
+  "collected_at": "2025-10-08T11:37:23.827468+00:00",
+  "text": "처리 중 알 수 없는 오류 발생: cannot access local variable 'main_content' where it is not associated with a value"
+}
