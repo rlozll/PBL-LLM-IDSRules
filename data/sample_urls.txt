@@ -1,0 +1,19 @@
+# CVE-2021-44228 (Log4Shell)
+https://nvd.nist.gov/vuln/detail/CVE-2021-44228
+https://blog.cloudflare.com/ko-kr/inside-the-log4j2-vulnerability-cve-2021-44228/
+
+# CVE-2017-0144 (EternalBlue)
+https://nvd.nist.gov/vuln/detail/CVE-2017-0144
+https://learn.microsoft.com/en-us/security-updates/securitybulletins/2017/ms17-010
+
+# CVE-2022-22965 (Spring4Shell)
+https://nvd.nist.gov/vuln/detail/CVE-2022-22965
+https://spring.io/blog/2022/03/31/spring-framework-rce-early-announcement
+
+# CVE-2020-1472 (Zerologon)
+https://nvd.nist.gov/vuln/detail/CVE-2020-1472
+https://msrc.microsoft.com/update-guide/vulnerability/CVE-2020-1472
+
+# CVE-2014-0160 (Heartbleed)
+https://nvd.nist.gov/vuln/detail/CVE-2014-0160
+https://heartbleed.com/

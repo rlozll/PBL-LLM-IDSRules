@@ -1,0 +1,9 @@
+{
+  "source_id": "learn.microsoft.com-ms17-010",
+  "url": "https://learn.microsoft.com/en-us/security-updates/securitybulletins/2017/ms17-010",
+  "text": "처리 중 알 수 없는 오류 발생: cannot access local variable 'main_content' where it is not associated with a value",
+  "metadata": {
+    "collected_at": "2025-10-08T10:30:29.901926Z",
+    "source_domain": "learn.microsoft.com"
+  }
+}

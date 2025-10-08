@@ -1,0 +1,7 @@
+{
+  "url": "https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-21739",
+  "source_domain": "web.nvd.nist.gov",
+  "title": "CVE-2023-21739 (windows_10_1507, windows_10_1607, windows_10_1809, windows_10_20h2, windows_10_21h2, windows_10_22h2, windows_11_21h2, windows_11_22h2, windows_rt_8.1)",
+  "collected_at": "2025-10-08T11:49:11.827461+00:00",
+  "text": "처리 중 알 수 없는 오류 발생: cannot access local variable 'main_content' where it is not associated with a value"
+}

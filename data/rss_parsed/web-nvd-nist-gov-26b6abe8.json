@@ -1,0 +1,7 @@
+{
+  "url": "https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2009-3547",
+  "source_domain": "web.nvd.nist.gov",
+  "title": "CVE-2009-3547 (enterprise_linux_desktop, enterprise_linux_eus, enterprise_linux_server, enterprise_linux_workstation, esx, fedora, linux_desktop, linux_kernel, mrg_realtime, opensuse, suse_linux_enterprise_desktop, suse_linux_enterprise_server, ubuntu_linux, vma)",
+  "collected_at": "2025-10-08T11:31:33.033003+00:00",
+  "text": "처리 중 알 수 없는 오류 발생: cannot access local variable 'main_content' where it is not associated with a value"
+}
