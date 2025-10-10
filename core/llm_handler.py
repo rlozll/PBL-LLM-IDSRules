@@ -1,101 +1,124 @@
-# core/llm_handler.py
+# llm_handler.py
+import os, json, asyncio
+import google.generativeai as genai
+from google.generativeai import types as genai_types
+from pydantic import BaseModel, Field
+from typing import List
 
-import os
-import json
-from openai import AsyncOpenAI  # 비동기 처리를 위해 AsyncOpenAI 사용
-from dotenv import load_dotenv
+MODEL = os.getenv("LLM_MODEL", "gemini-2.5-flash")
 
-# 1. API 키 로딩
-load_dotenv()
-api_key = os.getenv("OPENAI_API_KEY")
-if not api_key:
-    raise ValueError("OpenAI API 키가 .env 파일에 설정되지 않았습니다.")
+# 1) IoC 스키마 정의 (필요 필드만, 전부 optional 리스트로)
+class IoC(BaseModel):
+    cve: List[str] = Field(default_factory=list)
+    ip: List[str] = Field(default_factory=list)
+    domain: List[str] = Field(default_factory=list)
+    url: List[str] = Field(default_factory=list)
+    hash: List[str] = Field(default_factory=list)
 
-client = AsyncOpenAI(api_key=api_key)
-MODEL = "gpt-4o" # 또는 "gpt-3.5-turbo" 등 사용 가능한 최신 모델
+def _configure():
+    api_key = os.getenv("GOOGLE_API_KEY")
+    if not api_key:
+        raise RuntimeError("GOOGLE_API_KEY not set")
+    genai.configure(api_key=api_key)
+
+def _extract_text(resp) -> str:
+    # resp.text가 비어있을 수 있음 → candidates/parts에서 재조립
+    txt = (getattr(resp, "text", None) or "").strip()
+    if txt:
+        return txt
+    # fallback: parts 순회
+    try:
+        for cand in getattr(resp, "candidates", []):
+            for part in getattr(cand, "content", {}).parts:  # SDK 구조상 content.parts
+                if hasattr(part, "text") and part.text:
+                    return part.text.strip()
+    except Exception:
+        pass
+    return ""
+
+async def call_gemini(prompt: str, *, json_mode=False, schema=None) -> tuple[str, str]:
+    try:
+        _configure()
+        model = genai.GenerativeModel(MODEL)
+
+        genconf = {}
+        if json_mode:
+            genconf["response_mime_type"] = "application/json"
+            if schema is not None:
+                genconf["response_schema"] = schema  # Pydantic BaseModel OK
+
+        resp = await asyncio.to_thread(
+            lambda: model.generate_content(
+                prompt,
+                generation_config=genconf if genconf else None,
+            )
+        )
+
+        text = _extract_text(resp)
+        if not text:
+            return "", "Empty response text"
+        return text, ""
+    except Exception as e:
+        return "", f"{type(e).__name__}: {e}"
+    
+
+def _json_coerce(s: str) -> tuple[dict, str]:
+    """JSON 파싱 수비수: 코드블록/앞뒤 잡소리 제거 + {} 추출"""
+    try:
+        return json.loads(s), ""
+    except Exception:
+        pass
+    # 코드블록 제거
+    if "```" in s:
+        parts = [p.strip() for p in s.split("```") if p.strip()]
+        s = parts[-1]
+    # 본문에서 가장 바깥 { ... } 추출
+    import re
+    m = re.search(r"\{.*\}", s, flags=re.S)
+    if m:
+        try:
+            return json.loads(m.group(0)), ""
+        except Exception as e:
+            return {}, f"JSON_EXTRACT_FAIL: {e}"
+    return {}, "No JSON object found"
 
 async def generate_analysis_from_text(text: str) -> dict:
-    """
-    CTI 텍스트를 입력받아 LLM을 통해 IoC와 Snort Rule을 생성합니다.
-    """
-    try:
-        # --- 1차 호출: IoC 추출 ---
-        print("INFO: LLM 호출 시작 - 1단계: IoC 추출")
-        ioc_prompt = f"""
-        당신은 최고의 사이버 위협 인텔리전스(CTI) 분석가입니다.
-        아래 텍스트에서 공격과 관련된 IoC(Indicators of Compromise)를 모두 추출하여 JSON 형식으로 정리해 주십시오.
+    # 1) IoC 추출 (구조화 출력 강제)
+    ioc_prompt = f"""
+다음 CTI 본문에서 IoC를 '한 개의 JSON 객체'로만 출력하라.
+키: cve, ip, domain, url, hash (모두 리스트). 설명, 주석, 텍스트 금지.
+본문:
+{text[:12000]}
+"""
+    ioc_text, err = await call_gemini(ioc_prompt, json_mode=True, schema=IoC)
+    if err:
+        return {"error": f"IOC_FAILED: {err}", "ioc": {}, "rule": "", "explanation": err}
 
-        추출할 항목:
-        - "cve": 관련된 CVE 번호 (예: "CVE-2021-44228")
-        - "ip": 공격자의 C2 서버 또는 악성 IP 주소
-        - "domain": 악성 도메인 주소
-        - "url": 악성 행위와 관련된 전체 URL 경로
-        - "hash": 악성 파일의 해시 값 (md5, sha1, sha256)
-        - "file_path": 공격과 관련된 파일 경로 (예: "/var/log/access.log")
-        
-        해당하는 항목이 없으면 빈 리스트 `[]` 또는 빈 문자열 `""`로 표시해 주십시오.
-        반드시 JSON 객체 하나만 응답해야 합니다.
+    ioc_json, perr = _json_coerce(ioc_text)
+    if perr:
+        return {"error": f"IOC_JSON_PARSE_FAILED: {perr}", "raw": ioc_text, "ioc": {}, "rule": "", "explanation": perr}
 
-        --- 분석할 텍스트 ---
-        {text[:4000]} 
-        """ # 텍스트가 너무 길 경우를 대비해 일부만 사용
+    # 2) Rule 생성
+    rule_prompt = f"""
+다음 IoC를 기반으로 Snort 2.9 규칙 1개만 출력. 코드블록/설명 금지, 규칙 한 줄만.
+필수: msg, sid(>=1000000), rev(>=1), reference(CVE).
+IoC:
+{json.dumps(ioc_json, ensure_ascii=False, indent=2)}
+"""
+    rule_text, err = await call_gemini(rule_prompt, json_mode=False)
+    if err:
+        return {"error": f"RULE_FAILED: {err}", "ioc": ioc_json, "rule": "", "explanation": err}
 
-        response1 = await client.chat.completions.create(
-            model=MODEL,
-            messages=[{"role": "user", "content": ioc_prompt}],
-            response_format={"type": "json_object"} # JSON 출력 모드 활성화
-        )
-        extracted_iocs = json.loads(response1.choices[0].message.content)
-        print(f"INFO: LLM 결과 - 추출된 IoC: {extracted_iocs}")
+    rule_text = rule_text.strip()
+    if "```" in rule_text:
+        parts = [p.strip() for p in rule_text.split("```") if p.strip()]
+        rule_text = parts[-1]
 
-        # --- 2차 호출: Snort Rule 생성 ---
-        print("INFO: LLM 호출 시작 - 2단계: Snort Rule 생성")
-        rule_prompt = f"""
-        당신은 최고의 네트워크 보안 전문가입니다. 
-        아래 CTI 분석 텍스트와 추출된 IoC를 바탕으로, 이 공격을 탐지할 수 있는 Snort 2.9 버전 문법에 맞는 IDS Rule을 생성해 주십시오.
+    # 간단 형태검사 (기존과 동일)
+    import re
+    pat = re.compile(r'^alert\s+\w+.*?msg:"[^"]+";.*?sid:\d+;.*?rev:\d+;.*?\)\s*$', re.I | re.S)
+    lines = [L.strip() for L in rule_text.splitlines() if L.strip()]
+    if not lines or not all(pat.search(L) for L in lines):
+        return {"error": "RULE_PRECHECK_FAILED", "ioc": ioc_json, "rule": rule_text, "explanation": "precheck failed"}
 
-        규칙 생성 가이드:
-        1. `msg` 필드에는 어떤 공격인지 명확하게 설명합니다. (예: "ET EXPLOIT Apache Log4j JNDI Injection Attempt")
-        2. `content` 필드에는 탐지할 핵심적인 문자열 패턴을 IoC에서 가져와 사용합니다.
-        3. `reference` 필드에는 CVE 번호를 포함합니다.
-        4. `sid`는 1000000 이상의 임의의 숫자를 사용하고, `rev`는 1로 설정합니다.
-        5. 가장 중요한 공격 패턴을 탐지할 수 있는 규칙 딱 하나만 생성합니다.
-
-        --- CTI 분석 텍스트 ---
-        {text[:4000]}
-
-        --- 추출된 IoC ---
-        {json.dumps(extracted_iocs, indent=2)}
-
-        --- 생성할 Snort Rule ---
-        """
-
-        response2 = await client.chat.completions.create(
-            model=MODEL,
-            messages=[{"role": "user", "content": rule_prompt}]
-        )
-        generated_rule = response2.choices[0].message.content.strip()
-
-        # LLM 응답에서 Rule만 깔끔하게 추출 (```rule ... ``` 같은 마크다운 제거)
-        if '```' in generated_rule:
-            generated_rule = generated_rule.split('```')[1].strip().replace("rule\n", "")
-
-        print(f"INFO: LLM 결과 - 생성된 Rule: {generated_rule}")
-
-        # TODO: Rule 설명 생성 (간단한 3차 호출 또는 Rule 생성 프롬프트에 포함)
-        explanation = f"LLM이 생성한 규칙. CVE: {extracted_iocs.get('cve', 'N/A')}"
-        
-        return {
-            "ioc": extracted_iocs,
-            "rule": generated_rule,
-            "explanation": explanation
-        }
-
-    except Exception as e:
-        print(f"ERROR: LLM 처리 중 오류 발생 - {e}")
-        # 오류 발생 시 빈 결과 또는 기본 오류 메시지 반환
-        return {
-            "ioc": {},
-            "rule": f"Error: LLM processing failed. {e}",
-            "explanation": str(e)
-        }
+    return {"ioc": ioc_json, "rule": rule_text, "explanation": f"model={MODEL}"}
