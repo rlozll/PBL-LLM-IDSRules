@@ -70,4 +70,4 @@ def validate_rule_syntax(rule_string: str, engine: str = 'snort') -> bool:
         if os.path.exists(windows_config_path):
             os.remove(windows_config_path)
     
-    return is_valid
+    return is_valid 
