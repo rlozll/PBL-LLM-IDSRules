@@ -16,57 +16,58 @@ def _windows_path_to_wsl_path(windows_path: str) -> str:
 
 def validate_rule_syntax(rule_string: str, engine: str = 'snort') -> bool:
     """
-    WSL에 설치된 Snort를 호출하여 Rule의 문법적 유효성을 검증합니다.
+    WSL Snort를 사용하여 단일 Rule 문자열의 유효성을 검증합니다.
+    (개선된 방식: 임시 설정 파일을 생성하여 테스트)
     """
-    # 1. Windows에 임시 규칙 파일을 생성합니다.
-    with tempfile.NamedTemporaryFile(mode='w+', delete=False, suffix='.rules', encoding='utf-8') as temp_rule_file:
-        temp_rule_file.write(rule_string)
-        windows_rule_path = temp_rule_file.name
+    # 1. 검증할 Rule만 포함하는 '임시 설정 파일'의 내용을 만듭니다.
+    #    Snort가 최소한의 설정을 인식하도록 'HOME_NET' 변수를 함께 넣어줍니다.
+    config_content = f"var HOME_NET any\n{rule_string}"
+    
+    # Windows에 임시 설정 파일을 생성합니다.
+    with tempfile.NamedTemporaryFile(mode='w+', delete=False, suffix='.conf', encoding='utf-8') as temp_config_file:
+        temp_config_file.write(config_content)
+        windows_config_path = temp_config_file.name
 
     try:
         # 2. Windows 경로를 WSL이 인식할 수 있는 경로로 변환합니다.
-        wsl_rule_path = _windows_path_to_wsl_path(windows_rule_path)
-        print(f"INFO: Windows 임시 파일: {windows_rule_path}")
-        print(f"INFO: WSL 변환 경로: {wsl_rule_path}")
+        wsl_config_path = _windows_path_to_wsl_path(windows_config_path)
+        print(f"INFO: 임시 설정 파일 생성 (WSL 경로): {wsl_config_path}")
 
-        # 3. WSL에 설치된 Snort 2.9의 설정 파일 경로를 지정합니다.
-        wsl_config_path = '/etc/snort/snort.conf'
-
-        # 4. wsl.exe를 통해 WSL 내부의 snort 명령어를 실행할 준비를 합니다.
-        #    -c: 설정 파일을 지정합니다.
-        #    -T: 설정 및 규칙을 테스트하는 'Test' 모드로 실행합니다.
-        #    -r: 테스트할 규칙 파일을 읽어들입니다.
+        # 3. wsl.exe를 통해 Snort를 '설정 테스트 모드(-T)'로 실행합니다.
+        #    -c 옵션으로 방금 만든 임시 설정 파일을 지정합니다.
+        #    이렇게 하면 다른 규칙이나 복잡한 설정 없이 오직 우리 Rule만 검사합니다.
         command = [
             "wsl",
-            "sudo", # Snort가 설정 파일을 읽으려면 관리자 권한이 필요할 수 있습니다.
+            "sudo",
             "snort",
             "-c", wsl_config_path,
-            "-T",
-            "-r", wsl_rule_path
+            "-T"  # <- 오류의 원인이었던 -r 옵션을 제거하고 -T만 사용합니다.
         ]
 
         print(f"INFO: 실행할 WSL 명령어: {' '.join(command)}")
 
-        # 5. WSL 명령어를 실행하여 검증을 수행합니다.
+        # 4. WSL 명령어를 실행하여 검증을 수행합니다.
         result = subprocess.run(
             command, check=True, capture_output=True, text=True, timeout=30
         )
-        # Snort 2.9는 성공 시 stderr에 상세 정보를 출력하므로, 특정 에러 메시지가 없는지 확인합니다.
-        if "ERROR" in result.stderr or "Fatal" in result.stderr:
-             print(f"❌ (WSL Snort) 구문 검증 실패:\n{result.stderr}")
-             is_valid = False
+
+        # Snort 2.9는 성공 시 stdout에 성공 메시지를 출력합니다.
+        if "Snort successfully validated the configuration" in result.stdout:
+            print("✅ (WSL Snort) 구문 검증 성공")
+            is_valid = True
         else:
-             print("✅ (WSL Snort) 구문 검증 성공")
-             is_valid = True
+            # 성공 메시지가 없으면 실패로 간주합니다.
+            print(f"❌ (WSL Snort) 구문 검증 실패 (성공 메시지 없음):\n{result.stderr}")
+            is_valid = False
 
     except subprocess.CalledProcessError as e:
-        # 명령 자체가 실패한 경우 (예: 경로 오류)
-        print(f"❌ (WSL Snort) 명령어 실행 실패:\n{e.stderr}")
+        # Snort가 문법 오류 등으로 0이 아닌 종료 코드를 반환하면 이 예외가 발생합니다.
+        print(f"❌ (WSL Snort) 명령어 실행 오류 (문법 오류 가능성 높음):\n{e.stderr}")
         is_valid = False
     
     finally:
-        # 6. 검증이 끝나면 Windows에 생성된 임시 파일을 반드시 삭제합니다.
-        if os.path.exists(windows_rule_path):
-            os.remove(windows_rule_path)
+        # 5. 검증이 끝나면 Windows에 생성된 임시 설정 파일을 반드시 삭제합니다.
+        if os.path.exists(windows_config_path):
+            os.remove(windows_config_path)
     
     return is_valid
