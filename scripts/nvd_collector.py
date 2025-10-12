@@ -23,29 +23,31 @@ from dotenv import load_dotenv
 
 # ------------------ 설정 ------------------
 
-# 1) 프로젝트 루트 경로 고정 (scripts/의 상위)
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+# 1️⃣ 절대경로로 프로젝트 루트 지정 (맥/윈도우 둘 다 호환)
+BASE_DIR = os.path.expanduser("/Users/kimnahyun/Desktop/pbl/PBL-LLM-IDSRules")
 
-# 2) 루트 .env를 명시적으로 로드
+# 2️⃣ .env 파일을 명시적으로 로드
 DOTENV_PATH = os.path.join(BASE_DIR, ".env")
-load_dotenv(dotenv_path=DOTENV_PATH)
+if os.path.exists(DOTENV_PATH):
+    load_dotenv(dotenv_path=DOTENV_PATH)
+else:
+    logging.warning(f".env 파일을 찾을 수 없음: {DOTENV_PATH}")
 
-# 3) API 및 경로
+# 3️⃣ API 및 출력 경로 설정
 API_URL = "https://services.nvd.nist.gov/rest/json/cves/2.0"
-API_KEY = os.getenv("NVD_API_KEY")
+API_KEY = os.getenv("861A8157-53A4-F011-8362-0EBF96DE670D")
 
-# 4) 출력 폴더: 루트/data/nvd_cve
 OUT_DIR = os.path.join(BASE_DIR, "data", "nvd_cve")
 os.makedirs(OUT_DIR, exist_ok=True)
 
-# 5) 로깅
+# 4️⃣ 로깅 설정
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(message)s")
 logging.info(f"🔑 NVD_API_KEY loaded: {'YES' if API_KEY else 'NO'}")
 
-# 6) 레이트/재시도
-DEFAULT_SLEEP_SECONDS = 3.0   # 요청 간 최소 슬립
-MAX_PER_WINDOW_RETRIES = 5    # 페이지 요청 재시도 횟수
-BACKOFF_BASE = 2.0            # 지수 백오프 base
+# 5️⃣ 요청 제어 설정
+DEFAULT_SLEEP_SECONDS = 3.0
+MAX_PER_WINDOW_RETRIES = 5
+BACKOFF_BASE = 2.0
 
 
 # ------------------ 유틸 ------------------
