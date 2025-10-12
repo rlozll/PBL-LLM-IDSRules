@@ -1,525 +1,176 @@
-2025-10-12 11:07:10,420 [INFO] 🔑 NVD_API_KEY loaded: YES
-2025-10-12 11:07:10,426 [INFO] Adding job tentatively -- it will be properly scheduled when the scheduler starts
-2025-10-12 11:07:10,426 [INFO] Adding job tentatively -- it will be properly scheduled when the scheduler starts
-2025-10-12 11:07:10,426 [INFO] Adding job tentatively -- it will be properly scheduled when the scheduler starts
-2025-10-12 11:07:10,426 [INFO] 🕒 Scheduler 시작됨 (RSS=10분, API=2시간, VT=1분)
-2025-10-12 11:07:10,426 [INFO] Added job "job_rss" to job store "default"
-2025-10-12 11:07:10,427 [INFO] Added job "job_api" to job store "default"
-2025-10-12 11:07:10,427 [INFO] Added job "job_vt" to job store "default"
-2025-10-12 11:07:10,427 [INFO] Scheduler started
-2025-10-12 11:07:43,977 [INFO] 🛑 Scheduler 종료됨
-2025-10-12 11:13:49,249 [INFO] 🔑 NVD_API_KEY loaded: NO
-2025-10-12 11:13:49,251 [INFO] Adding job tentatively -- it will be properly scheduled when the scheduler starts
-2025-10-12 11:13:49,251 [INFO] Adding job tentatively -- it will be properly scheduled when the scheduler starts
-2025-10-12 11:13:49,252 [INFO] Adding job tentatively -- it will be properly scheduled when the scheduler starts
-2025-10-12 11:13:49,252 [INFO] 🕒 Scheduler 시작됨 (RSS=10분, API=2시간, VT=1분)
-2025-10-12 11:13:49,252 [INFO] Added job "job_rss" to job store "default"
-2025-10-12 11:13:49,252 [INFO] Added job "job_api" to job store "default"
-2025-10-12 11:13:49,252 [INFO] Added job "job_vt" to job store "default"
-2025-10-12 11:13:49,252 [INFO] Scheduler started
-2025-10-12 11:14:49,328 [INFO] Running job "job_vt (trigger: interval[0:01:00], next run at: 2025-10-12 11:14:49 KST)" (scheduled at 2025-10-12 11:14:49.251983+09:00)
-2025-10-12 11:14:49,330 [INFO] 🧬 VirusTotal 검사 시작
-2025-10-12 11:14:49,331 [ERROR] name 'vt_checker' is not defined
 Traceback (most recent call last):
-  File "/Users/kimnahyun/Desktop/pbl/PBL-LLM-IDSRules/scripts/orchestrator.py", line 42, in job_vt
-    vt_checker.run(limit=4)
-    ^^^^^^^^^^
-NameError: name 'vt_checker' is not defined
-2025-10-12 11:14:49,335 [INFO] ✅ VirusTotal 검사 종료
-2025-10-12 11:14:49,335 [INFO] Job "job_vt (trigger: interval[0:01:00], next run at: 2025-10-12 11:15:49 KST)" executed successfully
-2025-10-12 11:15:49,288 [INFO] Running job "job_vt (trigger: interval[0:01:00], next run at: 2025-10-12 11:16:49 KST)" (scheduled at 2025-10-12 11:15:49.251983+09:00)
-2025-10-12 11:15:49,290 [INFO] 🧬 VirusTotal 검사 시작
-2025-10-12 11:15:49,291 [ERROR] name 'vt_checker' is not defined
+  File "/Users/kimnahyun/Desktop/pbl/PBL-LLM-IDSRules/scripts/orchestrator.py", line 9, in <module>
+    logging.info(f"[BOOT] VT module={getattr(_vt, "__file__", "unknown")}")
+                                             ^^^
+NameError: name '_vt' is not defined
 Traceback (most recent call last):
-  File "/Users/kimnahyun/Desktop/pbl/PBL-LLM-IDSRules/scripts/orchestrator.py", line 42, in job_vt
-    vt_checker.run(limit=4)
-    ^^^^^^^^^^
-NameError: name 'vt_checker' is not defined
-2025-10-12 11:15:49,292 [INFO] ✅ VirusTotal 검사 종료
-2025-10-12 11:15:49,293 [INFO] Job "job_vt (trigger: interval[0:01:00], next run at: 2025-10-12 11:16:49 KST)" executed successfully
-2025-10-12 11:16:49,301 [INFO] Running job "job_vt (trigger: interval[0:01:00], next run at: 2025-10-12 11:17:49 KST)" (scheduled at 2025-10-12 11:16:49.251983+09:00)
-2025-10-12 11:16:49,303 [INFO] 🧬 VirusTotal 검사 시작
-2025-10-12 11:16:49,303 [ERROR] name 'vt_checker' is not defined
+  File "/Users/kimnahyun/Desktop/pbl/PBL-LLM-IDSRules/scripts/orchestrator.py", line 9, in <module>
+    logging.info(f"[BOOT] VT module={getattr(_vt, "__file__", "unknown")}")
+                                             ^^^
+NameError: name '_vt' is not defined
 Traceback (most recent call last):
-  File "/Users/kimnahyun/Desktop/pbl/PBL-LLM-IDSRules/scripts/orchestrator.py", line 42, in job_vt
-    vt_checker.run(limit=4)
-    ^^^^^^^^^^
-NameError: name 'vt_checker' is not defined
-2025-10-12 11:16:49,304 [INFO] ✅ VirusTotal 검사 종료
-2025-10-12 11:16:49,304 [INFO] Job "job_vt (trigger: interval[0:01:00], next run at: 2025-10-12 11:17:49 KST)" executed successfully
-2025-10-12 11:17:42,648 [INFO] 🔑 NVD_API_KEY loaded: YES
-2025-10-12 11:17:42,650 [INFO] Adding job tentatively -- it will be properly scheduled when the scheduler starts
-2025-10-12 11:17:42,650 [INFO] Adding job tentatively -- it will be properly scheduled when the scheduler starts
-2025-10-12 11:17:42,650 [INFO] Adding job tentatively -- it will be properly scheduled when the scheduler starts
-2025-10-12 11:17:42,650 [INFO] 🕒 Scheduler 시작됨 (RSS=10분, API=2시간, VT=1분)
-2025-10-12 11:17:42,651 [INFO] Added job "job_rss" to job store "default"
-2025-10-12 11:17:42,651 [INFO] Added job "job_api" to job store "default"
-2025-10-12 11:17:42,651 [INFO] Added job "job_vt" to job store "default"
-2025-10-12 11:17:42,651 [INFO] Scheduler started
-2025-10-12 11:18:42,672 [INFO] Running job "job_vt (trigger: interval[0:01:00], next run at: 2025-10-12 11:18:42 KST)" (scheduled at 2025-10-12 11:18:42.650362+09:00)
-2025-10-12 11:18:42,674 [INFO] 🧬 VirusTotal 검사 시작
-2025-10-12 11:18:42,675 [ERROR] name 'vt_checker' is not defined
+  File "/Users/kimnahyun/Desktop/pbl/PBL-LLM-IDSRules/scripts/orchestrator.py", line 9, in <module>
+    logging.info(f"[BOOT] VT module={getattr(_vt, "__file__", "unknown")}")
+                                             ^^^
+NameError: name '_vt' is not defined
 Traceback (most recent call last):
-  File "/Users/kimnahyun/Desktop/pbl/PBL-LLM-IDSRules/scripts/orchestrator.py", line 42, in job_vt
-    vt_checker.run(limit=4)
-    ^^^^^^^^^^
-NameError: name 'vt_checker' is not defined
-2025-10-12 11:18:42,678 [INFO] ✅ VirusTotal 검사 종료
-2025-10-12 11:18:42,678 [INFO] Job "job_vt (trigger: interval[0:01:00], next run at: 2025-10-12 11:19:42 KST)" executed successfully
-2025-10-12 11:19:42,725 [INFO] Running job "job_vt (trigger: interval[0:01:00], next run at: 2025-10-12 11:20:42 KST)" (scheduled at 2025-10-12 11:19:42.650362+09:00)
-2025-10-12 11:19:42,726 [INFO] 🧬 VirusTotal 검사 시작
-2025-10-12 11:19:42,726 [ERROR] name 'vt_checker' is not defined
+  File "/Users/kimnahyun/Desktop/pbl/PBL-LLM-IDSRules/scripts/orchestrator.py", line 9, in <module>
+    logging.info(f"[BOOT] VT module={getattr(_vt, "__file__", "unknown")}")
+                                             ^^^
+NameError: name '_vt' is not defined
+ERROR:root:module 'collectors.virustotal_collector' has no attribute 'run'
 Traceback (most recent call last):
-  File "/Users/kimnahyun/Desktop/pbl/PBL-LLM-IDSRules/scripts/orchestrator.py", line 42, in job_vt
-    vt_checker.run(limit=4)
-    ^^^^^^^^^^
-NameError: name 'vt_checker' is not defined
-2025-10-12 11:19:42,728 [INFO] ✅ VirusTotal 검사 종료
-2025-10-12 11:19:42,730 [INFO] Job "job_vt (trigger: interval[0:01:00], next run at: 2025-10-12 11:20:42 KST)" executed successfully
-2025-10-12 11:20:42,682 [INFO] Running job "job_vt (trigger: interval[0:01:00], next run at: 2025-10-12 11:21:42 KST)" (scheduled at 2025-10-12 11:20:42.650362+09:00)
-2025-10-12 11:20:42,683 [INFO] 🧬 VirusTotal 검사 시작
-2025-10-12 11:20:42,683 [ERROR] name 'vt_checker' is not defined
-Traceback (most recent call last):
-  File "/Users/kimnahyun/Desktop/pbl/PBL-LLM-IDSRules/scripts/orchestrator.py", line 42, in job_vt
-    vt_checker.run(limit=4)
-    ^^^^^^^^^^
-NameError: name 'vt_checker' is not defined
-2025-10-12 11:20:42,683 [INFO] ✅ VirusTotal 검사 종료
-2025-10-12 11:20:42,684 [INFO] Job "job_vt (trigger: interval[0:01:00], next run at: 2025-10-12 11:21:42 KST)" executed successfully
-2025-10-12 11:21:31,307 [INFO] 🔑 NVD_API_KEY loaded: YES
-2025-10-12 11:21:31,309 [INFO] Adding job tentatively -- it will be properly scheduled when the scheduler starts
-2025-10-12 11:21:31,309 [INFO] Adding job tentatively -- it will be properly scheduled when the scheduler starts
-2025-10-12 11:21:31,309 [INFO] Adding job tentatively -- it will be properly scheduled when the scheduler starts
-2025-10-12 11:21:31,310 [INFO] 🕒 Scheduler 시작됨 (RSS=10분, API=2시간, VT=1분)
-2025-10-12 11:21:31,310 [INFO] Added job "job_rss" to job store "default"
-2025-10-12 11:21:31,310 [INFO] Added job "job_api" to job store "default"
-2025-10-12 11:21:31,310 [INFO] Added job "job_vt" to job store "default"
-2025-10-12 11:21:31,310 [INFO] Scheduler started
-2025-10-12 11:22:31,329 [INFO] Running job "job_vt (trigger: interval[0:01:00], next run at: 2025-10-12 11:22:31 KST)" (scheduled at 2025-10-12 11:22:31.309966+09:00)
-2025-10-12 11:22:31,330 [INFO] 🧬 VirusTotal 검사 시작
-2025-10-12 11:22:31,331 [ERROR] module 'collectors.virustotal_collector' has no attribute 'run'
-Traceback (most recent call last):
-  File "/Users/kimnahyun/Desktop/pbl/PBL-LLM-IDSRules/scripts/orchestrator.py", line 42, in job_vt
+  File "/Users/kimnahyun/Desktop/pbl/PBL-LLM-IDSRules/scripts/orchestrator.py", line 45, in job_vt
     virustotal_collector.run(limit=4)
     ^^^^^^^^^^^^^^^^^^^^^^^^
 AttributeError: module 'collectors.virustotal_collector' has no attribute 'run'
-2025-10-12 11:22:31,333 [INFO] ✅ VirusTotal 검사 종료
-2025-10-12 11:22:31,334 [INFO] Job "job_vt (trigger: interval[0:01:00], next run at: 2025-10-12 11:23:31 KST)" executed successfully
-2025-10-12 11:23:31,381 [INFO] Running job "job_vt (trigger: interval[0:01:00], next run at: 2025-10-12 11:24:31 KST)" (scheduled at 2025-10-12 11:23:31.309966+09:00)
-2025-10-12 11:23:31,383 [INFO] 🧬 VirusTotal 검사 시작
-2025-10-12 11:23:31,383 [ERROR] module 'collectors.virustotal_collector' has no attribute 'run'
+ERROR:root:module 'collectors.virustotal_collector' has no attribute 'run'
 Traceback (most recent call last):
-  File "/Users/kimnahyun/Desktop/pbl/PBL-LLM-IDSRules/scripts/orchestrator.py", line 42, in job_vt
-    virustotal_collector.run(limit=4)
-    ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kimnahyun/Desktop/pbl/PBL-LLM-IDSRules/scripts/orchestrator.py", line 45, in job_vt
+    def job_rss():
+            ^^^^^^
 AttributeError: module 'collectors.virustotal_collector' has no attribute 'run'
-2025-10-12 11:23:31,385 [INFO] ✅ VirusTotal 검사 종료
-2025-10-12 11:23:31,385 [INFO] Job "job_vt (trigger: interval[0:01:00], next run at: 2025-10-12 11:24:31 KST)" executed successfully
-2025-10-12 11:51:54,733 [INFO] ================================================================================
-2025-10-12 11:51:54,734 [INFO] RSS 수집기 시작
-2025-10-12 11:51:54,734 [INFO] 모드: 1회 실행
-2025-10-12 11:51:54,734 [INFO] 출력 디렉토리: data/rss_parsed
-2025-10-12 11:51:54,734 [INFO] 로그 파일: logs/rss_collector.log
-2025-10-12 11:51:54,734 [INFO] ================================================================================
-
-2025-10-12 11:51:54,734 [INFO] 
-================================================================================
-2025-10-12 11:51:54,734 [INFO] RSS 수집 시작
-2025-10-12 11:51:54,734 [INFO] 시작 시간: 2025-10-12T02:51:54.734412+00:00
-2025-10-12 11:51:54,734 [INFO] ================================================================================
-2025-10-12 11:51:54,734 [INFO] 
-============================================================
-2025-10-12 11:51:54,734 [INFO] 처리 시작: https://nvd.nist.gov/feeds/xml/cve/misc/nvd-rss-analyzed.xml
-2025-10-12 11:51:54,734 [INFO] ============================================================
-2025-10-12 11:51:54,734 [INFO] 피드 가져오는 중: https://nvd.nist.gov/feeds/xml/cve/misc/nvd-rss-analyzed.xml (시도 1/3)
-2025-10-12 11:51:55,776 [INFO] 발견된 엔트리 수: 528
-2025-10-12 11:51:55,776 [INFO] 
-[1/528] 처리 중...
-2025-10-12 11:51:56,781 [INFO] 
-[2/528] 처리 중...
-2025-10-12 11:51:57,782 [INFO] 
-[3/528] 처리 중...
-2025-10-12 11:51:58,787 [INFO] 
-[4/528] 처리 중...
-2025-10-12 11:51:59,789 [INFO] 
-[5/528] 처리 중...
-2025-10-12 11:52:00,793 [INFO] 
-[6/528] 처리 중...
-2025-10-12 11:52:01,798 [INFO] 
-[7/528] 처리 중...
-2025-10-12 11:52:02,804 [INFO] 
-[8/528] 처리 중...
-2025-10-12 11:52:03,810 [INFO] 
-[9/528] 처리 중...
-2025-10-12 11:52:04,815 [INFO] 
-[10/528] 처리 중...
-2025-10-12 11:52:05,820 [INFO] 
-[11/528] 처리 중...
-2025-10-12 11:52:06,822 [INFO] 
-[12/528] 처리 중...
-2025-10-12 11:52:07,828 [INFO] 
-[13/528] 처리 중...
-2025-10-12 11:52:08,833 [INFO] 
-[14/528] 처리 중...
-2025-10-12 11:52:09,836 [INFO] 
-[15/528] 처리 중...
-2025-10-12 11:52:10,842 [INFO] 
-[16/528] 처리 중...
-2025-10-12 11:52:11,843 [INFO] 
-[17/528] 처리 중...
-2025-10-12 11:52:12,847 [INFO] 
-[18/528] 처리 중...
-2025-10-12 11:52:13,849 [INFO] 
-[19/528] 처리 중...
-2025-10-12 11:52:14,850 [INFO] 
-[20/528] 처리 중...
-2025-10-12 11:52:15,855 [INFO] 
-[21/528] 처리 중...
-2025-10-12 11:52:16,861 [INFO] 
-[22/528] 처리 중...
-2025-10-12 11:52:17,867 [INFO] 
-[23/528] 처리 중...
-2025-10-12 11:52:18,872 [INFO] 
-[24/528] 처리 중...
-2025-10-12 11:52:19,875 [INFO] 
-[25/528] 처리 중...
-2025-10-12 11:52:20,881 [INFO] 
-[26/528] 처리 중...
-2025-10-12 11:52:21,881 [INFO] 
-[27/528] 처리 중...
-2025-10-12 11:52:22,887 [INFO] 
-[28/528] 처리 중...
-2025-10-12 11:52:23,891 [INFO] 
-[29/528] 처리 중...
-2025-10-12 11:52:24,897 [INFO] 
-[30/528] 처리 중...
-2025-10-12 11:52:25,902 [INFO] 
-[31/528] 처리 중...
-2025-10-12 11:52:26,906 [INFO] 
-[32/528] 처리 중...
-2025-10-12 11:52:27,912 [INFO] 
-[33/528] 처리 중...
-2025-10-12 11:52:28,917 [INFO] 
-[34/528] 처리 중...
-2025-10-12 11:52:29,923 [INFO] 
-[35/528] 처리 중...
-2025-10-12 11:52:30,928 [INFO] 
-[36/528] 처리 중...
-2025-10-12 11:52:31,930 [INFO] 
-[37/528] 처리 중...
-2025-10-12 11:52:32,935 [INFO] 
-[38/528] 처리 중...
-2025-10-12 11:52:33,941 [INFO] 
-[39/528] 처리 중...
-2025-10-12 11:52:34,947 [INFO] 
-[40/528] 처리 중...
-2025-10-12 11:52:35,952 [INFO] 
-[41/528] 처리 중...
-2025-10-12 11:52:36,955 [INFO] 
-[42/528] 처리 중...
-2025-10-12 11:52:37,961 [INFO] 
-[43/528] 처리 중...
-2025-10-12 11:52:38,965 [INFO] 
-[44/528] 처리 중...
-2025-10-12 11:52:39,970 [INFO] 
-[45/528] 처리 중...
-2025-10-12 11:52:40,975 [INFO] 
-[46/528] 처리 중...
-2025-10-12 11:52:41,981 [INFO] 
-[47/528] 처리 중...
-2025-10-12 11:52:42,986 [INFO] 
-[48/528] 처리 중...
-2025-10-12 11:52:43,992 [INFO] 
-[49/528] 처리 중...
-2025-10-12 11:52:44,993 [INFO] 
-[50/528] 처리 중...
-2025-10-12 11:52:45,997 [INFO] 
-[51/528] 처리 중...
-2025-10-12 11:52:47,000 [INFO] 
-[52/528] 처리 중...
-2025-10-12 11:52:48,005 [INFO] 
-[53/528] 처리 중...
-2025-10-12 11:52:49,007 [INFO] 
-[54/528] 처리 중...
-2025-10-12 11:52:50,012 [INFO] 
-[55/528] 처리 중...
-2025-10-12 11:52:51,014 [INFO] 
-[56/528] 처리 중...
-2025-10-12 11:52:52,017 [INFO] 
-[57/528] 처리 중...
-2025-10-12 11:52:53,022 [INFO] 
-[58/528] 처리 중...
-2025-10-12 11:52:54,028 [INFO] 
-[59/528] 처리 중...
-2025-10-12 11:52:55,030 [INFO] 
-[60/528] 처리 중...
-2025-10-12 11:52:56,036 [INFO] 
-[61/528] 처리 중...
-2025-10-12 11:52:57,042 [INFO] 
-[62/528] 처리 중...
-2025-10-12 11:52:58,044 [INFO] 
-[63/528] 처리 중...
-2025-10-12 11:52:59,049 [INFO] 
-[64/528] 처리 중...
-2025-10-12 11:53:00,054 [INFO] 
-[65/528] 처리 중...
-2025-10-12 11:53:01,055 [INFO] 
-[66/528] 처리 중...
-2025-10-12 11:53:02,061 [INFO] 
-[67/528] 처리 중...
-2025-10-12 11:53:03,063 [INFO] 
-[68/528] 처리 중...
-2025-10-12 11:53:04,069 [INFO] 
-[69/528] 처리 중...
-2025-10-12 11:53:05,074 [INFO] 
-[70/528] 처리 중...
-2025-10-12 11:53:06,078 [INFO] 
-[71/528] 처리 중...
-2025-10-12 11:53:07,080 [INFO] 
-[72/528] 처리 중...
-2025-10-12 11:53:08,085 [INFO] 
-[73/528] 처리 중...
-2025-10-12 11:53:09,091 [INFO] 
-[74/528] 처리 중...
-2025-10-12 11:53:10,093 [INFO] 
-[75/528] 처리 중...
-2025-10-12 11:53:11,099 [INFO] 
-[76/528] 처리 중...
-2025-10-12 11:53:12,105 [INFO] 
-[77/528] 처리 중...
-2025-10-12 11:53:13,107 [INFO] 
-[78/528] 처리 중...
-2025-10-12 11:53:14,113 [INFO] 
-[79/528] 처리 중...
-2025-10-12 11:53:15,114 [INFO] 
-[80/528] 처리 중...
-2025-10-12 11:53:16,120 [INFO] 
-[81/528] 처리 중...
-2025-10-12 11:53:17,128 [INFO] 
-[82/528] 처리 중...
-2025-10-12 11:53:18,134 [INFO] 
-[83/528] 처리 중...
-2025-10-12 11:53:19,139 [INFO] 
-[84/528] 처리 중...
-2025-10-12 11:53:20,146 [INFO] 
-[85/528] 처리 중...
-2025-10-12 11:53:21,152 [INFO] 
-[86/528] 처리 중...
-2025-10-12 11:53:22,157 [INFO] 
-[87/528] 처리 중...
-2025-10-12 11:53:23,163 [INFO] 
-[88/528] 처리 중...
-2025-10-12 11:53:24,165 [INFO] 
-[89/528] 처리 중...
-2025-10-12 11:53:25,171 [INFO] 
-[90/528] 처리 중...
-2025-10-12 11:53:26,175 [INFO] 
-[91/528] 처리 중...
-2025-10-12 11:53:27,178 [INFO] 
-[92/528] 처리 중...
-2025-10-12 11:53:28,185 [INFO] 
-[93/528] 처리 중...
-2025-10-12 11:53:29,191 [INFO] 
-[94/528] 처리 중...
-2025-10-12 11:53:30,196 [INFO] 
-[95/528] 처리 중...
-2025-10-12 11:53:31,202 [INFO] 
-[96/528] 처리 중...
-2025-10-12 11:53:32,207 [INFO] 
-[97/528] 처리 중...
-2025-10-12 11:53:33,212 [INFO] 
-[98/528] 처리 중...
-2025-10-12 11:53:34,219 [INFO] 
-[99/528] 처리 중...
-2025-10-12 11:53:35,225 [INFO] 
-[100/528] 처리 중...
-2025-10-12 11:53:36,227 [INFO] 
-[101/528] 처리 중...
-2025-10-12 11:53:37,234 [INFO] 
-[102/528] 처리 중...
-2025-10-12 11:53:38,235 [INFO] 
-[103/528] 처리 중...
-2025-10-12 11:53:39,241 [INFO] 
-[104/528] 처리 중...
-2025-10-12 11:53:40,244 [INFO] 
-[105/528] 처리 중...
-2025-10-12 11:53:41,250 [INFO] 
-[106/528] 처리 중...
-2025-10-12 11:53:42,256 [INFO] 
-[107/528] 처리 중...
-2025-10-12 11:53:43,262 [INFO] 
-[108/528] 처리 중...
-2025-10-12 11:53:44,267 [INFO] 
-[109/528] 처리 중...
-2025-10-12 11:53:45,272 [INFO] 
-[110/528] 처리 중...
-2025-10-12 11:53:46,277 [INFO] 
-[111/528] 처리 중...
-2025-10-12 11:53:47,283 [INFO] 
-[112/528] 처리 중...
-2025-10-12 11:53:48,285 [INFO] 
-[113/528] 처리 중...
-2025-10-12 11:53:49,291 [INFO] 
-[114/528] 처리 중...
-2025-10-12 11:53:50,296 [INFO] 
-[115/528] 처리 중...
-2025-10-12 11:53:51,302 [INFO] 
-[116/528] 처리 중...
-2025-10-12 11:53:52,308 [INFO] 
-[117/528] 처리 중...
-2025-10-12 11:53:53,313 [INFO] 
-[118/528] 처리 중...
-2025-10-12 11:53:54,319 [INFO] 
-[119/528] 처리 중...
-2025-10-12 11:53:55,325 [INFO] 
-[120/528] 처리 중...
-2025-10-12 11:53:56,329 [INFO] 
-[121/528] 처리 중...
-2025-10-12 11:53:57,331 [INFO] 
-[122/528] 처리 중...
-2025-10-12 11:53:58,336 [INFO] 
-[123/528] 처리 중...
-2025-10-12 11:53:59,342 [INFO] 
-[124/528] 처리 중...
-2025-10-12 11:54:00,347 [INFO] 
-[125/528] 처리 중...
-2025-10-12 11:54:01,353 [INFO] 
-[126/528] 처리 중...
-2025-10-12 11:54:02,359 [INFO] 
-[127/528] 처리 중...
-2025-10-12 11:54:03,361 [INFO] 
-[128/528] 처리 중...
-2025-10-12 11:54:04,366 [INFO] 
-[129/528] 처리 중...
-2025-10-12 11:54:05,372 [INFO] 
-[130/528] 처리 중...
-2025-10-12 11:54:06,377 [INFO] 
-[131/528] 처리 중...
-2025-10-12 11:54:07,383 [INFO] 
-[132/528] 처리 중...
-2025-10-12 11:54:08,387 [INFO] 
-[133/528] 처리 중...
-2025-10-12 11:54:09,391 [INFO] 
-[134/528] 처리 중...
-2025-10-12 11:54:10,393 [INFO] 
-[135/528] 처리 중...
-2025-10-12 11:54:11,399 [INFO] 
-[136/528] 처리 중...
-2025-10-12 11:54:12,406 [INFO] 
-[137/528] 처리 중...
-2025-10-12 11:54:13,412 [INFO] 
-[138/528] 처리 중...
-2025-10-12 11:54:14,417 [INFO] 
-[139/528] 처리 중...
-2025-10-12 11:54:15,422 [INFO] 
-[140/528] 처리 중...
-2025-10-12 11:54:16,427 [INFO] 
-[141/528] 처리 중...
-2025-10-12 11:54:17,429 [INFO] 
-[142/528] 처리 중...
-2025-10-12 11:54:18,434 [INFO] 
-[143/528] 처리 중...
-2025-10-12 11:54:19,437 [INFO] 
-[144/528] 처리 중...
-2025-10-12 11:54:20,443 [INFO] 
-[145/528] 처리 중...
-2025-10-12 11:54:21,448 [INFO] 
-[146/528] 처리 중...
-2025-10-12 11:54:22,453 [INFO] 
-[147/528] 처리 중...
-2025-10-12 11:54:23,456 [INFO] 
-[148/528] 처리 중...
-2025-10-12 11:54:24,457 [INFO] 
-[149/528] 처리 중...
-2025-10-12 11:54:25,459 [INFO] 
-[150/528] 처리 중...
-2025-10-12 11:54:26,460 [INFO] 
-[151/528] 처리 중...
-2025-10-12 11:54:27,466 [INFO] 
-[152/528] 처리 중...
-2025-10-12 11:54:28,471 [INFO] 
-[153/528] 처리 중...
-2025-10-12 11:54:29,474 [INFO] 
-[154/528] 처리 중...
-2025-10-12 11:54:30,480 [INFO] 
-[155/528] 처리 중...
-2025-10-12 11:54:31,482 [INFO] 
-[156/528] 처리 중...
-2025-10-12 11:54:32,486 [INFO] 
-[157/528] 처리 중...
-2025-10-12 11:54:33,492 [INFO] 
-[158/528] 처리 중...
-2025-10-12 11:54:34,498 [INFO] 
-[159/528] 처리 중...
-2025-10-12 11:54:35,502 [INFO] 
-[160/528] 처리 중...
-2025-10-12 11:54:36,508 [INFO] 
-[161/528] 처리 중...
-2025-10-12 11:54:37,511 [INFO] 
-[162/528] 처리 중...
-2025-10-12 11:54:38,516 [INFO] 
-[163/528] 처리 중...
-2025-10-12 11:54:39,521 [INFO] 
-[164/528] 처리 중...
-2025-10-12 11:54:40,527 [INFO] 
-[165/528] 처리 중...
-2025-10-12 11:54:41,530 [INFO] 
-[166/528] 처리 중...
-2025-10-12 11:54:42,535 [INFO] 
-[167/528] 처리 중...
-2025-10-12 11:54:43,541 [INFO] 
-[168/528] 처리 중...
-2025-10-12 11:54:44,546 [INFO] 
-[169/528] 처리 중...
-2025-10-12 11:54:45,552 [INFO] 
-[170/528] 처리 중...
-2025-10-12 11:54:46,557 [INFO] 
-[171/528] 처리 중...
-2025-10-12 11:54:47,559 [INFO] 
-[172/528] 처리 중...
-2025-10-12 11:54:48,565 [INFO] 
-[173/528] 처리 중...
-2025-10-12 11:54:49,567 [INFO] 
-[174/528] 처리 중...
-2025-10-12 11:54:50,572 [INFO] 
-[175/528] 처리 중...
-2025-10-12 11:54:51,578 [INFO] 
-[176/528] 처리 중...
-2025-10-12 11:54:52,583 [INFO] 
-[177/528] 처리 중...
-2025-10-12 11:54:53,589 [INFO] 
-[178/528] 처리 중...
-2025-10-12 11:54:54,592 [INFO] 
-[179/528] 처리 중...
-2025-10-12 11:54:55,597 [INFO] 
-[180/528] 처리 중...
-2025-10-12 11:54:56,599 [INFO] 
-[181/528] 처리 중...
-2025-10-12 11:54:57,604 [INFO] 
-[182/528] 처리 중...
-2025-10-12 11:54:58,610 [INFO] 
-[183/528] 처리 중...
-2025-10-12 11:54:59,615 [INFO] 
-[184/528] 처리 중...
-2025-10-12 11:55:00,621 [INFO] 
-[185/528] 처리 중...
-2025-10-12 11:55:01,625 [INFO] 
-[186/528] 처리 중...
-2025-10-12 11:55:02,630 [INFO] 
-[187/528] 처리 중...
-2025-10-12 11:55:03,636 [INFO] 
-[188/528] 처리 중...
-2025-10-12 11:55:04,637 [INFO] 
-[189/528] 처리 중...
-2025-10-12 11:55:05,638 [INFO] 
-[190/528] 처리 중...
-2025-10-12 11:55:06,644 [INFO] 
-[191/528] 처리 중...
-2025-10-12 11:55:07,647 [INFO] 
-[192/528] 처리 중...
-2025-10-12 11:55:07,791 [INFO] 
-
-사용자에 의해 중단되었습니다.
+ERROR:root:module 'collectors.virustotal_collector' has no attribute 'run'
+Traceback (most recent call last):
+  File "/Users/kimnahyun/Desktop/pbl/PBL-LLM-IDSRules/scripts/orchestrator.py", line 45, in job_vt
+    def job_rss():
+            ^^^^^^
+AttributeError: module 'collectors.virustotal_collector' has no attribute 'run'
+ERROR:root:module 'collectors.virustotal_collector' has no attribute 'run'
+Traceback (most recent call last):
+  File "/Users/kimnahyun/Desktop/pbl/PBL-LLM-IDSRules/scripts/orchestrator.py", line 45, in job_vt
+    def job_rss():
+            ^^^^^^
+AttributeError: module 'collectors.virustotal_collector' has no attribute 'run'
+ERROR:root:module 'collectors.virustotal_collector' has no attribute 'run'
+Traceback (most recent call last):
+  File "/Users/kimnahyun/Desktop/pbl/PBL-LLM-IDSRules/scripts/orchestrator.py", line 45, in job_vt
+    def job_rss():
+            ^^^^^^
+AttributeError: module 'collectors.virustotal_collector' has no attribute 'run'
+ERROR:root:module 'collectors.virustotal_collector' has no attribute 'run'
+Traceback (most recent call last):
+  File "/Users/kimnahyun/Desktop/pbl/PBL-LLM-IDSRules/scripts/orchestrator.py", line 45, in job_vt
+    def job_rss():
+            ^^^^^^
+AttributeError: module 'collectors.virustotal_collector' has no attribute 'run'
+ERROR:root:module 'collectors.virustotal_collector' has no attribute 'run'
+Traceback (most recent call last):
+  File "/Users/kimnahyun/Desktop/pbl/PBL-LLM-IDSRules/scripts/orchestrator.py", line 45, in job_vt
+    def job_rss():
+            ^^^^^^
+AttributeError: module 'collectors.virustotal_collector' has no attribute 'run'
+ERROR:root:module 'collectors.virustotal_collector' has no attribute 'run'
+Traceback (most recent call last):
+  File "/Users/kimnahyun/Desktop/pbl/PBL-LLM-IDSRules/scripts/orchestrator.py", line 45, in job_vt
+    def job_rss():
+            ^^^^^^
+AttributeError: module 'collectors.virustotal_collector' has no attribute 'run'
+ERROR:root:module 'collectors.virustotal_collector' has no attribute 'run'
+Traceback (most recent call last):
+  File "/Users/kimnahyun/Desktop/pbl/PBL-LLM-IDSRules/scripts/orchestrator.py", line 45, in job_vt
+    def job_rss():
+            ^^^^^^
+AttributeError: module 'collectors.virustotal_collector' has no attribute 'run'
+ERROR:root:module 'collectors.rss_collector' has no attribute 'collect'
+Traceback (most recent call last):
+  File "/Users/kimnahyun/Desktop/pbl/PBL-LLM-IDSRules/scripts/orchestrator.py", line 29, in job_rss
+    # 3) 서브 모듈 임포트
+AttributeError: module 'collectors.rss_collector' has no attribute 'collect'
+ERROR:root:module 'collectors.virustotal_collector' has no attribute 'run'
+Traceback (most recent call last):
+  File "/Users/kimnahyun/Desktop/pbl/PBL-LLM-IDSRules/scripts/orchestrator.py", line 45, in job_vt
+    def job_rss():
+            ^^^^^^
+AttributeError: module 'collectors.virustotal_collector' has no attribute 'run'
+ERROR:root:module 'collectors.virustotal_collector' has no attribute 'run'
+Traceback (most recent call last):
+  File "/Users/kimnahyun/Desktop/pbl/PBL-LLM-IDSRules/scripts/orchestrator.py", line 45, in job_vt
+    def job_rss():
+            ^^^^^^
+AttributeError: module 'collectors.virustotal_collector' has no attribute 'run'
+2025-10-12 11:48:54,860 [INFO] 🔑 NVD_API_KEY loaded: YES
+2025-10-12 11:48:54,862 [INFO] [BOOT] ORCH file=/Users/kimnahyun/Desktop/pbl/PBL-LLM-IDSRules/scripts/orchestrator.py
+2025-10-12 11:48:54,862 [INFO] [BOOT] PYTHON=/Users/kimnahyun/Desktop/pbl/PBL-LLM-IDSRules/.venv/bin/python
+2025-10-12 11:48:54,862 [INFO] [BOOT] VT module=/Users/kimnahyun/Desktop/pbl/PBL-LLM-IDSRules/scripts/collectors/virustotal_collector.py
+2025-10-12 11:48:54,863 [INFO] Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-10-12 11:48:54,863 [INFO] Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-10-12 11:48:54,863 [INFO] Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-10-12 11:48:54,863 [INFO] 🕒 Scheduler 시작됨 (RSS=10분, API=2시간, VT=1분)
+2025-10-12 11:48:54,863 [INFO] [JOB] rss next=None trigger=interval[0:10:00]
+2025-10-12 11:48:54,863 [INFO] [JOB] api next=None trigger=interval[2:00:00]
+2025-10-12 11:48:54,863 [INFO] [JOB] vt next=None trigger=interval[0:01:00]
+2025-10-12 11:48:54,864 [INFO] Added job "job_rss" to job store "default"
+2025-10-12 11:48:54,864 [INFO] Added job "job_api" to job store "default"
+2025-10-12 11:48:54,864 [INFO] Added job "job_vt" to job store "default"
+2025-10-12 11:48:54,864 [INFO] Scheduler started
+2025-10-12 11:49:05,611 [INFO] 🔑 NVD_API_KEY loaded: YES
+2025-10-12 11:49:05,611 [INFO] [BOOT] ORCH file=/Users/kimnahyun/Desktop/pbl/PBL-LLM-IDSRules/scripts/orchestrator.py
+2025-10-12 11:49:05,611 [INFO] [BOOT] PYTHON=/Users/kimnahyun/Desktop/pbl/PBL-LLM-IDSRules/.venv/bin/python
+2025-10-12 11:49:05,611 [INFO] [BOOT] VT module=/Users/kimnahyun/Desktop/pbl/PBL-LLM-IDSRules/scripts/collectors/virustotal_collector.py
+2025-10-12 11:49:05,612 [INFO] Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-10-12 11:49:05,612 [INFO] Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-10-12 11:49:05,613 [INFO] Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-10-12 11:49:05,613 [INFO] 🕒 Scheduler 시작됨 (RSS=10분, API=2시간, VT=1분)
+2025-10-12 11:49:05,613 [INFO] [JOB] rss next=None trigger=interval[0:10:00]
+2025-10-12 11:49:05,613 [INFO] [JOB] api next=None trigger=interval[2:00:00]
+2025-10-12 11:49:05,613 [INFO] [JOB] vt next=None trigger=interval[0:01:00]
+2025-10-12 11:49:05,613 [INFO] Added job "job_rss" to job store "default"
+2025-10-12 11:49:05,613 [INFO] Added job "job_api" to job store "default"
+2025-10-12 11:49:05,613 [INFO] Added job "job_vt" to job store "default"
+2025-10-12 11:49:05,613 [INFO] Scheduler started
+2025-10-12 11:50:05,692 [INFO] Running job "job_vt (trigger: interval[0:01:00], next run at: 2025-10-12 11:50:05 KST)" (scheduled at 2025-10-12 11:50:05.613022+09:00)
+2025-10-12 11:50:05,694 [INFO] 🧬 VirusTotal 검사 시작
+2025-10-12 11:50:05,743 [INFO] [VT] 처리할 신규 URL 없음
+2025-10-12 11:50:05,743 [INFO] ✅ VirusTotal 검사 종료
+2025-10-12 11:50:05,743 [INFO] Job "job_vt (trigger: interval[0:01:00], next run at: 2025-10-12 11:51:05 KST)" executed successfully
+2025-10-12 11:51:05,678 [INFO] Running job "job_vt (trigger: interval[0:01:00], next run at: 2025-10-12 11:52:05 KST)" (scheduled at 2025-10-12 11:51:05.613022+09:00)
+2025-10-12 11:51:05,679 [INFO] 🧬 VirusTotal 검사 시작
+2025-10-12 11:51:05,726 [INFO] [VT] 처리할 신규 URL 없음
+2025-10-12 11:51:05,726 [INFO] ✅ VirusTotal 검사 종료
+2025-10-12 11:51:05,726 [INFO] Job "job_vt (trigger: interval[0:01:00], next run at: 2025-10-12 11:52:05 KST)" executed successfully
+2025-10-12 11:52:05,638 [INFO] Running job "job_vt (trigger: interval[0:01:00], next run at: 2025-10-12 11:53:05 KST)" (scheduled at 2025-10-12 11:52:05.613022+09:00)
+2025-10-12 11:52:05,638 [INFO] 🧬 VirusTotal 검사 시작
+2025-10-12 11:52:05,690 [INFO] [VT] 처리할 신규 URL 없음
+2025-10-12 11:52:05,690 [INFO] ✅ VirusTotal 검사 종료
+2025-10-12 11:52:05,690 [INFO] Job "job_vt (trigger: interval[0:01:00], next run at: 2025-10-12 11:53:05 KST)" executed successfully
+2025-10-12 11:53:05,685 [INFO] Running job "job_vt (trigger: interval[0:01:00], next run at: 2025-10-12 11:54:05 KST)" (scheduled at 2025-10-12 11:53:05.613022+09:00)
+2025-10-12 11:53:05,686 [INFO] 🧬 VirusTotal 검사 시작
+2025-10-12 11:53:05,731 [INFO] [VT] 처리할 신규 URL 없음
+2025-10-12 11:53:05,731 [INFO] ✅ VirusTotal 검사 종료
+2025-10-12 11:53:05,731 [INFO] Job "job_vt (trigger: interval[0:01:00], next run at: 2025-10-12 11:54:05 KST)" executed successfully
+2025-10-12 11:54:05,696 [INFO] Running job "job_vt (trigger: interval[0:01:00], next run at: 2025-10-12 11:55:05 KST)" (scheduled at 2025-10-12 11:54:05.613022+09:00)
+2025-10-12 11:54:05,697 [INFO] 🧬 VirusTotal 검사 시작
+2025-10-12 11:54:05,742 [INFO] [VT] 처리할 신규 URL 없음
+2025-10-12 11:54:05,742 [INFO] ✅ VirusTotal 검사 종료
+2025-10-12 11:54:05,742 [INFO] Job "job_vt (trigger: interval[0:01:00], next run at: 2025-10-12 11:55:05 KST)" executed successfully
+2025-10-12 11:55:05,686 [INFO] Running job "job_vt (trigger: interval[0:01:00], next run at: 2025-10-12 11:56:05 KST)" (scheduled at 2025-10-12 11:55:05.613022+09:00)
+2025-10-12 11:55:05,687 [INFO] 🧬 VirusTotal 검사 시작
+2025-10-12 11:55:05,729 [INFO] [VT] 처리할 신규 URL 없음
+2025-10-12 11:55:05,729 [INFO] ✅ VirusTotal 검사 종료
+2025-10-12 11:55:05,729 [INFO] Job "job_vt (trigger: interval[0:01:00], next run at: 2025-10-12 11:56:05 KST)" executed successfully
+2025-10-12 11:56:05,660 [INFO] Running job "job_vt (trigger: interval[0:01:00], next run at: 2025-10-12 11:57:05 KST)" (scheduled at 2025-10-12 11:56:05.613022+09:00)
+2025-10-12 11:56:05,662 [INFO] 🧬 VirusTotal 검사 시작
+2025-10-12 11:56:05,718 [INFO] [VT] 처리할 신규 URL 없음
+2025-10-12 11:56:05,718 [INFO] ✅ VirusTotal 검사 종료
+2025-10-12 11:56:05,718 [INFO] Job "job_vt (trigger: interval[0:01:00], next run at: 2025-10-12 11:57:05 KST)" executed successfully
+2025-10-12 11:57:05,618 [INFO] Running job "job_vt (trigger: interval[0:01:00], next run at: 2025-10-12 11:58:05 KST)" (scheduled at 2025-10-12 11:57:05.613022+09:00)
+2025-10-12 11:57:05,618 [INFO] 🧬 VirusTotal 검사 시작
+2025-10-12 11:57:05,665 [INFO] [VT] 처리할 신규 URL 없음
+2025-10-12 11:57:05,666 [INFO] ✅ VirusTotal 검사 종료
+2025-10-12 11:57:05,666 [INFO] Job "job_vt (trigger: interval[0:01:00], next run at: 2025-10-12 11:58:05 KST)" executed successfully
+2025-10-12 11:58:05,681 [INFO] Running job "job_vt (trigger: interval[0:01:00], next run at: 2025-10-12 11:59:05 KST)" (scheduled at 2025-10-12 11:58:05.613022+09:00)
+2025-10-12 11:58:05,681 [INFO] 🧬 VirusTotal 검사 시작
+2025-10-12 11:58:05,739 [INFO] [VT] 처리할 신규 URL 없음
+2025-10-12 11:58:05,740 [INFO] ✅ VirusTotal 검사 종료
+2025-10-12 11:58:05,740 [INFO] Job "job_vt (trigger: interval[0:01:00], next run at: 2025-10-12 11:59:05 KST)" executed successfully
+2025-10-12 11:59:05,623 [INFO] Running job "job_vt (trigger: interval[0:01:00], next run at: 2025-10-12 11:59:05 KST)" (scheduled at 2025-10-12 11:59:05.613022+09:00)
+2025-10-12 11:59:05,623 [INFO] 🧬 VirusTotal 검사 시작
+2025-10-12 11:59:05,623 [INFO] Running job "job_rss (trigger: interval[0:10:00], next run at: 2025-10-12 12:09:05 KST)" (scheduled at 2025-10-12 11:59:05.612868+09:00)
+2025-10-12 11:59:05,624 [INFO] 📡 RSS 수집 시작
+2025-10-12 11:59:05,677 [INFO] [VT] 처리할 신규 URL 없음
+2025-10-12 11:59:05,677 [INFO] ✅ VirusTotal 검사 종료
+2025-10-12 11:59:05,677 [INFO] Job "job_vt (trigger: interval[0:01:00], next run at: 2025-10-12 12:00:05 KST)" executed successfully
 2025-10-12 11:59:05,925 [INFO] ================================================================================
 2025-10-12 11:59:05,925 [INFO] RSS 수집기 시작
 2025-10-12 11:59:05,925 [INFO] 모드: 1회 실행
@@ -652,6 +303,11 @@ AttributeError: module 'collectors.virustotal_collector' has no attribute 'run'
 [56/528] 처리 중...
 2025-10-12 12:00:05,408 [INFO] 
 [57/528] 처리 중...
+2025-10-12 12:00:05,687 [INFO] Running job "job_vt (trigger: interval[0:01:00], next run at: 2025-10-12 12:01:05 KST)" (scheduled at 2025-10-12 12:00:05.613022+09:00)
+2025-10-12 12:00:05,688 [INFO] 🧬 VirusTotal 검사 시작
+2025-10-12 12:00:05,735 [INFO] [VT] 처리할 신규 URL 없음
+2025-10-12 12:00:05,735 [INFO] ✅ VirusTotal 검사 종료
+2025-10-12 12:00:05,735 [INFO] Job "job_vt (trigger: interval[0:01:00], next run at: 2025-10-12 12:01:05 KST)" executed successfully
 2025-10-12 12:00:06,448 [INFO] 
 [58/528] 처리 중...
 2025-10-12 12:00:07,522 [INFO] 
@@ -766,6 +422,11 @@ AttributeError: module 'collectors.virustotal_collector' has no attribute 'run'
 [113/528] 처리 중...
 2025-10-12 12:01:05,168 [INFO] 
 [114/528] 처리 중...
+2025-10-12 12:01:05,669 [INFO] Running job "job_vt (trigger: interval[0:01:00], next run at: 2025-10-12 12:02:05 KST)" (scheduled at 2025-10-12 12:01:05.613022+09:00)
+2025-10-12 12:01:05,670 [INFO] 🧬 VirusTotal 검사 시작
+2025-10-12 12:01:05,720 [INFO] [VT] 처리할 신규 URL 없음
+2025-10-12 12:01:05,720 [INFO] ✅ VirusTotal 검사 종료
+2025-10-12 12:01:05,720 [INFO] Job "job_vt (trigger: interval[0:01:00], next run at: 2025-10-12 12:02:05 KST)" executed successfully
 2025-10-12 12:01:06,222 [INFO] 
 [115/528] 처리 중...
 2025-10-12 12:01:07,242 [INFO] 
@@ -882,6 +543,11 @@ AttributeError: module 'collectors.virustotal_collector' has no attribute 'run'
 [171/528] 처리 중...
 2025-10-12 12:02:05,507 [INFO] 
 [172/528] 처리 중...
+2025-10-12 12:02:05,687 [INFO] Running job "job_vt (trigger: interval[0:01:00], next run at: 2025-10-12 12:03:05 KST)" (scheduled at 2025-10-12 12:02:05.613022+09:00)
+2025-10-12 12:02:05,688 [INFO] 🧬 VirusTotal 검사 시작
+2025-10-12 12:02:05,729 [INFO] [VT] 처리할 신규 URL 없음
+2025-10-12 12:02:05,729 [INFO] ✅ VirusTotal 검사 종료
+2025-10-12 12:02:05,729 [INFO] Job "job_vt (trigger: interval[0:01:00], next run at: 2025-10-12 12:03:05 KST)" executed successfully
 2025-10-12 12:02:06,583 [INFO] 
 [173/528] 처리 중...
 2025-10-12 12:02:07,642 [INFO] 
@@ -996,6 +662,11 @@ AttributeError: module 'collectors.virustotal_collector' has no attribute 'run'
 [228/528] 처리 중...
 2025-10-12 12:03:05,147 [INFO] 
 [229/528] 처리 중...
+2025-10-12 12:03:05,651 [INFO] Running job "job_vt (trigger: interval[0:01:00], next run at: 2025-10-12 12:04:05 KST)" (scheduled at 2025-10-12 12:03:05.613022+09:00)
+2025-10-12 12:03:05,651 [INFO] 🧬 VirusTotal 검사 시작
+2025-10-12 12:03:05,692 [INFO] [VT] 처리할 신규 URL 없음
+2025-10-12 12:03:05,692 [INFO] ✅ VirusTotal 검사 종료
+2025-10-12 12:03:05,692 [INFO] Job "job_vt (trigger: interval[0:01:00], next run at: 2025-10-12 12:04:05 KST)" executed successfully
 2025-10-12 12:03:06,222 [INFO] 
 [230/528] 처리 중...
 2025-10-12 12:03:07,297 [INFO] 
@@ -1110,6 +781,11 @@ AttributeError: module 'collectors.virustotal_collector' has no attribute 'run'
 [285/528] 처리 중...
 2025-10-12 12:04:04,750 [INFO] 
 [286/528] 처리 중...
+2025-10-12 12:04:05,651 [INFO] Running job "job_vt (trigger: interval[0:01:00], next run at: 2025-10-12 12:05:05 KST)" (scheduled at 2025-10-12 12:04:05.613022+09:00)
+2025-10-12 12:04:05,652 [INFO] 🧬 VirusTotal 검사 시작
+2025-10-12 12:04:05,701 [INFO] [VT] 처리할 신규 URL 없음
+2025-10-12 12:04:05,701 [INFO] ✅ VirusTotal 검사 종료
+2025-10-12 12:04:05,701 [INFO] Job "job_vt (trigger: interval[0:01:00], next run at: 2025-10-12 12:05:05 KST)" executed successfully
 2025-10-12 12:04:05,801 [INFO] 
 [287/528] 처리 중...
 2025-10-12 12:04:06,849 [INFO] 
@@ -1226,6 +902,11 @@ AttributeError: module 'collectors.virustotal_collector' has no attribute 'run'
 [343/528] 처리 중...
 2025-10-12 12:05:05,358 [INFO] 
 [344/528] 처리 중...
+2025-10-12 12:05:05,682 [INFO] Running job "job_vt (trigger: interval[0:01:00], next run at: 2025-10-12 12:06:05 KST)" (scheduled at 2025-10-12 12:05:05.613022+09:00)
+2025-10-12 12:05:05,683 [INFO] 🧬 VirusTotal 검사 시작
+2025-10-12 12:05:05,728 [INFO] [VT] 처리할 신규 URL 없음
+2025-10-12 12:05:05,729 [INFO] ✅ VirusTotal 검사 종료
+2025-10-12 12:05:05,729 [INFO] Job "job_vt (trigger: interval[0:01:00], next run at: 2025-10-12 12:06:05 KST)" executed successfully
 2025-10-12 12:05:06,432 [INFO] 
 [345/528] 처리 중...
 2025-10-12 12:05:07,508 [INFO] 
@@ -1340,6 +1021,11 @@ AttributeError: module 'collectors.virustotal_collector' has no attribute 'run'
 [400/528] 처리 중...
 2025-10-12 12:06:04,975 [INFO] 
 [401/528] 처리 중...
+2025-10-12 12:06:05,687 [INFO] Running job "job_vt (trigger: interval[0:01:00], next run at: 2025-10-12 12:07:05 KST)" (scheduled at 2025-10-12 12:06:05.613022+09:00)
+2025-10-12 12:06:05,688 [INFO] 🧬 VirusTotal 검사 시작
+2025-10-12 12:06:05,741 [INFO] [VT] 처리할 신규 URL 없음
+2025-10-12 12:06:05,741 [INFO] ✅ VirusTotal 검사 종료
+2025-10-12 12:06:05,741 [INFO] Job "job_vt (trigger: interval[0:01:00], next run at: 2025-10-12 12:07:05 KST)" executed successfully
 2025-10-12 12:06:06,034 [INFO] 
 [402/528] 처리 중...
 2025-10-12 12:06:07,091 [INFO] 
@@ -1454,8 +1140,13 @@ AttributeError: module 'collectors.virustotal_collector' has no attribute 'run'
 [457/528] 처리 중...
 2025-10-12 12:07:04,687 [INFO] 
 [458/528] 처리 중...
+2025-10-12 12:07:05,684 [INFO] Running job "job_vt (trigger: interval[0:01:00], next run at: 2025-10-12 12:08:05 KST)" (scheduled at 2025-10-12 12:07:05.613022+09:00)
+2025-10-12 12:07:05,685 [INFO] 🧬 VirusTotal 검사 시작
 2025-10-12 12:07:05,692 [INFO] 
 [459/528] 처리 중...
+2025-10-12 12:07:05,730 [INFO] [VT] 처리할 신규 URL 없음
+2025-10-12 12:07:05,730 [INFO] ✅ VirusTotal 검사 종료
+2025-10-12 12:07:05,730 [INFO] Job "job_vt (trigger: interval[0:01:00], next run at: 2025-10-12 12:08:05 KST)" executed successfully
 2025-10-12 12:07:06,744 [INFO] 
 [460/528] 처리 중...
 2025-10-12 12:07:07,758 [INFO] 
@@ -1570,6 +1261,11 @@ AttributeError: module 'collectors.virustotal_collector' has no attribute 'run'
 [515/528] 처리 중...
 2025-10-12 12:08:05,225 [INFO] 
 [516/528] 처리 중...
+2025-10-12 12:08:05,669 [INFO] Running job "job_vt (trigger: interval[0:01:00], next run at: 2025-10-12 12:09:05 KST)" (scheduled at 2025-10-12 12:08:05.613022+09:00)
+2025-10-12 12:08:05,669 [INFO] 🧬 VirusTotal 검사 시작
+2025-10-12 12:08:05,710 [INFO] [VT] 처리할 신규 URL 없음
+2025-10-12 12:08:05,710 [INFO] ✅ VirusTotal 검사 종료
+2025-10-12 12:08:05,710 [INFO] Job "job_vt (trigger: interval[0:01:00], next run at: 2025-10-12 12:09:05 KST)" executed successfully
 2025-10-12 12:08:06,300 [INFO] 
 [517/528] 처리 중...
 2025-10-12 12:08:07,375 [INFO] 
@@ -1671,3 +1367,102 @@ AttributeError: module 'collectors.virustotal_collector' has no attribute 'run'
 2025-10-12 12:08:41,006 [INFO] ================================================================================
 2025-10-12 12:08:41,006 [INFO] 
 수집 완료. 프로그램을 종료합니다.
+2025-10-12 12:08:41,067 [INFO] ✅ RSS 수집 종료
+2025-10-12 12:08:41,067 [INFO] Job "job_rss (trigger: interval[0:10:00], next run at: 2025-10-12 12:09:05 KST)" executed successfully
+2025-10-12 12:09:05,681 [INFO] Running job "job_rss (trigger: interval[0:10:00], next run at: 2025-10-12 12:19:05 KST)" (scheduled at 2025-10-12 12:09:05.612868+09:00)
+2025-10-12 12:09:05,681 [INFO] Running job "job_vt (trigger: interval[0:01:00], next run at: 2025-10-12 12:10:05 KST)" (scheduled at 2025-10-12 12:09:05.613022+09:00)
+2025-10-12 12:09:05,681 [INFO] 📡 RSS 수집 시작
+2025-10-12 12:09:05,682 [INFO] 🧬 VirusTotal 검사 시작
+2025-10-12 12:09:05,726 [INFO] [VT] 처리할 신규 URL 없음
+2025-10-12 12:09:05,726 [INFO] ✅ VirusTotal 검사 종료
+2025-10-12 12:09:05,726 [INFO] Job "job_vt (trigger: interval[0:01:00], next run at: 2025-10-12 12:10:05 KST)" executed successfully
+/Users/kimnahyun/Desktop/pbl/PBL-LLM-IDSRules/.venv/bin/python: Error while finding module specification for 'scripts.collectors.rss_collector' (ModuleNotFoundError: No module named 'scripts.collectors')
+2025-10-12 12:09:05,733 [ERROR] Command '['/Users/kimnahyun/Desktop/pbl/PBL-LLM-IDSRules/.venv/bin/python', '-m', 'scripts.collectors.rss_collector', '--once']' returned non-zero exit status 1.
+Traceback (most recent call last):
+  File "/Users/kimnahyun/Desktop/pbl/PBL-LLM-IDSRules/scripts/orchestrator.py", line 56, in job_rss
+    logging.exception("VirusTotal 검사 실패")
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kimnahyun/Desktop/pbl/PBL-LLM-IDSRules/scripts/orchestrator.py", line 20, in run_module
+    # ---- 잡 정의 (모듈을 함수로 직접 안 부르고 -m CLI로 호출)
+  File "/opt/homebrew/Cellar/python@3.13/3.13.7/Frameworks/Python.framework/Versions/3.13/lib/python3.13/subprocess.py", line 577, in run
+    raise CalledProcessError(retcode, process.args,
+                             output=stdout, stderr=stderr)
+subprocess.CalledProcessError: Command '['/Users/kimnahyun/Desktop/pbl/PBL-LLM-IDSRules/.venv/bin/python', '-m', 'scripts.collectors.rss_collector', '--once']' returned non-zero exit status 1.
+2025-10-12 12:09:05,735 [INFO] ✅ RSS 수집 종료
+2025-10-12 12:09:05,735 [INFO] Job "job_rss (trigger: interval[0:10:00], next run at: 2025-10-12 12:19:05 KST)" executed successfully
+2025-10-12 12:10:05,690 [INFO] Running job "job_vt (trigger: interval[0:01:00], next run at: 2025-10-12 12:11:05 KST)" (scheduled at 2025-10-12 12:10:05.613022+09:00)
+2025-10-12 12:10:05,691 [INFO] 🧬 VirusTotal 검사 시작
+2025-10-12 12:10:05,731 [INFO] [VT] 처리할 신규 URL 없음
+2025-10-12 12:10:05,732 [INFO] ✅ VirusTotal 검사 종료
+2025-10-12 12:10:05,732 [INFO] Job "job_vt (trigger: interval[0:01:00], next run at: 2025-10-12 12:11:05 KST)" executed successfully
+2025-10-12 12:11:05,687 [INFO] Running job "job_vt (trigger: interval[0:01:00], next run at: 2025-10-12 12:12:05 KST)" (scheduled at 2025-10-12 12:11:05.613022+09:00)
+2025-10-12 12:11:05,690 [INFO] 🧬 VirusTotal 검사 시작
+2025-10-12 12:11:05,814 [INFO] [VT] 처리할 신규 URL 없음
+2025-10-12 12:11:05,815 [INFO] ✅ VirusTotal 검사 종료
+2025-10-12 12:11:05,815 [INFO] Job "job_vt (trigger: interval[0:01:00], next run at: 2025-10-12 12:12:05 KST)" executed successfully
+2025-10-12 12:12:05,614 [INFO] Running job "job_vt (trigger: interval[0:01:00], next run at: 2025-10-12 12:13:05 KST)" (scheduled at 2025-10-12 12:12:05.613022+09:00)
+2025-10-12 12:12:05,616 [INFO] 🧬 VirusTotal 검사 시작
+2025-10-12 12:12:05,663 [INFO] [VT] 처리할 신규 URL 없음
+2025-10-12 12:12:05,663 [INFO] ✅ VirusTotal 검사 종료
+2025-10-12 12:12:05,664 [INFO] Job "job_vt (trigger: interval[0:01:00], next run at: 2025-10-12 12:13:05 KST)" executed successfully
+2025-10-12 12:13:05,679 [INFO] Running job "job_vt (trigger: interval[0:01:00], next run at: 2025-10-12 12:14:05 KST)" (scheduled at 2025-10-12 12:13:05.613022+09:00)
+2025-10-12 12:13:05,680 [INFO] 🧬 VirusTotal 검사 시작
+2025-10-12 12:13:05,727 [INFO] [VT] 처리할 신규 URL 없음
+2025-10-12 12:13:05,727 [INFO] ✅ VirusTotal 검사 종료
+2025-10-12 12:13:05,727 [INFO] Job "job_vt (trigger: interval[0:01:00], next run at: 2025-10-12 12:14:05 KST)" executed successfully
+2025-10-12 12:14:05,687 [INFO] Running job "job_vt (trigger: interval[0:01:00], next run at: 2025-10-12 12:15:05 KST)" (scheduled at 2025-10-12 12:14:05.613022+09:00)
+2025-10-12 12:14:05,689 [INFO] 🧬 VirusTotal 검사 시작
+2025-10-12 12:14:05,741 [INFO] [VT] 처리할 신규 URL 없음
+2025-10-12 12:14:05,742 [INFO] ✅ VirusTotal 검사 종료
+2025-10-12 12:14:05,742 [INFO] Job "job_vt (trigger: interval[0:01:00], next run at: 2025-10-12 12:15:05 KST)" executed successfully
+2025-10-12 12:15:05,652 [INFO] Running job "job_vt (trigger: interval[0:01:00], next run at: 2025-10-12 12:16:05 KST)" (scheduled at 2025-10-12 12:15:05.613022+09:00)
+2025-10-12 12:15:05,653 [INFO] 🧬 VirusTotal 검사 시작
+2025-10-12 12:15:05,719 [INFO] [VT] 처리할 신규 URL 없음
+2025-10-12 12:15:05,720 [INFO] ✅ VirusTotal 검사 종료
+2025-10-12 12:15:05,720 [INFO] Job "job_vt (trigger: interval[0:01:00], next run at: 2025-10-12 12:16:05 KST)" executed successfully
+2025-10-12 12:16:05,617 [INFO] Running job "job_vt (trigger: interval[0:01:00], next run at: 2025-10-12 12:17:05 KST)" (scheduled at 2025-10-12 12:16:05.613022+09:00)
+2025-10-12 12:16:05,618 [INFO] 🧬 VirusTotal 검사 시작
+2025-10-12 12:16:05,661 [INFO] [VT] 처리할 신규 URL 없음
+2025-10-12 12:16:05,662 [INFO] ✅ VirusTotal 검사 종료
+2025-10-12 12:16:05,662 [INFO] Job "job_vt (trigger: interval[0:01:00], next run at: 2025-10-12 12:17:05 KST)" executed successfully
+2025-10-12 12:17:05,620 [INFO] Running job "job_vt (trigger: interval[0:01:00], next run at: 2025-10-12 12:18:05 KST)" (scheduled at 2025-10-12 12:17:05.613022+09:00)
+2025-10-12 12:17:05,622 [INFO] 🧬 VirusTotal 검사 시작
+2025-10-12 12:17:05,667 [INFO] [VT] 처리할 신규 URL 없음
+2025-10-12 12:17:05,667 [INFO] ✅ VirusTotal 검사 종료
+2025-10-12 12:17:05,668 [INFO] Job "job_vt (trigger: interval[0:01:00], next run at: 2025-10-12 12:18:05 KST)" executed successfully
+2025-10-12 12:18:05,673 [INFO] Running job "job_vt (trigger: interval[0:01:00], next run at: 2025-10-12 12:19:05 KST)" (scheduled at 2025-10-12 12:18:05.613022+09:00)
+2025-10-12 12:18:05,673 [INFO] 🧬 VirusTotal 검사 시작
+2025-10-12 12:18:05,711 [INFO] [VT] 처리할 신규 URL 없음
+2025-10-12 12:18:05,711 [INFO] ✅ VirusTotal 검사 종료
+2025-10-12 12:18:05,711 [INFO] Job "job_vt (trigger: interval[0:01:00], next run at: 2025-10-12 12:19:05 KST)" executed successfully
+2025-10-12 12:19:05,669 [INFO] Running job "job_rss (trigger: interval[0:10:00], next run at: 2025-10-12 12:29:05 KST)" (scheduled at 2025-10-12 12:19:05.612868+09:00)
+2025-10-12 12:19:05,669 [INFO] Running job "job_vt (trigger: interval[0:01:00], next run at: 2025-10-12 12:20:05 KST)" (scheduled at 2025-10-12 12:19:05.613022+09:00)
+2025-10-12 12:19:05,691 [INFO] 📡 RSS 수집 시작
+2025-10-12 12:19:05,691 [INFO] 🧬 VirusTotal 검사 시작
+2025-10-12 12:19:06,068 [INFO] [VT] 처리할 신규 URL 없음
+2025-10-12 12:19:06,069 [INFO] ✅ VirusTotal 검사 종료
+2025-10-12 12:19:06,069 [INFO] Job "job_vt (trigger: interval[0:01:00], next run at: 2025-10-12 12:20:05 KST)" executed successfully
+/Users/kimnahyun/Desktop/pbl/PBL-LLM-IDSRules/.venv/bin/python: Error while finding module specification for 'scripts.collectors.rss_collector' (ModuleNotFoundError: No module named 'scripts.collectors')
+2025-10-12 12:19:06,215 [ERROR] Command '['/Users/kimnahyun/Desktop/pbl/PBL-LLM-IDSRules/.venv/bin/python', '-m', 'scripts.collectors.rss_collector', '--once']' returned non-zero exit status 1.
+Traceback (most recent call last):
+  File "/Users/kimnahyun/Desktop/pbl/PBL-LLM-IDSRules/scripts/orchestrator.py", line 56, in job_rss
+    logging.exception("VirusTotal 검사 실패")
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kimnahyun/Desktop/pbl/PBL-LLM-IDSRules/scripts/orchestrator.py", line 20, in run_module
+    # ---- 잡 정의 (모듈을 함수로 직접 안 부르고 -m CLI로 호출)
+  File "/opt/homebrew/Cellar/python@3.13/3.13.7/Frameworks/Python.framework/Versions/3.13/lib/python3.13/subprocess.py", line 577, in run
+    raise CalledProcessError(retcode, process.args,
+                             output=stdout, stderr=stderr)
+subprocess.CalledProcessError: Command '['/Users/kimnahyun/Desktop/pbl/PBL-LLM-IDSRules/.venv/bin/python', '-m', 'scripts.collectors.rss_collector', '--once']' returned non-zero exit status 1.
+2025-10-12 12:19:06,216 [INFO] ✅ RSS 수집 종료
+2025-10-12 12:19:06,216 [INFO] Job "job_rss (trigger: interval[0:10:00], next run at: 2025-10-12 12:29:05 KST)" executed successfully
+2025-10-12 12:20:05,696 [INFO] Running job "job_vt (trigger: interval[0:01:00], next run at: 2025-10-12 12:21:05 KST)" (scheduled at 2025-10-12 12:20:05.613022+09:00)
+2025-10-12 12:20:05,699 [INFO] 🧬 VirusTotal 검사 시작
+2025-10-12 12:20:05,742 [INFO] [VT] 처리할 신규 URL 없음
+2025-10-12 12:20:05,742 [INFO] ✅ VirusTotal 검사 종료
+2025-10-12 12:20:05,742 [INFO] Job "job_vt (trigger: interval[0:01:00], next run at: 2025-10-12 12:21:05 KST)" executed successfully
+2025-10-12 12:21:05,633 [INFO] Running job "job_vt (trigger: interval[0:01:00], next run at: 2025-10-12 12:22:05 KST)" (scheduled at 2025-10-12 12:21:05.613022+09:00)
+2025-10-12 12:21:05,635 [INFO] 🧬 VirusTotal 검사 시작
+2025-10-12 12:21:05,694 [INFO] [VT] 처리할 신규 URL 없음
+2025-10-12 12:21:05,694 [INFO] ✅ VirusTotal 검사 종료
+2025-10-12 12:21:05,694 [INFO] Job "job_vt (trigger: interval[0:01:00], next run at: 2025-10-12 12:22:05 KST)" executed successfully
