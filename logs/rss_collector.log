@@ -1,2245 +1,1673 @@
-2025-10-08 22:59:59,259 [INFO] ================================================================================
-2025-10-08 22:59:59,260 [INFO] RSS 수집기 시작
-2025-10-08 22:59:59,260 [INFO] 모드: 1회 실행
-2025-10-08 22:59:59,260 [INFO] 출력 디렉토리: data/rss_parsed
-2025-10-08 22:59:59,260 [INFO] 로그 파일: logs/rss_collector.log
-2025-10-08 22:59:59,260 [INFO] ================================================================================
+2025-10-12 11:07:10,420 [INFO] 🔑 NVD_API_KEY loaded: YES
+2025-10-12 11:07:10,426 [INFO] Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-10-12 11:07:10,426 [INFO] Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-10-12 11:07:10,426 [INFO] Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-10-12 11:07:10,426 [INFO] 🕒 Scheduler 시작됨 (RSS=10분, API=2시간, VT=1분)
+2025-10-12 11:07:10,426 [INFO] Added job "job_rss" to job store "default"
+2025-10-12 11:07:10,427 [INFO] Added job "job_api" to job store "default"
+2025-10-12 11:07:10,427 [INFO] Added job "job_vt" to job store "default"
+2025-10-12 11:07:10,427 [INFO] Scheduler started
+2025-10-12 11:07:43,977 [INFO] 🛑 Scheduler 종료됨
+2025-10-12 11:13:49,249 [INFO] 🔑 NVD_API_KEY loaded: NO
+2025-10-12 11:13:49,251 [INFO] Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-10-12 11:13:49,251 [INFO] Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-10-12 11:13:49,252 [INFO] Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-10-12 11:13:49,252 [INFO] 🕒 Scheduler 시작됨 (RSS=10분, API=2시간, VT=1분)
+2025-10-12 11:13:49,252 [INFO] Added job "job_rss" to job store "default"
+2025-10-12 11:13:49,252 [INFO] Added job "job_api" to job store "default"
+2025-10-12 11:13:49,252 [INFO] Added job "job_vt" to job store "default"
+2025-10-12 11:13:49,252 [INFO] Scheduler started
+2025-10-12 11:14:49,328 [INFO] Running job "job_vt (trigger: interval[0:01:00], next run at: 2025-10-12 11:14:49 KST)" (scheduled at 2025-10-12 11:14:49.251983+09:00)
+2025-10-12 11:14:49,330 [INFO] 🧬 VirusTotal 검사 시작
+2025-10-12 11:14:49,331 [ERROR] name 'vt_checker' is not defined
+Traceback (most recent call last):
+  File "/Users/kimnahyun/Desktop/pbl/PBL-LLM-IDSRules/scripts/orchestrator.py", line 42, in job_vt
+    vt_checker.run(limit=4)
+    ^^^^^^^^^^
+NameError: name 'vt_checker' is not defined
+2025-10-12 11:14:49,335 [INFO] ✅ VirusTotal 검사 종료
+2025-10-12 11:14:49,335 [INFO] Job "job_vt (trigger: interval[0:01:00], next run at: 2025-10-12 11:15:49 KST)" executed successfully
+2025-10-12 11:15:49,288 [INFO] Running job "job_vt (trigger: interval[0:01:00], next run at: 2025-10-12 11:16:49 KST)" (scheduled at 2025-10-12 11:15:49.251983+09:00)
+2025-10-12 11:15:49,290 [INFO] 🧬 VirusTotal 검사 시작
+2025-10-12 11:15:49,291 [ERROR] name 'vt_checker' is not defined
+Traceback (most recent call last):
+  File "/Users/kimnahyun/Desktop/pbl/PBL-LLM-IDSRules/scripts/orchestrator.py", line 42, in job_vt
+    vt_checker.run(limit=4)
+    ^^^^^^^^^^
+NameError: name 'vt_checker' is not defined
+2025-10-12 11:15:49,292 [INFO] ✅ VirusTotal 검사 종료
+2025-10-12 11:15:49,293 [INFO] Job "job_vt (trigger: interval[0:01:00], next run at: 2025-10-12 11:16:49 KST)" executed successfully
+2025-10-12 11:16:49,301 [INFO] Running job "job_vt (trigger: interval[0:01:00], next run at: 2025-10-12 11:17:49 KST)" (scheduled at 2025-10-12 11:16:49.251983+09:00)
+2025-10-12 11:16:49,303 [INFO] 🧬 VirusTotal 검사 시작
+2025-10-12 11:16:49,303 [ERROR] name 'vt_checker' is not defined
+Traceback (most recent call last):
+  File "/Users/kimnahyun/Desktop/pbl/PBL-LLM-IDSRules/scripts/orchestrator.py", line 42, in job_vt
+    vt_checker.run(limit=4)
+    ^^^^^^^^^^
+NameError: name 'vt_checker' is not defined
+2025-10-12 11:16:49,304 [INFO] ✅ VirusTotal 검사 종료
+2025-10-12 11:16:49,304 [INFO] Job "job_vt (trigger: interval[0:01:00], next run at: 2025-10-12 11:17:49 KST)" executed successfully
+2025-10-12 11:17:42,648 [INFO] 🔑 NVD_API_KEY loaded: YES
+2025-10-12 11:17:42,650 [INFO] Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-10-12 11:17:42,650 [INFO] Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-10-12 11:17:42,650 [INFO] Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-10-12 11:17:42,650 [INFO] 🕒 Scheduler 시작됨 (RSS=10분, API=2시간, VT=1분)
+2025-10-12 11:17:42,651 [INFO] Added job "job_rss" to job store "default"
+2025-10-12 11:17:42,651 [INFO] Added job "job_api" to job store "default"
+2025-10-12 11:17:42,651 [INFO] Added job "job_vt" to job store "default"
+2025-10-12 11:17:42,651 [INFO] Scheduler started
+2025-10-12 11:18:42,672 [INFO] Running job "job_vt (trigger: interval[0:01:00], next run at: 2025-10-12 11:18:42 KST)" (scheduled at 2025-10-12 11:18:42.650362+09:00)
+2025-10-12 11:18:42,674 [INFO] 🧬 VirusTotal 검사 시작
+2025-10-12 11:18:42,675 [ERROR] name 'vt_checker' is not defined
+Traceback (most recent call last):
+  File "/Users/kimnahyun/Desktop/pbl/PBL-LLM-IDSRules/scripts/orchestrator.py", line 42, in job_vt
+    vt_checker.run(limit=4)
+    ^^^^^^^^^^
+NameError: name 'vt_checker' is not defined
+2025-10-12 11:18:42,678 [INFO] ✅ VirusTotal 검사 종료
+2025-10-12 11:18:42,678 [INFO] Job "job_vt (trigger: interval[0:01:00], next run at: 2025-10-12 11:19:42 KST)" executed successfully
+2025-10-12 11:19:42,725 [INFO] Running job "job_vt (trigger: interval[0:01:00], next run at: 2025-10-12 11:20:42 KST)" (scheduled at 2025-10-12 11:19:42.650362+09:00)
+2025-10-12 11:19:42,726 [INFO] 🧬 VirusTotal 검사 시작
+2025-10-12 11:19:42,726 [ERROR] name 'vt_checker' is not defined
+Traceback (most recent call last):
+  File "/Users/kimnahyun/Desktop/pbl/PBL-LLM-IDSRules/scripts/orchestrator.py", line 42, in job_vt
+    vt_checker.run(limit=4)
+    ^^^^^^^^^^
+NameError: name 'vt_checker' is not defined
+2025-10-12 11:19:42,728 [INFO] ✅ VirusTotal 검사 종료
+2025-10-12 11:19:42,730 [INFO] Job "job_vt (trigger: interval[0:01:00], next run at: 2025-10-12 11:20:42 KST)" executed successfully
+2025-10-12 11:20:42,682 [INFO] Running job "job_vt (trigger: interval[0:01:00], next run at: 2025-10-12 11:21:42 KST)" (scheduled at 2025-10-12 11:20:42.650362+09:00)
+2025-10-12 11:20:42,683 [INFO] 🧬 VirusTotal 검사 시작
+2025-10-12 11:20:42,683 [ERROR] name 'vt_checker' is not defined
+Traceback (most recent call last):
+  File "/Users/kimnahyun/Desktop/pbl/PBL-LLM-IDSRules/scripts/orchestrator.py", line 42, in job_vt
+    vt_checker.run(limit=4)
+    ^^^^^^^^^^
+NameError: name 'vt_checker' is not defined
+2025-10-12 11:20:42,683 [INFO] ✅ VirusTotal 검사 종료
+2025-10-12 11:20:42,684 [INFO] Job "job_vt (trigger: interval[0:01:00], next run at: 2025-10-12 11:21:42 KST)" executed successfully
+2025-10-12 11:21:31,307 [INFO] 🔑 NVD_API_KEY loaded: YES
+2025-10-12 11:21:31,309 [INFO] Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-10-12 11:21:31,309 [INFO] Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-10-12 11:21:31,309 [INFO] Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-10-12 11:21:31,310 [INFO] 🕒 Scheduler 시작됨 (RSS=10분, API=2시간, VT=1분)
+2025-10-12 11:21:31,310 [INFO] Added job "job_rss" to job store "default"
+2025-10-12 11:21:31,310 [INFO] Added job "job_api" to job store "default"
+2025-10-12 11:21:31,310 [INFO] Added job "job_vt" to job store "default"
+2025-10-12 11:21:31,310 [INFO] Scheduler started
+2025-10-12 11:22:31,329 [INFO] Running job "job_vt (trigger: interval[0:01:00], next run at: 2025-10-12 11:22:31 KST)" (scheduled at 2025-10-12 11:22:31.309966+09:00)
+2025-10-12 11:22:31,330 [INFO] 🧬 VirusTotal 검사 시작
+2025-10-12 11:22:31,331 [ERROR] module 'collectors.virustotal_collector' has no attribute 'run'
+Traceback (most recent call last):
+  File "/Users/kimnahyun/Desktop/pbl/PBL-LLM-IDSRules/scripts/orchestrator.py", line 42, in job_vt
+    virustotal_collector.run(limit=4)
+    ^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'collectors.virustotal_collector' has no attribute 'run'
+2025-10-12 11:22:31,333 [INFO] ✅ VirusTotal 검사 종료
+2025-10-12 11:22:31,334 [INFO] Job "job_vt (trigger: interval[0:01:00], next run at: 2025-10-12 11:23:31 KST)" executed successfully
+2025-10-12 11:23:31,381 [INFO] Running job "job_vt (trigger: interval[0:01:00], next run at: 2025-10-12 11:24:31 KST)" (scheduled at 2025-10-12 11:23:31.309966+09:00)
+2025-10-12 11:23:31,383 [INFO] 🧬 VirusTotal 검사 시작
+2025-10-12 11:23:31,383 [ERROR] module 'collectors.virustotal_collector' has no attribute 'run'
+Traceback (most recent call last):
+  File "/Users/kimnahyun/Desktop/pbl/PBL-LLM-IDSRules/scripts/orchestrator.py", line 42, in job_vt
+    virustotal_collector.run(limit=4)
+    ^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'collectors.virustotal_collector' has no attribute 'run'
+2025-10-12 11:23:31,385 [INFO] ✅ VirusTotal 검사 종료
+2025-10-12 11:23:31,385 [INFO] Job "job_vt (trigger: interval[0:01:00], next run at: 2025-10-12 11:24:31 KST)" executed successfully
+2025-10-12 11:51:54,733 [INFO] ================================================================================
+2025-10-12 11:51:54,734 [INFO] RSS 수집기 시작
+2025-10-12 11:51:54,734 [INFO] 모드: 1회 실행
+2025-10-12 11:51:54,734 [INFO] 출력 디렉토리: data/rss_parsed
+2025-10-12 11:51:54,734 [INFO] 로그 파일: logs/rss_collector.log
+2025-10-12 11:51:54,734 [INFO] ================================================================================
 
-2025-10-08 22:59:59,260 [INFO] 
+2025-10-12 11:51:54,734 [INFO] 
 ================================================================================
-2025-10-08 22:59:59,260 [INFO] RSS 수집 시작
-2025-10-08 22:59:59,260 [INFO] 시작 시간: 2025-10-08T13:59:59.260182+00:00
-2025-10-08 22:59:59,260 [INFO] ================================================================================
-2025-10-08 22:59:59,260 [INFO] 
+2025-10-12 11:51:54,734 [INFO] RSS 수집 시작
+2025-10-12 11:51:54,734 [INFO] 시작 시간: 2025-10-12T02:51:54.734412+00:00
+2025-10-12 11:51:54,734 [INFO] ================================================================================
+2025-10-12 11:51:54,734 [INFO] 
 ============================================================
-2025-10-08 22:59:59,260 [INFO] 처리 시작: https://nvd.nist.gov/feeds/xml/cve/misc/nvd-rss-analyzed.xml
-2025-10-08 22:59:59,260 [INFO] ============================================================
-2025-10-08 22:59:59,260 [INFO] 피드 가져오는 중: https://nvd.nist.gov/feeds/xml/cve/misc/nvd-rss-analyzed.xml (시도 1/3)
-2025-10-08 23:00:00,618 [INFO] 발견된 엔트리 수: 528
-2025-10-08 23:00:00,618 [INFO] 
+2025-10-12 11:51:54,734 [INFO] 처리 시작: https://nvd.nist.gov/feeds/xml/cve/misc/nvd-rss-analyzed.xml
+2025-10-12 11:51:54,734 [INFO] ============================================================
+2025-10-12 11:51:54,734 [INFO] 피드 가져오는 중: https://nvd.nist.gov/feeds/xml/cve/misc/nvd-rss-analyzed.xml (시도 1/3)
+2025-10-12 11:51:55,776 [INFO] 발견된 엔트리 수: 528
+2025-10-12 11:51:55,776 [INFO] 
 [1/528] 처리 중...
-2025-10-08 23:00:00,618 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2008-4302
-2025-10-08 23:00:03,270 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-a1cedf198ef4.json (3556자)
-2025-10-08 23:00:04,277 [INFO] 
+2025-10-12 11:51:56,781 [INFO] 
 [2/528] 처리 중...
-2025-10-08 23:00:04,277 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2009-3547
-2025-10-08 23:00:06,942 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-26b6abe874ca.json (4991자)
-2025-10-08 23:00:07,948 [INFO] 
+2025-10-12 11:51:57,782 [INFO] 
 [3/528] 처리 중...
-2025-10-08 23:00:07,948 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2009-3560
-2025-10-08 23:00:10,711 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-685f92501f1d.json (8613자)
-2025-10-08 23:00:11,716 [INFO] 
+2025-10-12 11:51:58,787 [INFO] 
 [4/528] 처리 중...
-2025-10-08 23:00:11,717 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2009-3620
-2025-10-08 23:00:14,309 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-86c73ef53c10.json (4509자)
-2025-10-08 23:00:15,315 [INFO] 
+2025-10-12 11:51:59,789 [INFO] 
 [5/528] 처리 중...
-2025-10-08 23:00:15,315 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2010-0408
-2025-10-08 23:00:17,907 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-94fe6cad4cc8.json (7411자)
-2025-10-08 23:00:18,912 [INFO] 
+2025-10-12 11:52:00,793 [INFO] 
 [6/528] 처리 중...
-2025-10-08 23:00:18,913 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2010-1452
-2025-10-08 23:00:22,370 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-e85f1e782d49.json (8120자)
-2025-10-08 23:00:23,375 [INFO] 
+2025-10-12 11:52:01,798 [INFO] 
 [7/528] 처리 중...
-2025-10-08 23:00:23,376 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2013-1763
-2025-10-08 23:00:25,991 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-4ede6f84ad55.json (3076자)
-2025-10-08 23:00:26,996 [INFO] 
+2025-10-12 11:52:02,804 [INFO] 
 [8/528] 처리 중...
-2025-10-08 23:00:26,996 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2013-5211
-2025-10-08 23:00:30,174 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-80042d74802f.json (3681자)
-2025-10-08 23:00:31,179 [INFO] 
+2025-10-12 11:52:03,810 [INFO] 
 [9/528] 처리 중...
-2025-10-08 23:00:31,179 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2015-8816
-2025-10-08 23:00:33,794 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-e5550cbfb10b.json (4715자)
-2025-10-08 23:00:34,799 [INFO] 
+2025-10-12 11:52:04,815 [INFO] 
 [10/528] 처리 중...
-2025-10-08 23:00:34,800 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2017-20182
-2025-10-08 23:00:37,620 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-1d9e51445555.json (2477자)
-2025-10-08 23:00:38,625 [INFO] 
+2025-10-12 11:52:05,820 [INFO] 
 [11/528] 처리 중...
-2025-10-08 23:00:38,626 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2019-10401
-2025-10-08 23:00:42,712 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-96838e6be2e0.json (2141자)
-2025-10-08 23:00:43,717 [INFO] 
+2025-10-12 11:52:06,822 [INFO] 
 [12/528] 처리 중...
-2025-10-08 23:00:43,718 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2019-10402
-2025-10-08 23:00:46,288 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-a69016714dcb.json (2096자)
-2025-10-08 23:00:47,291 [INFO] 
+2025-10-12 11:52:07,828 [INFO] 
 [13/528] 처리 중...
-2025-10-08 23:00:47,292 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2019-10403
-2025-10-08 23:00:49,819 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-8529ae5150ac.json (2114자)
-2025-10-08 23:00:50,825 [INFO] 
+2025-10-12 11:52:08,833 [INFO] 
 [14/528] 처리 중...
-2025-10-08 23:00:50,825 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2019-10404
-2025-10-08 23:00:53,331 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-10ca2b72882a.json (2185자)
-2025-10-08 23:00:54,336 [INFO] 
+2025-10-12 11:52:09,836 [INFO] 
 [15/528] 처리 중...
-2025-10-08 23:00:54,337 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2019-10405
-2025-10-08 23:00:56,840 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-cac8b2936bec.json (2125자)
-2025-10-08 23:00:57,845 [INFO] 
+2025-10-12 11:52:10,842 [INFO] 
 [16/528] 처리 중...
-2025-10-08 23:00:57,845 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2019-10406
-2025-10-08 23:01:00,362 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-aae6810dfa7c.json (2109자)
-2025-10-08 23:01:01,368 [INFO] 
+2025-10-12 11:52:11,843 [INFO] 
 [17/528] 처리 중...
-2025-10-08 23:01:01,368 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2019-16562
-2025-10-08 23:01:04,084 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-93979bbdd1d6.json (2079자)
-2025-10-08 23:01:05,090 [INFO] 
+2025-10-12 11:52:12,847 [INFO] 
 [18/528] 처리 중...
-2025-10-08 23:01:05,090 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2019-16563
-2025-10-08 23:01:07,786 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-54480c795a05.json (2092자)
-2025-10-08 23:01:08,791 [INFO] 
+2025-10-12 11:52:13,849 [INFO] 
 [19/528] 처리 중...
-2025-10-08 23:01:08,791 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2019-16564
-2025-10-08 23:01:11,156 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-71871aa874ef.json (2122자)
-2025-10-08 23:01:12,161 [INFO] 
+2025-10-12 11:52:14,850 [INFO] 
 [20/528] 처리 중...
-2025-10-08 23:01:12,162 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2019-25105
-2025-10-08 23:01:14,829 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-bd458aa6e86f.json (2459자)
-2025-10-08 23:01:15,834 [INFO] 
+2025-10-12 11:52:15,855 [INFO] 
 [21/528] 처리 중...
-2025-10-08 23:01:15,835 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2020-2096
-2025-10-08 23:01:18,445 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-e15a71f80612.json (2175자)
-2025-10-08 23:01:19,451 [INFO] 
+2025-10-12 11:52:16,861 [INFO] 
 [22/528] 처리 중...
-2025-10-08 23:01:19,451 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2020-2106
-2025-10-08 23:01:22,068 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-4566469cd42d.json (2090자)
-2025-10-08 23:01:23,072 [INFO] 
+2025-10-12 11:52:17,867 [INFO] 
 [23/528] 처리 중...
-2025-10-08 23:01:23,072 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2020-2137
-2025-10-08 23:01:26,762 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-80815a501019.json (2069자)
-2025-10-08 23:01:27,767 [INFO] 
+2025-10-12 11:52:18,872 [INFO] 
 [24/528] 처리 중...
-2025-10-08 23:01:27,768 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2020-2161
-2025-10-08 23:01:30,237 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-7caff7bea940.json (2138자)
-2025-10-08 23:01:31,243 [INFO] 
+2025-10-12 11:52:19,875 [INFO] 
 [25/528] 처리 중...
-2025-10-08 23:01:31,244 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2020-2162
-2025-10-08 23:01:33,677 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-745009d2a1c1.json (2060자)
-2025-10-08 23:01:34,682 [INFO] 
+2025-10-12 11:52:20,881 [INFO] 
 [26/528] 처리 중...
-2025-10-08 23:01:34,682 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2020-2163
-2025-10-08 23:01:37,091 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-da5623e150c9.json (2080자)
-2025-10-08 23:01:38,096 [INFO] 
+2025-10-12 11:52:21,881 [INFO] 
 [27/528] 처리 중...
-2025-10-08 23:01:38,097 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2020-2169
-2025-10-08 23:01:41,009 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-3ba14aee3b90.json (2066자)
-2025-10-08 23:01:42,014 [INFO] 
+2025-10-12 11:52:22,887 [INFO] 
 [28/528] 처리 중...
-2025-10-08 23:01:42,015 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2020-2170
-2025-10-08 23:01:44,462 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-9fc32c7ead82.json (2043자)
-2025-10-08 23:01:45,468 [INFO] 
+2025-10-12 11:52:23,891 [INFO] 
 [29/528] 처리 중...
-2025-10-08 23:01:45,468 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2020-2173
-2025-10-08 23:01:48,029 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-5dd3df6272ec.json (2082자)
-2025-10-08 23:01:49,034 [INFO] 
+2025-10-12 11:52:24,897 [INFO] 
 [30/528] 처리 중...
-2025-10-08 23:01:49,035 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2020-2175
-2025-10-08 23:01:51,883 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-34b833f89e32.json (2124자)
-2025-10-08 23:01:52,888 [INFO] 
+2025-10-12 11:52:25,902 [INFO] 
 [31/528] 처리 중...
-2025-10-08 23:01:52,889 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2020-2176
-2025-10-08 23:01:55,307 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-c5152e2d9fef.json (2139자)
-2025-10-08 23:01:56,312 [INFO] 
+2025-10-12 11:52:26,906 [INFO] 
 [32/528] 처리 중...
-2025-10-08 23:01:56,312 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2020-2205
-2025-10-08 23:01:58,676 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-ca1a2f81a962.json (2105자)
-2025-10-08 23:01:59,681 [INFO] 
+2025-10-12 11:52:27,912 [INFO] 
 [33/528] 처리 중...
-2025-10-08 23:01:59,681 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2020-2206
-2025-10-08 23:02:01,932 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-14010a9b03a9.json (2074자)
-2025-10-08 23:02:02,937 [INFO] 
+2025-10-12 11:52:28,917 [INFO] 
 [34/528] 처리 중...
-2025-10-08 23:02:02,938 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2020-2207
-2025-10-08 23:02:05,336 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-caf9e9d21f9b.json (2061자)
-2025-10-08 23:02:06,341 [INFO] 
+2025-10-12 11:52:29,923 [INFO] 
 [35/528] 처리 중...
-2025-10-08 23:02:06,342 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2020-2217
-2025-10-08 23:02:08,912 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-61afb66e2a27.json (2100자)
-2025-10-08 23:02:09,917 [INFO] 
+2025-10-12 11:52:30,928 [INFO] 
 [36/528] 처리 중...
-2025-10-08 23:02:09,917 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2020-2229
-2025-10-08 23:02:12,539 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-e06f034af357.json (2185자)
-2025-10-08 23:02:13,545 [INFO] 
+2025-10-12 11:52:31,930 [INFO] 
 [37/528] 처리 중...
-2025-10-08 23:02:13,545 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2020-2230
-2025-10-08 23:02:15,851 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-388d34031e5c.json (2243자)
-2025-10-08 23:02:16,857 [INFO] 
+2025-10-12 11:52:32,935 [INFO] 
 [38/528] 처리 중...
-2025-10-08 23:02:16,857 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2020-2231
-2025-10-08 23:02:21,288 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-e2a52fb670f2.json (2331자)
-2025-10-08 23:02:22,294 [INFO] 
+2025-10-12 11:52:33,941 [INFO] 
 [39/528] 처리 중...
-2025-10-08 23:02:22,294 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2020-2236
-2025-10-08 23:02:24,649 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-125774d02f18.json (2079자)
-2025-10-08 23:02:25,654 [INFO] 
+2025-10-12 11:52:34,947 [INFO] 
 [40/528] 처리 중...
-2025-10-08 23:02:25,655 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2020-2238
-2025-10-08 23:02:28,511 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-a9c19cb67085.json (2114자)
-2025-10-08 23:02:29,517 [INFO] 
+2025-10-12 11:52:35,952 [INFO] 
 [41/528] 처리 중...
-2025-10-08 23:02:29,517 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2020-2243
-2025-10-08 23:02:32,227 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-d292e5f5e2ef.json (2087자)
-2025-10-08 23:02:33,232 [INFO] 
+2025-10-12 11:52:36,955 [INFO] 
 [42/528] 처리 중...
-2025-10-08 23:02:33,233 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2020-2244
-2025-10-08 23:02:35,665 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-10f9ea249add.json (2150자)
-2025-10-08 23:02:36,670 [INFO] 
+2025-10-12 11:52:37,961 [INFO] 
 [43/528] 처리 중...
-2025-10-08 23:02:36,671 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2020-2246
-2025-10-08 23:02:39,111 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-ed2c52277078.json (2097자)
-2025-10-08 23:02:40,116 [INFO] 
+2025-10-12 11:52:38,965 [INFO] 
 [44/528] 처리 중...
-2025-10-08 23:02:40,117 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2020-2248
-2025-10-08 23:02:43,258 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-593a7eee8f65.json (2012자)
-2025-10-08 23:02:44,263 [INFO] 
+2025-10-12 11:52:39,970 [INFO] 
 [45/528] 처리 중...
-2025-10-08 23:02:44,264 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2020-2256
-2025-10-08 23:02:47,114 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-38f61b039eaf.json (2136자)
-2025-10-08 23:02:48,119 [INFO] 
+2025-10-12 11:52:40,975 [INFO] 
 [46/528] 처리 중...
-2025-10-08 23:02:48,119 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2020-2257
-2025-10-08 23:02:50,415 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-556e1a60865e.json (2103자)
-2025-10-08 23:02:51,421 [INFO] 
+2025-10-12 11:52:41,981 [INFO] 
 [47/528] 처리 중...
-2025-10-08 23:02:51,421 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2020-2259
-2025-10-08 23:02:54,545 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-4e11df1c63db.json (2095자)
-2025-10-08 23:02:55,550 [INFO] 
+2025-10-12 11:52:42,986 [INFO] 
 [48/528] 처리 중...
-2025-10-08 23:02:55,551 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2020-2262
-2025-10-08 23:02:57,843 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-03a819ed6efb.json (2123자)
-2025-10-08 23:02:58,849 [INFO] 
+2025-10-12 11:52:43,992 [INFO] 
 [49/528] 처리 중...
-2025-10-08 23:02:58,849 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2020-2263
-2025-10-08 23:03:01,227 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-d0cef8412340.json (2097자)
-2025-10-08 23:03:02,233 [INFO] 
+2025-10-12 11:52:44,993 [INFO] 
 [50/528] 처리 중...
-2025-10-08 23:03:02,233 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2020-2264
-2025-10-08 23:03:05,243 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-48ef953751aa.json (2093자)
-2025-10-08 23:03:06,248 [INFO] 
+2025-10-12 11:52:45,997 [INFO] 
 [51/528] 처리 중...
-2025-10-08 23:03:06,249 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2020-2265
-2025-10-08 23:03:08,337 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-11f3bc279270.json (2145자)
-2025-10-08 23:03:09,343 [INFO] 
+2025-10-12 11:52:47,000 [INFO] 
 [52/528] 처리 중...
-2025-10-08 23:03:09,343 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2020-2266
-2025-10-08 23:03:11,917 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-974fda62d825.json (2105자)
-2025-10-08 23:03:12,923 [INFO] 
+2025-10-12 11:52:48,005 [INFO] 
 [53/528] 처리 중...
-2025-10-08 23:03:12,924 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2020-2269
-2025-10-08 23:03:15,492 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-5967a755335c.json (2113자)
-2025-10-08 23:03:16,497 [INFO] 
+2025-10-12 11:52:49,007 [INFO] 
 [54/528] 처리 중...
-2025-10-08 23:03:16,498 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2020-2270
-2025-10-08 23:03:18,836 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-e5b817e5d540.json (2102자)
-2025-10-08 23:03:19,842 [INFO] 
+2025-10-12 11:52:50,012 [INFO] 
 [55/528] 처리 중...
-2025-10-08 23:03:19,843 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2020-2271
-2025-10-08 23:03:22,188 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-1ec9e2f06b1d.json (2096자)
-2025-10-08 23:03:23,194 [INFO] 
+2025-10-12 11:52:51,014 [INFO] 
 [56/528] 처리 중...
-2025-10-08 23:03:23,194 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2020-2273
-2025-10-08 23:03:26,410 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-46b244d9ea87.json (2017자)
-2025-10-08 23:03:27,415 [INFO] 
+2025-10-12 11:52:52,017 [INFO] 
 [57/528] 처리 중...
-2025-10-08 23:03:27,416 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2020-2280
-2025-10-08 23:03:30,857 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-6cc48a71ebfc.json (1966자)
-2025-10-08 23:03:31,862 [INFO] 
+2025-10-12 11:52:53,022 [INFO] 
 [58/528] 처리 중...
-2025-10-08 23:03:31,863 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2020-2283
-2025-10-08 23:03:35,026 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-2d122be07bb0.json (2104자)
-2025-10-08 23:03:36,031 [INFO] 
+2025-10-12 11:52:54,028 [INFO] 
 [59/528] 처리 중...
-2025-10-08 23:03:36,032 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2020-2289
-2025-10-08 23:03:38,811 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-a64f12af20a7.json (2104자)
-2025-10-08 23:03:39,816 [INFO] 
+2025-10-12 11:52:55,030 [INFO] 
 [60/528] 처리 중...
-2025-10-08 23:03:39,817 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2020-2290
-2025-10-08 23:03:42,423 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-bec4b3e99e56.json (2133자)
-2025-10-08 23:03:43,428 [INFO] 
+2025-10-12 11:52:56,036 [INFO] 
 [61/528] 처리 중...
-2025-10-08 23:03:43,428 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2020-2292
-2025-10-08 23:03:46,970 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-1d9f36c5f6a1.json (2094자)
-2025-10-08 23:03:47,975 [INFO] 
+2025-10-12 11:52:57,042 [INFO] 
 [62/528] 처리 중...
-2025-10-08 23:03:47,976 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2020-2295
-2025-10-08 23:03:50,222 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-7e0434cd0f51.json (2023자)
-2025-10-08 23:03:51,227 [INFO] 
+2025-10-12 11:52:58,044 [INFO] 
 [63/528] 처리 중...
-2025-10-08 23:03:51,229 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2020-2296
-2025-10-08 23:03:53,535 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-e5d6ef1a30de.json (1973자)
-2025-10-08 23:03:54,540 [INFO] 
+2025-10-12 11:52:59,049 [INFO] 
 [64/528] 처리 중...
-2025-10-08 23:03:54,541 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2020-2303
-2025-10-08 23:03:56,902 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-3f6f5774b0f2.json (2096자)
-2025-10-08 23:03:57,906 [INFO] 
+2025-10-12 11:53:00,054 [INFO] 
 [65/528] 처리 중...
-2025-10-08 23:03:57,906 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2020-2316
-2025-10-08 23:04:00,825 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-79015fd8d646.json (1995자)
-2025-10-08 23:04:01,827 [INFO] 
+2025-10-12 11:53:01,055 [INFO] 
 [66/528] 처리 중...
-2025-10-08 23:04:01,828 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2020-2317
-2025-10-08 23:04:04,042 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-f3a2b3649e92.json (2023자)
-2025-10-08 23:04:05,048 [INFO] 
+2025-10-12 11:53:02,061 [INFO] 
 [67/528] 처리 중...
-2025-10-08 23:04:05,048 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2020-2321
-2025-10-08 23:04:07,707 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-3984a817345e.json (1985자)
-2025-10-08 23:04:08,712 [INFO] 
+2025-10-12 11:53:03,063 [INFO] 
 [68/528] 처리 중...
-2025-10-08 23:04:08,713 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2020-36651
-2025-10-08 23:04:11,335 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-00be966f0adf.json (2408자)
-2025-10-08 23:04:12,336 [INFO] 
+2025-10-12 11:53:04,069 [INFO] 
 [69/528] 처리 중...
-2025-10-08 23:04:12,337 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2020-36653
-2025-10-08 23:04:14,939 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-d48e948ad5f6.json (2486자)
-2025-10-08 23:04:15,945 [INFO] 
+2025-10-12 11:53:05,074 [INFO] 
 [70/528] 처리 중...
-2025-10-08 23:04:15,945 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2020-36654
-2025-10-08 23:04:18,405 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-3e806c015c09.json (2490자)
-2025-10-08 23:04:19,410 [INFO] 
+2025-10-12 11:53:06,078 [INFO] 
 [71/528] 처리 중...
-2025-10-08 23:04:19,410 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2021-21603
-2025-10-08 23:04:22,702 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-fb174e68e59b.json (1928자)
-2025-10-08 23:04:23,707 [INFO] 
+2025-10-12 11:53:07,080 [INFO] 
 [72/528] 처리 중...
-2025-10-08 23:04:23,708 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2021-21608
-2025-10-08 23:04:26,572 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-ed7469fe9f50.json (1992자)
-2025-10-08 23:04:27,578 [INFO] 
+2025-10-12 11:53:08,085 [INFO] 
 [73/528] 처리 중...
-2025-10-08 23:04:27,579 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2021-21610
-2025-10-08 23:04:30,148 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-9530d5c69e93.json (2095자)
-2025-10-08 23:04:31,153 [INFO] 
+2025-10-12 11:53:09,091 [INFO] 
 [74/528] 처리 중...
-2025-10-08 23:04:31,154 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2021-21611
-2025-10-08 23:04:33,652 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-eac4187f9d05.json (2039자)
-2025-10-08 23:04:34,654 [INFO] 
+2025-10-12 11:53:10,093 [INFO] 
 [75/528] 처리 중...
-2025-10-08 23:04:34,655 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2021-21613
-2025-10-08 23:04:37,270 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-8c3e8ca0f27b.json (1979자)
-2025-10-08 23:04:38,275 [INFO] 
+2025-10-12 11:53:11,099 [INFO] 
 [76/528] 처리 중...
-2025-10-08 23:04:38,276 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2021-21616
-2025-10-08 23:04:40,964 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-3e23fa80df22.json (2090자)
-2025-10-08 23:04:41,969 [INFO] 
+2025-10-12 11:53:12,105 [INFO] 
 [77/528] 처리 중...
-2025-10-08 23:04:41,970 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2021-21617
-2025-10-08 23:04:44,372 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-1b1ff187b9fc.json (1994자)
-2025-10-08 23:04:45,377 [INFO] 
+2025-10-12 11:53:13,107 [INFO] 
 [78/528] 처리 중...
-2025-10-08 23:04:45,378 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2021-21618
-2025-10-08 23:04:48,600 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-82e4fb88f1b2.json (2008자)
-2025-10-08 23:04:49,605 [INFO] 
+2025-10-12 11:53:14,113 [INFO] 
 [79/528] 처리 중...
-2025-10-08 23:04:49,606 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2021-21619
-2025-10-08 23:04:52,079 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-a4a737fd0368.json (2175자)
-2025-10-08 23:04:53,084 [INFO] 
+2025-10-12 11:53:15,114 [INFO] 
 [80/528] 처리 중...
-2025-10-08 23:04:53,085 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2021-21620
-2025-10-08 23:04:55,859 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-4284b649e5cd.json (1856자)
-2025-10-08 23:04:56,864 [INFO] 
+2025-10-12 11:53:16,120 [INFO] 
 [81/528] 처리 중...
-2025-10-08 23:04:56,864 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2021-21622
-2025-10-08 23:04:59,758 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-01cef78e91de.json (2000자)
-2025-10-08 23:05:00,764 [INFO] 
+2025-10-12 11:53:17,128 [INFO] 
 [82/528] 처리 중...
-2025-10-08 23:05:00,764 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2021-21627
-2025-10-08 23:05:03,294 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-6c0e1048829a.json (1975자)
-2025-10-08 23:05:04,299 [INFO] 
+2025-10-12 11:53:18,134 [INFO] 
 [83/528] 처리 중...
-2025-10-08 23:05:04,300 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2021-21628
-2025-10-08 23:05:06,877 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-5d7b3de62423.json (2101자)
-2025-10-08 23:05:07,883 [INFO] 
+2025-10-12 11:53:19,139 [INFO] 
 [84/528] 처리 중...
-2025-10-08 23:05:07,883 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2021-21629
-2025-10-08 23:05:11,131 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-18c0f1f6f68f.json (2007자)
-2025-10-08 23:05:12,136 [INFO] 
+2025-10-12 11:53:20,146 [INFO] 
 [85/528] 처리 중...
-2025-10-08 23:05:12,137 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2021-21630
-2025-10-08 23:05:14,581 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-471892cd3d2f.json (2109자)
-2025-10-08 23:05:15,587 [INFO] 
+2025-10-12 11:53:21,152 [INFO] 
 [86/528] 처리 중...
-2025-10-08 23:05:15,587 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2021-21635
-2025-10-08 23:05:18,531 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-332119f3de7a.json (2118자)
-2025-10-08 23:05:19,535 [INFO] 
+2025-10-12 11:53:22,157 [INFO] 
 [87/528] 처리 중...
-2025-10-08 23:05:19,535 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2021-21648
-2025-10-08 23:05:22,071 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-c1282d925108.json (1948자)
-2025-10-08 23:05:23,076 [INFO] 
+2025-10-12 11:53:23,163 [INFO] 
 [88/528] 처리 중...
-2025-10-08 23:05:23,076 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2021-21649
-2025-10-08 23:05:25,911 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-dc7d82139fb2.json (1996자)
-2025-10-08 23:05:26,916 [INFO] 
+2025-10-12 11:53:24,165 [INFO] 
 [89/528] 처리 중...
-2025-10-08 23:05:26,917 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2021-21660
-2025-10-08 23:05:29,601 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-0efaa3c2e383.json (2268자)
-2025-10-08 23:05:30,607 [INFO] 
+2025-10-12 11:53:25,171 [INFO] 
 [90/528] 처리 중...
-2025-10-08 23:05:30,607 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2021-21666
-2025-10-08 23:05:33,208 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-b88f83475f19.json (2072자)
-2025-10-08 23:05:34,214 [INFO] 
+2025-10-12 11:53:26,175 [INFO] 
 [91/528] 처리 중...
-2025-10-08 23:05:34,215 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2021-21667
-2025-10-08 23:05:36,761 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-fe0c0535efd0.json (2111자)
-2025-10-08 23:05:37,766 [INFO] 
+2025-10-12 11:53:27,178 [INFO] 
 [92/528] 처리 중...
-2025-10-08 23:05:37,766 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2021-21668
-2025-10-08 23:05:40,713 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-0797a828ff7e.json (2077자)
-2025-10-08 23:05:41,719 [INFO] 
+2025-10-12 11:53:28,185 [INFO] 
 [93/528] 처리 중...
-2025-10-08 23:05:41,719 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2021-21697
-2025-10-08 23:05:44,146 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-3a0261a440d7.json (1981자)
-2025-10-08 23:05:45,151 [INFO] 
+2025-10-12 11:53:29,191 [INFO] 
 [94/528] 처리 중...
-2025-10-08 23:05:45,152 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2021-24370
-2025-10-08 23:05:47,721 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-8bd1df964464.json (2399자)
-2025-10-08 23:05:48,726 [INFO] 
+2025-10-12 11:53:30,196 [INFO] 
 [95/528] 처리 중...
-2025-10-08 23:05:48,729 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2021-39289
-2025-10-08 23:05:51,314 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-546393d36a6f.json (2063자)
-2025-10-08 23:05:52,319 [INFO] 
+2025-10-12 11:53:31,202 [INFO] 
 [96/528] 처리 중...
-2025-10-08 23:05:52,320 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2021-39290
-2025-10-08 23:05:54,806 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-ffe22e319656.json (2020자)
-2025-10-08 23:05:55,812 [INFO] 
+2025-10-12 11:53:32,207 [INFO] 
 [97/528] 처리 중...
-2025-10-08 23:05:55,812 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2021-39291
-2025-10-08 23:05:58,627 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-c158bbe24a44.json (2055자)
-2025-10-08 23:05:59,632 [INFO] 
+2025-10-12 11:53:33,212 [INFO] 
 [98/528] 처리 중...
-2025-10-08 23:05:59,633 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2021-39810
-2025-10-08 23:06:02,638 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-20dde66a5573.json (2059자)
-2025-10-08 23:06:03,643 [INFO] 
+2025-10-12 11:53:34,219 [INFO] 
 [99/528] 처리 중...
-2025-10-08 23:06:03,644 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2021-4312
-2025-10-08 23:06:06,091 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-0bff6765f91a.json (2564자)
-2025-10-08 23:06:07,097 [INFO] 
+2025-10-12 11:53:35,225 [INFO] 
 [100/528] 처리 중...
-2025-10-08 23:06:07,097 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2021-4313
-2025-10-08 23:06:09,776 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-351f1269a865.json (2378자)
-2025-10-08 23:06:10,781 [INFO] 
+2025-10-12 11:53:36,227 [INFO] 
 [101/528] 처리 중...
-2025-10-08 23:06:10,782 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2021-4325
-2025-10-08 23:06:13,784 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-2bcf6314f804.json (2576자)
-2025-10-08 23:06:14,790 [INFO] 
+2025-10-12 11:53:37,234 [INFO] 
 [102/528] 처리 중...
-2025-10-08 23:06:14,790 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2021-4328
-2025-10-08 23:06:17,533 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-1eccbd581bef.json (2417자)
-2025-10-08 23:06:18,538 [INFO] 
+2025-10-12 11:53:38,235 [INFO] 
 [103/528] 처리 중...
-2025-10-08 23:06:18,539 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-1388
-2025-10-08 23:06:20,926 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-4e537a207f88.json (2810자)
-2025-10-08 23:06:21,931 [INFO] 
+2025-10-12 11:53:39,241 [INFO] 
 [104/528] 처리 중...
-2025-10-08 23:06:21,932 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-1749
-2025-10-08 23:06:24,191 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-f571368263c5.json (2319자)
-2025-10-08 23:06:25,196 [INFO] 
+2025-10-12 11:53:40,244 [INFO] 
 [105/528] 처리 중...
-2025-10-08 23:06:25,197 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-1750
-2025-10-08 23:06:28,323 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-cc4a8139afe6.json (2495자)
-2025-10-08 23:06:29,323 [INFO] 
+2025-10-12 11:53:41,250 [INFO] 
 [106/528] 처리 중...
-2025-10-08 23:06:29,324 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-20264
-2025-10-08 23:06:32,302 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-4ebda2ae53ec.json (2123자)
-2025-10-08 23:06:33,307 [INFO] 
+2025-10-12 11:53:42,256 [INFO] 
 [107/528] 처리 중...
-2025-10-08 23:06:33,307 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-25184
-2025-10-08 23:06:35,533 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-e09ac3bd3e2a.json (1999자)
-2025-10-08 23:06:36,538 [INFO] 
+2025-10-12 11:53:43,262 [INFO] 
 [108/528] 처리 중...
-2025-10-08 23:06:36,539 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-25185
-2025-10-08 23:06:38,851 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-cd4a1b311b1a.json (2117자)
-2025-10-08 23:06:39,856 [INFO] 
+2025-10-12 11:53:44,267 [INFO] 
 [109/528] 처리 중...
-2025-10-08 23:06:39,857 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-25191
-2025-10-08 23:06:42,373 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-bb12923d1ec5.json (2023자)
-2025-10-08 23:06:43,379 [INFO] 
+2025-10-12 11:53:45,272 [INFO] 
 [110/528] 처리 중...
-2025-10-08 23:06:43,379 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-25192
-2025-10-08 23:06:46,012 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-8750ce153fad.json (2017자)
-2025-10-08 23:06:47,017 [INFO] 
+2025-10-12 11:53:46,277 [INFO] 
 [111/528] 처리 중...
-2025-10-08 23:06:47,018 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-25193
-2025-10-08 23:06:49,732 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-2cc0c553eda0.json (2009자)
-2025-10-08 23:06:50,737 [INFO] 
+2025-10-12 11:53:47,283 [INFO] 
 [112/528] 처리 중...
-2025-10-08 23:06:50,738 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-25194
-2025-10-08 23:06:53,534 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-a6e9afefba07.json (1936자)
-2025-10-08 23:06:54,539 [INFO] 
+2025-10-12 11:53:48,285 [INFO] 
 [113/528] 처리 중...
-2025-10-08 23:06:54,540 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-25195
-2025-10-08 23:06:56,941 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-93c9a7f78a7c.json (1923자)
-2025-10-08 23:06:57,944 [INFO] 
+2025-10-12 11:53:49,291 [INFO] 
 [114/528] 처리 중...
-2025-10-08 23:06:57,944 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-25196
-2025-10-08 23:07:04,620 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-b1423063811f.json (2159자)
-2025-10-08 23:07:05,623 [INFO] 
+2025-10-12 11:53:50,296 [INFO] 
 [115/528] 처리 중...
-2025-10-08 23:07:05,624 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-25197
-2025-10-08 23:07:08,312 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-fdd6b8c7bef1.json (1894자)
-2025-10-08 23:07:09,315 [INFO] 
+2025-10-12 11:53:51,302 [INFO] 
 [116/528] 처리 중...
-2025-10-08 23:07:09,316 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-25198
-2025-10-08 23:07:12,183 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-ed5629ae936c.json (1939자)
-2025-10-08 23:07:13,188 [INFO] 
+2025-10-12 11:53:52,308 [INFO] 
 [117/528] 처리 중...
-2025-10-08 23:07:13,189 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-25199
-2025-10-08 23:07:15,770 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-f02603cb6995.json (1933자)
-2025-10-08 23:07:16,775 [INFO] 
+2025-10-12 11:53:53,313 [INFO] 
 [118/528] 처리 중...
-2025-10-08 23:07:16,776 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-25200
-2025-10-08 23:07:19,298 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-783d600f8a45.json (2127자)
-2025-10-08 23:07:20,303 [INFO] 
+2025-10-12 11:53:54,319 [INFO] 
 [119/528] 처리 중...
-2025-10-08 23:07:20,303 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-25201
-2025-10-08 23:07:22,811 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-b78add4ddb19.json (2008자)
-2025-10-08 23:07:23,817 [INFO] 
+2025-10-12 11:53:55,325 [INFO] 
 [120/528] 처리 중...
-2025-10-08 23:07:23,817 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-25202
-2025-10-08 23:07:26,392 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-7f13db22944e.json (2022자)
-2025-10-08 23:07:27,398 [INFO] 
+2025-10-12 11:53:56,329 [INFO] 
 [121/528] 처리 중...
-2025-10-08 23:07:27,398 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-25203
-2025-10-08 23:07:29,628 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-52c509c50707.json (1958자)
-2025-10-08 23:07:30,633 [INFO] 
+2025-10-12 11:53:57,331 [INFO] 
 [122/528] 처리 중...
-2025-10-08 23:07:30,634 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-25204
-2025-10-08 23:07:33,298 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-771576ad1a36.json (2010자)
-2025-10-08 23:07:34,301 [INFO] 
+2025-10-12 11:53:58,336 [INFO] 
 [123/528] 처리 중...
-2025-10-08 23:07:34,302 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-25205
-2025-10-08 23:07:36,631 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-91ffc8fcf235.json (2008자)
-2025-10-08 23:07:37,636 [INFO] 
+2025-10-12 11:53:59,342 [INFO] 
 [124/528] 처리 중...
-2025-10-08 23:07:37,637 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-25206
-2025-10-08 23:07:40,374 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-413a96984c08.json (1926자)
-2025-10-08 23:07:41,379 [INFO] 
+2025-10-12 11:54:00,347 [INFO] 
 [125/528] 처리 중...
-2025-10-08 23:07:41,380 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-25207
-2025-10-08 23:07:44,028 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-26ef873a2ae8.json (2046자)
-2025-10-08 23:07:45,034 [INFO] 
+2025-10-12 11:54:01,353 [INFO] 
 [126/528] 처리 중...
-2025-10-08 23:07:45,035 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-25208
-2025-10-08 23:07:47,772 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-f544dec786eb.json (2040자)
-2025-10-08 23:07:48,775 [INFO] 
+2025-10-12 11:54:02,359 [INFO] 
 [127/528] 처리 중...
-2025-10-08 23:07:48,775 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-25209
-2025-10-08 23:07:51,095 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-62cdc053669a.json (1863자)
-2025-10-08 23:07:52,100 [INFO] 
+2025-10-12 11:54:03,361 [INFO] 
 [128/528] 처리 중...
-2025-10-08 23:07:52,101 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-25210
-2025-10-08 23:07:54,930 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-0f2154010743.json (1955자)
-2025-10-08 23:07:55,935 [INFO] 
+2025-10-12 11:54:04,366 [INFO] 
 [129/528] 처리 중...
-2025-10-08 23:07:55,936 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-25318
-2025-10-08 23:07:58,526 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-974c4359cfb9.json (1976자)
-2025-10-08 23:07:59,531 [INFO] 
+2025-10-12 11:54:05,372 [INFO] 
 [130/528] 처리 중...
-2025-10-08 23:07:59,532 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-2541
-2025-10-08 23:08:02,460 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-64b9a9586940.json (2650자)
-2025-10-08 23:08:03,465 [INFO] 
+2025-10-12 11:54:06,377 [INFO] 
 [131/528] 처리 중...
-2025-10-08 23:08:03,465 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-2542
-2025-10-08 23:08:06,062 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-96b156329179.json (2650자)
-2025-10-08 23:08:07,067 [INFO] 
+2025-10-12 11:54:07,383 [INFO] 
 [132/528] 처리 중...
-2025-10-08 23:08:07,068 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-28149
-2025-10-08 23:08:09,545 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-47d42a5e448c.json (2107자)
-2025-10-08 23:08:10,551 [INFO] 
+2025-10-12 11:54:08,387 [INFO] 
 [133/528] 처리 중...
-2025-10-08 23:08:10,551 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-28150
-2025-10-08 23:08:12,974 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-d7d01f69844c.json (2027자)
-2025-10-08 23:08:13,979 [INFO] 
+2025-10-12 11:54:09,391 [INFO] 
 [134/528] 처리 중...
-2025-10-08 23:08:13,980 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-28151
-2025-10-08 23:08:16,360 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-ea999d2f51f8.json (2018자)
-2025-10-08 23:08:17,366 [INFO] 
+2025-10-12 11:54:10,393 [INFO] 
 [135/528] 처리 중...
-2025-10-08 23:08:17,366 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-28152
-2025-10-08 23:08:20,179 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-d0d8ab344bc0.json (2009자)
-2025-10-08 23:08:21,184 [INFO] 
+2025-10-12 11:54:11,399 [INFO] 
 [136/528] 처리 중...
-2025-10-08 23:08:21,186 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-28153
-2025-10-08 23:08:23,961 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-1c7979df4326.json (2096자)
-2025-10-08 23:08:24,967 [INFO] 
+2025-10-12 11:54:12,406 [INFO] 
 [137/528] 처리 중...
-2025-10-08 23:08:24,968 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-28154
-2025-10-08 23:08:27,156 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-aadc88516442.json (1995자)
-2025-10-08 23:08:28,161 [INFO] 
+2025-10-12 11:54:13,412 [INFO] 
 [138/528] 처리 중...
-2025-10-08 23:08:28,163 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-28155
-2025-10-08 23:08:31,426 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-b0692bca4597.json (1987자)
-2025-10-08 23:08:32,432 [INFO] 
+2025-10-12 11:54:14,417 [INFO] 
 [139/528] 처리 중...
-2025-10-08 23:08:32,432 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-28156
-2025-10-08 23:08:35,481 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-32b371639cd9.json (2071자)
-2025-10-08 23:08:36,487 [INFO] 
+2025-10-12 11:54:15,422 [INFO] 
 [140/528] 처리 중...
-2025-10-08 23:08:36,488 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-28157
-2025-10-08 23:08:39,418 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-880dd94b069b.json (2078자)
-2025-10-08 23:08:40,423 [INFO] 
+2025-10-12 11:54:16,427 [INFO] 
 [141/528] 처리 중...
-2025-10-08 23:08:40,423 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-28158
-2025-10-08 23:08:44,332 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-7ae558d3edad.json (2014자)
-2025-10-08 23:08:45,338 [INFO] 
+2025-10-12 11:54:17,429 [INFO] 
 [142/528] 처리 중...
-2025-10-08 23:08:45,338 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-28159
-2025-10-08 23:08:47,999 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-11984b1d0e6c.json (2126자)
-2025-10-08 23:08:49,004 [INFO] 
+2025-10-12 11:54:18,434 [INFO] 
 [143/528] 처리 중...
-2025-10-08 23:08:49,005 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-28160
-2025-10-08 23:08:51,405 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-1ee5ad89e16d.json (1975자)
-2025-10-08 23:08:52,411 [INFO] 
+2025-10-12 11:54:19,437 [INFO] 
 [144/528] 처리 중...
-2025-10-08 23:08:52,413 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-29046
-2025-10-08 23:08:55,534 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-88b3411c8886.json (2234자)
-2025-10-08 23:08:56,539 [INFO] 
+2025-10-12 11:54:20,443 [INFO] 
 [145/528] 처리 중...
-2025-10-08 23:08:56,540 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-2941
-2025-10-08 23:09:00,464 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-4e0bd09b5a2f.json (2888자)
-2025-10-08 23:09:01,469 [INFO] 
+2025-10-12 11:54:21,448 [INFO] 
 [146/528] 처리 중...
-2025-10-08 23:09:01,470 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-2943
-2025-10-08 23:09:04,641 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-b12c9d23f345.json (2545자)
-2025-10-08 23:09:05,647 [INFO] 
+2025-10-12 11:54:22,453 [INFO] 
 [147/528] 처리 중...
-2025-10-08 23:09:05,647 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-29529
-2025-10-08 23:09:08,684 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-646b90d5dcda.json (2295자)
-2025-10-08 23:09:09,689 [INFO] 
+2025-10-12 11:54:23,456 [INFO] 
 [148/528] 처리 중...
-2025-10-08 23:09:09,690 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-30011
-2025-10-08 23:09:14,037 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-b3696d0f5482.json (1940자)
-2025-10-08 23:09:15,041 [INFO] 
+2025-10-12 11:54:24,457 [INFO] 
 [149/528] 처리 중...
-2025-10-08 23:09:15,041 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-30948
-2025-10-08 23:09:17,407 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-1ca83d5ab641.json (2093자)
-2025-10-08 23:09:18,412 [INFO] 
+2025-10-12 11:54:25,459 [INFO] 
 [150/528] 처리 중...
-2025-10-08 23:09:18,414 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-30950
-2025-10-08 23:09:21,134 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-523723834d99.json (2105자)
-2025-10-08 23:09:22,140 [INFO] 
+2025-10-12 11:54:26,460 [INFO] 
 [151/528] 처리 중...
-2025-10-08 23:09:22,140 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-30951
-2025-10-08 23:09:24,524 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-31fad67ecaf2.json (2031자)
-2025-10-08 23:09:25,525 [INFO] 
+2025-10-12 11:54:27,466 [INFO] 
 [152/528] 처리 중...
-2025-10-08 23:09:25,525 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-30952
-2025-10-08 23:09:28,495 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-8290ca7f0cda.json (2087자)
-2025-10-08 23:09:29,501 [INFO] 
+2025-10-12 11:54:28,471 [INFO] 
 [153/528] 처리 중...
-2025-10-08 23:09:29,501 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-30953
-2025-10-08 23:09:32,628 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-bd11fb210412.json (1993자)
-2025-10-08 23:09:33,634 [INFO] 
+2025-10-12 11:54:29,474 [INFO] 
 [154/528] 처리 중...
-2025-10-08 23:09:33,635 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-30954
-2025-10-08 23:09:35,929 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-5b6c215d0a48.json (2022자)
-2025-10-08 23:09:36,929 [INFO] 
+2025-10-12 11:54:30,480 [INFO] 
 [155/528] 처리 중...
-2025-10-08 23:09:36,930 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-30955
-2025-10-08 23:09:39,964 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-0425bda45145.json (1915자)
-2025-10-08 23:09:40,969 [INFO] 
+2025-10-12 11:54:31,482 [INFO] 
 [156/528] 처리 중...
-2025-10-08 23:09:40,970 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-30956
-2025-10-08 23:09:43,694 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-2613ad28caa2.json (2009자)
-2025-10-08 23:09:44,700 [INFO] 
+2025-10-12 11:54:32,486 [INFO] 
 [157/528] 처리 중...
-2025-10-08 23:09:44,701 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-30958
-2025-10-08 23:09:47,363 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-eed246401a0c.json (1987자)
-2025-10-08 23:09:48,369 [INFO] 
+2025-10-12 11:54:33,492 [INFO] 
 [158/528] 처리 중...
-2025-10-08 23:09:48,369 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-30959
-2025-10-08 23:09:51,367 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-9e7cab05f5a0.json (1981자)
-2025-10-08 23:09:52,372 [INFO] 
+2025-10-12 11:54:34,498 [INFO] 
 [159/528] 처리 중...
-2025-10-08 23:09:52,372 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-30960
-2025-10-08 23:09:54,817 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-266678a51d59.json (2039자)
-2025-10-08 23:09:55,822 [INFO] 
+2025-10-12 11:54:35,502 [INFO] 
 [160/528] 처리 중...
-2025-10-08 23:09:55,823 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-30961
-2025-10-08 23:09:58,183 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-fb7ec99ef419.json (2060자)
-2025-10-08 23:09:59,189 [INFO] 
+2025-10-12 11:54:36,508 [INFO] 
 [161/528] 처리 중...
-2025-10-08 23:09:59,189 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-30962
-2025-10-08 23:10:02,018 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-80a4168e9796.json (2062자)
-2025-10-08 23:10:03,023 [INFO] 
+2025-10-12 11:54:37,511 [INFO] 
 [162/528] 처리 중...
-2025-10-08 23:10:03,025 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-30963
-2025-10-08 23:10:05,719 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-fa8d59cbf92d.json (2024자)
-2025-10-08 23:10:06,724 [INFO] 
+2025-10-12 11:54:38,516 [INFO] 
 [163/528] 처리 중...
-2025-10-08 23:10:06,725 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-30964
-2025-10-08 23:10:09,462 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-5cb83c6cae9b.json (2040자)
-2025-10-08 23:10:10,467 [INFO] 
+2025-10-12 11:54:39,521 [INFO] 
 [164/528] 처리 중...
-2025-10-08 23:10:10,467 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-30965
-2025-10-08 23:10:12,755 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-4349932b1214.json (2047자)
-2025-10-08 23:10:13,760 [INFO] 
+2025-10-12 11:54:40,527 [INFO] 
 [165/528] 처리 중...
-2025-10-08 23:10:13,762 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-30966
-2025-10-08 23:10:16,504 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-46b0ee7755bc.json (2000자)
-2025-10-08 23:10:17,509 [INFO] 
+2025-10-12 11:54:41,530 [INFO] 
 [166/528] 처리 중...
-2025-10-08 23:10:17,510 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-30967
-2025-10-08 23:10:19,967 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-f8fcfd422256.json (2053자)
-2025-10-08 23:10:20,973 [INFO] 
+2025-10-12 11:54:42,535 [INFO] 
 [167/528] 처리 중...
-2025-10-08 23:10:20,974 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-30968
-2025-10-08 23:10:24,009 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-139551eab8b3.json (2028자)
-2025-10-08 23:10:25,014 [INFO] 
+2025-10-12 11:54:43,541 [INFO] 
 [168/528] 처리 중...
-2025-10-08 23:10:25,014 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-30969
-2025-10-08 23:10:27,340 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-f5d00c1c09bd.json (1930자)
-2025-10-08 23:10:28,346 [INFO] 
+2025-10-12 11:54:44,546 [INFO] 
 [169/528] 처리 중...
-2025-10-08 23:10:28,347 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-30970
-2025-10-08 23:10:30,946 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-377e686594a2.json (2092자)
-2025-10-08 23:10:31,951 [INFO] 
+2025-10-12 11:54:45,552 [INFO] 
 [170/528] 처리 중...
-2025-10-08 23:10:31,952 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-30971
-2025-10-08 23:10:34,749 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-4bc7597016a0.json (1866자)
-2025-10-08 23:10:35,755 [INFO] 
+2025-10-12 11:54:46,557 [INFO] 
 [171/528] 처리 중...
-2025-10-08 23:10:35,756 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-30972
-2025-10-08 23:10:38,206 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-9dd5cac744f5.json (2016자)
-2025-10-08 23:10:39,211 [INFO] 
+2025-10-12 11:54:47,559 [INFO] 
 [172/528] 처리 중...
-2025-10-08 23:10:39,212 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-34170
-2025-10-08 23:10:41,496 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-39eb16dc1f68.json (2104자)
-2025-10-08 23:10:42,501 [INFO] 
+2025-10-12 11:54:48,565 [INFO] 
 [173/528] 처리 중...
-2025-10-08 23:10:42,502 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-34171
-2025-10-08 23:10:45,047 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-a03e0088aba9.json (2131자)
-2025-10-08 23:10:46,048 [INFO] 
+2025-10-12 11:54:49,567 [INFO] 
 [174/528] 처리 중...
-2025-10-08 23:10:46,050 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-34172
-2025-10-08 23:10:48,491 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-cd2e27216ba2.json (1952자)
-2025-10-08 23:10:49,496 [INFO] 
+2025-10-12 11:54:50,572 [INFO] 
 [175/528] 처리 중...
-2025-10-08 23:10:49,498 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-34173
-2025-10-08 23:10:51,742 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-e992ae3bf631.json (2027자)
-2025-10-08 23:10:52,747 [INFO] 
+2025-10-12 11:54:51,578 [INFO] 
 [176/528] 처리 중...
-2025-10-08 23:10:52,748 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-34174
-2025-10-08 23:10:55,127 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-9323e65d0f6f.json (1998자)
-2025-10-08 23:10:56,132 [INFO] 
+2025-10-12 11:54:52,583 [INFO] 
 [177/528] 처리 중...
-2025-10-08 23:10:56,133 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-34175
-2025-10-08 23:10:58,956 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-80ffa943e193.json (1946자)
-2025-10-08 23:10:59,961 [INFO] 
+2025-10-12 11:54:53,589 [INFO] 
 [178/528] 처리 중...
-2025-10-08 23:10:59,962 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-34176
-2025-10-08 23:11:05,505 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-c8c7b0aac2d3.json (1985자)
-2025-10-08 23:11:06,510 [INFO] 
+2025-10-12 11:54:54,592 [INFO] 
 [179/528] 처리 중...
-2025-10-08 23:11:06,511 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-34177
-2025-10-08 23:11:08,799 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-c4e13b77ee3b.json (2203자)
-2025-10-08 23:11:09,804 [INFO] 
+2025-10-12 11:54:55,597 [INFO] 
 [180/528] 처리 중...
-2025-10-08 23:11:09,805 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-34178
-2025-10-08 23:11:12,256 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-7018858e3e68.json (1999자)
-2025-10-08 23:11:13,261 [INFO] 
+2025-10-12 11:54:56,599 [INFO] 
 [181/528] 처리 중...
-2025-10-08 23:11:13,262 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-34179
-2025-10-08 23:11:15,993 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-946b3fdc1864.json (2134자)
-2025-10-08 23:11:16,996 [INFO] 
+2025-10-12 11:54:57,604 [INFO] 
 [182/528] 처리 중...
-2025-10-08 23:11:16,996 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-34180
-2025-10-08 23:11:19,556 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-9de70c380fbd.json (2022자)
-2025-10-08 23:11:20,561 [INFO] 
+2025-10-12 11:54:58,610 [INFO] 
 [183/528] 처리 중...
-2025-10-08 23:11:20,562 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-34181
-2025-10-08 23:11:23,067 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-7ec20ecaed7d.json (2095자)
-2025-10-08 23:11:24,072 [INFO] 
+2025-10-12 11:54:59,615 [INFO] 
 [184/528] 처리 중...
-2025-10-08 23:11:24,073 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-34182
-2025-10-08 23:11:26,305 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-34de587488ba.json (1932자)
-2025-10-08 23:11:27,310 [INFO] 
+2025-10-12 11:55:00,621 [INFO] 
 [185/528] 처리 중...
-2025-10-08 23:11:27,311 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-34183
-2025-10-08 23:11:29,598 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-4e59427abc5c.json (2042자)
-2025-10-08 23:11:30,604 [INFO] 
+2025-10-12 11:55:01,625 [INFO] 
 [186/528] 처리 중...
-2025-10-08 23:11:30,604 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-34184
-2025-10-08 23:11:34,885 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-6723c97031ed.json (2062자)
-2025-10-08 23:11:35,890 [INFO] 
+2025-10-12 11:55:02,630 [INFO] 
 [187/528] 처리 중...
-2025-10-08 23:11:35,892 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-34185
-2025-10-08 23:11:38,822 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-c7da8cf58268.json (2028자)
-2025-10-08 23:11:39,827 [INFO] 
+2025-10-12 11:55:03,636 [INFO] 
 [188/528] 처리 중...
-2025-10-08 23:11:39,828 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-34186
-2025-10-08 23:11:42,249 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-6d7b2d6170b8.json (2064자)
-2025-10-08 23:11:43,255 [INFO] 
+2025-10-12 11:55:04,637 [INFO] 
 [189/528] 처리 중...
-2025-10-08 23:11:43,255 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-34187
-2025-10-08 23:11:45,799 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-a760487a3f27.json (2059자)
-2025-10-08 23:11:46,801 [INFO] 
+2025-10-12 11:55:05,638 [INFO] 
 [190/528] 처리 중...
-2025-10-08 23:11:46,801 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-34188
-2025-10-08 23:11:49,570 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-a8595d1b7649.json (2042자)
-2025-10-08 23:11:50,575 [INFO] 
+2025-10-12 11:55:06,644 [INFO] 
 [191/528] 처리 중...
-2025-10-08 23:11:50,576 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-34189
-2025-10-08 23:11:53,628 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-04655d774877.json (2037자)
-2025-10-08 23:11:54,633 [INFO] 
+2025-10-12 11:55:07,647 [INFO] 
 [192/528] 처리 중...
-2025-10-08 23:11:54,635 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-34190
-2025-10-08 23:11:57,091 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-f2e70f8afdc2.json (2079자)
-2025-10-08 23:11:58,096 [INFO] 
-[193/528] 처리 중...
-2025-10-08 23:11:58,097 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-34191
-2025-10-08 23:12:00,911 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-646c9bf24250.json (2049자)
-2025-10-08 23:12:01,916 [INFO] 
-[194/528] 처리 중...
-2025-10-08 23:12:01,918 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-34192
-2025-10-08 23:12:04,488 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-ec9b4bbe93ca.json (2097자)
-2025-10-08 23:12:05,493 [INFO] 
-[195/528] 처리 중...
-2025-10-08 23:12:05,495 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-34193
-2025-10-08 23:12:08,523 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-0ac65b42151c.json (2024자)
-2025-10-08 23:12:09,528 [INFO] 
-[196/528] 처리 중...
-2025-10-08 23:12:09,529 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-34194
-2025-10-08 23:12:11,859 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-f2bde3832306.json (2061자)
-2025-10-08 23:12:12,864 [INFO] 
-[197/528] 처리 중...
-2025-10-08 23:12:12,865 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-34199
-2025-10-08 23:12:15,956 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-bb41aeaaefed.json (1972자)
-2025-10-08 23:12:16,958 [INFO] 
-[198/528] 처리 중...
-2025-10-08 23:12:16,960 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-34200
-2025-10-08 23:12:19,568 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-84d462f0f90a.json (1887자)
-2025-10-08 23:12:20,573 [INFO] 
-[199/528] 처리 중...
-2025-10-08 23:12:20,575 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-34201
-2025-10-08 23:12:23,340 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-7878740be943.json (1881자)
-2025-10-08 23:12:24,345 [INFO] 
-[200/528] 처리 중...
-2025-10-08 23:12:24,346 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-34202
-2025-10-08 23:12:26,782 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-b107a988564d.json (1937자)
-2025-10-08 23:12:27,784 [INFO] 
-[201/528] 처리 중...
-2025-10-08 23:12:27,784 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-34203
-2025-10-08 23:12:29,946 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-b8d6fe8da814.json (1875자)
-2025-10-08 23:12:30,951 [INFO] 
-[202/528] 처리 중...
-2025-10-08 23:12:30,952 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-34204
-2025-10-08 23:12:33,375 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-a6149518fad4.json (1869자)
-2025-10-08 23:12:34,375 [INFO] 
-[203/528] 처리 중...
-2025-10-08 23:12:34,376 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-34205
-2025-10-08 23:12:36,784 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-a1608dfe0103.json (1898자)
-2025-10-08 23:12:37,784 [INFO] 
-[204/528] 처리 중...
-2025-10-08 23:12:37,786 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-34206
-2025-10-08 23:12:40,256 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-f64b24321ba2.json (1892자)
-2025-10-08 23:12:41,261 [INFO] 
-[205/528] 처리 중...
-2025-10-08 23:12:41,263 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-34207
-2025-10-08 23:12:43,946 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-f415acde4d1c.json (1876자)
-2025-10-08 23:12:44,951 [INFO] 
-[206/528] 처리 중...
-2025-10-08 23:12:44,951 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-34208
-2025-10-08 23:12:47,592 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-592ffd031561.json (1870자)
-2025-10-08 23:12:48,598 [INFO] 
-[207/528] 처리 중...
-2025-10-08 23:12:48,599 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-34209
-2025-10-08 23:12:51,115 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-39a040cf0cf0.json (1872자)
-2025-10-08 23:12:52,120 [INFO] 
-[208/528] 처리 중...
-2025-10-08 23:12:52,121 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-34210
-2025-10-08 23:12:54,604 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-2aa3cd057539.json (1866자)
-2025-10-08 23:12:55,610 [INFO] 
-[209/528] 처리 중...
-2025-10-08 23:12:55,611 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-34211
-2025-10-08 23:12:58,400 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-a17ad4deaab7.json (1900자)
-2025-10-08 23:12:59,405 [INFO] 
-[210/528] 처리 중...
-2025-10-08 23:12:59,406 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-34212
-2025-10-08 23:13:02,412 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-b4d8bc959b45.json (1894자)
-2025-10-08 23:13:03,417 [INFO] 
-[211/528] 처리 중...
-2025-10-08 23:13:03,418 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-34213
-2025-10-08 23:13:07,104 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-2da1ecc64f8f.json (1964자)
-2025-10-08 23:13:08,109 [INFO] 
-[212/528] 처리 중...
-2025-10-08 23:13:08,109 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-34779
-2025-10-08 23:13:11,322 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-1554f9a425fa.json (1910자)
-2025-10-08 23:13:12,327 [INFO] 
-[213/528] 처리 중...
-2025-10-08 23:13:12,328 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-34780
-2025-10-08 23:13:14,861 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-08b4ffa5a0e0.json (2016자)
-2025-10-08 23:13:15,866 [INFO] 
-[214/528] 처리 중...
-2025-10-08 23:13:15,868 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-34782
-2025-10-08 23:13:18,462 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-abb8160f5dab.json (1875자)
-2025-10-08 23:13:19,467 [INFO] 
-[215/528] 처리 중...
-2025-10-08 23:13:19,468 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-34785
-2025-10-08 23:13:22,071 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-a2d476d774ec.json (1929자)
-2025-10-08 23:13:23,076 [INFO] 
-[216/528] 처리 중...
-2025-10-08 23:13:23,078 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-34789
-2025-10-08 23:13:25,533 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-903ea74ed2e8.json (1872자)
-2025-10-08 23:13:26,535 [INFO] 
-[217/528] 처리 중...
-2025-10-08 23:13:26,536 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-34792
-2025-10-08 23:13:28,900 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-f90033b6582e.json (1910자)
-2025-10-08 23:13:29,905 [INFO] 
-[218/528] 처리 중...
-2025-10-08 23:13:29,906 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-34793
-2025-10-08 23:13:33,733 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-1549f1cfea97.json (1856자)
-2025-10-08 23:13:34,739 [INFO] 
-[219/528] 처리 중...
-2025-10-08 23:13:34,740 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-34794
-2025-10-08 23:13:37,488 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-baf608e113ad.json (1902자)
-2025-10-08 23:13:38,493 [INFO] 
-[220/528] 처리 중...
-2025-10-08 23:13:38,494 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-36895
-2025-10-08 23:13:41,416 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-939436a57db2.json (2063자)
-2025-10-08 23:13:42,417 [INFO] 
-[221/528] 처리 중...
-2025-10-08 23:13:42,418 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-36896
-2025-10-08 23:13:44,698 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-f82228eb6e13.json (2096자)
-2025-10-08 23:13:45,701 [INFO] 
-[222/528] 처리 중...
-2025-10-08 23:13:45,702 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-36897
-2025-10-08 23:13:48,687 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-ce4c6ff82c44.json (2070자)
-2025-10-08 23:13:49,692 [INFO] 
-[223/528] 처리 중...
-2025-10-08 23:13:49,694 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-36898
-2025-10-08 23:13:52,786 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-f1783795913e.json (2063자)
-2025-10-08 23:13:53,789 [INFO] 
-[224/528] 처리 중...
-2025-10-08 23:13:53,791 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-36899
-2025-10-08 23:13:56,813 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-df62cb271f24.json (2022자)
-2025-10-08 23:13:57,819 [INFO] 
-[225/528] 처리 중...
-2025-10-08 23:13:57,821 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-36900
-2025-10-08 23:14:01,048 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-b06f8bca5608.json (2019자)
-2025-10-08 23:14:02,053 [INFO] 
-[226/528] 처리 중...
-2025-10-08 23:14:02,054 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-36901
-2025-10-08 23:14:05,025 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-d3594f8619d4.json (2063자)
-2025-10-08 23:14:06,029 [INFO] 
-[227/528] 처리 중...
-2025-10-08 23:14:06,030 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-36902
-2025-10-08 23:14:09,612 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-8e088f09bb98.json (2134자)
-2025-10-08 23:14:10,617 [INFO] 
-[228/528] 처리 중...
-2025-10-08 23:14:10,619 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-36903
-2025-10-08 23:14:13,429 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-8d17ae37fc3e.json (2020자)
-2025-10-08 23:14:14,434 [INFO] 
-[229/528] 처리 중...
-2025-10-08 23:14:14,435 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-36904
-2025-10-08 23:14:17,360 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-c4250b71984f.json (2108자)
-2025-10-08 23:14:18,366 [INFO] 
-[230/528] 처리 중...
-2025-10-08 23:14:18,366 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-36905
-2025-10-08 23:14:21,318 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-f3f517ee02ee.json (2178자)
-2025-10-08 23:14:22,324 [INFO] 
-[231/528] 처리 중...
-2025-10-08 23:14:22,325 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-36906
-2025-10-08 23:14:25,419 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-3ad55967ce40.json (2049자)
-2025-10-08 23:14:26,425 [INFO] 
-[232/528] 처리 중...
-2025-10-08 23:14:26,427 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-36907
-2025-10-08 23:14:29,220 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-4bbfe192d4f3.json (2043자)
-2025-10-08 23:14:30,226 [INFO] 
-[233/528] 처리 중...
-2025-10-08 23:14:30,226 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-36908
-2025-10-08 23:14:32,772 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-36f6e485126c.json (2160자)
-2025-10-08 23:14:33,778 [INFO] 
-[234/528] 처리 중...
-2025-10-08 23:14:33,778 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-36909
-2025-10-08 23:14:36,677 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-f954a359c8d2.json (2154자)
-2025-10-08 23:14:37,682 [INFO] 
-[235/528] 처리 중...
-2025-10-08 23:14:37,683 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-36915
-2025-10-08 23:14:40,577 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-ce035491f0d2.json (2121자)
-2025-10-08 23:14:41,582 [INFO] 
-[236/528] 처리 중...
-2025-10-08 23:14:41,582 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-36916
-2025-10-08 23:14:43,787 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-c3aa4699c377.json (1978자)
-2025-10-08 23:14:44,792 [INFO] 
-[237/528] 처리 중...
-2025-10-08 23:14:44,794 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-36917
-2025-10-08 23:14:47,122 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-8ef5cc93f0cc.json (1972자)
-2025-10-08 23:14:48,127 [INFO] 
-[238/528] 처리 중...
-2025-10-08 23:14:48,128 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-36918
-2025-10-08 23:14:50,737 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-b5bc1195b438.json (2089자)
-2025-10-08 23:14:51,743 [INFO] 
-[239/528] 처리 중...
-2025-10-08 23:14:51,743 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-36919
-2025-10-08 23:14:53,800 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-29ccdef0203f.json (2009자)
-2025-10-08 23:14:54,806 [INFO] 
-[240/528] 처리 중...
-2025-10-08 23:14:54,807 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-36920
-2025-10-08 23:14:57,878 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-873694e76395.json (2107자)
-2025-10-08 23:14:58,881 [INFO] 
-[241/528] 처리 중...
-2025-10-08 23:14:58,881 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-36921
-2025-10-08 23:15:01,660 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-8d3a21b17c53.json (2101자)
-2025-10-08 23:15:02,665 [INFO] 
-[242/528] 처리 중...
-2025-10-08 23:15:02,665 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-36922
-2025-10-08 23:15:05,405 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-40f530bfc406.json (2087자)
-2025-10-08 23:15:06,411 [INFO] 
-[243/528] 처리 중...
-2025-10-08 23:15:06,413 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-38663
-2025-10-08 23:15:09,021 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-3a8af16f9825.json (2040자)
-2025-10-08 23:15:10,026 [INFO] 
-[244/528] 처리 중...
-2025-10-08 23:15:10,028 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-38664
-2025-10-08 23:15:14,255 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-b8dcfa8c6a49.json (2139자)
-2025-10-08 23:15:15,261 [INFO] 
-[245/528] 처리 중...
-2025-10-08 23:15:15,261 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-38665
-2025-10-08 23:15:18,179 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-ea9fa5ff537d.json (2064자)
-2025-10-08 23:15:19,185 [INFO] 
-[246/528] 처리 중...
-2025-10-08 23:15:19,185 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-38666
-2025-10-08 23:15:21,652 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-947b3503f3b1.json (2014자)
-2025-10-08 23:15:22,657 [INFO] 
-[247/528] 처리 중...
-2025-10-08 23:15:22,659 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-39046
-2025-10-08 23:15:25,590 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-b6b99a83c9d3.json (2468자)
-2025-10-08 23:15:26,595 [INFO] 
-[248/528] 처리 중...
-2025-10-08 23:15:26,596 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-39135
-2025-10-08 23:15:29,091 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-986ace0419d2.json (2570자)
-2025-10-08 23:15:30,094 [INFO] 
-[249/528] 처리 중...
-2025-10-08 23:15:30,095 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-41224
-2025-10-08 23:15:32,512 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-52ab12e76691.json (2059자)
-2025-10-08 23:15:33,517 [INFO] 
-[250/528] 처리 중...
-2025-10-08 23:15:33,518 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-41225
-2025-10-08 23:15:37,108 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-4af84b515258.json (2040자)
-2025-10-08 23:15:38,113 [INFO] 
-[251/528] 처리 중...
-2025-10-08 23:15:38,114 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-41226
-2025-10-08 23:15:40,765 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-e295601633e0.json (1892자)
-2025-10-08 23:15:41,770 [INFO] 
-[252/528] 처리 중...
-2025-10-08 23:15:41,771 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-41227
-2025-10-08 23:15:44,644 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-59a691c64d50.json (1958자)
-2025-10-08 23:15:45,649 [INFO] 
-[253/528] 처리 중...
-2025-10-08 23:15:45,650 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-41228
-2025-10-08 23:15:48,024 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-6e307f40d877.json (1953자)
-2025-10-08 23:15:49,028 [INFO] 
-[254/528] 처리 중...
-2025-10-08 23:15:49,029 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-41229
-2025-10-08 23:15:52,836 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-903a23b57a54.json (2062자)
-2025-10-08 23:15:53,841 [INFO] 
-[255/528] 처리 중...
-2025-10-08 23:15:53,842 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-41230
-2025-10-08 23:15:57,553 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-82cfb498b868.json (2032자)
-2025-10-08 23:15:58,558 [INFO] 
-[256/528] 처리 중...
-2025-10-08 23:15:58,559 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-41231
-2025-10-08 23:16:05,512 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-2e39880bd881.json (1999자)
-2025-10-08 23:16:06,517 [INFO] 
-[257/528] 처리 중...
-2025-10-08 23:16:06,518 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-41232
-2025-10-08 23:16:09,339 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-a29197948c37.json (1986자)
-2025-10-08 23:16:10,344 [INFO] 
-[258/528] 처리 중...
-2025-10-08 23:16:10,345 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-41233
-2025-10-08 23:16:13,105 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-f180484b20a1.json (1992자)
-2025-10-08 23:16:14,111 [INFO] 
-[259/528] 처리 중...
-2025-10-08 23:16:14,113 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-41234
-2025-10-08 23:16:17,037 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-71773bdf89a7.json (1934자)
-2025-10-08 23:16:18,042 [INFO] 
-[260/528] 처리 중...
-2025-10-08 23:16:18,043 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-41235
-2025-10-08 23:16:20,530 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-f8a7197fc2aa.json (1903자)
-2025-10-08 23:16:21,532 [INFO] 
-[261/528] 처리 중...
-2025-10-08 23:16:21,533 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-41236
-2025-10-08 23:16:24,196 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-5c0cd4a21b32.json (2048자)
-2025-10-08 23:16:25,202 [INFO] 
-[262/528] 처리 중...
-2025-10-08 23:16:25,204 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-41237
-2025-10-08 23:16:27,869 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-2c98979a03f8.json (1944자)
-2025-10-08 23:16:28,875 [INFO] 
-[263/528] 처리 중...
-2025-10-08 23:16:28,875 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-41238
-2025-10-08 23:16:31,968 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-62c70c0dac5d.json (1928자)
-2025-10-08 23:16:32,974 [INFO] 
-[264/528] 처리 중...
-2025-10-08 23:16:32,974 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-41239
-2025-10-08 23:16:35,738 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-1841faa820ac.json (2001자)
-2025-10-08 23:16:36,743 [INFO] 
-[265/528] 처리 중...
-2025-10-08 23:16:36,744 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-41240
-2025-10-08 23:16:39,495 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-db81c5c69e47.json (2015자)
-2025-10-08 23:16:40,500 [INFO] 
-[266/528] 처리 중...
-2025-10-08 23:16:40,501 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-41241
-2025-10-08 23:16:43,821 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-f35bfb654c7e.json (1862자)
-2025-10-08 23:16:44,826 [INFO] 
-[267/528] 처리 중...
-2025-10-08 23:16:44,827 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-41242
-2025-10-08 23:16:47,115 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-ca82e77f6632.json (1965자)
-2025-10-08 23:16:48,121 [INFO] 
-[268/528] 처리 중...
-2025-10-08 23:16:48,122 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-41243
-2025-10-08 23:16:50,912 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-9a7acfdb75a2.json (1939자)
-2025-10-08 23:16:51,917 [INFO] 
-[269/528] 처리 중...
-2025-10-08 23:16:51,918 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-41244
-2025-10-08 23:16:54,687 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-f8ef20a860aa.json (1951자)
-2025-10-08 23:16:55,692 [INFO] 
-[270/528] 처리 중...
-2025-10-08 23:16:55,694 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-41245
-2025-10-08 23:16:58,149 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-8d07dab338f9.json (2017자)
-2025-10-08 23:16:59,154 [INFO] 
-[271/528] 처리 중...
-2025-10-08 23:16:59,155 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-41248
-2025-10-08 23:17:04,493 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-6929f0715b05.json (2033자)
-2025-10-08 23:17:05,495 [INFO] 
-[272/528] 처리 중...
-2025-10-08 23:17:05,496 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-41249
-2025-10-08 23:17:07,994 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-3cf5bd597b29.json (2117자)
-2025-10-08 23:17:09,000 [INFO] 
-[273/528] 처리 중...
-2025-10-08 23:17:09,000 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-41250
-2025-10-08 23:17:11,361 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-ab73e6321d82.json (2111자)
-2025-10-08 23:17:12,366 [INFO] 
-[274/528] 처리 중...
-2025-10-08 23:17:12,368 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-41251
-2025-10-08 23:17:14,872 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-a6646f5b09db.json (2003자)
-2025-10-08 23:17:15,877 [INFO] 
-[275/528] 처리 중...
-2025-10-08 23:17:15,877 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-41252
-2025-10-08 23:17:18,810 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-243efa0c42d5.json (2000자)
-2025-10-08 23:17:19,815 [INFO] 
-[276/528] 처리 중...
-2025-10-08 23:17:19,816 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-41253
-2025-10-08 23:17:22,129 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-1abd72ced850.json (2112자)
-2025-10-08 23:17:23,134 [INFO] 
-[277/528] 처리 중...
-2025-10-08 23:17:23,135 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-41254
-2025-10-08 23:17:26,121 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-ffb5731f01ca.json (2104자)
-2025-10-08 23:17:27,127 [INFO] 
-[278/528] 처리 중...
-2025-10-08 23:17:27,129 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-41255
-2025-10-08 23:17:29,495 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-2eb788748e6d.json (2052자)
-2025-10-08 23:17:30,500 [INFO] 
-[279/528] 처리 중...
-2025-10-08 23:17:30,501 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-41727
-2025-10-08 23:17:33,546 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-1bb70fee6d95.json (2509자)
-2025-10-08 23:17:34,551 [INFO] 
-[280/528] 처리 중...
-2025-10-08 23:17:34,552 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-43407
-2025-10-08 23:17:37,293 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-1fb067f9fd87.json (2324자)
-2025-10-08 23:17:38,298 [INFO] 
-[281/528] 처리 중...
-2025-10-08 23:17:38,299 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-43408
-2025-10-08 23:17:40,807 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-2ec05d9eb850.json (2170자)
-2025-10-08 23:17:41,812 [INFO] 
-[282/528] 처리 중...
-2025-10-08 23:17:41,813 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-43409
-2025-10-08 23:17:45,325 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-64a15c75ebe1.json (2169자)
-2025-10-08 23:17:46,330 [INFO] 
-[283/528] 처리 중...
-2025-10-08 23:17:46,331 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-43410
-2025-10-08 23:17:49,263 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-3d05e2c1eb9b.json (2102자)
-2025-10-08 23:17:50,269 [INFO] 
-[284/528] 처리 중...
-2025-10-08 23:17:50,269 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-43411
-2025-10-08 23:17:53,653 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-4ea6a6600d2f.json (2077자)
-2025-10-08 23:17:54,658 [INFO] 
-[285/528] 처리 중...
-2025-10-08 23:17:54,660 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-43412
-2025-10-08 23:17:57,608 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-43130447eff3.json (2094자)
-2025-10-08 23:17:58,613 [INFO] 
-[286/528] 처리 중...
-2025-10-08 23:17:58,615 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-43413
-2025-10-08 23:18:02,394 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-6105a8344395.json (2036자)
-2025-10-08 23:18:03,399 [INFO] 
-[287/528] 처리 중...
-2025-10-08 23:18:03,400 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-43414
-2025-10-08 23:18:05,661 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-79adb406c208.json (2192자)
-2025-10-08 23:18:06,666 [INFO] 
-[288/528] 처리 중...
-2025-10-08 23:18:06,667 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-43415
-2025-10-08 23:18:09,460 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-e53cbefdc4e1.json (1977자)
-2025-10-08 23:18:10,465 [INFO] 
-[289/528] 처리 중...
-2025-10-08 23:18:10,466 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-43416
-2025-10-08 23:18:12,912 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-923120240455.json (2426자)
-2025-10-08 23:18:13,916 [INFO] 
-[290/528] 처리 중...
-2025-10-08 23:18:13,917 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-43417
-2025-10-08 23:18:17,096 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-46af64c299e5.json (2143자)
-2025-10-08 23:18:18,102 [INFO] 
-[291/528] 처리 중...
-2025-10-08 23:18:18,103 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-43418
-2025-10-08 23:18:20,510 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-2ae6197e62bc.json (2115자)
-2025-10-08 23:18:21,515 [INFO] 
-[292/528] 처리 중...
-2025-10-08 23:18:21,516 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-43423
-2025-10-08 23:18:24,397 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-b258b0d6f711.json (2220자)
-2025-10-08 23:18:25,402 [INFO] 
-[293/528] 처리 중...
-2025-10-08 23:18:25,404 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-43424
-2025-10-08 23:18:28,332 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-20fbebb41d90.json (2159자)
-2025-10-08 23:18:29,337 [INFO] 
-[294/528] 처리 중...
-2025-10-08 23:18:29,337 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-43425
-2025-10-08 23:18:31,868 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-ea5624f14e7e.json (2178자)
-2025-10-08 23:18:32,873 [INFO] 
-[295/528] 처리 중...
-2025-10-08 23:18:32,874 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-43426
-2025-10-08 23:18:37,180 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-1bab1a3c3680.json (2039자)
-2025-10-08 23:18:38,185 [INFO] 
-[296/528] 처리 중...
-2025-10-08 23:18:38,187 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-43427
-2025-10-08 23:18:41,339 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-2e93d2634fca.json (2063자)
-2025-10-08 23:18:42,344 [INFO] 
-[297/528] 처리 중...
-2025-10-08 23:18:42,345 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-43428
-2025-10-08 23:18:44,869 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-9fa43de7cadd.json (2192자)
-2025-10-08 23:18:45,875 [INFO] 
-[298/528] 처리 중...
-2025-10-08 23:18:45,877 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-43429
-2025-10-08 23:18:48,279 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-c09dcaf7de8e.json (2131자)
-2025-10-08 23:18:49,283 [INFO] 
-[299/528] 처리 중...
-2025-10-08 23:18:49,284 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-45386
-2025-10-08 23:18:51,970 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-c5b0b6d2853f.json (1982자)
-2025-10-08 23:18:52,976 [INFO] 
-[300/528] 처리 중...
-2025-10-08 23:18:52,976 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-45387
-2025-10-08 23:18:55,409 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-4df82c11244d.json (2078자)
-2025-10-08 23:18:56,414 [INFO] 
-[301/528] 처리 중...
-2025-10-08 23:18:56,416 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-45388
-2025-10-08 23:18:58,868 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-5782fc39f608.json (2157자)
-2025-10-08 23:18:59,873 [INFO] 
-[302/528] 처리 중...
-2025-10-08 23:18:59,874 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-45389
-2025-10-08 23:19:02,694 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-2f1c0f82bde4.json (2004자)
-2025-10-08 23:19:03,699 [INFO] 
-[303/528] 처리 중...
-2025-10-08 23:19:03,700 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-45390
-2025-10-08 23:19:06,271 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-a58fd8d1341b.json (2008자)
-2025-10-08 23:19:07,276 [INFO] 
-[304/528] 처리 중...
-2025-10-08 23:19:07,277 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-45391
-2025-10-08 23:19:09,877 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-dd06c2a3e89e.json (2044자)
-2025-10-08 23:19:10,882 [INFO] 
-[305/528] 처리 중...
-2025-10-08 23:19:10,883 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-45392
-2025-10-08 23:19:13,711 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-bbfe351f62f7.json (2115자)
-2025-10-08 23:19:14,716 [INFO] 
-[306/528] 처리 중...
-2025-10-08 23:19:14,717 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-45393
-2025-10-08 23:19:17,391 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-1b4a5f61027b.json (1972자)
-2025-10-08 23:19:18,392 [INFO] 
-[307/528] 처리 중...
-2025-10-08 23:19:18,393 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-45394
-2025-10-08 23:19:21,117 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-2e9077f06231.json (1963자)
-2025-10-08 23:19:22,122 [INFO] 
-[308/528] 처리 중...
-2025-10-08 23:19:22,124 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-45395
-2025-10-08 23:19:24,888 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-90aaf14a7728.json (1974자)
-2025-10-08 23:19:25,894 [INFO] 
-[309/528] 처리 중...
-2025-10-08 23:19:25,894 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-45396
-2025-10-08 23:19:28,121 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-4d9bb5d6b722.json (1983자)
-2025-10-08 23:19:29,126 [INFO] 
-[310/528] 처리 중...
-2025-10-08 23:19:29,127 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-45397
-2025-10-08 23:19:31,404 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-1e957f4da5f0.json (2004자)
-2025-10-08 23:19:32,405 [INFO] 
-[311/528] 처리 중...
-2025-10-08 23:19:32,406 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-45398
-2025-10-08 23:19:35,320 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-4fe56f6b96ea.json (2007자)
-2025-10-08 23:19:36,326 [INFO] 
-[312/528] 처리 중...
-2025-10-08 23:19:36,327 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-45399
-2025-10-08 23:19:38,789 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-493c20052970.json (1972자)
-2025-10-08 23:19:39,794 [INFO] 
-[313/528] 처리 중...
-2025-10-08 23:19:39,795 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-45400
-2025-10-08 23:19:42,879 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-eef53373a3c5.json (1975자)
-2025-10-08 23:19:43,881 [INFO] 
-[314/528] 처리 중...
-2025-10-08 23:19:43,881 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-45401
-2025-10-08 23:19:46,902 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-da0cae5a61b0.json (2101자)
-2025-10-08 23:19:47,907 [INFO] 
-[315/528] 처리 중...
-2025-10-08 23:19:47,908 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-4573
-2025-10-08 23:19:50,772 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-cf7ba71df0a2.json (1941자)
-2025-10-08 23:19:51,777 [INFO] 
-[316/528] 처리 중...
-2025-10-08 23:19:51,778 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-46663
-2025-10-08 23:19:54,252 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-109a9aa73a0f.json (2296자)
-2025-10-08 23:19:55,255 [INFO] 
-[317/528] 처리 중...
-2025-10-08 23:19:55,255 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-46945
-2025-10-08 23:19:57,518 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-f0efb143d5c6.json (2081자)
-2025-10-08 23:19:58,524 [INFO] 
-[318/528] 처리 중...
-2025-10-08 23:19:58,524 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-48189
-2025-10-08 23:20:04,252 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-0a942efab496.json (1939자)
-2025-10-08 23:20:05,257 [INFO] 
-[319/528] 처리 중...
-2025-10-08 23:20:05,258 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-4882
-2025-10-08 23:20:07,679 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-2e8fb538b9b3.json (2752자)
-2025-10-08 23:20:08,684 [INFO] 
-[320/528] 처리 중...
-2025-10-08 23:20:08,685 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-4885
-2025-10-08 23:20:12,565 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-7001b4b3cf47.json (2577자)
-2025-10-08 23:20:13,570 [INFO] 
-[321/528] 처리 중...
-2025-10-08 23:20:13,572 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-4886
-2025-10-08 23:20:16,604 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-fbfc0a30a5c5.json (2152자)
-2025-10-08 23:20:17,609 [INFO] 
-[322/528] 처리 중...
-2025-10-08 23:20:17,610 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-4889
-2025-10-08 23:20:20,527 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-197c48089df7.json (2408자)
-2025-10-08 23:20:21,530 [INFO] 
-[323/528] 처리 중...
-2025-10-08 23:20:21,530 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-4890
-2025-10-08 23:20:24,177 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-406e3acbce31.json (2401자)
-2025-10-08 23:20:25,183 [INFO] 
-[324/528] 처리 중...
-2025-10-08 23:20:25,183 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-4892
-2025-10-08 23:20:28,362 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-a8099b685a88.json (2368자)
-2025-10-08 23:20:29,367 [INFO] 
-[325/528] 처리 중...
-2025-10-08 23:20:29,368 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-4905
-2025-10-08 23:20:31,745 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-4deb148c4b74.json (2599자)
-2025-10-08 23:20:32,750 [INFO] 
-[326/528] 처리 중...
-2025-10-08 23:20:32,751 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-4927
-2025-10-08 23:20:35,623 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-fe0549e50e3f.json (2619자)
-2025-10-08 23:20:36,628 [INFO] 
-[327/528] 처리 중...
-2025-10-08 23:20:36,629 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-4928
-2025-10-08 23:20:40,590 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-7b3a1d0993e6.json (2576자)
-2025-10-08 23:20:41,596 [INFO] 
-[328/528] 처리 중...
-2025-10-08 23:20:41,596 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-4929
-2025-10-08 23:20:43,925 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-5f96867a0904.json (2540자)
-2025-10-08 23:20:44,931 [INFO] 
-[329/528] 처리 중...
-2025-10-08 23:20:44,931 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-4930
-2025-10-08 23:20:47,814 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-628f726fddbe.json (2518자)
-2025-10-08 23:20:48,819 [INFO] 
-[330/528] 처리 중...
-2025-10-08 23:20:48,819 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2022-4933
-2025-10-08 23:20:51,083 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-aa21910e5bf5.json (2547자)
-2025-10-08 23:20:52,089 [INFO] 
-[331/528] 처리 중...
-2025-10-08 23:20:52,089 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-0673
-2025-10-08 23:20:54,432 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-a3da2ecec39d.json (2249자)
-2025-10-08 23:20:55,437 [INFO] 
-[332/528] 처리 중...
-2025-10-08 23:20:55,437 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-0747
-2025-10-08 23:20:58,090 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-4fdc60428cae.json (1993자)
-2025-10-08 23:20:59,095 [INFO] 
-[333/528] 처리 중...
-2025-10-08 23:20:59,096 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-0861
-2025-10-08 23:21:02,743 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-e71f2c0470e3.json (2402자)
-2025-10-08 23:21:03,748 [INFO] 
-[334/528] 처리 중...
-2025-10-08 23:21:03,749 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-0862
-2025-10-08 23:21:06,103 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-d8ae7c39aa1a.json (2375자)
-2025-10-08 23:21:07,108 [INFO] 
-[335/528] 처리 중...
-2025-10-08 23:21:07,109 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-1003
-2025-10-08 23:21:09,727 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-52030b0b67d8.json (2336자)
-2025-10-08 23:21:10,732 [INFO] 
-[336/528] 처리 중...
-2025-10-08 23:21:10,733 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-1004
-2025-10-08 23:21:13,465 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-feec61010b91.json (2311자)
-2025-10-08 23:21:14,470 [INFO] 
-[337/528] 처리 중...
-2025-10-08 23:21:14,471 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-1112
-2025-10-08 23:21:16,893 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-73fd036f6f0e.json (2371자)
-2025-10-08 23:21:17,898 [INFO] 
-[338/528] 처리 중...
-2025-10-08 23:21:17,899 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-1400
-2025-10-08 23:21:20,252 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-e0d774af962c.json (1969자)
-2025-10-08 23:21:21,257 [INFO] 
-[339/528] 처리 중...
-2025-10-08 23:21:21,257 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-1495
-2025-10-08 23:21:24,186 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-633ff0376822.json (2516자)
-2025-10-08 23:21:25,191 [INFO] 
-[340/528] 처리 중...
-2025-10-08 23:21:25,192 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-20588
-2025-10-08 23:21:28,191 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-74adccf73a89.json (5181자)
-2025-10-08 23:21:29,197 [INFO] 
-[341/528] 처리 중...
-2025-10-08 23:21:29,198 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-21255
-2025-10-08 23:21:31,972 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-f6c750fece1d.json (2664자)
-2025-10-08 23:21:32,978 [INFO] 
-[342/528] 처리 중...
-2025-10-08 23:21:32,978 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-21293
-2025-10-08 23:21:35,798 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-d863e7a6e14e.json (2117자)
-2025-10-08 23:21:36,803 [INFO] 
-[343/528] 처리 중...
-2025-10-08 23:21:36,804 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-21294
-2025-10-08 23:21:39,410 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-05eceeddd8c9.json (2051자)
-2025-10-08 23:21:40,414 [INFO] 
-[344/528] 처리 중...
-2025-10-08 23:21:40,414 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-21295
-2025-10-08 23:21:42,901 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-29ae533cae5f.json (2084자)
-2025-10-08 23:21:43,907 [INFO] 
-[345/528] 처리 중...
-2025-10-08 23:21:43,907 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-21296
-2025-10-08 23:21:46,231 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-f386735d90d2.json (2089자)
-2025-10-08 23:21:47,237 [INFO] 
-[346/528] 처리 중...
-2025-10-08 23:21:47,239 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-21297
-2025-10-08 23:21:49,601 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-11d0d1d38339.json (2034자)
-2025-10-08 23:21:50,606 [INFO] 
-[347/528] 처리 중...
-2025-10-08 23:21:50,607 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-21298
-2025-10-08 23:21:53,573 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-c31f53d43fb1.json (2061자)
-2025-10-08 23:21:54,575 [INFO] 
-[348/528] 처리 중...
-2025-10-08 23:21:54,575 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-21299
-2025-10-08 23:21:57,220 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-dd8850748354.json (2097자)
-2025-10-08 23:21:58,225 [INFO] 
-[349/528] 처리 중...
-2025-10-08 23:21:58,226 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-21300
-2025-10-08 23:22:00,867 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-e062d38233c0.json (2096자)
-2025-10-08 23:22:01,872 [INFO] 
-[350/528] 처리 중...
-2025-10-08 23:22:01,873 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-21301
-2025-10-08 23:22:04,678 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-fa0bc5bea39f.json (2105자)
-2025-10-08 23:22:05,683 [INFO] 
-[351/528] 처리 중...
-2025-10-08 23:22:05,684 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-21302
-2025-10-08 23:22:08,214 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-3f92cce0d28b.json (2097자)
-2025-10-08 23:22:09,219 [INFO] 
-[352/528] 처리 중...
-2025-10-08 23:22:09,219 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-21303
-2025-10-08 23:22:11,994 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-694c7b01dcd9.json (2088자)
-2025-10-08 23:22:12,998 [INFO] 
-[353/528] 처리 중...
-2025-10-08 23:22:12,999 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-21304
-2025-10-08 23:22:15,633 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-4a8de36959ef.json (2097자)
-2025-10-08 23:22:16,635 [INFO] 
-[354/528] 처리 중...
-2025-10-08 23:22:16,636 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-21305
-2025-10-08 23:22:19,507 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-71448faa887b.json (2089자)
-2025-10-08 23:22:20,511 [INFO] 
-[355/528] 처리 중...
-2025-10-08 23:22:20,511 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-21306
-2025-10-08 23:22:23,701 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-7725d9b9e45b.json (2068자)
-2025-10-08 23:22:24,706 [INFO] 
-[356/528] 처리 중...
-2025-10-08 23:22:24,708 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-21307
-2025-10-08 23:22:27,219 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-1d0b25172e36.json (2089자)
-2025-10-08 23:22:28,224 [INFO] 
-[357/528] 처리 중...
-2025-10-08 23:22:28,225 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-21308
-2025-10-08 23:22:31,570 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-7080ce518a37.json (2020자)
-2025-10-08 23:22:32,576 [INFO] 
-[358/528] 처리 중...
-2025-10-08 23:22:32,576 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-21309
-2025-10-08 23:22:35,334 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-fb035bbc61ba.json (2018자)
-2025-10-08 23:22:36,339 [INFO] 
-[359/528] 처리 중...
-2025-10-08 23:22:36,340 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-21310
-2025-10-08 23:22:39,628 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-b27ecc3ce4ec.json (2016자)
-2025-10-08 23:22:40,634 [INFO] 
-[360/528] 처리 중...
-2025-10-08 23:22:40,635 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-21311
-2025-10-08 23:22:43,243 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-1d0bf4611894.json (2061자)
-2025-10-08 23:22:44,249 [INFO] 
-[361/528] 처리 중...
-2025-10-08 23:22:44,249 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-21312
-2025-10-08 23:22:46,877 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-543bff4784d4.json (2016자)
-2025-10-08 23:22:47,881 [INFO] 
-[362/528] 처리 중...
-2025-10-08 23:22:47,882 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-21313
-2025-10-08 23:22:50,408 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-42e1bd921eb8.json (2048자)
-2025-10-08 23:22:51,413 [INFO] 
-[363/528] 처리 중...
-2025-10-08 23:22:51,414 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-21314
-2025-10-08 23:22:54,273 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-84e5559465d1.json (2013자)
-2025-10-08 23:22:55,279 [INFO] 
-[364/528] 처리 중...
-2025-10-08 23:22:55,279 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-21315
-2025-10-08 23:22:57,785 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-52d0b4994db8.json (2041자)
-2025-10-08 23:22:58,790 [INFO] 
-[365/528] 처리 중...
-2025-10-08 23:22:58,791 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-21316
-2025-10-08 23:23:01,773 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-0b389b702f41.json (2089자)
-2025-10-08 23:23:02,778 [INFO] 
-[366/528] 처리 중...
-2025-10-08 23:23:02,779 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-21317
-2025-10-08 23:23:05,123 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-06af12b97454.json (2096자)
-2025-10-08 23:23:06,128 [INFO] 
-[367/528] 처리 중...
-2025-10-08 23:23:06,129 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-21318
-2025-10-08 23:23:08,592 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-3290c9dac2c2.json (2089자)
-2025-10-08 23:23:09,597 [INFO] 
-[368/528] 처리 중...
-2025-10-08 23:23:09,598 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-21319
-2025-10-08 23:23:12,998 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-9bb216729c0d.json (2063자)
-2025-10-08 23:23:14,003 [INFO] 
-[369/528] 처리 중...
-2025-10-08 23:23:14,004 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-21320
-2025-10-08 23:23:16,275 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-df0d0873aa5b.json (2090자)
-2025-10-08 23:23:17,280 [INFO] 
-[370/528] 처리 중...
-2025-10-08 23:23:17,281 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-21321
-2025-10-08 23:23:19,811 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-1af413e58759.json (2045자)
-2025-10-08 23:23:20,814 [INFO] 
-[371/528] 처리 중...
-2025-10-08 23:23:20,815 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-21323
-2025-10-08 23:23:23,105 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-69a92112436c.json (2098자)
-2025-10-08 23:23:24,110 [INFO] 
-[372/528] 처리 중...
-2025-10-08 23:23:24,111 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-21324
-2025-10-08 23:23:26,760 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-35eed12bc908.json (2109자)
-2025-10-08 23:23:27,766 [INFO] 
-[373/528] 처리 중...
-2025-10-08 23:23:27,766 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-21325
-2025-10-08 23:23:30,560 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-37eb7d78ac2b.json (2090자)
-2025-10-08 23:23:31,565 [INFO] 
-[374/528] 처리 중...
-2025-10-08 23:23:31,566 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-21326
-2025-10-08 23:23:34,609 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-f35a36c4e68d.json (2105자)
-2025-10-08 23:23:35,614 [INFO] 
-[375/528] 처리 중...
-2025-10-08 23:23:35,615 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-21327
-2025-10-08 23:23:38,064 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-e592dc312e94.json (2100자)
-2025-10-08 23:23:39,067 [INFO] 
-[376/528] 처리 중...
-2025-10-08 23:23:39,068 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-21328
-2025-10-08 23:23:42,044 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-beee76eab703.json (2104자)
-2025-10-08 23:23:43,050 [INFO] 
-[377/528] 처리 중...
-2025-10-08 23:23:43,050 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-21329
-2025-10-08 23:23:46,173 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-f40d30a99820.json (2074자)
-2025-10-08 23:23:47,178 [INFO] 
-[378/528] 처리 중...
-2025-10-08 23:23:47,180 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-21330
-2025-10-08 23:23:49,746 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-64d2042a4700.json (2111자)
-2025-10-08 23:23:50,751 [INFO] 
-[379/528] 처리 중...
-2025-10-08 23:23:50,752 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-21331
-2025-10-08 23:23:52,995 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-911c0ea66b1d.json (2107자)
-2025-10-08 23:23:54,001 [INFO] 
-[380/528] 처리 중...
-2025-10-08 23:23:54,001 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-21332
-2025-10-08 23:23:56,439 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-f078b4a10f95.json (2109자)
-2025-10-08 23:23:57,444 [INFO] 
-[381/528] 처리 중...
-2025-10-08 23:23:57,446 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-21333
-2025-10-08 23:24:00,104 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-46890d3ba984.json (2109자)
-2025-10-08 23:24:01,109 [INFO] 
-[382/528] 처리 중...
-2025-10-08 23:24:01,110 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-21334
-2025-10-08 23:24:03,664 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-5e354f39bc5a.json (2088자)
-2025-10-08 23:24:04,669 [INFO] 
-[383/528] 처리 중...
-2025-10-08 23:24:04,670 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-21335
-2025-10-08 23:24:07,298 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-a817a9c1ebeb.json (2104자)
-2025-10-08 23:24:08,304 [INFO] 
-[384/528] 처리 중...
-2025-10-08 23:24:08,305 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-21336
-2025-10-08 23:24:11,362 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-5a9139783fb2.json (2108자)
-2025-10-08 23:24:12,364 [INFO] 
-[385/528] 처리 중...
-2025-10-08 23:24:12,366 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-21337
-2025-10-08 23:24:14,715 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-096bcb1b5419.json (2117자)
-2025-10-08 23:24:15,720 [INFO] 
-[386/528] 처리 중...
-2025-10-08 23:24:15,722 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-21338
-2025-10-08 23:24:18,866 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-402369d48741.json (2109자)
-2025-10-08 23:24:19,871 [INFO] 
-[387/528] 처리 중...
-2025-10-08 23:24:19,872 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-21339
-2025-10-08 23:24:22,436 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-5bdf93020f8c.json (2120자)
-2025-10-08 23:24:23,441 [INFO] 
-[388/528] 처리 중...
-2025-10-08 23:24:23,442 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-21340
-2025-10-08 23:24:26,605 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-7ed6464911bd.json (2047자)
-2025-10-08 23:24:27,611 [INFO] 
-[389/528] 처리 중...
-2025-10-08 23:24:27,611 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-21341
-2025-10-08 23:24:30,406 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-3fb01d3f4bb9.json (2076자)
-2025-10-08 23:24:31,412 [INFO] 
-[390/528] 처리 중...
-2025-10-08 23:24:31,413 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-21342
-2025-10-08 23:24:33,806 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-242c88893c5a.json (2214자)
-2025-10-08 23:24:34,812 [INFO] 
-[391/528] 처리 중...
-2025-10-08 23:24:34,813 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-21343
-2025-10-08 23:24:37,851 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-0d1e6365f2a0.json (2110자)
-2025-10-08 23:24:38,856 [INFO] 
-[392/528] 처리 중...
-2025-10-08 23:24:38,857 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-21344
-2025-10-08 23:24:41,465 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-6e11ec784872.json (2109자)
-2025-10-08 23:24:42,471 [INFO] 
-[393/528] 처리 중...
-2025-10-08 23:24:42,472 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-21345
-2025-10-08 23:24:44,564 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-b5fc9f2d63cf.json (2102자)
-2025-10-08 23:24:45,569 [INFO] 
-[394/528] 처리 중...
-2025-10-08 23:24:45,570 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-21346
-2025-10-08 23:24:48,672 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-faa5b3b93c61.json (2108자)
-2025-10-08 23:24:49,677 [INFO] 
-[395/528] 처리 중...
-2025-10-08 23:24:49,678 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-21347
-2025-10-08 23:24:52,316 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-0962e2b8192a.json (2021자)
-2025-10-08 23:24:53,322 [INFO] 
-[396/528] 처리 중...
-2025-10-08 23:24:53,322 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-21348
-2025-10-08 23:24:56,753 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-8c1b42ffbd1f.json (2096자)
-2025-10-08 23:24:57,759 [INFO] 
-[397/528] 처리 중...
-2025-10-08 23:24:57,760 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-21349
-2025-10-08 23:25:00,692 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-df848fdc3870.json (2097자)
-2025-10-08 23:25:01,698 [INFO] 
-[398/528] 처리 중...
-2025-10-08 23:25:01,699 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-21350
-2025-10-08 23:25:03,988 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-1da8124a914d.json (2098자)
-2025-10-08 23:25:04,990 [INFO] 
-[399/528] 처리 중...
-2025-10-08 23:25:04,991 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-21351
-2025-10-08 23:25:08,796 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-f6c00e0eeaa4.json (2291자)
-2025-10-08 23:25:09,801 [INFO] 
-[400/528] 처리 중...
-2025-10-08 23:25:09,802 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-21352
-2025-10-08 23:25:12,164 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-84a25d3e79c1.json (2014자)
-2025-10-08 23:25:13,169 [INFO] 
-[401/528] 처리 중...
-2025-10-08 23:25:13,170 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-21353
-2025-10-08 23:25:15,831 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-8d4c15047b53.json (2015자)
-2025-10-08 23:25:16,837 [INFO] 
-[402/528] 처리 중...
-2025-10-08 23:25:16,837 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-21354
-2025-10-08 23:25:19,712 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-cfa018484d16.json (2105자)
-2025-10-08 23:25:20,717 [INFO] 
-[403/528] 처리 중...
-2025-10-08 23:25:20,718 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-21355
-2025-10-08 23:25:23,252 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-5a7a41afa9d9.json (2017자)
-2025-10-08 23:25:24,254 [INFO] 
-[404/528] 처리 중...
-2025-10-08 23:25:24,255 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-21356
-2025-10-08 23:25:26,796 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-db7fba1d8b6a.json (2035자)
-2025-10-08 23:25:27,801 [INFO] 
-[405/528] 처리 중...
-2025-10-08 23:25:27,802 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-21357
-2025-10-08 23:25:30,701 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-756e44c6221e.json (2007자)
-2025-10-08 23:25:31,706 [INFO] 
-[406/528] 처리 중...
-2025-10-08 23:25:31,707 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-21358
-2025-10-08 23:25:34,954 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-09781b71bc93.json (2143자)
-2025-10-08 23:25:35,959 [INFO] 
-[407/528] 처리 중...
-2025-10-08 23:25:35,960 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-21359
-2025-10-08 23:25:38,878 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-f538c024d610.json (2037자)
-2025-10-08 23:25:39,883 [INFO] 
-[408/528] 처리 중...
-2025-10-08 23:25:39,884 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-21360
-2025-10-08 23:25:42,757 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-6268815ddd26.json (2019자)
-2025-10-08 23:25:43,757 [INFO] 
-[409/528] 처리 중...
-2025-10-08 23:25:43,758 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-21361
-2025-10-08 23:25:46,314 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-fb64f373096a.json (2057자)
-2025-10-08 23:25:47,319 [INFO] 
-[410/528] 처리 중...
-2025-10-08 23:25:47,319 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-21362
-2025-10-08 23:25:49,728 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-819687d75aa5.json (2016자)
-2025-10-08 23:25:50,733 [INFO] 
-[411/528] 처리 중...
-2025-10-08 23:25:50,734 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-21364
-2025-10-08 23:25:53,420 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-976d6fdbc743.json (2043자)
-2025-10-08 23:25:54,424 [INFO] 
-[412/528] 처리 중...
-2025-10-08 23:25:54,425 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-21365
-2025-10-08 23:25:57,153 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-8a4cb370733e.json (2024자)
-2025-10-08 23:25:58,159 [INFO] 
-[413/528] 처리 중...
-2025-10-08 23:25:58,159 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-21366
-2025-10-08 23:26:01,406 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-5010493c03f1.json (2074자)
-2025-10-08 23:26:02,411 [INFO] 
-[414/528] 처리 중...
-2025-10-08 23:26:02,412 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-21367
-2025-10-08 23:26:05,089 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-c77a1d83dcf3.json (2071자)
-2025-10-08 23:26:06,094 [INFO] 
-[415/528] 처리 중...
-2025-10-08 23:26:06,095 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-21368
-2025-10-08 23:26:09,211 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-d549cf72d33f.json (2014자)
-2025-10-08 23:26:10,216 [INFO] 
-[416/528] 처리 중...
-2025-10-08 23:26:10,217 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-21369
-2025-10-08 23:26:13,089 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-6fdf8b3ccab6.json (2071자)
-2025-10-08 23:26:14,094 [INFO] 
-[417/528] 처리 중...
-2025-10-08 23:26:14,095 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-21370
-2025-10-08 23:26:16,449 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-2e4a6ca5870a.json (2039자)
-2025-10-08 23:26:17,455 [INFO] 
-[418/528] 처리 중...
-2025-10-08 23:26:17,455 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-21371
-2025-10-08 23:26:20,700 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-32743d6707ef.json (2029자)
-2025-10-08 23:26:21,705 [INFO] 
-[419/528] 처리 중...
-2025-10-08 23:26:21,705 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-21372
-2025-10-08 23:26:24,132 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-cb1e672a3649.json (2022자)
-2025-10-08 23:26:25,133 [INFO] 
-[420/528] 처리 중...
-2025-10-08 23:26:25,134 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-21373
-2025-10-08 23:26:27,858 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-b4723fad5716.json (2058자)
-2025-10-08 23:26:28,863 [INFO] 
-[421/528] 처리 중...
-2025-10-08 23:26:28,863 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-21374
-2025-10-08 23:26:31,789 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-e9e7594b684e.json (2097자)
-2025-10-08 23:26:32,794 [INFO] 
-[422/528] 처리 중...
-2025-10-08 23:26:32,795 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-21375
-2025-10-08 23:26:35,811 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-0ab620c12e9b.json (2031자)
-2025-10-08 23:26:36,816 [INFO] 
-[423/528] 처리 중...
-2025-10-08 23:26:36,817 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-21376
-2025-10-08 23:26:39,839 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-993f7651f195.json (2090자)
-2025-10-08 23:26:40,845 [INFO] 
-[424/528] 처리 중...
-2025-10-08 23:26:40,846 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-21377
-2025-10-08 23:26:43,711 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-9eb08e8ee7ca.json (2036자)
-2025-10-08 23:26:44,716 [INFO] 
-[425/528] 처리 중...
-2025-10-08 23:26:44,717 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-21378
-2025-10-08 23:26:47,395 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-b34a1f9ec2f3.json (2061자)
-2025-10-08 23:26:48,400 [INFO] 
-[426/528] 처리 중...
-2025-10-08 23:26:48,401 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-21379
-2025-10-08 23:26:50,856 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-d755f583b870.json (2037자)
-2025-10-08 23:26:51,861 [INFO] 
-[427/528] 처리 중...
-2025-10-08 23:26:51,862 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-21380
-2025-10-08 23:26:54,346 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-9d7575c98d83.json (2016자)
-2025-10-08 23:26:55,350 [INFO] 
-[428/528] 처리 중...
-2025-10-08 23:26:55,350 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-21381
-2025-10-08 23:26:57,942 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-e0b0b9e47db5.json (2034자)
-2025-10-08 23:26:58,948 [INFO] 
-[429/528] 처리 중...
-2025-10-08 23:26:58,948 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-21382
-2025-10-08 23:27:01,825 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-eb42a8984db9.json (2088자)
-2025-10-08 23:27:02,832 [INFO] 
-[430/528] 처리 중...
-2025-10-08 23:27:02,832 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-21383
-2025-10-08 23:27:05,420 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-0dc15f5cccb7.json (2056자)
-2025-10-08 23:27:06,426 [INFO] 
-[431/528] 처리 중...
-2025-10-08 23:27:06,426 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-21384
-2025-10-08 23:27:09,253 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-3374d0a46404.json (2040자)
-2025-10-08 23:27:10,258 [INFO] 
-[432/528] 처리 중...
-2025-10-08 23:27:10,259 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-21385
-2025-10-08 23:27:12,542 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-0ba1015179c1.json (2018자)
-2025-10-08 23:27:13,547 [INFO] 
-[433/528] 처리 중...
-2025-10-08 23:27:13,548 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-21387
-2025-10-08 23:27:16,403 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-54e1a0585c7b.json (2111자)
-2025-10-08 23:27:17,408 [INFO] 
-[434/528] 처리 중...
-2025-10-08 23:27:17,409 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-21388
-2025-10-08 23:27:20,174 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-e9404fd26816.json (2041자)
-2025-10-08 23:27:21,177 [INFO] 
-[435/528] 처리 중...
-2025-10-08 23:27:21,177 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-21389
-2025-10-08 23:27:24,090 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-20989f36682b.json (2059자)
-2025-10-08 23:27:25,095 [INFO] 
-[436/528] 처리 중...
-2025-10-08 23:27:25,096 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-21390
-2025-10-08 23:27:27,915 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-161abc0b3a3f.json (2065자)
-2025-10-08 23:27:28,921 [INFO] 
-[437/528] 처리 중...
-2025-10-08 23:27:28,922 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-21391
-2025-10-08 23:27:31,180 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-6e1f3b52fff8.json (2061자)
-2025-10-08 23:27:32,185 [INFO] 
-[438/528] 처리 중...
-2025-10-08 23:27:32,186 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-21392
-2025-10-08 23:27:34,531 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-9383e1ee31e4.json (2066자)
-2025-10-08 23:27:35,536 [INFO] 
-[439/528] 처리 중...
-2025-10-08 23:27:35,537 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-21393
-2025-10-08 23:27:37,982 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-931b60b33236.json (2053자)
-2025-10-08 23:27:38,983 [INFO] 
-[440/528] 처리 중...
-2025-10-08 23:27:38,984 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-21394
-2025-10-08 23:27:41,497 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-905f61750d61.json (2268자)
-2025-10-08 23:27:42,499 [INFO] 
-[441/528] 처리 중...
-2025-10-08 23:27:42,500 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-21395
-2025-10-08 23:27:44,900 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-707612324b35.json (2026자)
-2025-10-08 23:27:45,905 [INFO] 
-[442/528] 처리 중...
-2025-10-08 23:27:45,906 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-21396
-2025-10-08 23:27:49,093 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-3ef70bdcbe76.json (2104자)
-2025-10-08 23:27:50,098 [INFO] 
-[443/528] 처리 중...
-2025-10-08 23:27:50,099 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-21397
-2025-10-08 23:27:52,892 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-e9dc92e0054d.json (2109자)
-2025-10-08 23:27:53,898 [INFO] 
-[444/528] 처리 중...
-2025-10-08 23:27:53,898 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-21398
-2025-10-08 23:27:56,553 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-64a4c813738c.json (2065자)
-2025-10-08 23:27:57,558 [INFO] 
-[445/528] 처리 중...
-2025-10-08 23:27:57,559 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-21739
-2025-10-08 23:28:00,599 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-af574714b666.json (1880자)
-2025-10-08 23:28:01,600 [INFO] 
-[446/528] 처리 중...
-2025-10-08 23:28:01,601 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-2246
-2025-10-08 23:28:04,099 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-33db6e9865cd.json (2291자)
-2025-10-08 23:28:05,100 [INFO] 
-[447/528] 처리 중...
-2025-10-08 23:28:05,101 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-22812
-2025-10-08 23:28:08,306 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-14a6030964d2.json (1990자)
-2025-10-08 23:28:09,311 [INFO] 
-[448/528] 처리 중...
-2025-10-08 23:28:09,312 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-24429
-2025-10-08 23:28:12,062 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-700fa3419031.json (2151자)
-2025-10-08 23:28:13,067 [INFO] 
-[449/528] 처리 중...
-2025-10-08 23:28:13,068 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-24430
-2025-10-08 23:28:15,622 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-b68f895c5338.json (1889자)
-2025-10-08 23:28:16,629 [INFO] 
-[450/528] 처리 중...
-2025-10-08 23:28:16,641 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-24431
-2025-10-08 23:28:19,029 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-ba42feeeb06c.json (1915자)
-2025-10-08 23:28:20,033 [INFO] 
-[451/528] 처리 중...
-2025-10-08 23:28:20,034 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-24432
-2025-10-08 23:28:22,868 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-2743fb881401.json (2021자)
-2025-10-08 23:28:23,873 [INFO] 
-[452/528] 처리 중...
-2025-10-08 23:28:23,873 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-24433
-2025-10-08 23:28:26,789 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-f07c3a72b251.json (2013자)
-2025-10-08 23:28:27,792 [INFO] 
-[453/528] 처리 중...
-2025-10-08 23:28:27,793 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-24434
-2025-10-08 23:28:31,570 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-e8d93b4336ab.json (2024자)
-2025-10-08 23:28:32,575 [INFO] 
-[454/528] 처리 중...
-2025-10-08 23:28:32,576 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-24435
-2025-10-08 23:28:34,944 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-2c648250f705.json (2018자)
-2025-10-08 23:28:35,950 [INFO] 
-[455/528] 처리 중...
-2025-10-08 23:28:35,951 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-24436
-2025-10-08 23:28:38,140 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-55e42a11427e.json (1926자)
-2025-10-08 23:28:39,144 [INFO] 
-[456/528] 처리 중...
-2025-10-08 23:28:39,145 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-24516
-2025-10-08 23:28:41,809 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-9055f45617d3.json (2345자)
-2025-10-08 23:28:42,815 [INFO] 
-[457/528] 처리 중...
-2025-10-08 23:28:42,816 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-24517
-2025-10-08 23:28:45,310 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-6c0e9b2d37f3.json (2312자)
-2025-10-08 23:28:46,315 [INFO] 
-[458/528] 처리 중...
-2025-10-08 23:28:46,316 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-25761
-2025-10-08 23:28:49,083 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-84ef91edd3e7.json (2180자)
-2025-10-08 23:28:50,088 [INFO] 
-[459/528] 처리 중...
-2025-10-08 23:28:50,089 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-25762
-2025-10-08 23:28:52,541 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-58d40fa6f521.json (2149자)
-2025-10-08 23:28:53,544 [INFO] 
-[460/528] 처리 중...
-2025-10-08 23:28:53,544 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-25763
-2025-10-08 23:28:55,850 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-6ae1b1309fbd.json (2125자)
-2025-10-08 23:28:56,855 [INFO] 
-[461/528] 처리 중...
-2025-10-08 23:28:56,855 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-25764
-2025-10-08 23:28:59,461 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-8dff24556597.json (2193자)
-2025-10-08 23:29:00,466 [INFO] 
-[462/528] 처리 중...
-2025-10-08 23:29:00,467 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-25765
-2025-10-08 23:29:03,025 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-c3580ff51e54.json (2174자)
-2025-10-08 23:29:04,031 [INFO] 
-[463/528] 처리 중...
-2025-10-08 23:29:04,031 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-25766
-2025-10-08 23:29:06,545 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-607b7044a033.json (2028자)
-2025-10-08 23:29:07,548 [INFO] 
-[464/528] 처리 중...
-2025-10-08 23:29:07,548 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-25767
-2025-10-08 23:29:10,036 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-850f403d5776.json (2019자)
-2025-10-08 23:29:11,041 [INFO] 
-[465/528] 처리 중...
-2025-10-08 23:29:11,042 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-25768
-2025-10-08 23:29:14,007 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-b752975325b1.json (2013자)
-2025-10-08 23:29:15,012 [INFO] 
-[466/528] 처리 중...
-2025-10-08 23:29:15,013 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-26116
-2025-10-08 23:29:17,674 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-f0b7824a9188.json (2744자)
-2025-10-08 23:29:18,680 [INFO] 
-[467/528] 처리 중...
-2025-10-08 23:29:18,681 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-26117
-2025-10-08 23:29:21,536 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-58ab87572095.json (2742자)
-2025-10-08 23:29:22,542 [INFO] 
-[468/528] 처리 중...
-2025-10-08 23:29:22,542 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-26118
-2025-10-08 23:29:25,003 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-28775f3e780f.json (2757자)
-2025-10-08 23:29:26,008 [INFO] 
-[469/528] 처리 중...
-2025-10-08 23:29:26,009 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-26219
-2025-10-08 23:29:28,843 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-e82dc85bb8fa.json (2356자)
-2025-10-08 23:29:29,848 [INFO] 
-[470/528] 처리 중...
-2025-10-08 23:29:29,849 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-2668
-2025-10-08 23:29:32,098 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-eb25a1bea1e2.json (2397자)
-2025-10-08 23:29:33,103 [INFO] 
-[471/528] 처리 중...
-2025-10-08 23:29:33,104 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-2669
-2025-10-08 23:29:35,620 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-545d4acf40da.json (2398자)
-2025-10-08 23:29:36,626 [INFO] 
-[472/528] 처리 중...
-2025-10-08 23:29:36,626 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-2670
-2025-10-08 23:29:39,677 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-54e53689b8ef.json (2321자)
-2025-10-08 23:29:40,683 [INFO] 
-[473/528] 처리 중...
-2025-10-08 23:29:40,683 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-2671
-2025-10-08 23:29:44,079 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-798dcd5575d0.json (2418자)
-2025-10-08 23:29:45,085 [INFO] 
-[474/528] 처리 중...
-2025-10-08 23:29:45,086 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-2672
-2025-10-08 23:29:47,343 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-0206b0c2ad8f.json (2359자)
-2025-10-08 23:29:48,348 [INFO] 
-[475/528] 처리 중...
-2025-10-08 23:29:48,348 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-27320
-2025-10-08 23:29:51,824 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-f03c65052ce4.json (2538자)
-2025-10-08 23:29:52,829 [INFO] 
-[476/528] 처리 중...
-2025-10-08 23:29:52,830 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-27530
-2025-10-08 23:29:55,450 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-18e2463903a8.json (2353자)
-2025-10-08 23:29:56,455 [INFO] 
-[477/528] 처리 중...
-2025-10-08 23:29:56,456 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-28486
-2025-10-08 23:29:58,949 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-3e8f56e8e1e7.json (2112자)
-2025-10-08 23:29:59,954 [INFO] 
-[478/528] 처리 중...
-2025-10-08 23:29:59,955 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-28487
-2025-10-08 23:30:02,793 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-2cbf7490ae2e.json (2117자)
-2025-10-08 23:30:03,799 [INFO] 
-[479/528] 처리 중...
-2025-10-08 23:30:03,799 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-2886
-2025-10-08 23:30:06,531 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-517b283d3748.json (2076자)
-2025-10-08 23:30:07,536 [INFO] 
-[480/528] 처리 중...
-2025-10-08 23:30:07,537 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-29407
-2025-10-08 23:30:09,931 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-0ffc044102a0.json (2572자)
-2025-10-08 23:30:10,936 [INFO] 
-[481/528] 처리 중...
-2025-10-08 23:30:10,937 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-29408
-2025-10-08 23:30:13,736 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-57750392f1e0.json (2677자)
-2025-10-08 23:30:14,741 [INFO] 
-[482/528] 처리 중...
-2025-10-08 23:30:14,742 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-2978
-2025-10-08 23:30:17,629 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-671107d8a566.json (2517자)
-2025-10-08 23:30:18,635 [INFO] 
-[483/528] 처리 중...
-2025-10-08 23:30:18,636 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-2979
-2025-10-08 23:30:21,380 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-6bc8dd6f3d54.json (2550자)
-2025-10-08 23:30:22,385 [INFO] 
-[484/528] 처리 중...
-2025-10-08 23:30:22,386 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-2995
-2025-10-08 23:30:25,119 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-b1f6337b1716.json (1947자)
-2025-10-08 23:30:26,125 [INFO] 
-[485/528] 처리 중...
-2025-10-08 23:30:26,126 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-30967
-2025-10-08 23:30:28,404 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-8c919b4831cc.json (2037자)
-2025-10-08 23:30:29,407 [INFO] 
-[486/528] 처리 중...
-2025-10-08 23:30:29,408 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-30969
-2025-10-08 23:30:32,103 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-23b5261a13e4.json (1943자)
-2025-10-08 23:30:33,109 [INFO] 
-[487/528] 처리 중...
-2025-10-08 23:30:33,109 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-31084
-2025-10-08 23:30:35,930 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-b046ac602058.json (3061자)
-2025-10-08 23:30:36,935 [INFO] 
-[488/528] 처리 중...
-2025-10-08 23:30:36,936 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-31416
-2025-10-08 23:30:40,101 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-465cc92a2994.json (2071자)
-2025-10-08 23:30:41,102 [INFO] 
-[489/528] 처리 중...
-2025-10-08 23:30:41,102 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-31417
-2025-10-08 23:30:44,034 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-5fcb2f2237d4.json (2546자)
-2025-10-08 23:30:45,039 [INFO] 
-[490/528] 처리 중...
-2025-10-08 23:30:45,040 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-31418
-2025-10-08 23:30:47,677 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-5ac2442355fe.json (2251자)
-2025-10-08 23:30:48,682 [INFO] 
-[491/528] 처리 중...
-2025-10-08 23:30:48,683 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-31419
-2025-10-08 23:30:51,537 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-e515a804b0af.json (2115자)
-2025-10-08 23:30:52,543 [INFO] 
-[492/528] 처리 중...
-2025-10-08 23:30:52,543 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-31422
-2025-10-08 23:30:54,995 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-9d2f55f3db9b.json (2486자)
-2025-10-08 23:30:56,000 [INFO] 
-[493/528] 처리 중...
-2025-10-08 23:30:56,001 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-31425
-2025-10-08 23:30:58,374 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-b8004cdc2828.json (2276자)
-2025-10-08 23:30:59,379 [INFO] 
-[494/528] 처리 중...
-2025-10-08 23:30:59,380 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-31429
-2025-10-08 23:31:01,962 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-f28e93d93674.json (2467자)
-2025-10-08 23:31:02,964 [INFO] 
-[495/528] 처리 중...
-2025-10-08 23:31:02,965 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-32359
-2025-10-08 23:31:06,005 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-3b7933700d39.json (2134자)
-2025-10-08 23:31:07,010 [INFO] 
-[496/528] 처리 중...
-2025-10-08 23:31:07,011 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-3255
-2025-10-08 23:31:09,809 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-7fa4f888fcea.json (2401자)
-2025-10-08 23:31:10,814 [INFO] 
-[497/528] 처리 중...
-2025-10-08 23:31:10,815 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-32570
-2025-10-08 23:31:13,369 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-9f539ef90f5c.json (2355자)
-2025-10-08 23:31:14,374 [INFO] 
-[498/528] 처리 중...
-2025-10-08 23:31:14,375 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-3301
-2025-10-08 23:31:17,240 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-9c864f34cad0.json (2289자)
-2025-10-08 23:31:18,246 [INFO] 
-[499/528] 처리 중...
-2025-10-08 23:31:18,246 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-33558
-2025-10-08 23:31:21,120 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-32c10fafc3f9.json (2048자)
-2025-10-08 23:31:22,125 [INFO] 
-[500/528] 처리 중...
-2025-10-08 23:31:22,126 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-3375
-2025-10-08 23:31:25,097 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-b37ea90db21f.json (2010자)
-2025-10-08 23:31:26,102 [INFO] 
-[501/528] 처리 중...
-2025-10-08 23:31:26,103 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-35788
-2025-10-08 23:31:29,189 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-8fa92ce26c35.json (2834자)
-2025-10-08 23:31:30,190 [INFO] 
-[502/528] 처리 중...
-2025-10-08 23:31:30,190 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-36417
-2025-10-08 23:31:32,480 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-9c0d72c0d395.json (1850자)
-2025-10-08 23:31:33,485 [INFO] 
-[503/528] 처리 중...
-2025-10-08 23:31:33,485 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-37913
-2025-10-08 23:31:36,167 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-792875faa289.json (3157자)
-2025-10-08 23:31:37,172 [INFO] 
-[504/528] 처리 중...
-2025-10-08 23:31:37,173 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-38845
-2025-10-08 23:31:39,534 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-e131f580d247.json (1981자)
-2025-10-08 23:31:40,539 [INFO] 
-[505/528] 처리 중...
-2025-10-08 23:31:40,540 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-38846
-2025-10-08 23:31:43,294 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-e969fb4252f2.json (1965자)
-2025-10-08 23:31:44,300 [INFO] 
-[506/528] 처리 중...
-2025-10-08 23:31:44,301 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-38847
-2025-10-08 23:31:47,343 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-5a68e5c84b56.json (1968자)
-2025-10-08 23:31:48,348 [INFO] 
-[507/528] 처리 중...
-2025-10-08 23:31:48,349 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-38848
-2025-10-08 23:31:50,718 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-60bcc5f6df99.json (1937자)
-2025-10-08 23:31:51,724 [INFO] 
-[508/528] 처리 중...
-2025-10-08 23:31:51,724 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-38849
-2025-10-08 23:31:54,654 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-cf6c47fea730.json (1963자)
-2025-10-08 23:31:55,659 [INFO] 
-[509/528] 처리 중...
-2025-10-08 23:31:55,660 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-39250
-2025-10-08 23:31:58,073 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-4c016350db6e.json (2222자)
-2025-10-08 23:31:59,078 [INFO] 
-[510/528] 처리 중...
-2025-10-08 23:31:59,079 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-39318
-2025-10-08 23:32:01,597 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-f7dbcb5185f2.json (2417자)
-2025-10-08 23:32:02,602 [INFO] 
-[511/528] 처리 중...
-2025-10-08 23:32:02,603 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-39319
-2025-10-08 23:32:05,030 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-31e43c050dba.json (2435자)
-2025-10-08 23:32:06,036 [INFO] 
-[512/528] 처리 중...
-2025-10-08 23:32:06,037 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-39320
-2025-10-08 23:32:08,952 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-592ee45852d1.json (2390자)
-2025-10-08 23:32:09,957 [INFO] 
-[513/528] 처리 중...
-2025-10-08 23:32:09,958 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-39321
-2025-10-08 23:32:12,505 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-abc13ce7ba51.json (2172자)
-2025-10-08 23:32:13,510 [INFO] 
-[514/528] 처리 중...
-2025-10-08 23:32:13,510 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-39322
-2025-10-08 23:32:16,476 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-523ab395666e.json (2331자)
-2025-10-08 23:32:17,480 [INFO] 
-[515/528] 처리 중...
-2025-10-08 23:32:17,481 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-39427
-2025-10-08 23:32:20,136 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-dbfc3af7d32d.json (1894자)
-2025-10-08 23:32:21,142 [INFO] 
-[516/528] 처리 중...
-2025-10-08 23:32:21,142 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-39936
-2025-10-08 23:32:23,856 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-0b382b2ff383.json (2006자)
-2025-10-08 23:32:24,861 [INFO] 
-[517/528] 처리 중...
-2025-10-08 23:32:24,862 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-40101
-2025-10-08 23:32:27,155 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-d16642ff8f6e.json (2054자)
-2025-10-08 23:32:28,160 [INFO] 
-[518/528] 처리 중...
-2025-10-08 23:32:28,160 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-40401
-2025-10-08 23:32:30,843 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-d673e1480434.json (2222자)
-2025-10-08 23:32:31,846 [INFO] 
-[519/528] 처리 중...
-2025-10-08 23:32:31,847 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-40404
-2025-10-08 23:32:34,599 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-ce8589f079ae.json (2039자)
-2025-10-08 23:32:35,603 [INFO] 
-[520/528] 처리 중...
-2025-10-08 23:32:35,603 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-40405
-2025-10-08 23:32:38,021 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-15fc8e832cf0.json (2077자)
-2025-10-08 23:32:39,026 [INFO] 
-[521/528] 처리 중...
-2025-10-08 23:32:39,027 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-40408
-2025-10-08 23:32:41,392 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-324d45f855a5.json (2972자)
-2025-10-08 23:32:42,397 [INFO] 
-[522/528] 처리 중...
-2025-10-08 23:32:42,398 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-40413
-2025-10-08 23:32:45,929 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-8e21584ee6af.json (3489자)
-2025-10-08 23:32:46,935 [INFO] 
-[523/528] 처리 중...
-2025-10-08 23:32:46,936 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-40416
-2025-10-08 23:32:49,974 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-3d0e83caff95.json (3249자)
-2025-10-08 23:32:50,980 [INFO] 
-[524/528] 처리 중...
-2025-10-08 23:32:50,981 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-40421
-2025-10-08 23:32:53,683 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-833382de3170.json (2612자)
-2025-10-08 23:32:54,688 [INFO] 
-[525/528] 처리 중...
-2025-10-08 23:32:54,689 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-40423
-2025-10-08 23:32:58,143 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-cedf9a5914e0.json (3254자)
-2025-10-08 23:32:59,149 [INFO] 
-[526/528] 처리 중...
-2025-10-08 23:32:59,151 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-40425
-2025-10-08 23:33:01,715 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-5edf2d0fcd74.json (2217자)
-2025-10-08 23:33:02,720 [INFO] 
-[527/528] 처리 중...
-2025-10-08 23:33:02,721 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-40444
-2025-10-08 23:33:05,451 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-926c21a0628a.json (2031자)
-2025-10-08 23:33:06,456 [INFO] 
-[528/528] 처리 중...
-2025-10-08 23:33:06,457 [INFO] 본문 추출 중: https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2023-40445
-2025-10-08 23:33:09,051 [INFO] ✅ 저장 완료: data/rss_parsed/nvd-nist-gov-05a9b0f66b90.json (2083자)
-2025-10-08 23:33:09,052 [INFO] 
-피드 처리 완료: https://nvd.nist.gov/feeds/xml/cve/misc/nvd-rss-analyzed.xml
-2025-10-08 23:33:09,052 [INFO]   ✅ 성공: 528
-2025-10-08 23:33:09,052 [INFO]   ⏭️  스킵: 0
-2025-10-08 23:33:09,052 [INFO]   ❌ 실패: 0
-2025-10-08 23:33:09,052 [INFO] 
-============================================================
-2025-10-08 23:33:09,052 [INFO] 처리 시작: https://www.zerodayinitiative.com/rss/alladvisories/
-2025-10-08 23:33:09,052 [INFO] ============================================================
-2025-10-08 23:33:09,052 [INFO] 피드 가져오는 중: https://www.zerodayinitiative.com/rss/alladvisories/ (시도 1/3)
-2025-10-08 23:33:09,602 [WARNING] 피드 파싱 경고: <unknown>:3:0: syntax error
-2025-10-08 23:33:09,602 [INFO] 발견된 엔트리 수: 0
-2025-10-08 23:33:09,602 [WARNING] 엔트리가 없습니다: https://www.zerodayinitiative.com/rss/alladvisories/
-2025-10-08 23:33:09,602 [INFO] 
-============================================================
-2025-10-08 23:33:09,603 [INFO] 처리 시작: https://blog.cloudflare.com/rss/
-2025-10-08 23:33:09,603 [INFO] ============================================================
-2025-10-08 23:33:09,603 [INFO] 피드 가져오는 중: https://blog.cloudflare.com/rss/ (시도 1/3)
-2025-10-08 23:33:10,186 [INFO] 발견된 엔트리 수: 20
-2025-10-08 23:33:10,186 [INFO] 
-[1/20] 처리 중...
-2025-10-08 23:33:10,186 [INFO] 본문 추출 중: https://blog.cloudflare.com/how-we-found-a-bug-in-gos-arm64-compiler/
-2025-10-08 23:33:11,957 [INFO] ✅ 저장 완료: data/rss_parsed/blog-cloudflare-com-454e75a35349.json (48196자)
-2025-10-08 23:33:12,962 [INFO] 
-[2/20] 처리 중...
-2025-10-08 23:33:12,963 [INFO] 본문 추출 중: https://blog.cloudflare.com/payload-cms-workers/
-2025-10-08 23:33:14,044 [INFO] ✅ 저장 완료: data/rss_parsed/blog-cloudflare-com-e7766dd26579.json (42959자)
-2025-10-08 23:33:15,046 [INFO] 
-[3/20] 처리 중...
-2025-10-08 23:33:15,048 [INFO] 본문 추출 중: https://blog.cloudflare.com/nationwide-internet-shutdown-in-afghanistan/
-2025-10-08 23:33:16,378 [INFO] ✅ 저장 완료: data/rss_parsed/blog-cloudflare-com-e5e92f85ca2f.json (51032자)
-2025-10-08 23:33:17,380 [INFO] 
-[4/20] 처리 중...
-2025-10-08 23:33:17,380 [INFO] 본문 추출 중: https://blog.cloudflare.com/birthday-week-2025-wrap-up/
-2025-10-08 23:33:18,589 [INFO] ✅ 저장 완료: data/rss_parsed/blog-cloudflare-com-97c610a57742.json (40901자)
-2025-10-08 23:33:19,594 [INFO] 
-[5/20] 처리 중...
-2025-10-08 23:33:19,595 [INFO] 본문 추출 중: https://blog.cloudflare.com/20-percent-internet-upgrade/
-2025-10-08 23:33:20,852 [INFO] ✅ 저장 완료: data/rss_parsed/blog-cloudflare-com-458177cd4644.json (44423자)
-2025-10-08 23:33:21,857 [INFO] 
-[6/20] 처리 중...
-2025-10-08 23:33:21,858 [INFO] 본문 추출 중: https://blog.cloudflare.com/introducing-observatory-and-smart-shield/
-2025-10-08 23:33:23,146 [INFO] ✅ 저장 완료: data/rss_parsed/blog-cloudflare-com-ec0b4ff1c9fc.json (44705자)
-2025-10-08 23:33:24,146 [INFO] 
-[7/20] 처리 중...
-2025-10-08 23:33:24,147 [INFO] 본문 추출 중: https://blog.cloudflare.com/monitoring-as-sets-and-why-they-matter/
-2025-10-08 23:33:25,144 [INFO] ✅ 저장 완료: data/rss_parsed/blog-cloudflare-com-11d9099d882e.json (38696자)
-2025-10-08 23:33:26,149 [INFO] 
-[8/20] 처리 중...
-2025-10-08 23:33:26,150 [INFO] 본문 추출 중: https://blog.cloudflare.com/an-ai-index-for-all-our-customers/
-2025-10-08 23:33:27,297 [INFO] ✅ 저장 완료: data/rss_parsed/blog-cloudflare-com-4f91443324fc.json (45757자)
-2025-10-08 23:33:28,303 [INFO] 
-[9/20] 처리 중...
-2025-10-08 23:33:28,303 [INFO] 본문 추출 중: https://blog.cloudflare.com/new-regional-internet-traffic-and-certificate-transparency-insights-on-radar/
-2025-10-08 23:33:29,524 [INFO] ✅ 저장 완료: data/rss_parsed/blog-cloudflare-com-2ce3b8651d48.json (53148자)
-2025-10-08 23:33:30,530 [INFO] 
-[10/20] 처리 중...
-2025-10-08 23:33:30,531 [INFO] 본문 추출 중: https://blog.cloudflare.com/code-mode/
-2025-10-08 23:33:31,697 [INFO] ✅ 저장 완료: data/rss_parsed/blog-cloudflare-com-ba9a9e880a06.json (46115자)
-2025-10-08 23:33:32,702 [INFO] 
-[11/20] 처리 중...
-2025-10-08 23:33:32,703 [INFO] 본문 추출 중: https://blog.cloudflare.com/eliminating-cold-starts-2-shard-and-conquer/
-2025-10-08 23:33:34,182 [INFO] ✅ 저장 완료: data/rss_parsed/blog-cloudflare-com-b31e392479d5.json (47505자)
-2025-10-08 23:33:35,187 [INFO] 
-[12/20] 처리 중...
-2025-10-08 23:33:35,188 [INFO] 본문 추출 중: https://blog.cloudflare.com/network-performance-update-birthday-week-2025/
-2025-10-08 23:33:36,458 [INFO] ✅ 저장 완료: data/rss_parsed/blog-cloudflare-com-fe2a3b137fb0.json (43004자)
-2025-10-08 23:33:37,461 [INFO] 
-[13/20] 처리 중...
-2025-10-08 23:33:37,462 [INFO] 본문 추출 중: https://blog.cloudflare.com/how-cloudflare-uses-the-worlds-greatest-collection-of-performance-data/
-2025-10-08 23:33:38,655 [INFO] ✅ 저장 완료: data/rss_parsed/blog-cloudflare-com-0c099343ff7f.json (35648자)
-2025-10-08 23:33:39,657 [INFO] 
-[14/20] 처리 중...
-2025-10-08 23:33:39,658 [INFO] 본문 추출 중: https://blog.cloudflare.com/enterprise-grade-features-for-all/
-2025-10-08 23:33:41,008 [INFO] ✅ 저장 완료: data/rss_parsed/blog-cloudflare-com-4ff2dc915516.json (46554자)
-2025-10-08 23:33:42,009 [INFO] 
-[15/20] 처리 중...
-2025-10-08 23:33:42,010 [INFO] 본문 추출 중: https://blog.cloudflare.com/cloudflare-developer-platform-keeps-getting-better-faster-and-more-powerful/
-2025-10-08 23:33:43,299 [INFO] ✅ 저장 완료: data/rss_parsed/blog-cloudflare-com-6f7bfa13b1fe.json (47722자)
-2025-10-08 23:33:44,304 [INFO] 
-[16/20] 처리 중...
-2025-10-08 23:33:44,304 [INFO] 본문 추출 중: https://blog.cloudflare.com/planetscale-postgres-workers/
-2025-10-08 23:33:45,558 [INFO] ✅ 저장 완료: data/rss_parsed/blog-cloudflare-com-ff080eea9682.json (41419자)
-2025-10-08 23:33:46,563 [INFO] 
-[17/20] 처리 중...
-2025-10-08 23:33:46,563 [INFO] 본문 추출 중: https://blog.cloudflare.com/r2-sql-deep-dive/
-2025-10-08 23:33:47,804 [INFO] ✅ 저장 완료: data/rss_parsed/blog-cloudflare-com-06bc4847abfa.json (51111자)
-2025-10-08 23:33:48,809 [INFO] 
-[18/20] 처리 중...
-2025-10-08 23:33:48,810 [INFO] 본문 추출 중: https://blog.cloudflare.com/safe-in-the-sandbox-security-hardening-for-cloudflare-workers/
-2025-10-08 23:33:50,018 [INFO] ✅ 저장 완료: data/rss_parsed/blog-cloudflare-com-8d521df6acea.json (44181자)
-2025-10-08 23:33:51,020 [INFO] 
-[19/20] 처리 중...
-2025-10-08 23:33:51,020 [INFO] 본문 추출 중: https://blog.cloudflare.com/cloudflare-data-platform/
-2025-10-08 23:33:52,536 [INFO] ✅ 저장 완료: data/rss_parsed/blog-cloudflare-com-1cebe0e42bdf.json (43125자)
-2025-10-08 23:33:53,541 [INFO] 
-[20/20] 처리 중...
-2025-10-08 23:33:53,543 [INFO] 본문 추출 중: https://blog.cloudflare.com/sovereign-ai-and-choice/
-2025-10-08 23:33:54,728 [INFO] ✅ 저장 완료: data/rss_parsed/blog-cloudflare-com-f7210901bafd.json (51978자)
-2025-10-08 23:33:54,728 [INFO] 
-피드 처리 완료: https://blog.cloudflare.com/rss/
-2025-10-08 23:33:54,728 [INFO]   ✅ 성공: 20
-2025-10-08 23:33:54,728 [INFO]   ⏭️  스킵: 0
-2025-10-08 23:33:54,728 [INFO]   ❌ 실패: 0
-2025-10-08 23:33:54,730 [INFO] 
+2025-10-12 11:55:07,791 [INFO] 
+
+사용자에 의해 중단되었습니다.
+2025-10-12 11:59:05,925 [INFO] ================================================================================
+2025-10-12 11:59:05,925 [INFO] RSS 수집기 시작
+2025-10-12 11:59:05,925 [INFO] 모드: 1회 실행
+2025-10-12 11:59:05,925 [INFO] 출력 디렉토리: data/rss_parsed
+2025-10-12 11:59:05,925 [INFO] 로그 파일: logs/rss_collector.log
+2025-10-12 11:59:05,925 [INFO] ================================================================================
+
+2025-10-12 11:59:05,925 [INFO] 
 ================================================================================
-2025-10-08 23:33:54,730 [INFO] RSS 수집 완료
-2025-10-08 23:33:54,731 [INFO] 종료 시간: 2025-10-08T14:33:54.731011+00:00
-2025-10-08 23:33:54,731 [INFO] 총 성공: 548
-2025-10-08 23:33:54,731 [INFO] 총 스킵: 0
-2025-10-08 23:33:54,731 [INFO] 총 실패: 0
-2025-10-08 23:33:54,731 [INFO] 누적 수집: 548
-2025-10-08 23:33:54,731 [INFO] ================================================================================
-2025-10-08 23:33:54,731 [INFO] 
+2025-10-12 11:59:05,925 [INFO] RSS 수집 시작
+2025-10-12 11:59:05,925 [INFO] 시작 시간: 2025-10-12T02:59:05.925783+00:00
+2025-10-12 11:59:05,925 [INFO] ================================================================================
+2025-10-12 11:59:05,925 [INFO] 
+============================================================
+2025-10-12 11:59:05,925 [INFO] 처리 시작: https://nvd.nist.gov/feeds/xml/cve/misc/nvd-rss-analyzed.xml
+2025-10-12 11:59:05,925 [INFO] ============================================================
+2025-10-12 11:59:05,925 [INFO] 피드 가져오는 중: https://nvd.nist.gov/feeds/xml/cve/misc/nvd-rss-analyzed.xml (시도 1/3)
+2025-10-12 11:59:07,078 [INFO] 발견된 엔트리 수: 528
+2025-10-12 11:59:07,078 [INFO] 
+[1/528] 처리 중...
+2025-10-12 11:59:08,155 [INFO] 
+[2/528] 처리 중...
+2025-10-12 11:59:09,218 [INFO] 
+[3/528] 처리 중...
+2025-10-12 11:59:10,258 [INFO] 
+[4/528] 처리 중...
+2025-10-12 11:59:11,275 [INFO] 
+[5/528] 처리 중...
+2025-10-12 11:59:12,332 [INFO] 
+[6/528] 처리 중...
+2025-10-12 11:59:13,333 [INFO] 
+[7/528] 처리 중...
+2025-10-12 11:59:14,350 [INFO] 
+[8/528] 처리 중...
+2025-10-12 11:59:15,379 [INFO] 
+[9/528] 처리 중...
+2025-10-12 11:59:16,455 [INFO] 
+[10/528] 처리 중...
+2025-10-12 11:59:17,475 [INFO] 
+[11/528] 처리 중...
+2025-10-12 11:59:18,549 [INFO] 
+[12/528] 처리 중...
+2025-10-12 11:59:19,582 [INFO] 
+[13/528] 처리 중...
+2025-10-12 11:59:20,607 [INFO] 
+[14/528] 처리 중...
+2025-10-12 11:59:21,661 [INFO] 
+[15/528] 처리 중...
+2025-10-12 11:59:22,691 [INFO] 
+[16/528] 처리 중...
+2025-10-12 11:59:23,693 [INFO] 
+[17/528] 처리 중...
+2025-10-12 11:59:24,767 [INFO] 
+[18/528] 처리 중...
+2025-10-12 11:59:25,807 [INFO] 
+[19/528] 처리 중...
+2025-10-12 11:59:26,882 [INFO] 
+[20/528] 처리 중...
+2025-10-12 11:59:27,955 [INFO] 
+[21/528] 처리 중...
+2025-10-12 11:59:28,967 [INFO] 
+[22/528] 처리 중...
+2025-10-12 11:59:29,975 [INFO] 
+[23/528] 처리 중...
+2025-10-12 11:59:31,028 [INFO] 
+[24/528] 처리 중...
+2025-10-12 11:59:32,051 [INFO] 
+[25/528] 처리 중...
+2025-10-12 11:59:33,055 [INFO] 
+[26/528] 처리 중...
+2025-10-12 11:59:34,130 [INFO] 
+[27/528] 처리 중...
+2025-10-12 11:59:35,179 [INFO] 
+[28/528] 처리 중...
+2025-10-12 11:59:36,218 [INFO] 
+[29/528] 처리 중...
+2025-10-12 11:59:37,287 [INFO] 
+[30/528] 처리 중...
+2025-10-12 11:59:38,294 [INFO] 
+[31/528] 처리 중...
+2025-10-12 11:59:39,301 [INFO] 
+[32/528] 처리 중...
+2025-10-12 11:59:40,324 [INFO] 
+[33/528] 처리 중...
+2025-10-12 11:59:41,379 [INFO] 
+[34/528] 처리 중...
+2025-10-12 11:59:42,417 [INFO] 
+[35/528] 처리 중...
+2025-10-12 11:59:43,478 [INFO] 
+[36/528] 처리 중...
+2025-10-12 11:59:44,507 [INFO] 
+[37/528] 처리 중...
+2025-10-12 11:59:45,550 [INFO] 
+[38/528] 처리 중...
+2025-10-12 11:59:46,595 [INFO] 
+[39/528] 처리 중...
+2025-10-12 11:59:47,669 [INFO] 
+[40/528] 처리 중...
+2025-10-12 11:59:48,741 [INFO] 
+[41/528] 처리 중...
+2025-10-12 11:59:49,750 [INFO] 
+[42/528] 처리 중...
+2025-10-12 11:59:50,793 [INFO] 
+[43/528] 처리 중...
+2025-10-12 11:59:51,794 [INFO] 
+[44/528] 처리 중...
+2025-10-12 11:59:52,796 [INFO] 
+[45/528] 처리 중...
+2025-10-12 11:59:53,800 [INFO] 
+[46/528] 처리 중...
+2025-10-12 11:59:54,889 [INFO] 
+[47/528] 처리 중...
+2025-10-12 11:59:55,937 [INFO] 
+[48/528] 처리 중...
+2025-10-12 11:59:57,000 [INFO] 
+[49/528] 처리 중...
+2025-10-12 11:59:58,067 [INFO] 
+[50/528] 처리 중...
+2025-10-12 11:59:59,092 [INFO] 
+[51/528] 처리 중...
+2025-10-12 12:00:00,100 [INFO] 
+[52/528] 처리 중...
+2025-10-12 12:00:01,169 [INFO] 
+[53/528] 처리 중...
+2025-10-12 12:00:02,227 [INFO] 
+[54/528] 처리 중...
+2025-10-12 12:00:03,288 [INFO] 
+[55/528] 처리 중...
+2025-10-12 12:00:04,364 [INFO] 
+[56/528] 처리 중...
+2025-10-12 12:00:05,408 [INFO] 
+[57/528] 처리 중...
+2025-10-12 12:00:06,448 [INFO] 
+[58/528] 처리 중...
+2025-10-12 12:00:07,522 [INFO] 
+[59/528] 처리 중...
+2025-10-12 12:00:08,594 [INFO] 
+[60/528] 처리 중...
+2025-10-12 12:00:09,669 [INFO] 
+[61/528] 처리 중...
+2025-10-12 12:00:10,726 [INFO] 
+[62/528] 처리 중...
+2025-10-12 12:00:11,733 [INFO] 
+[63/528] 처리 중...
+2025-10-12 12:00:12,794 [INFO] 
+[64/528] 처리 중...
+2025-10-12 12:00:13,866 [INFO] 
+[65/528] 처리 중...
+2025-10-12 12:00:14,942 [INFO] 
+[66/528] 처리 중...
+2025-10-12 12:00:15,956 [INFO] 
+[67/528] 처리 중...
+2025-10-12 12:00:16,961 [INFO] 
+[68/528] 처리 중...
+2025-10-12 12:00:17,966 [INFO] 
+[69/528] 처리 중...
+2025-10-12 12:00:19,039 [INFO] 
+[70/528] 처리 중...
+2025-10-12 12:00:20,114 [INFO] 
+[71/528] 처리 중...
+2025-10-12 12:00:21,168 [INFO] 
+[72/528] 처리 중...
+2025-10-12 12:00:22,223 [INFO] 
+[73/528] 처리 중...
+2025-10-12 12:00:23,294 [INFO] 
+[74/528] 처리 중...
+2025-10-12 12:00:24,333 [INFO] 
+[75/528] 처리 중...
+2025-10-12 12:00:25,400 [INFO] 
+[76/528] 처리 중...
+2025-10-12 12:00:26,445 [INFO] 
+[77/528] 처리 중...
+2025-10-12 12:00:27,475 [INFO] 
+[78/528] 처리 중...
+2025-10-12 12:00:28,503 [INFO] 
+[79/528] 처리 중...
+2025-10-12 12:00:29,579 [INFO] 
+[80/528] 처리 중...
+2025-10-12 12:00:30,654 [INFO] 
+[81/528] 처리 중...
+2025-10-12 12:00:31,719 [INFO] 
+[82/528] 처리 중...
+2025-10-12 12:00:32,733 [INFO] 
+[83/528] 처리 중...
+2025-10-12 12:00:33,758 [INFO] 
+[84/528] 처리 중...
+2025-10-12 12:00:34,833 [INFO] 
+[85/528] 처리 중...
+2025-10-12 12:00:35,854 [INFO] 
+[86/528] 처리 중...
+2025-10-12 12:00:36,919 [INFO] 
+[87/528] 처리 중...
+2025-10-12 12:00:37,993 [INFO] 
+[88/528] 처리 중...
+2025-10-12 12:00:39,068 [INFO] 
+[89/528] 처리 중...
+2025-10-12 12:00:40,144 [INFO] 
+[90/528] 처리 중...
+2025-10-12 12:00:41,187 [INFO] 
+[91/528] 처리 중...
+2025-10-12 12:00:42,253 [INFO] 
+[92/528] 처리 중...
+2025-10-12 12:00:43,270 [INFO] 
+[93/528] 처리 중...
+2025-10-12 12:00:44,294 [INFO] 
+[94/528] 처리 중...
+2025-10-12 12:00:45,314 [INFO] 
+[95/528] 처리 중...
+2025-10-12 12:00:46,332 [INFO] 
+[96/528] 처리 중...
+2025-10-12 12:00:47,407 [INFO] 
+[97/528] 처리 중...
+2025-10-12 12:00:48,470 [INFO] 
+[98/528] 처리 중...
+2025-10-12 12:00:49,474 [INFO] 
+[99/528] 처리 중...
+2025-10-12 12:00:50,524 [INFO] 
+[100/528] 처리 중...
+2025-10-12 12:00:51,535 [INFO] 
+[101/528] 처리 중...
+2025-10-12 12:00:52,587 [INFO] 
+[102/528] 처리 중...
+2025-10-12 12:00:53,613 [INFO] 
+[103/528] 처리 중...
+2025-10-12 12:00:54,617 [INFO] 
+[104/528] 처리 중...
+2025-10-12 12:00:55,669 [INFO] 
+[105/528] 처리 중...
+2025-10-12 12:00:56,738 [INFO] 
+[106/528] 처리 중...
+2025-10-12 12:00:57,797 [INFO] 
+[107/528] 처리 중...
+2025-10-12 12:00:58,847 [INFO] 
+[108/528] 처리 중...
+2025-10-12 12:00:59,888 [INFO] 
+[109/528] 처리 중...
+2025-10-12 12:01:00,963 [INFO] 
+[110/528] 처리 중...
+2025-10-12 12:01:02,039 [INFO] 
+[111/528] 처리 중...
+2025-10-12 12:01:03,100 [INFO] 
+[112/528] 처리 중...
+2025-10-12 12:01:04,125 [INFO] 
+[113/528] 처리 중...
+2025-10-12 12:01:05,168 [INFO] 
+[114/528] 처리 중...
+2025-10-12 12:01:06,222 [INFO] 
+[115/528] 처리 중...
+2025-10-12 12:01:07,242 [INFO] 
+[116/528] 처리 중...
+2025-10-12 12:01:08,258 [INFO] 
+[117/528] 처리 중...
+2025-10-12 12:01:09,294 [INFO] 
+[118/528] 처리 중...
+2025-10-12 12:01:10,300 [INFO] 
+[119/528] 처리 중...
+2025-10-12 12:01:11,372 [INFO] 
+[120/528] 처리 중...
+2025-10-12 12:01:12,404 [INFO] 
+[121/528] 처리 중...
+2025-10-12 12:01:13,406 [INFO] 
+[122/528] 처리 중...
+2025-10-12 12:01:14,425 [INFO] 
+[123/528] 처리 중...
+2025-10-12 12:01:15,433 [INFO] 
+[124/528] 처리 중...
+2025-10-12 12:01:16,507 [INFO] 
+[125/528] 처리 중...
+2025-10-12 12:01:17,542 [INFO] 
+[126/528] 처리 중...
+2025-10-12 12:01:18,616 [INFO] 
+[127/528] 처리 중...
+2025-10-12 12:01:19,667 [INFO] 
+[128/528] 처리 중...
+2025-10-12 12:01:20,738 [INFO] 
+[129/528] 처리 중...
+2025-10-12 12:01:21,783 [INFO] 
+[130/528] 처리 중...
+2025-10-12 12:01:22,792 [INFO] 
+[131/528] 처리 중...
+2025-10-12 12:01:23,857 [INFO] 
+[132/528] 처리 중...
+2025-10-12 12:01:24,908 [INFO] 
+[133/528] 처리 중...
+2025-10-12 12:01:25,947 [INFO] 
+[134/528] 처리 중...
+2025-10-12 12:01:26,984 [INFO] 
+[135/528] 처리 중...
+2025-10-12 12:01:28,033 [INFO] 
+[136/528] 처리 중...
+2025-10-12 12:01:29,090 [INFO] 
+[137/528] 처리 중...
+2025-10-12 12:01:30,112 [INFO] 
+[138/528] 처리 중...
+2025-10-12 12:01:31,147 [INFO] 
+[139/528] 처리 중...
+2025-10-12 12:01:32,219 [INFO] 
+[140/528] 처리 중...
+2025-10-12 12:01:33,233 [INFO] 
+[141/528] 처리 중...
+2025-10-12 12:01:34,267 [INFO] 
+[142/528] 처리 중...
+2025-10-12 12:01:35,316 [INFO] 
+[143/528] 처리 중...
+2025-10-12 12:01:36,367 [INFO] 
+[144/528] 처리 중...
+2025-10-12 12:01:37,400 [INFO] 
+[145/528] 처리 중...
+2025-10-12 12:01:38,438 [INFO] 
+[146/528] 처리 중...
+2025-10-12 12:01:39,508 [INFO] 
+[147/528] 처리 중...
+2025-10-12 12:01:40,544 [INFO] 
+[148/528] 처리 중...
+2025-10-12 12:01:41,550 [INFO] 
+[149/528] 처리 중...
+2025-10-12 12:01:42,613 [INFO] 
+[150/528] 처리 중...
+2025-10-12 12:01:43,689 [INFO] 
+[151/528] 처리 중...
+2025-10-12 12:01:44,733 [INFO] 
+[152/528] 처리 중...
+2025-10-12 12:01:45,808 [INFO] 
+[153/528] 처리 중...
+2025-10-12 12:01:46,840 [INFO] 
+[154/528] 처리 중...
+2025-10-12 12:01:47,867 [INFO] 
+[155/528] 처리 중...
+2025-10-12 12:01:48,882 [INFO] 
+[156/528] 처리 중...
+2025-10-12 12:01:49,942 [INFO] 
+[157/528] 처리 중...
+2025-10-12 12:01:50,994 [INFO] 
+[158/528] 처리 중...
+2025-10-12 12:01:52,033 [INFO] 
+[159/528] 처리 중...
+2025-10-12 12:01:53,044 [INFO] 
+[160/528] 처리 중...
+2025-10-12 12:01:54,050 [INFO] 
+[161/528] 처리 중...
+2025-10-12 12:01:55,100 [INFO] 
+[162/528] 처리 중...
+2025-10-12 12:01:56,108 [INFO] 
+[163/528] 처리 중...
+2025-10-12 12:01:57,162 [INFO] 
+[164/528] 처리 중...
+2025-10-12 12:01:58,179 [INFO] 
+[165/528] 처리 중...
+2025-10-12 12:01:59,221 [INFO] 
+[166/528] 처리 중...
+2025-10-12 12:02:00,282 [INFO] 
+[167/528] 처리 중...
+2025-10-12 12:02:01,321 [INFO] 
+[168/528] 처리 중...
+2025-10-12 12:02:02,371 [INFO] 
+[169/528] 처리 중...
+2025-10-12 12:02:03,425 [INFO] 
+[170/528] 처리 중...
+2025-10-12 12:02:04,433 [INFO] 
+[171/528] 처리 중...
+2025-10-12 12:02:05,507 [INFO] 
+[172/528] 처리 중...
+2025-10-12 12:02:06,583 [INFO] 
+[173/528] 처리 중...
+2025-10-12 12:02:07,642 [INFO] 
+[174/528] 처리 중...
+2025-10-12 12:02:08,708 [INFO] 
+[175/528] 처리 중...
+2025-10-12 12:02:09,720 [INFO] 
+[176/528] 처리 중...
+2025-10-12 12:02:10,750 [INFO] 
+[177/528] 처리 중...
+2025-10-12 12:02:11,816 [INFO] 
+[178/528] 처리 중...
+2025-10-12 12:02:12,892 [INFO] 
+[179/528] 처리 중...
+2025-10-12 12:02:13,966 [INFO] 
+[180/528] 처리 중...
+2025-10-12 12:02:15,024 [INFO] 
+[181/528] 처리 중...
+2025-10-12 12:02:16,033 [INFO] 
+[182/528] 처리 중...
+2025-10-12 12:02:17,046 [INFO] 
+[183/528] 처리 중...
+2025-10-12 12:02:18,090 [INFO] 
+[184/528] 처리 중...
+2025-10-12 12:02:19,133 [INFO] 
+[185/528] 처리 중...
+2025-10-12 12:02:20,134 [INFO] 
+[186/528] 처리 중...
+2025-10-12 12:02:21,210 [INFO] 
+[187/528] 처리 중...
+2025-10-12 12:02:22,285 [INFO] 
+[188/528] 처리 중...
+2025-10-12 12:02:23,325 [INFO] 
+[189/528] 처리 중...
+2025-10-12 12:02:24,327 [INFO] 
+[190/528] 처리 중...
+2025-10-12 12:02:25,331 [INFO] 
+[191/528] 처리 중...
+2025-10-12 12:02:26,400 [INFO] 
+[192/528] 처리 중...
+2025-10-12 12:02:27,470 [INFO] 
+[193/528] 처리 중...
+2025-10-12 12:02:28,508 [INFO] 
+[194/528] 처리 중...
+2025-10-12 12:02:29,522 [INFO] 
+[195/528] 처리 중...
+2025-10-12 12:02:30,535 [INFO] 
+[196/528] 처리 중...
+2025-10-12 12:02:31,607 [INFO] 
+[197/528] 처리 중...
+2025-10-12 12:02:32,650 [INFO] 
+[198/528] 처리 중...
+2025-10-12 12:02:33,725 [INFO] 
+[199/528] 처리 중...
+2025-10-12 12:02:34,733 [INFO] 
+[200/528] 처리 중...
+2025-10-12 12:02:35,789 [INFO] 
+[201/528] 처리 중...
+2025-10-12 12:02:36,817 [INFO] 
+[202/528] 처리 중...
+2025-10-12 12:02:37,893 [INFO] 
+[203/528] 처리 중...
+2025-10-12 12:02:38,960 [INFO] 
+[204/528] 처리 중...
+2025-10-12 12:02:40,000 [INFO] 
+[205/528] 처리 중...
+2025-10-12 12:02:41,044 [INFO] 
+[206/528] 처리 중...
+2025-10-12 12:02:42,092 [INFO] 
+[207/528] 처리 중...
+2025-10-12 12:02:43,111 [INFO] 
+[208/528] 처리 중...
+2025-10-12 12:02:44,169 [INFO] 
+[209/528] 처리 중...
+2025-10-12 12:02:45,232 [INFO] 
+[210/528] 처리 중...
+2025-10-12 12:02:46,306 [INFO] 
+[211/528] 처리 중...
+2025-10-12 12:02:47,337 [INFO] 
+[212/528] 처리 중...
+2025-10-12 12:02:48,406 [INFO] 
+[213/528] 처리 중...
+2025-10-12 12:02:49,480 [INFO] 
+[214/528] 처리 중...
+2025-10-12 12:02:50,508 [INFO] 
+[215/528] 처리 중...
+2025-10-12 12:02:51,544 [INFO] 
+[216/528] 처리 중...
+2025-10-12 12:02:52,583 [INFO] 
+[217/528] 처리 중...
+2025-10-12 12:02:53,602 [INFO] 
+[218/528] 처리 중...
+2025-10-12 12:02:54,677 [INFO] 
+[219/528] 처리 중...
+2025-10-12 12:02:55,753 [INFO] 
+[220/528] 처리 중...
+2025-10-12 12:02:56,800 [INFO] 
+[221/528] 처리 중...
+2025-10-12 12:02:57,872 [INFO] 
+[222/528] 처리 중...
+2025-10-12 12:02:58,928 [INFO] 
+[223/528] 처리 중...
+2025-10-12 12:02:59,946 [INFO] 
+[224/528] 처리 중...
+2025-10-12 12:03:00,958 [INFO] 
+[225/528] 처리 중...
+2025-10-12 12:03:02,034 [INFO] 
+[226/528] 처리 중...
+2025-10-12 12:03:03,071 [INFO] 
+[227/528] 처리 중...
+2025-10-12 12:03:04,072 [INFO] 
+[228/528] 처리 중...
+2025-10-12 12:03:05,147 [INFO] 
+[229/528] 처리 중...
+2025-10-12 12:03:06,222 [INFO] 
+[230/528] 처리 중...
+2025-10-12 12:03:07,297 [INFO] 
+[231/528] 처리 중...
+2025-10-12 12:03:08,329 [INFO] 
+[232/528] 처리 중...
+2025-10-12 12:03:09,401 [INFO] 
+[233/528] 처리 중...
+2025-10-12 12:03:10,419 [INFO] 
+[234/528] 처리 중...
+2025-10-12 12:03:11,495 [INFO] 
+[235/528] 처리 중...
+2025-10-12 12:03:12,542 [INFO] 
+[236/528] 처리 중...
+2025-10-12 12:03:13,608 [INFO] 
+[237/528] 처리 중...
+2025-10-12 12:03:14,669 [INFO] 
+[238/528] 처리 중...
+2025-10-12 12:03:15,704 [INFO] 
+[239/528] 처리 중...
+2025-10-12 12:03:16,742 [INFO] 
+[240/528] 처리 중...
+2025-10-12 12:03:17,800 [INFO] 
+[241/528] 처리 중...
+2025-10-12 12:03:18,827 [INFO] 
+[242/528] 처리 중...
+2025-10-12 12:03:19,869 [INFO] 
+[243/528] 처리 중...
+2025-10-12 12:03:20,919 [INFO] 
+[244/528] 처리 중...
+2025-10-12 12:03:21,995 [INFO] 
+[245/528] 처리 중...
+2025-10-12 12:03:23,017 [INFO] 
+[246/528] 처리 중...
+2025-10-12 12:03:24,089 [INFO] 
+[247/528] 처리 중...
+2025-10-12 12:03:25,117 [INFO] 
+[248/528] 처리 중...
+2025-10-12 12:03:26,122 [INFO] 
+[249/528] 처리 중...
+2025-10-12 12:03:27,196 [INFO] 
+[250/528] 처리 중...
+2025-10-12 12:03:28,234 [INFO] 
+[251/528] 처리 중...
+2025-10-12 12:03:29,299 [INFO] 
+[252/528] 처리 중...
+2025-10-12 12:03:30,308 [INFO] 
+[253/528] 처리 중...
+2025-10-12 12:03:31,356 [INFO] 
+[254/528] 처리 중...
+2025-10-12 12:03:32,432 [INFO] 
+[255/528] 처리 중...
+2025-10-12 12:03:33,491 [INFO] 
+[256/528] 처리 중...
+2025-10-12 12:03:34,556 [INFO] 
+[257/528] 처리 중...
+2025-10-12 12:03:35,624 [INFO] 
+[258/528] 처리 중...
+2025-10-12 12:03:36,667 [INFO] 
+[259/528] 처리 중...
+2025-10-12 12:03:37,675 [INFO] 
+[260/528] 처리 중...
+2025-10-12 12:03:38,683 [INFO] 
+[261/528] 처리 중...
+2025-10-12 12:03:39,688 [INFO] 
+[262/528] 처리 중...
+2025-10-12 12:03:40,735 [INFO] 
+[263/528] 처리 중...
+2025-10-12 12:03:41,794 [INFO] 
+[264/528] 처리 중...
+2025-10-12 12:03:42,870 [INFO] 
+[265/528] 처리 중...
+2025-10-12 12:03:43,914 [INFO] 
+[266/528] 처리 중...
+2025-10-12 12:03:44,917 [INFO] 
+[267/528] 처리 중...
+2025-10-12 12:03:45,941 [INFO] 
+[268/528] 처리 중...
+2025-10-12 12:03:46,950 [INFO] 
+[269/528] 처리 중...
+2025-10-12 12:03:48,017 [INFO] 
+[270/528] 처리 중...
+2025-10-12 12:03:49,044 [INFO] 
+[271/528] 처리 중...
+2025-10-12 12:03:50,073 [INFO] 
+[272/528] 처리 중...
+2025-10-12 12:03:51,124 [INFO] 
+[273/528] 처리 중...
+2025-10-12 12:03:52,156 [INFO] 
+[274/528] 처리 중...
+2025-10-12 12:03:53,223 [INFO] 
+[275/528] 처리 중...
+2025-10-12 12:03:54,292 [INFO] 
+[276/528] 처리 중...
+2025-10-12 12:03:55,333 [INFO] 
+[277/528] 처리 중...
+2025-10-12 12:03:56,383 [INFO] 
+[278/528] 처리 중...
+2025-10-12 12:03:57,427 [INFO] 
+[279/528] 처리 중...
+2025-10-12 12:03:58,503 [INFO] 
+[280/528] 처리 중...
+2025-10-12 12:03:59,544 [INFO] 
+[281/528] 처리 중...
+2025-10-12 12:04:00,613 [INFO] 
+[282/528] 처리 중...
+2025-10-12 12:04:01,658 [INFO] 
+[283/528] 처리 중...
+2025-10-12 12:04:02,689 [INFO] 
+[284/528] 처리 중...
+2025-10-12 12:04:03,733 [INFO] 
+[285/528] 처리 중...
+2025-10-12 12:04:04,750 [INFO] 
+[286/528] 처리 중...
+2025-10-12 12:04:05,801 [INFO] 
+[287/528] 처리 중...
+2025-10-12 12:04:06,849 [INFO] 
+[288/528] 처리 중...
+2025-10-12 12:04:07,883 [INFO] 
+[289/528] 처리 중...
+2025-10-12 12:04:08,918 [INFO] 
+[290/528] 처리 중...
+2025-10-12 12:04:09,971 [INFO] 
+[291/528] 처리 중...
+2025-10-12 12:04:11,044 [INFO] 
+[292/528] 처리 중...
+2025-10-12 12:04:12,117 [INFO] 
+[293/528] 처리 중...
+2025-10-12 12:04:13,174 [INFO] 
+[294/528] 처리 중...
+2025-10-12 12:04:14,248 [INFO] 
+[295/528] 처리 중...
+2025-10-12 12:04:15,255 [INFO] 
+[296/528] 처리 중...
+2025-10-12 12:04:16,283 [INFO] 
+[297/528] 처리 중...
+2025-10-12 12:04:17,292 [INFO] 
+[298/528] 처리 중...
+2025-10-12 12:04:18,367 [INFO] 
+[299/528] 처리 중...
+2025-10-12 12:04:19,439 [INFO] 
+[300/528] 처리 중...
+2025-10-12 12:04:20,449 [INFO] 
+[301/528] 처리 중...
+2025-10-12 12:04:21,504 [INFO] 
+[302/528] 처리 중...
+2025-10-12 12:04:22,566 [INFO] 
+[303/528] 처리 중...
+2025-10-12 12:04:23,591 [INFO] 
+[304/528] 처리 중...
+2025-10-12 12:04:24,592 [INFO] 
+[305/528] 처리 중...
+2025-10-12 12:04:25,661 [INFO] 
+[306/528] 처리 중...
+2025-10-12 12:04:26,667 [INFO] 
+[307/528] 처리 중...
+2025-10-12 12:04:27,727 [INFO] 
+[308/528] 처리 중...
+2025-10-12 12:04:28,790 [INFO] 
+[309/528] 처리 중...
+2025-10-12 12:04:29,866 [INFO] 
+[310/528] 처리 중...
+2025-10-12 12:04:30,874 [INFO] 
+[311/528] 처리 중...
+2025-10-12 12:04:31,949 [INFO] 
+[312/528] 처리 중...
+2025-10-12 12:04:32,992 [INFO] 
+[313/528] 처리 중...
+2025-10-12 12:04:34,066 [INFO] 
+[314/528] 처리 중...
+2025-10-12 12:04:35,134 [INFO] 
+[315/528] 처리 중...
+2025-10-12 12:04:36,142 [INFO] 
+[316/528] 처리 중...
+2025-10-12 12:04:37,183 [INFO] 
+[317/528] 처리 중...
+2025-10-12 12:04:38,252 [INFO] 
+[318/528] 처리 중...
+2025-10-12 12:04:39,275 [INFO] 
+[319/528] 처리 중...
+2025-10-12 12:04:40,340 [INFO] 
+[320/528] 처리 중...
+2025-10-12 12:04:41,360 [INFO] 
+[321/528] 처리 중...
+2025-10-12 12:04:42,400 [INFO] 
+[322/528] 처리 중...
+2025-10-12 12:04:43,417 [INFO] 
+[323/528] 처리 중...
+2025-10-12 12:04:44,425 [INFO] 
+[324/528] 처리 중...
+2025-10-12 12:04:45,499 [INFO] 
+[325/528] 처리 중...
+2025-10-12 12:04:46,571 [INFO] 
+[326/528] 처리 중...
+2025-10-12 12:04:47,622 [INFO] 
+[327/528] 처리 중...
+2025-10-12 12:04:48,628 [INFO] 
+[328/528] 처리 중...
+2025-10-12 12:04:49,682 [INFO] 
+[329/528] 처리 중...
+2025-10-12 12:04:50,683 [INFO] 
+[330/528] 처리 중...
+2025-10-12 12:04:51,731 [INFO] 
+[331/528] 처리 중...
+2025-10-12 12:04:52,795 [INFO] 
+[332/528] 처리 중...
+2025-10-12 12:04:53,823 [INFO] 
+[333/528] 처리 중...
+2025-10-12 12:04:54,865 [INFO] 
+[334/528] 처리 중...
+2025-10-12 12:04:55,905 [INFO] 
+[335/528] 처리 중...
+2025-10-12 12:04:56,974 [INFO] 
+[336/528] 처리 중...
+2025-10-12 12:04:58,044 [INFO] 
+[337/528] 처리 중...
+2025-10-12 12:04:59,066 [INFO] 
+[338/528] 처리 중...
+2025-10-12 12:05:00,074 [INFO] 
+[339/528] 처리 중...
+2025-10-12 12:05:01,150 [INFO] 
+[340/528] 처리 중...
+2025-10-12 12:05:02,220 [INFO] 
+[341/528] 처리 중...
+2025-10-12 12:05:03,289 [INFO] 
+[342/528] 처리 중...
+2025-10-12 12:05:04,334 [INFO] 
+[343/528] 처리 중...
+2025-10-12 12:05:05,358 [INFO] 
+[344/528] 처리 중...
+2025-10-12 12:05:06,432 [INFO] 
+[345/528] 처리 중...
+2025-10-12 12:05:07,508 [INFO] 
+[346/528] 처리 중...
+2025-10-12 12:05:08,549 [INFO] 
+[347/528] 처리 중...
+2025-10-12 12:05:09,607 [INFO] 
+[348/528] 처리 중...
+2025-10-12 12:05:10,682 [INFO] 
+[349/528] 처리 중...
+2025-10-12 12:05:11,695 [INFO] 
+[350/528] 처리 중...
+2025-10-12 12:05:12,732 [INFO] 
+[351/528] 처리 중...
+2025-10-12 12:05:13,758 [INFO] 
+[352/528] 처리 중...
+2025-10-12 12:05:14,788 [INFO] 
+[353/528] 처리 중...
+2025-10-12 12:05:15,790 [INFO] 
+[354/528] 처리 중...
+2025-10-12 12:05:16,863 [INFO] 
+[355/528] 처리 중...
+2025-10-12 12:05:17,900 [INFO] 
+[356/528] 처리 중...
+2025-10-12 12:05:18,975 [INFO] 
+[357/528] 처리 중...
+2025-10-12 12:05:20,053 [INFO] 
+[358/528] 처리 중...
+2025-10-12 12:05:21,121 [INFO] 
+[359/528] 처리 중...
+2025-10-12 12:05:22,142 [INFO] 
+[360/528] 처리 중...
+2025-10-12 12:05:23,150 [INFO] 
+[361/528] 처리 중...
+2025-10-12 12:05:24,225 [INFO] 
+[362/528] 처리 중...
+2025-10-12 12:05:25,295 [INFO] 
+[363/528] 처리 중...
+2025-10-12 12:05:26,370 [INFO] 
+[364/528] 처리 중...
+2025-10-12 12:05:27,445 [INFO] 
+[365/528] 처리 중...
+2025-10-12 12:05:28,487 [INFO] 
+[366/528] 처리 중...
+2025-10-12 12:05:29,507 [INFO] 
+[367/528] 처리 중...
+2025-10-12 12:05:30,544 [INFO] 
+[368/528] 처리 중...
+2025-10-12 12:05:31,562 [INFO] 
+[369/528] 처리 중...
+2025-10-12 12:05:32,572 [INFO] 
+[370/528] 처리 중...
+2025-10-12 12:05:33,639 [INFO] 
+[371/528] 처리 중...
+2025-10-12 12:05:34,674 [INFO] 
+[372/528] 처리 중...
+2025-10-12 12:05:35,747 [INFO] 
+[373/528] 처리 중...
+2025-10-12 12:05:36,822 [INFO] 
+[374/528] 처리 중...
+2025-10-12 12:05:37,858 [INFO] 
+[375/528] 처리 중...
+2025-10-12 12:05:38,933 [INFO] 
+[376/528] 처리 중...
+2025-10-12 12:05:40,004 [INFO] 
+[377/528] 처리 중...
+2025-10-12 12:05:41,016 [INFO] 
+[378/528] 처리 중...
+2025-10-12 12:05:42,036 [INFO] 
+[379/528] 처리 중...
+2025-10-12 12:05:43,044 [INFO] 
+[380/528] 처리 중...
+2025-10-12 12:05:44,049 [INFO] 
+[381/528] 처리 중...
+2025-10-12 12:05:45,061 [INFO] 
+[382/528] 처리 중...
+2025-10-12 12:05:46,087 [INFO] 
+[383/528] 처리 중...
+2025-10-12 12:05:47,158 [INFO] 
+[384/528] 처리 중...
+2025-10-12 12:05:48,217 [INFO] 
+[385/528] 처리 중...
+2025-10-12 12:05:49,222 [INFO] 
+[386/528] 처리 중...
+2025-10-12 12:05:50,273 [INFO] 
+[387/528] 처리 중...
+2025-10-12 12:05:51,329 [INFO] 
+[388/528] 처리 중...
+2025-10-12 12:05:52,351 [INFO] 
+[389/528] 처리 중...
+2025-10-12 12:05:53,424 [INFO] 
+[390/528] 처리 중...
+2025-10-12 12:05:54,438 [INFO] 
+[391/528] 처리 중...
+2025-10-12 12:05:55,511 [INFO] 
+[392/528] 처리 중...
+2025-10-12 12:05:56,531 [INFO] 
+[393/528] 처리 중...
+2025-10-12 12:05:57,555 [INFO] 
+[394/528] 처리 중...
+2025-10-12 12:05:58,616 [INFO] 
+[395/528] 처리 중...
+2025-10-12 12:05:59,658 [INFO] 
+[396/528] 처리 중...
+2025-10-12 12:06:00,733 [INFO] 
+[397/528] 처리 중...
+2025-10-12 12:06:01,808 [INFO] 
+[398/528] 처리 중...
+2025-10-12 12:06:02,874 [INFO] 
+[399/528] 처리 중...
+2025-10-12 12:06:03,919 [INFO] 
+[400/528] 처리 중...
+2025-10-12 12:06:04,975 [INFO] 
+[401/528] 처리 중...
+2025-10-12 12:06:06,034 [INFO] 
+[402/528] 처리 중...
+2025-10-12 12:06:07,091 [INFO] 
+[403/528] 처리 중...
+2025-10-12 12:06:08,108 [INFO] 
+[404/528] 처리 중...
+2025-10-12 12:06:09,117 [INFO] 
+[405/528] 처리 중...
+2025-10-12 12:06:10,169 [INFO] 
+[406/528] 처리 중...
+2025-10-12 12:06:11,222 [INFO] 
+[407/528] 처리 중...
+2025-10-12 12:06:12,267 [INFO] 
+[408/528] 처리 중...
+2025-10-12 12:06:13,275 [INFO] 
+[409/528] 처리 중...
+2025-10-12 12:06:14,350 [INFO] 
+[410/528] 처리 중...
+2025-10-12 12:06:15,401 [INFO] 
+[411/528] 처리 중...
+2025-10-12 12:06:16,451 [INFO] 
+[412/528] 처리 중...
+2025-10-12 12:06:17,501 [INFO] 
+[413/528] 처리 중...
+2025-10-12 12:06:18,570 [INFO] 
+[414/528] 처리 중...
+2025-10-12 12:06:19,608 [INFO] 
+[415/528] 처리 중...
+2025-10-12 12:06:20,676 [INFO] 
+[416/528] 처리 중...
+2025-10-12 12:06:21,702 [INFO] 
+[417/528] 처리 중...
+2025-10-12 12:06:22,773 [INFO] 
+[418/528] 처리 중...
+2025-10-12 12:06:23,825 [INFO] 
+[419/528] 처리 중...
+2025-10-12 12:06:24,893 [INFO] 
+[420/528] 처리 중...
+2025-10-12 12:06:25,958 [INFO] 
+[421/528] 처리 중...
+2025-10-12 12:06:27,034 [INFO] 
+[422/528] 처리 중...
+2025-10-12 12:06:28,062 [INFO] 
+[423/528] 처리 중...
+2025-10-12 12:06:29,131 [INFO] 
+[424/528] 처리 중...
+2025-10-12 12:06:30,133 [INFO] 
+[425/528] 처리 중...
+2025-10-12 12:06:31,150 [INFO] 
+[426/528] 처리 중...
+2025-10-12 12:06:32,169 [INFO] 
+[427/528] 처리 중...
+2025-10-12 12:06:33,181 [INFO] 
+[428/528] 처리 중...
+2025-10-12 12:06:34,255 [INFO] 
+[429/528] 처리 중...
+2025-10-12 12:06:35,259 [INFO] 
+[430/528] 처리 중...
+2025-10-12 12:06:36,284 [INFO] 
+[431/528] 처리 중...
+2025-10-12 12:06:37,300 [INFO] 
+[432/528] 처리 중...
+2025-10-12 12:06:38,325 [INFO] 
+[433/528] 처리 중...
+2025-10-12 12:06:39,399 [INFO] 
+[434/528] 처리 중...
+2025-10-12 12:06:40,443 [INFO] 
+[435/528] 처리 중...
+2025-10-12 12:06:41,515 [INFO] 
+[436/528] 처리 중...
+2025-10-12 12:06:42,585 [INFO] 
+[437/528] 처리 중...
+2025-10-12 12:06:43,654 [INFO] 
+[438/528] 처리 중...
+2025-10-12 12:06:44,675 [INFO] 
+[439/528] 처리 중...
+2025-10-12 12:06:45,717 [INFO] 
+[440/528] 처리 중...
+2025-10-12 12:06:46,792 [INFO] 
+[441/528] 처리 중...
+2025-10-12 12:06:47,818 [INFO] 
+[442/528] 처리 중...
+2025-10-12 12:06:48,857 [INFO] 
+[443/528] 처리 중...
+2025-10-12 12:06:49,915 [INFO] 
+[444/528] 처리 중...
+2025-10-12 12:06:50,974 [INFO] 
+[445/528] 처리 중...
+2025-10-12 12:06:52,017 [INFO] 
+[446/528] 처리 중...
+2025-10-12 12:06:53,077 [INFO] 
+[447/528] 처리 중...
+2025-10-12 12:06:54,130 [INFO] 
+[448/528] 처리 중...
+2025-10-12 12:06:55,173 [INFO] 
+[449/528] 처리 중...
+2025-10-12 12:06:56,222 [INFO] 
+[450/528] 처리 중...
+2025-10-12 12:06:57,267 [INFO] 
+[451/528] 처리 중...
+2025-10-12 12:06:58,272 [INFO] 
+[452/528] 처리 중...
+2025-10-12 12:06:59,333 [INFO] 
+[453/528] 처리 중...
+2025-10-12 12:07:00,402 [INFO] 
+[454/528] 처리 중...
+2025-10-12 12:07:01,478 [INFO] 
+[455/528] 처리 중...
+2025-10-12 12:07:02,544 [INFO] 
+[456/528] 처리 중...
+2025-10-12 12:07:03,611 [INFO] 
+[457/528] 처리 중...
+2025-10-12 12:07:04,687 [INFO] 
+[458/528] 처리 중...
+2025-10-12 12:07:05,692 [INFO] 
+[459/528] 처리 중...
+2025-10-12 12:07:06,744 [INFO] 
+[460/528] 처리 중...
+2025-10-12 12:07:07,758 [INFO] 
+[461/528] 처리 중...
+2025-10-12 12:07:08,776 [INFO] 
+[462/528] 처리 중...
+2025-10-12 12:07:09,811 [INFO] 
+[463/528] 처리 중...
+2025-10-12 12:07:10,871 [INFO] 
+[464/528] 처리 중...
+2025-10-12 12:07:11,925 [INFO] 
+[465/528] 처리 중...
+2025-10-12 12:07:12,927 [INFO] 
+[466/528] 처리 중...
+2025-10-12 12:07:13,956 [INFO] 
+[467/528] 처리 중...
+2025-10-12 12:07:15,031 [INFO] 
+[468/528] 처리 중...
+2025-10-12 12:07:16,083 [INFO] 
+[469/528] 처리 중...
+2025-10-12 12:07:17,099 [INFO] 
+[470/528] 처리 중...
+2025-10-12 12:07:18,173 [INFO] 
+[471/528] 처리 중...
+2025-10-12 12:07:19,242 [INFO] 
+[472/528] 처리 중...
+2025-10-12 12:07:20,295 [INFO] 
+[473/528] 처리 중...
+2025-10-12 12:07:21,300 [INFO] 
+[474/528] 처리 중...
+2025-10-12 12:07:22,322 [INFO] 
+[475/528] 처리 중...
+2025-10-12 12:07:23,375 [INFO] 
+[476/528] 처리 중...
+2025-10-12 12:07:24,400 [INFO] 
+[477/528] 처리 중...
+2025-10-12 12:07:25,455 [INFO] 
+[478/528] 처리 중...
+2025-10-12 12:07:26,514 [INFO] 
+[479/528] 처리 중...
+2025-10-12 12:07:27,588 [INFO] 
+[480/528] 처리 중...
+2025-10-12 12:07:28,613 [INFO] 
+[481/528] 처리 중...
+2025-10-12 12:07:29,683 [INFO] 
+[482/528] 처리 중...
+2025-10-12 12:07:30,758 [INFO] 
+[483/528] 처리 중...
+2025-10-12 12:07:31,825 [INFO] 
+[484/528] 처리 중...
+2025-10-12 12:07:32,841 [INFO] 
+[485/528] 처리 중...
+2025-10-12 12:07:33,887 [INFO] 
+[486/528] 처리 중...
+2025-10-12 12:07:34,950 [INFO] 
+[487/528] 처리 중...
+2025-10-12 12:07:36,017 [INFO] 
+[488/528] 처리 중...
+2025-10-12 12:07:37,025 [INFO] 
+[489/528] 처리 중...
+2025-10-12 12:07:38,092 [INFO] 
+[490/528] 처리 중...
+2025-10-12 12:07:39,150 [INFO] 
+[491/528] 처리 중...
+2025-10-12 12:07:40,162 [INFO] 
+[492/528] 처리 중...
+2025-10-12 12:07:41,222 [INFO] 
+[493/528] 처리 중...
+2025-10-12 12:07:42,233 [INFO] 
+[494/528] 처리 중...
+2025-10-12 12:07:43,308 [INFO] 
+[495/528] 처리 중...
+2025-10-12 12:07:44,367 [INFO] 
+[496/528] 처리 중...
+2025-10-12 12:07:45,392 [INFO] 
+[497/528] 처리 중...
+2025-10-12 12:07:46,419 [INFO] 
+[498/528] 처리 중...
+2025-10-12 12:07:47,457 [INFO] 
+[499/528] 처리 중...
+2025-10-12 12:07:48,533 [INFO] 
+[500/528] 처리 중...
+2025-10-12 12:07:49,564 [INFO] 
+[501/528] 처리 중...
+2025-10-12 12:07:50,626 [INFO] 
+[502/528] 처리 중...
+2025-10-12 12:07:51,699 [INFO] 
+[503/528] 처리 중...
+2025-10-12 12:07:52,774 [INFO] 
+[504/528] 처리 중...
+2025-10-12 12:07:53,792 [INFO] 
+[505/528] 처리 중...
+2025-10-12 12:07:54,868 [INFO] 
+[506/528] 처리 중...
+2025-10-12 12:07:55,877 [INFO] 
+[507/528] 처리 중...
+2025-10-12 12:07:56,883 [INFO] 
+[508/528] 처리 중...
+2025-10-12 12:07:57,956 [INFO] 
+[509/528] 처리 중...
+2025-10-12 12:07:58,958 [INFO] 
+[510/528] 처리 중...
+2025-10-12 12:07:59,979 [INFO] 
+[511/528] 처리 중...
+2025-10-12 12:08:01,016 [INFO] 
+[512/528] 처리 중...
+2025-10-12 12:08:02,083 [INFO] 
+[513/528] 처리 중...
+2025-10-12 12:08:03,142 [INFO] 
+[514/528] 처리 중...
+2025-10-12 12:08:04,150 [INFO] 
+[515/528] 처리 중...
+2025-10-12 12:08:05,225 [INFO] 
+[516/528] 처리 중...
+2025-10-12 12:08:06,300 [INFO] 
+[517/528] 처리 중...
+2025-10-12 12:08:07,375 [INFO] 
+[518/528] 처리 중...
+2025-10-12 12:08:08,450 [INFO] 
+[519/528] 처리 중...
+2025-10-12 12:08:09,525 [INFO] 
+[520/528] 처리 중...
+2025-10-12 12:08:10,588 [INFO] 
+[521/528] 처리 중...
+2025-10-12 12:08:11,663 [INFO] 
+[522/528] 처리 중...
+2025-10-12 12:08:12,679 [INFO] 
+[523/528] 처리 중...
+2025-10-12 12:08:13,715 [INFO] 
+[524/528] 처리 중...
+2025-10-12 12:08:14,731 [INFO] 
+[525/528] 처리 중...
+2025-10-12 12:08:15,747 [INFO] 
+[526/528] 처리 중...
+2025-10-12 12:08:16,750 [INFO] 
+[527/528] 처리 중...
+2025-10-12 12:08:17,800 [INFO] 
+[528/528] 처리 중...
+2025-10-12 12:08:17,801 [INFO] 
+피드 처리 완료: https://nvd.nist.gov/feeds/xml/cve/misc/nvd-rss-analyzed.xml
+2025-10-12 12:08:17,801 [INFO]   ✅ 성공: 0
+2025-10-12 12:08:17,801 [INFO]   ⏭️  스킵: 528
+2025-10-12 12:08:17,802 [INFO]   ❌ 실패: 0
+2025-10-12 12:08:17,804 [INFO] 
+============================================================
+2025-10-12 12:08:17,804 [INFO] 처리 시작: https://www.zerodayinitiative.com/rss/alladvisories/
+2025-10-12 12:08:17,804 [INFO] ============================================================
+2025-10-12 12:08:17,805 [INFO] 피드 가져오는 중: https://www.zerodayinitiative.com/rss/alladvisories/ (시도 1/3)
+2025-10-12 12:08:18,342 [WARNING] 피드 파싱 경고: <unknown>:3:0: syntax error
+2025-10-12 12:08:18,342 [INFO] 발견된 엔트리 수: 0
+2025-10-12 12:08:18,342 [WARNING] 엔트리가 없습니다: https://www.zerodayinitiative.com/rss/alladvisories/
+2025-10-12 12:08:18,342 [INFO] 
+============================================================
+2025-10-12 12:08:18,342 [INFO] 처리 시작: https://blog.cloudflare.com/rss/
+2025-10-12 12:08:18,343 [INFO] ============================================================
+2025-10-12 12:08:18,343 [INFO] 피드 가져오는 중: https://blog.cloudflare.com/rss/ (시도 1/3)
+2025-10-12 12:08:19,061 [INFO] 발견된 엔트리 수: 20
+2025-10-12 12:08:19,061 [INFO] 
+[1/20] 처리 중...
+2025-10-12 12:08:19,061 [INFO] 본문 추출 중: https://blog.cloudflare.com/introducing-react-why-we-built-an-elite-incident-response-team/
+2025-10-12 12:08:21,044 [INFO] ✅ 저장 완료: data/rss_parsed/blog-cloudflare-com-c7364ab19d20.json (10437자)
+2025-10-12 12:08:22,076 [INFO] 
+[2/20] 처리 중...
+2025-10-12 12:08:23,092 [INFO] 
+[3/20] 처리 중...
+2025-10-12 12:08:24,148 [INFO] 
+[4/20] 처리 중...
+2025-10-12 12:08:25,221 [INFO] 
+[5/20] 처리 중...
+2025-10-12 12:08:26,253 [INFO] 
+[6/20] 처리 중...
+2025-10-12 12:08:27,283 [INFO] 
+[7/20] 처리 중...
+2025-10-12 12:08:28,356 [INFO] 
+[8/20] 처리 중...
+2025-10-12 12:08:29,374 [INFO] 
+[9/20] 처리 중...
+2025-10-12 12:08:30,400 [INFO] 
+[10/20] 처리 중...
+2025-10-12 12:08:31,418 [INFO] 
+[11/20] 처리 중...
+2025-10-12 12:08:32,485 [INFO] 
+[12/20] 처리 중...
+2025-10-12 12:08:33,549 [INFO] 
+[13/20] 처리 중...
+2025-10-12 12:08:34,622 [INFO] 
+[14/20] 처리 중...
+2025-10-12 12:08:35,688 [INFO] 
+[15/20] 처리 중...
+2025-10-12 12:08:36,763 [INFO] 
+[16/20] 처리 중...
+2025-10-12 12:08:37,838 [INFO] 
+[17/20] 처리 중...
+2025-10-12 12:08:38,875 [INFO] 
+[18/20] 처리 중...
+2025-10-12 12:08:39,949 [INFO] 
+[19/20] 처리 중...
+2025-10-12 12:08:41,003 [INFO] 
+[20/20] 처리 중...
+2025-10-12 12:08:41,003 [INFO] 
+피드 처리 완료: https://blog.cloudflare.com/rss/
+2025-10-12 12:08:41,003 [INFO]   ✅ 성공: 1
+2025-10-12 12:08:41,003 [INFO]   ⏭️  스킵: 19
+2025-10-12 12:08:41,003 [INFO]   ❌ 실패: 0
+2025-10-12 12:08:41,005 [INFO] 
+================================================================================
+2025-10-12 12:08:41,005 [INFO] RSS 수집 완료
+2025-10-12 12:08:41,005 [INFO] 종료 시간: 2025-10-12T03:08:41.005722+00:00
+2025-10-12 12:08:41,005 [INFO] 총 성공: 1
+2025-10-12 12:08:41,005 [INFO] 총 스킵: 547
+2025-10-12 12:08:41,005 [INFO] 총 실패: 0
+2025-10-12 12:08:41,005 [INFO] 누적 수집: 1
+2025-10-12 12:08:41,006 [INFO] ================================================================================
+2025-10-12 12:08:41,006 [INFO] 
 수집 완료. 프로그램을 종료합니다.
