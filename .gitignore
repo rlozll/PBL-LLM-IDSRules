@@ -1,3 +1,5 @@
 .env
 llm-ids-rules-f9e31a106e7f.json
 data/nvd_cve/*.jsondata/nvd_cve/*.jsondata/nvd_cve/*.json
+data/nvd_cve/*.json
+data/nvd_cve/
