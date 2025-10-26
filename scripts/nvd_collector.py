@@ -35,7 +35,7 @@ else:
 
 # 3️⃣ API 및 출력 경로 설정
 API_URL = "https://services.nvd.nist.gov/rest/json/cves/2.0"
-API_KEY = os.getenv("861A8157-53A4-F011-8362-0EBF96DE670D")
+API_KEY = os.getenv("NVD_API_KEY")
 
 OUT_DIR = os.path.join(BASE_DIR, "data", "nvd_cve")
 os.makedirs(OUT_DIR, exist_ok=True)
