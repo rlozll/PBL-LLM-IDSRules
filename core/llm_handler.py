@@ -100,8 +100,10 @@ async def generate_analysis_from_text(text: str) -> dict:
 
     # 2) Rule 생성
     rule_prompt = f"""
-다음 IoC를 기반으로 Snort 2.9 규칙 1개만 출력. 코드블록/설명 금지, 규칙 한 줄만.
-필수: msg, sid(>=1000000), rev(>=1), reference(CVE).
+다음 IoC를 기반으로 Snort 2.9 규칙 1개만 생성하여 출력하라. 코드블록/설명 금지, 규칙 한 줄만 출력.
+필수 항목: msg, sid(>=1000000), rev(>=1), reference(CVE). content 또는 pcre 사용.
+classtype 옵션은 포함하지 않아도 된다.
+
 IoC:
 {json.dumps(ioc_json, ensure_ascii=False, indent=2)}
 """

@@ -1,4 +1,4 @@
-# app.py
+# /app.py
 
 import os
 import sys
@@ -8,23 +8,24 @@ from pydantic import BaseModel
 from dotenv import load_dotenv
 
 # 내부 모듈
-from core.parser import get_text_from_url               # URL → 텍스트 파싱
-from core.llm_handler import generate_analysis_from_text  # LLM 호출(이미 A안으로 수정했다고 했음)
-from utils.validator import validate_rule_syntax        # Snort/Suricata 검증기
-from core.vt_client import vt_fetch_url_report          # VirusTotal 클라이언트
+from core.parser import get_text_from_url
+from core.llm_handler import generate_analysis_from_text
+from utils.validator import validate_rule_syntax # <- validate_rule_syntax 를 사용
+from core.vt_client import vt_fetch_url_report
 
 # ──────────────────────────────────────────────────────────────────────────────
 # 0) 환경 로드 및 사전 점검
 # ──────────────────────────────────────────────────────────────────────────────
 load_dotenv()
 
-# A안에서는 반드시 GOOGLE_API_KEY(문자열)가 있어야 함.
-# 서비스계정 키(JSON)는 사용하지 않는다. (GOOGLE_APPLICATION_CREDENTIALS 불필요)
+# --- 수정된 부분: GOOGLE_API_KEY 확인 ---
+# GOOGLE_API_KEY (문자열)가 있는지 확인합니다.
 if not os.getenv("GOOGLE_API_KEY"):
-    print("WARNING: GOOGLE_API_KEY not set. Set it in .env for AI Studio.")
-if os.getenv("GOOGLE_APPLICATION_CREDENTIALS"):
-    print("INFO: GOOGLE_APPLICATION_CREDENTIALS is set, but A-option (AI Studio) does not need it. "
-          "It will be ignored if GOOGLE_API_KEY is present.")
+    print("WARNING: GOOGLE_API_KEY not set. Set it in .env for AI Studio/Gemini API.")
+# GOOGLE_APPLICATION_CREDENTIALS 설정은 무시합니다 (주석 처리 또는 삭제 가능)
+# if os.getenv("GOOGLE_APPLICATION_CREDENTIALS"):
+#    print("INFO: GOOGLE_APPLICATION_CREDENTIALS is set, but API Key method is being used.")
+# --- 수정 끝 ---
 
 # ──────────────────────────────────────────────────────────────────────────────
 # 1) FastAPI 앱
@@ -45,7 +46,7 @@ class RuleResponse(BaseModel):
     source_url: str
     extracted_ioc: dict
     generated_rule: str
-    validation_result: str
+    validation_result: str # <- Success/Failed/Warning 등 상태
     rule_explanation: str
     vt_summary: dict | None = None
 
@@ -53,17 +54,14 @@ class RuleResponse(BaseModel):
 # 3) 유틸: Snort 룰 1차 형태검사(빠른 가드)
 # ──────────────────────────────────────────────────────────────────────────────
 def _is_probably_snort_rule(s: str) -> bool:
-    """
-    최소 형태 가드. LLM의 잘못된/설명성 텍스트가 Snort에 들어가는 것을 방지.
-    멀티라인 룰도 각 라인 검증.
-    """
     import re
     if not s or s.lower().startswith("error:"):
         return False
     lines = [L.strip() for L in s.strip().splitlines() if L.strip()]
     if not lines:
         return False
-    pat = re.compile(r'^alert\s+\w+.*?msg:"[^"]+";.*?sid:\d+;.*?rev:\d+;.*?\)\s*$', re.I | re.S)
+    # Snort 2 규칙 패턴 (간단 버전)
+    pat = re.compile(r'^alert\s+\w+\s+.*?\s+->\s+.*?\s+\(.*?\s*msg:"[^"]+";.*?\s*sid:\d+;.*?\s*rev:\d+;.*?\)\s*$', re.I | re.S)
     return all(pat.search(L) for L in lines)
 
 # ──────────────────────────────────────────────────────────────────────────────
@@ -88,16 +86,18 @@ async def create_rule_from_url(request: RuleRequest):
         print(f"ERROR: 파싱 실패 - {e}")
         raise HTTPException(status_code=400, detail=f"URL에서 텍스트를 파싱하는 데 실패했습니다: {e}")
 
-    # 2) LLM 호출 (A안: AI Studio · API Key)
-    #    6~12k자까지 1회 투입을 기본으로. 불필요한 청킹은 제거.
+    # 2) LLM 호출 (API 키 방식 사용 가정)
     text_for_llm = parsed_text
     print("INFO: LLM 분석용 텍스트 준비 완료 (전체 본문 사용)")
 
-    llm_output = await generate_analysis_from_text(text_for_llm)
+    try:
+        llm_output = await generate_analysis_from_text(text_for_llm)
+    except Exception as e:
+         print(f"ERROR: LLM 핸들러 실행 중 예외 발생 - {e}")
+         raise HTTPException(status_code=500, detail={"stage": "llm", "error": "Handler Exception", "detail": str(e)})
 
-    # 실패면 즉시 종료(중요: 200 금지)
+    # LLM 처리 결과 확인 및 실패 시 종료
     if llm_output.get("error"):
-        # 어떤 스테이지에서 실패했는지 간단 표기
         stage = "ioc" if "IOC" in llm_output["error"] else "rule" if "RULE" in llm_output["error"] else "llm"
         print(f"ERROR: LLM 처리 실패 - {llm_output['error']}")
         raise HTTPException(
@@ -121,12 +121,14 @@ async def create_rule_from_url(request: RuleRequest):
             detail={"stage": "validate", "error": "precheck failed", "rule": rule_to_validate[:300]},
         )
 
-    # 4) Snort 검증기 실행 (WSL/로컬 환경에 맞게 utils.validator가 처리)
+    # 4) Snort 검증기 실행
+    validation_status = "Skipped" # 기본값
     try:
-        if sys.platform == "darwin":
+        if sys.platform == "darwin": # macOS 예외 처리
             validation_status = "Skipped on macOS"
         else:
-            is_valid = validate_rule_syntax(rule_to_validate, engine="snort")
+            # validate_rule_syntax 함수는 rule_string만 받음
+            is_valid = validate_rule_syntax(rule_to_validate)
             validation_status = "Success: Valid Syntax" if is_valid else "Failed: Invalid Syntax"
     except Exception as e:
         print(f"ERROR: validator 모듈 실행 중 충돌 - {e}")
@@ -162,4 +164,4 @@ async def create_rule_from_url(request: RuleRequest):
 if __name__ == "__main__":
     print("INFO: CTI-Rule-Generator API 서버를 시작합니다.")
     print("INFO: http://127.0.0.1:8000/docs 로 접속하세요.")
-    uvicorn.run(app, host="127.0.0.1", port=8000)
+    uvicorn.run("app:app", host="127.0.0.1", port=8000, reload=True)
