@@ -21,7 +21,6 @@ from datetime import datetime, timedelta, timezone
 # CORS 미들웨어 추가 (FE<>BE 통신용)
 from fastapi.middleware.cors import CORSMiddleware
 
-
 # ──────────────────────────────────────────────────────────────────────────────
 # 0) 환경 로드 및 사전 점검
 # ──────────────────────────────────────────────────────────────────────────────
