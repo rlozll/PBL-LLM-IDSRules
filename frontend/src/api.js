@@ -8,13 +8,6 @@ export const login = async (password) => {
     // 백엔드에 /api/login 엔드포인트가 필요합니다.
     // 이 엔드포인트는 password를 받아 .env의 DASHBOARD_PASSWORD와 비교 후
     // 성공 시 { "access_token": "your_jwt_token" } 형태의 응답을 반환해야 합니다.
-<<<<<<< HEAD
-    const response = await fetch(`${API_BASE_URL}/api/login`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ password: password }),
-=======
-
     const formData = new FormData();
     formData.append('username', 'dashboard_user');
     formData.append('password', password);
@@ -24,7 +17,6 @@ export const login = async (password) => {
 //      headers: { 'Content-Type': 'application/json' },
 //      body: JSON.stringify({ password: password }),
 	body: formData,
->>>>>>> main
     });
 
     if (!response.ok) return false;
