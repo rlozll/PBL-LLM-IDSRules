@@ -9,13 +9,6 @@ from pydantic import BaseModel
 from dotenv import load_dotenv
 
 # 내부 모듈
-<<<<<<< HEAD
-from core.parser import get_text_from_url
-from core.llm_handler import generate_analysis_from_text
-# --- validator 임포트 수정 ---
-from utils.validator import validate_rule # <- 통합 검증 함수 임포트
-from core.vt_client import vt_fetch_url_report
-=======
 from datetime import datetime, timedelta, timezone
 from core.parser import get_text_from_url               # URL → 텍스트 파싱
 from core.llm_handler import generate_analysis_from_text  # LLM 호출(이미 A안으로 수정했다고 했음)
@@ -27,7 +20,6 @@ from passlib.context import CryptContext
 from datetime import datetime, timedelta, timezone
 # CORS 미들웨어 추가 (FE<>BE 통신용)
 from fastapi.middleware.cors import CORSMiddleware
->>>>>>> main
 
 # ──────────────────────────────────────────────────────────────────────────────
 # 0) 환경 로드 및 사전 점검
