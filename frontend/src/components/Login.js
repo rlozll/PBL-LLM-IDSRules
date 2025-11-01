@@ -1,6 +1,8 @@
 // src/components/Login.js
 import React, { useState } from 'react';
 import { login } from '../api'; // api.js에서 로그인 함수 가져오기
+import { FaUserAlt } from "react-icons/fa";
+
 
 function Login({ onLoginSuccess }) {
   const [password, setPassword] = useState('');
@@ -21,15 +23,15 @@ function Login({ onLoginSuccess }) {
   return (
     <div className="login-container"> {/* CSS 클래스 추가 */}
       <form onSubmit={handleSubmit}>
-        {/* 디자인 시안의 아이콘 등 추가 */}
+        <FaUserAlt className="user-icon" size="30" color='white' />
         <input
           type="password"
-          placeholder="Password"
+          placeholder="password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
+          onKeyDown={(e) => setPassword(e.target.value)}
           required
         />
-        <button type="submit">Login</button>
         {error && <p className="error-message">{error}</p>} {/* 에러 메시지 표시 */}
       </form>
     </div>
