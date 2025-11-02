@@ -1,0 +1,178 @@
+/* src/components/MainView.css */
+
+.main-view-grid {
+  display: grid;
+  grid-template-columns: 30% 35% 35%;
+  gap: 20px;
+  height: calc(100vh - 60px); /* 헤더 제외한 전체 높이 */
+}
+
+.analysis-box {
+  background-color: #1e2128; /* 어두운 카드 배경 */
+  border-radius: 8px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.analysis-box h3, .analysis-box h4 {
+  margin-top: 0;
+  border-bottom: 1px solid #444;
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+}
+
+.input-column .url-textarea {
+  flex-grow: 1;
+  padding: 12px;
+  background-color: #3a3f4b;
+  border: 1px solid #444;
+  color: #e0e0e0;
+  border-radius: 4px 0 0 4px; /* 오른쪽 버튼과 붙이기 */
+  border-right: none;
+  resize: vertical; /* 세로 크기 조절만 허용 */
+  min-height: 100px; /* 최소 높이 확보 */
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif; /* 폰트 통일 */
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+/* textarea가 포커스될 때 테두리 (선택 사항) */
+.input-column .url-textarea:focus {
+  outline: none;
+  border-color: #61dafb; /* 포커스 색상 */
+}
+
+/* 1열: 입력 */
+.input-column .url-input-wrapper {
+  display: flex;
+  width: 100%;
+}
+.input-column input[type="text"] {
+  flex-grow: 1;
+  padding: 12px;
+  background-color: #3a3f4b;
+  border: 1px solid #444;
+  color: #e0e0e0;
+  border-radius: 4px 0 0 4px; /* 오른쪽 버튼과 붙이기 */
+  border-right: none;
+}
+.input-column .upload-btn {
+  padding: 0 12px;
+  border: 1px solid #444;
+  background-color: #3a3f4b;
+  color: #e0e0e0;
+  cursor: pointer;
+  border-radius: 0 4px 4px 0;
+}
+.input-column .analyze-btn {
+  width: 100%;
+  padding: 12px;
+  margin-top: 15px;
+  border: none;
+  background-color: #444; /* 분석 시작 버튼 색 */
+  color: #e0e0e0;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 4px;
+}
+.input-column .analyze-btn:hover {
+  background-color: #555;
+}
+.input-column .analyze-btn:disabled {
+  background-color: #333;
+  cursor: not-allowed;
+}
+.preview-box {
+  flex-grow: 1;
+  margin-top: 20px;
+  border: 1px dashed #444;
+  border-radius: 4px;
+  padding: 15px;
+  color: #888;
+  overflow-y: auto; /* 내용 길어지면 스크롤 */
+  word-wrap: break-word;
+}
+
+/* 2열: IoCs */
+.ioc-column {
+  overflow-y: auto; /* 내용 많으면 스크롤 */
+}
+.ioc-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.ioc-item {
+  background-color: #2c313a; /* 각 IoC 항목 배경 */
+  border-radius: 4px;
+  padding: 10px 15px;
+}
+.ioc-item strong {
+  display: block;
+  margin-bottom: 5px;
+  color: #aaa;
+}
+.ioc-item pre {
+  margin: 0;
+  padding: 5px;
+  background-color: #3a3f4b; /* IoC 값 배경 */
+}
+
+/* 3열: Rule */
+.rule-column {
+  overflow-y: auto; /* 내용 많으면 스크롤 */
+}
+.rule-column pre {
+  flex-grow: 1; /* Rule 텍스트 영역이 최대한 커지도록 */
+}
+.rule-explanation {
+  font-style: italic;
+  color: #ccc;
+  border-top: 1px solid #444;
+  border-bottom: 1px solid #444;
+  padding: 10px 0;
+  margin: 10px 0;
+}
+.rule-explanation p {
+    white-space: pre-wrap; /* \n 줄바꿈을 그대로 렌더링 */
+    word-wrap: break-word; /* 긴 단어 자동 줄바꿈 */
+    margin: 15px 0; /* 각 항목 간 여백 */
+}
+.validation-status pre.validation-details {
+    background-color: #3a3f4b;
+    border: 1px solid #555;
+    font-size: 0.8rem;
+    white-space: pre-wrap; /* Snort 출력도 줄바꿈 유지 */
+}
+
+/* === ▼▼▼ 검증 결과 색상 클래스 추가 ▼▼▼ === */
+.details-success {
+    color: lightgreen;
+}
+.details-warning {
+    color: orange;
+}
+.details-error {
+    color: #ff6b6b; /* 기존 빨간색 */
+}
+.rule-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: auto; /* 버튼들을 맨 아래로 */
+}
+.rule-actions button {
+  flex-grow: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+.rule-actions .deploy-btn {
+  background-color: #4CAF50; /* 초록색 */
+  color: white;
+}

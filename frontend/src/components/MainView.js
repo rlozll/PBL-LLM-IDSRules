@@ -1,9 +1,8 @@
 // src/components/MainView.js
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { generateRule } from '../api';
-import { MdOutlineFileUpload } from "react-icons/md";
-import { MdOutlineFileOpen } from "react-icons/md";
-import { IoCopyOutline } from "react-icons/io5";
+import './MainView.css';
+import { FiUpload } from 'react-icons/fi';
 
 function MainView() {
   const [url, setUrl] = useState('');
@@ -12,284 +11,167 @@ function MainView() {
   const [result, setResult] = useState(null);
   const [error, setError] = useState('');
 
-  const handleFileUpload = (e) => {
-    const uploadedFile = e.target.files[0];
-    if(uploadedFile) {
-      setFile(uploadedFile);
-      setUrl(''); 
+  const fileInputRef = useRef(null);
+
+  const handleFileButtonClick = () => { fileInputRef.current.click(); };
+  const handleFileChange = (event) => {
+    const selectedFile = event.target.files[0];
+    if (selectedFile) {
+      setFile(selectedFile);
+      setUrl('');
+      console.log('File selected:', selectedFile.name);
     }
-  }
+  };
 
   const handleAnalyze = async () => {
     if (!url && !file) {
-      setError("URL 또는 파일을 입력해주세요.")
+      setError('URL을 입력하거나 PDF 파일을 업로드하세요.');
       return;
     }
     setIsLoading(true);
     setResult(null);
     setError('');
 
-    try {
-      let response;
-      if(file) {
-        const formData = new FormData();
-        formData.append('file', file);
-        response = await generateRule(null, formData);
-      } else {
-        response = await generateRule(url);
-      }
+    let response;
+    if (url) {
+      response = await generateRule(url);
+    } else if (file) {
+      setError('PDF 파일 분석 기능은 아직 구현되지 않았습니다.');
+      setIsLoading(false);
+      return;
+    }
 
-      if (response.ok) {
+    if (response && response.ok) {
         setResult(response.data);
-      } else {
-        const errorDetail = response.data?.detail?.error || response.data?.detail || `API Error (${response.status})`;
+    } else {
+        const errorDetail = response.data?.detail?.error || response.data?.detail || response.data?.error || `API Error (${response.status})`;
         setError(`분석 실패: ${errorDetail}`);
         console.error("Analysis failed:", response.status, response.data);
-      }
-    } catch(err) {
-      setError(`분석 중 오류 발생: ${err.message}`);
-      console.error("Analysis error: ", err);
     }
     setIsLoading(false);
   };
 
   const handleCopyRule = () => {
-    if (result?.generated_rule) {
+    if (result && result.generated_rule) {
       navigator.clipboard.writeText(result.generated_rule);
       alert('Rule이 클립보드에 복사되었습니다.');
     }
   };
 
   const handleDeployRule = () => {
-    if (result?.generated_rule) {
-      alert('Rule 배포 기능은 준비 중입니다.');
-    }
-  };
+      if (result && result.validation_result.startsWith("Success")) {
+          alert('배포 기능 호출 (구현 필요)');
+      } else {
+          alert('검증에 성공한 Rule만 배포할 수 있습니다.');
+      }
+  }
 
-  const clearInput = () => {
-    setUrl('');
-    setFile(null);
-    setResult(null);
-    setError('');
+  // --- ▼▼▼▼▼ 설명 객체를 렌더링하는 헬퍼 함수 ▼▼▼▼▼ ---
+  const renderExplanation = (explanation) => {
+    // explanation이 문자열(오류 메시지 등)인 경우 그대로 표시
+    if (typeof explanation === 'string') {
+      return <p>{explanation}</p>;
+    }
+    // explanation이 객체인 경우 (성공 시)
+    if (typeof explanation === 'object' && explanation !== null && !explanation.error) {
+      return (
+        <div>
+          <h4>규칙 분석 (전문가용)</h4>
+          <p>{explanation.rule_analysis}</p>
+          <h4>IDS 설정 권장 사항</h4>
+          <p>{explanation.ids_recommendation}</p>
+          <h4>일반 사용자/개발자 조치 사항</h4>
+          <p>{explanation.user_action}</p>
+        </div>
+      );
+    }
+    // explanation이 객체인데 오류가 포함된 경우
+    if (explanation && explanation.error) {
+      return <p style={{ color: 'red' }}>설명 생성 실패: {explanation.error}</p>;
+    }
+    // 그 외 알 수 없는 경우
+    return <p>설명 데이터를 불러올 수 없습니다.</p>;
   };
+  // --- ▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲ ---
+
 
   return (
-    <div className="main-view">
-      <h2>CTI Rule 생성</h2>
-      
-      <div className="content-wrapper">
-        <div className="left-section">
-          <div className="input-area">
-            <div className="url-input">
-              <input
-                type="text"
-                value={url}
-                onChange={(e) => {
-                  setUrl(e.target.value);
-                  setFile(null); 
-                }}
-                placeholder="분석할 CTI URL 입력"
-                disabled={file !== null}
-              />
-              {url && (
-                <button className="clear" onClick={clearInput}>✕</button>
-              )}
-              <label className="file-input">
-                <MdOutlineFileUpload size={20} />
-                <input
-                  type="file"
-                  accept=".pdf,.txt,.html,.json"
-                  onChange={handleFileUpload}
-                  style={{ display: 'none' }}
-                />
-              </label>
-            </div>
-            <button 
-              className="analyze" 
-              onClick={handleAnalyze} 
-              disabled={isLoading || (!url && !file)}
-            >
-              {isLoading ? "분석 중..." : "분석 시작"}
-            </button>
-          </div>
-
-          {error && <div className="error-message">{error}</div>}
-
-          <div className="preview">
-            {isLoading ? (
-              <div className="preview-loading">
-                <div className="spinner-small"></div>
-                <p>소스 로딩 중...</p>
-              </div>
-            ) : result ? (
-              <div className="preview-content">
-                {url && !file && (
-                  <div className="preview-url">
-                    <div className="preview-header">
-                      <span className="preview-icon">🔗</span>
-                      <span className="preview-title">{url}</span>
-                    </div>
-                    <iframe
-                      src={url}
-                      title="URL Preview"
-                      className="preview-iframe"
-                      sandbox="allow-same-origin allow-scripts"
-                    />
-                  </div>
-                )}
-                {file && (
-                  <div className="preview-file">
-                    <div className="preview-header">
-                      <span className="preview-icon">📄</span>
-                      <span className="preview-title">{file.name}</span>
-                      <span className="preview-size">{(file.size / 1024).toFixed(2)} KB</span>
-                    </div>
-                    {result?.source_text && (
-                      <div className="preview-text">
-                        <pre>{result.source_text}</pre>
-                      </div>
-                    )}
-                    {result?.source_info && (
-                      <div className="preview-info">
-                        <p><strong>타입:</strong> {result.source_info.type}</p>
-                        {result.source_info.title && (
-                          <p><strong>제목:</strong> {result.source_info.title}</p>
-                        )}
-                      </div>
-                    )}
-                  </div>
-                )}
-              </div>
-            ) : (
-              <div className="placeholder">
-                <p>url 페이지 or pdf 화면 출력</p>
-              </div>
-            )}
-          </div>
+    <div className="main-view-grid">
+      {/* === 1열: 입력 === */}
+      <div className="analysis-box input-column">
+        <h4>분석할 CTI URL 입력</h4>
+        <div className="url-input-wrapper">
+          <input
+            type="text"
+            value={url}
+            onChange={(e) => {
+                setUrl(e.target.value);
+                if (e.target.value) setFile(null);
+            }}
+            placeholder="https://..."
+            disabled={isLoading}
+          />
+          <button onClick={handleFileButtonClick} disabled={isLoading} className="upload-btn">
+            <FiUpload />
+          </button>
+          <input type="file" ref={fileInputRef} onChange={handleFileChange} style={{ display: 'none' }} accept=".pdf,.txt" />
         </div>
-
-        <div className="center-section">
-          <h3>[추출된 IoCs]</h3>
-          {isLoading ? (
-            <div className="loading">
-              <div className="spinner"></div>
-              <p>분석 중...</p>
-            </div>
-          ) : result?.extracted_ioc ? (
-            <div className="ioc-section-container">
-              <div className="ioc-section">
-                <label>• Domain:</label>
-                <div className="ioc-print">
-                  {result.extracted_ioc.domains?.length > 0 ? (  
-                    result.extracted_ioc.domains.map((domain, idx) => (
-                      <div key={idx} className="ioc-chip">{domain}</div>
-                    ))
-                  ) : (
-                    <span className="empty-text">-</span> 
-                  )}
-                </div>
-              </div>
-              <div className="ioc-section">
-                <label>• IP:</label>
-                <div className="ioc-print">
-                  {result.extracted_ioc.ips?.length > 0 ? (  
-                    result.extracted_ioc.ips.map((ip, idx) => (
-                      <div key={idx} className="ioc-chip">{ip}</div>
-                    ))
-                  ) : (
-                    <span className="empty-text">-</span>
-                  )}
-                </div>
-              </div>
-              <div className="ioc-section">
-                <label>• File hash (SHA256):</label>
-                <div className="ioc-print">
-                  {result.extracted_ioc.file_hashes?.sha256?.length > 0 ? (  
-                    result.extracted_ioc.file_hashes.sha256.map((hash, idx) => (
-                      <div key={idx} className="ioc-chip hash">{hash}</div>
-                    ))
-                  ) : (
-                    <span className="empty-text">-</span>
-                  )}
-                </div>
-              </div>
-              <div className="ioc-section">
-                <label>• File hash (md5):</label>
-                <div className="ioc-print">
-                  {result.extracted_ioc.file_hashes?.md5?.length > 0 ? (  
-                    result.extracted_ioc.file_hashes.md5.map((hash, idx) => (
-                      <div key={idx} className="ioc-chip hash">{hash}</div>
-                    ))
-                  ) : (
-                    <span className="empty-text">-</span>
-                  )}
-                </div>
-              </div>
-              <div className="ioc-section">
-                <label>• CVE:</label> 
-                <div className="ioc-print">
-                  {result.extracted_ioc.cves?.length > 0 ? (  
-                    result.extracted_ioc.cves.map((cve, idx) => (
-                      <div key={idx} className="ioc-chip">{cve}</div>
-                    ))
-                  ) : (
-                    <span className="empty-text">-</span>
-                  )}
-                </div>
-              </div>
-            </div>
-          ) : (
-            <div className="empty">
-              <p>분석을 시작하면 IoCs가 여기에 표시됩니다.</p>
-            </div>
-          )}
+        <button onClick={handleAnalyze} disabled={isLoading || (!url && !file)} className="analyze-btn">
+          {isLoading ? '분석 중...' : '분석 시작'}
+        </button>
+        <div className="preview-box">
+          {file ? `File: ${file.name}` : (url ? `URL: ${url}` : 'url 페이지 or pdf 화면 출력')}
         </div>
+      </div>
 
-        <div className="right-section">
-          <h3>[Rule 생성]</h3>
-          {isLoading ? (
-            <div className="loading">
-              <div className="spinner"></div>
-              <p>분석 중...</p>
+      {/* === 2열: IoCs === */}
+      <div className="analysis-box ioc-column">
+        <h3>[추출된 IoCs]</h3>
+        {isLoading && <p>IoC를 추출 중입니다...</p>}
+        {error && <p className="error-message">{error}</p>}
+        {result && (
+            <div className="ioc-grid">
+                <div className="ioc-item"><strong>Domain:</strong><pre>{JSON.stringify(result.extracted_ioc?.domain, null, 2)}</pre></div>
+                <div className="ioc-item"><strong>IP:</strong><pre>{JSON.stringify(result.extracted_ioc?.ip, null, 2)}</pre></div>
+                <div className="ioc-item"><strong>Hash (SHA256):</strong><pre>{JSON.stringify(result.extracted_ioc?.hash?.filter(h => h.length === 64), null, 2)}</pre></div>
+                <div className="ioc-item"><strong>Hash (MD5):</strong><pre>{JSON.stringify(result.extracted_ioc?.hash?.filter(h => h.length === 32), null, 2)}</pre></div>
+                <div className="ioc-item"><strong>CVE:</strong><pre>{JSON.stringify(result.extracted_ioc?.cve, null, 2)}</pre></div>
             </div>
-          ) : result?.generated_rule ? ( 
-            <div className="rule-content">
-              <div className="rule-editor">
-                <pre>{result.generated_rule}</pre>
-              </div>
-              <div className="rule-info">
-                <p className="validation-status">
-                  <strong>검증:</strong> 
-                  <span className={`status ${
-                    result.validation_result === 'Success: Valid Syntax' ? 'success' : 
-                    result.validation_result === 'Warning' ? 'warning' : 'error'
-                  }`}>
+        )}
+        {!isLoading && !result && !error && <p>분석을 시작하면 IoCs가 여기에 표시됩니다.</p>}
+      </div>
+
+      {/* === 3열: Rule === */}
+      <div className="analysis-box rule-column">
+        <h3>[Rule 생성]</h3>
+        {isLoading && <p>Rule을 생성 중입니다...</p>}
+        {error && <p className="error-message">Rule 생성 실패</p>}
+        {result && (
+            <>
+              <pre>{result.generated_rule}</pre>
+              <div className="validation-status">
+                <strong>검증: </strong>
+                <span style={{ color: result.validation_result.startsWith('Success') ? 'lightgreen' : (result.validation_result === 'Warning' ? 'orange' : '#ff6b6b') }}>
                     {result.validation_result}
-                  </span>
-                </p>
-                {result.rule_explanation && (
-                  <p className="rule-explanation">
-                    <strong>설명:</strong> {result.rule_explanation}
-                  </p>
-                )}
+                </span>
+                {result.validation_details && <pre className="validation-details">{result.validation_details}</pre>}
               </div>
+
+              {/* --- ▼▼▼▼▼ 여기가 수정되었습니다! ▼▼▼▼▼ --- */}
+              <div className="rule-explanation">
+                <p><strong>LLM 부연설명:</strong></p>
+                {/* 헬퍼 함수를 호출하여 객체를 렌더링 */}
+                {renderExplanation(result.rule_explanation)}
+              </div>
+              {/* --- ▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲ --- */}
+
               <div className="rule-actions">
-                <button className="btn-secondary" onClick={handleCopyRule}>
-                  <IoCopyOutline size={18} />
-                  Rule 복사
-                </button>
-                <button className="btn-primary" onClick={handleDeployRule}>
-                  <MdOutlineFileOpen size={18} />
-                  Rule 배포
-                </button>
+                <button onClick={handleCopyRule}>Rule 복사</button>
+                <button onClick={handleDeployRule} className="deploy-btn">Rule 배포</button>
               </div>
-            </div>
-          ) : (
-            <div className="empty">
-              <p>분석을 시작하면 Rule이 여기에 표시됩니다.</p>
-            </div>
-          )}
-        </div>
+            </>
+        )}
+        {!isLoading && !result && !error && <p>분석을 시작하면 Rule이 여기에 표시됩니다.</p>}
       </div>
     </div>
   );
