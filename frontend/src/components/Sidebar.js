@@ -2,7 +2,7 @@
 import React from 'react';
 
 // 아이콘 라이브러리 (예: react-icons) 설치 필요: npm install react-icons
-import { FiLogOut } from 'react-icons/fi';
+//mport { FiLogOut } from 'react-icons/fi';
 import { ReactComponent as DashboardIcon } from './icons/DashboardHome.svg';
 import { ReactComponent as CtiIcon } from './icons/CTILists.svg';
 import { ReactComponent as BookmarkIcon } from './icons/BookmarkedLists.svg';
@@ -10,7 +10,7 @@ import { ReactComponent as HistoryIcon } from './icons/History.svg';
 import { ReactComponent as LogoIcon } from './icons/Logo.svg';
 
 
-function Sidebar({ currentView, setCurrentView, onLogout }) {
+function Sidebar({ currentView, setCurrentView }) {
   const menuItems = [
   { id: 'main', label: 'Dashboard', icon: <DashboardIcon className="sidebar-icon" /> },
   { id: 'cti', label: 'CTI LIST', icon: <CtiIcon className="sidebar-icon" /> },
@@ -34,10 +34,7 @@ function Sidebar({ currentView, setCurrentView, onLogout }) {
           {item.icon} <span style={{ marginLeft: '10px' }}>{item.label}</span>
         </button>
       ))}
-       {/* 로그아웃 버튼 */}
-      <button onClick={onLogout} style={{ marginTop: 'auto' }}> {/* 맨 아래로 보내기 */}
-          <FiLogOut /> <span style={{ marginLeft: '10px' }}>Logout</span>
-      </button>
+    
     </nav>
   );
 }

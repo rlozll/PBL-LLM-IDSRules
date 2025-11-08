@@ -56,6 +56,7 @@ function App() {
             setError={setAnalysisError}
             isLoading={analysisLoading}
             setIsLoading={setAnalysisLoading}
+            onLogout={handleLogout} 
           />
         )}
         {currentView === 'cti' && <CtiList />}

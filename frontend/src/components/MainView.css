@@ -8,7 +8,7 @@
 }
 
 .analysis-box {
-  background-color: #1e2128; /* 어두운 카드 배경 */
+  background-color: #ffffff; /* 어두운 카드 배경 */
   border-radius: 8px;
   padding: 20px;
   display: flex;
@@ -107,7 +107,7 @@
   gap: 10px;
 }
 .ioc-item {
-  background-color: #2c313a; /* 각 IoC 항목 배경 */
+  background-color: #f9f9f9; /* 각 IoC 항목 배경 */
   border-radius: 4px;
   padding: 10px 15px;
 }
@@ -175,4 +175,356 @@
 .rule-actions .deploy-btn {
   background-color: #4CAF50; /* 초록색 */
   color: white;
+}
+
+/* ===== 상단 바(topbar) 스타일 ===== */
+.topbar {
+  display: flex;
+  align-items: center;
+  background-color: #ffffff;
+  border-bottom: 1px solid #e5e5e5;
+  padding: 0.75rem 1.5rem;
+  height: 60px;
+  width: 100%;
+  box-sizing: border-box;
+  gap: 1.5rem; /* 왼쪽 아이콘과 검색창 사이 여백 */
+}
+
+.left-icons {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.topbar-icon {
+  width: 22px;
+  height: 22px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.topbar-icon:hover {
+  transform: scale(1.15);
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: 1.5px solid #ff4b00;
+  border-radius: 8px;
+  padding: 0.25rem 0.75rem;
+  background-color: #fff;
+}
+
+.search-box input {
+  border: none;
+  outline: none;
+  font-size: 0.9rem;
+  width: 200px;
+}
+
+.search-btn {
+  background: none;
+  border: none;
+  color: #ff4b00;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-left: auto; /* 오른쪽 끝으로 밀기 */
+}
+
+
+.user-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.username {
+  font-weight: 500;
+  color: #333;
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  padding: 30px 40px;
+  color: #333;
+}
+
+.header-section h1 {
+  font-size: 2rem;
+  margin-bottom: 0;
+}
+
+.header-section .subtitle {
+  color: #888;
+  font-size: 1rem;
+  margin-bottom: 30px;
+}
+
+.main-box-grid {
+  display: grid;
+  grid-template-columns: 1.3fr 2fr; /* 왼쪽, 오른쪽 비율 */
+  grid-template-rows: 1fr 4fr; /* 상단 1/5, 하단 4/5 비율 */
+  grid-template-areas:
+    "sources rule"
+    "iocs rule";
+  gap: 24px;
+  align-items: stretch;
+}
+
+
+/* 각 구역 지정 */
+/* Your Sources 박스 */
+.main-box.sources {
+  background: #fff;
+  border-radius: 12px;
+  padding: 14px 18px 16px 18px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12); /*  음영 확실히 보이게 */
+  border: none;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;  /* 중요! 자식 스크롤 허용 */
+  grid-area: sources;
+}
+
+/* 공통 박스 스타일 */
+.main-box {
+  background: #fff;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.06);
+  display: flex;
+  flex-direction: column;
+}
+
+.main-box.iocs {
+  background: #f5f5f5;
+  border-radius: 12px;
+  padding: 20px;
+  grid-area: iocs;
+  height: 640px; /* 하단 고정 */
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+}
+
+.main-box.rule {
+  grid-area: rule;
+  height: 820px; /* 왼쪽 두 박스 합과 동일 */
+}
+
+
+.main-box > div {
+  flex: 1;
+  overflow-y: auto; /*  내용 많으면 박스 내부에서 스크롤 */
+  overflow: visible !important;
+  min-height: 0;  /* 자식 요소가 스크롤 가능하도록 함 */
+
+}
+
+.rule-box,
+.source-card,
+.ioc-list {
+  background: #f9f9f9;
+  border-radius: 10px;
+  padding: 16px;
+  flex: 1;
+  overflow-y: auto;
+}
+
+
+/*  Your Sources 제목 */
+.main-box.sources h2 {
+  color: #494A4A;
+  font-weight: 700;
+  font-size: 1.5rem;
+  margin: 0 0 4px 0;
+  border-bottom: none;
+}
+
+/* ===== 내부 콘텐츠 영역 ===== */
+/* 내부 콘텐츠 */
+.source-card {
+  flex: 1;
+  height: 220px; 
+  margin-top: 4px;
+  overflow-y: auto; /*  스크롤 */
+  padding-right: 8px; /* 스크롤 시 오른쪽 여백 */
+}
+
+/* ===== 스크롤바 커스터마이징 ===== */
+.source-card::-webkit-scrollbar {
+  width: 6px;
+}
+.source-card::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 10px;
+}
+.source-card::-webkit-scrollbar-thumb:hover {
+  background: #999;
+}
+
+/* ===== 파일 아이템 ===== */
+.source-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  margin-bottom: 12px;
+}
+
+.source-item img.source-icon {
+  width: 38px;
+  height: 48px;
+}
+
+.file-name {
+  color: #121212;
+  font-weight: 600;
+  font-size: 1rem;
+  margin: 0 0 4px 0;
+}
+
+.file-desc {
+  color: #121212;
+  font-weight: 400;
+  font-size: 0.9rem;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.ioc-list {
+  background: #f9f9f9;
+  border-radius: 10px;
+  padding: 16px;
+  flex: 1;
+  overflow-y: auto;
+}
+
+
+/* 오른쪽 박스 내부 스타일 */
+.rule-box {
+  background: #f9f9f9;
+  border-radius: 10px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+
+.rule-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: auto;
+}
+
+.copy-btn {
+  background: #eee;
+  color: #333;
+  padding: 8px 18px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+}
+
+.deploy-btn {
+  background: #FF4B00 !important;
+  color: white;
+  padding: 8px 18px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+}
+
+/* 전체 레이아웃이 화면 전체를 채우게 */
+html, body {
+  height: 100%;
+  margin: 0;
+  
+}
+
+/* ▼▼▼ 드롭다운 메뉴 ▼▼▼ */
+.dropdown-menu {
+  position: absolute;
+  top: 55px; /* 프로필 아래로 */
+  right: 30px; /* 오른쪽 정렬 */
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+  padding: 6px 0;
+  z-index: 1000;
+  min-width: 140px;
+  animation: dropdownFade 0.2s ease-out;
+}
+
+@keyframes dropdownFade {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.logout-btn {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 10px 14px;
+  border: none;
+  background: none;
+  color: #333;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.logout-btn:hover {
+  background: #f6f6f6;
+}
+
+.logout-icon {
+  margin-right: 8px;
+  font-size: 1.1rem;
+  color: #666;
+}
+
+/* ▼ 화살표 스타일 보정 */
+.menu-arrow {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+  margin-left: 4px;
+  transform: translateY(1px);
+  opacity: 0.8;
+}
+
+.menu-arrow:hover {
+  opacity: 1;
+}
+
+.user-click-area {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  padding: 6px 10px;
+  border-radius: 6px;
+  transition: background 0.2s ease;
+}
+
+.user-click-area:hover {
+  background: #f5f5f5;
 }
