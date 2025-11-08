@@ -8,6 +8,8 @@ import IdsSettings from './components/IdsSettings';
 import History from './components/History';
 import { checkLoginStatus } from './api';
 import Topbar from './components/Topbar';
+import BookmarkList from "./components/BookmarkList";
+
 import './App.css';
 
 function App() {
@@ -72,8 +74,9 @@ function App() {
         {currentView === 'cti' && <CtiList />}
         {currentView === 'settings' && <IdsSettings />}
         {currentView === 'history' && <History />}
+        {currentView === 'bookmark' && <BookmarkList />}
       </main>
-    </div> 
+    </div>   
   </div>
 );
 }

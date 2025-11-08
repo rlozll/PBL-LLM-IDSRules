@@ -1,85 +1,269 @@
-.bookmark-container {
-  padding: 40px 60px;
-  background-color: #fff;
-  color: #333;
-  max-width: 1400px;
-  margin: 0 auto;
+/* 버튼 영역 전체 */
+.link-buttons {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 24px;
+  position: relative;
+  flex-wrap: wrap;
 }
 
-.bookmark-header h1 {
-  font-size: 2rem;
-  font-weight: 700;
-  color: #211C37;
-  margin-bottom: 6px;
+/* 버튼 스타일 */
+.link-btn {
+  padding: 10px 22px;
+  border-radius: 4px !important;    /*  완전 각진 모서리 */
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 0.95rem;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
 }
 
-.bookmark-header .subtitle {
-  font-size: 1.2rem;
-  color: #85878D;
-  margin-bottom: 30px;
+/* hover 효과 강화 */
+.link-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.08);
 }
 
-/* 카드형 그리드 */
+/* 각 버튼 컬러 (원본 유지) */
+.link-1 {
+  background-color: #EDEFFE;
+  color: #3083FF;
+}
+.link-1:hover {
+  background-color: #D8DCFB;
+}
+
+.link-2 {
+  background-color: #FBF4EC;
+  color: #D28E3D;
+}
+.link-2:hover {
+  background-color: #F5E6D8;
+}
+
+.link-3 {
+  background-color: #F7F7E8;
+  color: #B1AB1D;
+}
+.link-3:hover {
+  background-color: #ECECCD;
+}
+
+.link-4 {
+  background-color: #F4EDF7;
+  color: #954BAF;
+}
+.link-4:hover {
+  background-color: #E5D9F0;
+}
+
+.link-5 {
+  background-color: #EEF5F0;
+  color: #259800;
+}
+.link-5:hover {
+  background-color: #DBE8DE;
+}
+
+/* 말풍선 입력창 */
+.bubble-input {
+  position: absolute;
+  top: 50px;                       /*  버튼 바로 아래 자연스럽게 배치 */
+  left: 0;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 10px 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  z-index: 10;
+}
+
+/* 입력창 내부 input 스타일 */
+.bubble-input input {
+  border: 1px solid #E4E4E4;
+  border-radius: 4px;
+  padding: 6px 10px;
+  flex: 1;
+  font-size: 0.9rem;
+}
+
+/* 카드 레이아웃 (3열 고정 유지) */
 .bookmark-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
 }
 
-/* 개별 카드 */
 .bookmark-card {
-  background-color: #fff;
-  border: 1px solid #e5e5e5;
+  border: 1px solid #eee;
   border-radius: 10px;
-  padding: 20px;
-  transition: all 0.2s ease-in-out;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  padding: 16px;
+  background: white;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
 }
 
-.bookmark-card:hover {
-  border-color: #FF4B00;
-  background-color: #fff6f0;
-}
-
-/* 카드 내용 */
-.bookmark-tag {
-  font-size: 0.9rem;
+/* 카드 제목 (URL) */
+.bookmark-title a {
+  display: block;
+  color: #111;              /* 진한 블랙 */
   font-weight: 600;
-  margin-bottom: 10px;
-}
-
-.bookmark-title {
-  font-size: 1.05rem;
-  font-weight: 500;
-  margin-bottom: 8px;
-  color: #222;
-}
-
-.bookmark-desc {
   font-size: 0.95rem;
-  color: #666;
-  margin-bottom: 20px;
+  text-decoration: none;
+  word-break: break-all;
+  margin-bottom: 6px;
+  line-height: 1.4;
 }
 
-/* 카드 하단 */
-.bookmark-footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.bookmark-link {
-  font-size: 0.9rem;
-  color: #000;
-  font-weight: 500;
+.bookmark-title a:hover {
+  color: #111;
   text-decoration: none;
 }
 
-.bookmark-link:hover {
-  color: #FF4B00;
+/* 룰 텍스트 (2줄만 표시) */
+.bookmark-desc {
+  color: #727272;
+  font-weight: 400;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;   /* 2줄까지만 표시 */
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+  margin-bottom: 8px;
+}
+
+
+/* 정렬 토글 영역 */
+.sort-toggle {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 24px;
+  margin-top: 6px;
+}
+
+.sort-toggle button {
+  border: 1px solid #ddd;
+  background: #fff;
+  color: #555;
+  border-radius: 4px;
+  padding: 6px 14px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+}
+
+.sort-toggle button:hover {
+  background: #f5f5f5;
+}
+
+.sort-btn.active {
+  background-color: #888;  /* 밝은 회색 */
+  color: #222;                /* 글씨 진한 회색 */
+  border: 1px solid #CFCFCF;  /* 테두리도 미세하게 */
 }
 
 .bookmark-date {
   font-size: 0.85rem;
-  color: #777;
+  color: #888;
+  text-align: right;
+  margin-top: 4px;
+  font-family: 'SF Mono', monospace; /* 숫자 간격 일정하게 */
+}
+
+
+.bookmark-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 8px;
+  border-top: 1px solid #eee;
+  padding-top: 8px;
+}
+
+.trash-icon {
+  width: 22px;
+  height: 22px;
+  cursor: pointer;
+  filter: invert(42%) sepia(100%) saturate(5233%) hue-rotate(8deg) brightness(96%) contrast(101%);
+  transition: transform 0.2s ease;
+}
+
+.trash-icon:hover {
+  transform: scale(1.1);
+}
+
+/* 🧱 삭제 확인 모달 */
+.delete-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+}
+
+.delete-box {
+  background: white;
+  border-radius: 10px;
+  padding: 24px 28px;
+  text-align: center;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+  animation: fadeIn 0.2s ease;
+}
+
+.delete-box p {
+  font-size: 1.05rem;
+  color: #333;
+  margin-bottom: 16px;
+}
+
+.delete-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+.cancel-btn,
+.delete-btn {
+  padding: 8px 20px;
+  border-radius: 6px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.cancel-btn {
+  background-color: #eee;
+  color: #333;
+}
+
+.cancel-btn:hover {
+  background-color: #ddd;
+}
+
+.delete-btn {
+  background-color: #ff4b00;
+  color: white;
+}
+
+.delete-btn:hover {
+  background-color: #e44400;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
 }
