@@ -4,8 +4,8 @@
 body {
   margin: 0;
   font-family: sans-serif;
-  background-color: #282c34; /* 어두운 배경 */
-  color: #e0e0e0; /* 밝은 텍스트 */
+  background-color: #FFFFFF; /* 밝은 배경 */
+  color: #000000; /* 어두운 텍스트 */
 }
 
 .dashboard-layout {
@@ -15,7 +15,7 @@ body {
 
 .sidebar {
   width: 200px; /* 사이드바 너비 */
-  background-color: #1e2128; /* 사이드바 배경색 */
+  background-color: #F9F9F9; /* 사이드바 배경색 */
   padding: 20px;
   display: flex;
   flex-direction: column;
@@ -25,7 +25,7 @@ body {
 .sidebar button {
   background: none;
   border: none;
-  color: #e0e0e0;
+  color: #727272;
   padding: 15px 10px;
   margin-bottom: 10px;
   width: 100%;
@@ -36,22 +36,24 @@ body {
 }
 
 .sidebar button.active {
-  background-color: #3a3f4b; /* 활성 탭 배경색 */
+  background-color: #FF4B00; /* 활성 탭 배경색 */
+  color: #FFFFFF;   /* 글씨 색 */
 }
 
 .sidebar button:hover {
-  background-color: #3a3f4b;
+  background-color: #E4E4E4; /* 마우스를 올렸을 때 */
+   color: #FFFFFF;   /* 글씨 색 */
 }
 
 .main-content {
   flex-grow: 1; /* 남은 공간 모두 차지 */
   padding: 30px;
-  background-color: #2c313a; /* 메인 영역 배경색 */
+  background-color: #FFFFFF; /* 메인 영역 배경색 */
 }
 
 /* --- Login --- */
 .login-container {
-  background-color: #1e2128;
+  background-color: #FFFFFF;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -63,7 +65,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #1e2128;
+  background-color: #FFFFFF;
   padding: 40px;
   border-radius: 8px;
 }
@@ -71,10 +73,10 @@ body {
 .login-container input[type="password"] {
   padding: 10px;
   margin-bottom: 20px;
-  border: 1px solid #444;
-  background-color: #3a3f4b;
-  color: #e0e0e0;
-  border-radius: 4px;
+  border: 1px solid #FFF4F0;
+  background-color: #FFF4F0;
+  color: #FF4B00;
+  border-radius: 30px;
   width: 200px;
   text-align: center; /* 텍스트 중앙 정렬 */
 }
@@ -124,7 +126,7 @@ body {
 
 /* ========== 왼쪽 섹션 ========== */
 .left-section {
-  background-color: #1e2128;
+  background-color: #FFFFFF;
   border-radius: 0.75rem;
   padding: 1rem;
   display: flex;
@@ -377,7 +379,7 @@ body {
 
 /* ========== 중앙 섹션 ========== */
 .center-section {
-  background-color: #1e2128;
+  background-color: #FFFFFF;
   border-radius: 0.75rem;
   padding: 1.5rem;
   /* [수정] 스크롤바 제거 */
@@ -473,7 +475,7 @@ body {
 
 /* ========== 오른쪽 섹션 ========== */
 .right-section {
-  background-color: #1e2128;
+  background-color: #FFFFFF;
   border-radius: 0.75rem;
   padding: 1.5rem;
   display: flex;
