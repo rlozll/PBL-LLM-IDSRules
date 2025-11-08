@@ -8,6 +8,8 @@ import { ReactComponent as CtiIcon } from './icons/CTILists.svg';
 import { ReactComponent as BookmarkIcon } from './icons/BookmarkedLists.svg';
 import { ReactComponent as HistoryIcon } from './icons/History.svg';
 import { ReactComponent as LogoIcon } from './icons/Logo.svg';
+import Footer from './Footer';
+import './Sidebar.css';
 
 
 function Sidebar({ currentView, setCurrentView }) {
@@ -34,7 +36,8 @@ function Sidebar({ currentView, setCurrentView }) {
           {item.icon} <span style={{ marginLeft: '10px' }}>{item.label}</span>
         </button>
       ))}
-    
+       {/* ✅ Footer 항상 하단 고정 */}
+      <Footer />
     </nav>
   );
 }

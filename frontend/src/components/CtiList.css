@@ -40,7 +40,6 @@
   font-weight: 700 !important;
   letter-spacing: 0.3px; 
   /*  전체 가운데 정렬 */
-  text-align: center;
   align-items: center; /* 세로 가운데 정렬 */
 }
 
@@ -86,8 +85,8 @@
 }
 
 .cti-col-date {
-  text-align: right;
+  text-align: center;
   color: #777;
   font-size: 0.95rem;
-  text-align: center;
+    letter-spacing: 0.5px;
 }

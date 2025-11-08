@@ -1,0 +1,85 @@
+.bookmark-container {
+  padding: 40px 60px;
+  background-color: #fff;
+  color: #333;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.bookmark-header h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #211C37;
+  margin-bottom: 6px;
+}
+
+.bookmark-header .subtitle {
+  font-size: 1.2rem;
+  color: #85878D;
+  margin-bottom: 30px;
+}
+
+/* 카드형 그리드 */
+.bookmark-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+  gap: 20px;
+}
+
+/* 개별 카드 */
+.bookmark-card {
+  background-color: #fff;
+  border: 1px solid #e5e5e5;
+  border-radius: 10px;
+  padding: 20px;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.bookmark-card:hover {
+  border-color: #FF4B00;
+  background-color: #fff6f0;
+}
+
+/* 카드 내용 */
+.bookmark-tag {
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.bookmark-title {
+  font-size: 1.05rem;
+  font-weight: 500;
+  margin-bottom: 8px;
+  color: #222;
+}
+
+.bookmark-desc {
+  font-size: 0.95rem;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+/* 카드 하단 */
+.bookmark-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.bookmark-link {
+  font-size: 0.9rem;
+  color: #000;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.bookmark-link:hover {
+  color: #FF4B00;
+}
+
+.bookmark-date {
+  font-size: 0.85rem;
+  color: #777;
+}
