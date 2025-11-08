@@ -126,35 +126,6 @@ function MainView({ onLogout }) {
 
 return (
   <>
-    {/* ===== 상단 바 ===== */}
-    <div className="topbar">
-      <div className="search-box">
-        <img src={searchIcon} alt="search" className="topbar-icon" />
-        <input type="text" placeholder="URL 입력" />
-        <img src={addURLIcon} alt="add-url" className="topbar-icon" />
-      </div>
-
-    {/* === 프로필 + 메뉴 === */}
-    <div className="user-info" ref={menuRef}>
-      {/* ▼ 아이콘 클릭 시 메뉴 토글 */}
-      <div className="user-click-area" onClick={() => setMenuOpen(!menuOpen)}>
-        <img src={profileIcon} alt="user" className="user-icon" />
-        <span className="username">admin</span>
-        <img src={profileMenuIcon} alt="menu" className="menu-arrow" />
-      </div>
-
-      {/* ▼ 드롭다운 메뉴 */}
-      {menuOpen && (
-        <div className="dropdown-menu">
-          <button className="logout-btn" onClick={onLogout}>
-            <FiLogOut className="logout-icon" />
-            <span>Logout</span>
-          </button>
-        </div>
-      )}
-    </div>
-  </div>
-
     {/* ===== 인사말 + 메인 콘텐츠 ===== */}
     <div className="main-container">
       <div className="header-section">

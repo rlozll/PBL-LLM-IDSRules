@@ -7,6 +7,7 @@ import CtiList from './components/CtiList';
 import IdsSettings from './components/IdsSettings';
 import History from './components/History';
 import { checkLoginStatus } from './api';
+import Topbar from './components/Topbar';
 import './App.css';
 
 function App() {
@@ -44,8 +45,17 @@ function App() {
   }
 
   return (
-    <div className="dashboard-layout">
-      <Sidebar currentView={currentView} setCurrentView={setCurrentView} onLogout={handleLogout} />
+  <div className="dashboard-layout">
+    <Sidebar
+      currentView={currentView}
+      setCurrentView={setCurrentView}
+      onLogout={handleLogout}
+    />
+
+    {/*  main-content를 main-wrapper로 감싸고, Topbar 추가 */}
+    <div className="main-wrapper">
+      <Topbar onLogout={handleLogout} /> {/* 공통 상단바 추가 */}
+
       <main className="main-content">
         {/* MainView에 상태와 상태 변경 함수를 props로 전달 */}
         {currentView === 'main' && (
@@ -56,15 +66,16 @@ function App() {
             setError={setAnalysisError}
             isLoading={analysisLoading}
             setIsLoading={setAnalysisLoading}
-            onLogout={handleLogout} 
+            onLogout={handleLogout}
           />
         )}
         {currentView === 'cti' && <CtiList />}
         {currentView === 'settings' && <IdsSettings />}
         {currentView === 'history' && <History />}
       </main>
-    </div>
-  );
+    </div> 
+  </div>
+);
 }
 
 export default App;
