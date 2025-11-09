@@ -1,6 +1,7 @@
 import React from "react";
 import "./History.css";
 
+
 const History = () => {
   const historyData = [
   {
@@ -75,7 +76,7 @@ const History = () => {
   return (
     <div className="history-container">
       <div className="history-header">
-        <h1>History</h1>
+        <h1>History </h1>
         <p className="subtitle">Look at past records</p>
       </div>
 

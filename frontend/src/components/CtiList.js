@@ -60,7 +60,7 @@ function CtiList() {
   return (
     <div className="cti-list-container">
       <header className="cti-header">
-        <h1>CTI Lists</h1>
+        <h1>CTI Lists </h1>
         <p className="subtitle">Check out the latest CTIs</p>
       </header>
 

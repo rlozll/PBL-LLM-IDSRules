@@ -10,7 +10,7 @@
 /* 버튼 스타일 */
 .link-btn {
   padding: 10px 22px;
-  border-radius: 4px !important;    /*  완전 각진 모서리 */
+  border-radius: 6px !important;    /*  완전 각진 모서리 */
   border: none;
   font-weight: 600;
   cursor: pointer;
@@ -94,6 +94,13 @@
   font-size: 0.9rem;
 }
 
+.bookmark-container {
+  padding: 40px;
+  padding-top: 40px; /* 상단 간격 늘림 */
+  background-color: #fff;
+  color: #333;
+}
+
 /* 카드 레이아웃 (3열 고정 유지) */
 .bookmark-grid {
   display: grid;
@@ -164,43 +171,49 @@
   background: #f5f5f5;
 }
 
-.sort-btn.active {
-  background-color: #888;  /* 밝은 회색 */
-  color: #222;                /* 글씨 진한 회색 */
-  border: 1px solid #CFCFCF;  /* 테두리도 미세하게 */
+
+/* 클릭된(active) 버튼 상태 */
+.sort-toggle button.active {
+  background-color: #e9e9e9;      /* 회색 배경 고정 */
+  border-color: #bbb;
+  color: #333;
+  font-weight: 600;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
-.bookmark-date {
-  font-size: 0.85rem;
-  color: #888;
-  text-align: right;
-  margin-top: 4px;
-  font-family: 'SF Mono', monospace; /* 숫자 간격 일정하게 */
-}
 
 
 .bookmark-footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 8px;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  gap: 8px !important;
   border-top: 1px solid #eee;
   padding-top: 8px;
+  margin-top: 8px;
 }
 
+.bookmark-date {
+  text-align: left !important;
+  margin-left: 1px !important;
+  color: #777 !important;
+}
+
+
+/* 휴지통 아이콘 */
 .trash-icon {
-  width: 22px;
-  height: 22px;
+  width: 20px;
+  height: 20px;
   cursor: pointer;
-  filter: invert(42%) sepia(100%) saturate(5233%) hue-rotate(8deg) brightness(96%) contrast(101%);
-  transition: transform 0.2s ease;
+  filter: invert(45%) sepia(80%) saturate(2400%) hue-rotate(350deg);
+  transition: transform 0.2s;
 }
 
 .trash-icon:hover {
-  transform: scale(1.1);
+  transform: scale(1.15);
 }
 
-/* 🧱 삭제 확인 모달 */
+/*  삭제 확인 모달 */
 .delete-modal {
   position: fixed;
   top: 0;
@@ -266,4 +279,112 @@
 @keyframes fadeIn {
   from { opacity: 0; transform: scale(0.95); }
   to { opacity: 1; transform: scale(1); }
+}
+
+/* URL 입력창 스타일 */
+.bubble-input {
+  position: absolute;
+  top: 50px;
+  left: 0;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 10px 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  z-index: 10;
+}
+
+/* 내부 입력칸 (배경 채움 + 테두리 제거) */
+.bubble-input input {
+  flex: 1;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 6px;
+  background-color: #F7F9FB;   /*  배경색 추가 */
+  font-size: 0.9rem;
+  outline: none;
+  transition: background-color 0.2s ease;
+}
+
+.bubble-input input:focus {
+  background-color: #EEF3F7;   /*  살짝 밝은 회색으로 포커스 효과 */
+}
+
+/* 등록 버튼 대신 아이콘 */
+.add-url-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.add-url-btn img {
+  width: 22px;
+  height: 22px;
+  opacity: 0.8;
+  transition: opacity 0.2s ease, transform 0.15s ease;
+}
+
+.add-url-btn:hover img {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+/* 카드 상단 Link 태그 (둥근 라벨 스타일) */
+.bookmark-tag {
+  display: inline-block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 6px 14px; 
+  border-radius: 6px;       /* 둥글게 마감 */
+  margin-bottom: 12px;
+  color: #333;
+  background: rgba(0, 0, 0, 0.02);
+  align-self: flex-start;
+}
+
+/* 라벨을 카드 상단 왼쪽으로 고정 느낌 주기 */
+.bookmark-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+  border: 1px solid #eee;
+  border-radius: 10px;
+  padding: 16px;
+  background: white;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+/* 각 Link 컬러 (버튼과 동일, 살짝 연하게) */
+.link-1 {
+  background-color: #EDEFFE;
+  color: #3083FF;
+}
+
+.link-2 {
+  background-color: #FBF4EC;
+  color: #D28E3D;
+}
+
+.link-3 {
+  background-color: #F7F7E8;
+  color: #B1AB1D;
+}
+
+.link-4 {
+  background-color: #F4EDF7;
+  color: #954BAF;
+}
+
+.link-5 {
+  background-color: #EEF5F0;
+  color: #259800;
 }

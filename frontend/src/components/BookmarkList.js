@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./BookmarkList.css";
-import trashIcon from "./icons/Trash1.svg";
-
+import trashIcon from "./icons/Trash2.svg?update"; 
+import linkIcon from "./icons/Link3.svg";
 
 function BookmarkList() {
   const linkButtons = [
@@ -16,7 +16,24 @@ function BookmarkList() {
   const [inputValue, setInputValue] = useState("");
   const [bookmarks, setBookmarks] = useState([]);
   const [sortMode, setSortMode] = useState("latest");
-  const [deleteTarget, setDeleteTarget] = useState(null); // 🔹 삭제 확인용
+  const [deleteTarget, setDeleteTarget] = useState(null);
+   const [isLoaded, setIsLoaded] = useState(false);
+
+  //  localStorage 불러오기
+  useEffect(() => {
+    const saved = localStorage.getItem("bookmarks");
+    if (saved) {
+      setBookmarks(JSON.parse(saved));
+    }
+    setIsLoaded(true); // 데이터 로딩 완료 표시
+  }, []);
+
+  //  localStorage 저장
+  useEffect(() => {
+    if (isLoaded) {
+      localStorage.setItem("bookmarks", JSON.stringify(bookmarks));
+    }
+  }, [bookmarks, isLoaded]);
 
   const handleButtonClick = (id) => {
     setShowInput(showInput === id ? null : id);
@@ -35,35 +52,25 @@ function BookmarkList() {
 
   const handleAddBookmark = (id) => {
     if (!inputValue.trim()) return;
-
     const newCard = {
       id: Date.now(),
-      tag: `Link ${id}`,
       linkId: id,
+      tag: `Link ${id}`, //  태그 표시용
       url: inputValue,
       desc: "",
       date: getCurrentDateTime(),
     };
-
     setBookmarks((prev) => [newCard, ...prev]);
     setShowInput(null);
+    setInputValue("");
   };
 
-  // 🔹 삭제 확인 팝업 띄우기
-  const handleDeleteClick = (id) => {
-    setDeleteTarget(id);
-  };
-
-  // 🔹 삭제 확정
+  const handleDeleteClick = (id) => setDeleteTarget(id);
   const confirmDelete = () => {
     setBookmarks((prev) => prev.filter((b) => b.id !== deleteTarget));
     setDeleteTarget(null);
   };
-
-  // 🔹 삭제 취소
-  const cancelDelete = () => {
-    setDeleteTarget(null);
-  };
+  const cancelDelete = () => setDeleteTarget(null);
 
   const sortedBookmarks = [...bookmarks].sort((a, b) => {
     if (sortMode === "latest") return new Date(b.date) - new Date(a.date);
@@ -76,7 +83,7 @@ function BookmarkList() {
     <div className="bookmark-container">
       <h1 className="bookmark-header">Bookmarked Pages</h1>
 
-      {/* 버튼 */}
+      {/* 링크 버튼 */}
       <div className="link-buttons">
         {linkButtons.map((btn) => (
           <div key={btn.id} style={{ position: "relative" }}>
@@ -91,11 +98,19 @@ function BookmarkList() {
               <div className="bubble-input">
                 <input
                   type="text"
-                  placeholder="URL 입력..."
+                  placeholder="URL 입력"
                   value={inputValue}
                   onChange={(e) => setInputValue(e.target.value)}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter") handleAddBookmark(btn.id);
+                  }}
                 />
-                <button onClick={() => handleAddBookmark(btn.id)}>등록</button>
+                <button
+                  onClick={() => handleAddBookmark(btn.id)}
+                  className="add-url-btn"
+                >
+                  <img src={linkIcon} alt="add" />
+                </button>
               </div>
             )}
           </div>
@@ -128,10 +143,18 @@ function BookmarkList() {
       <div className="bookmark-grid">
         {sortedBookmarks.map((b) => (
           <div key={b.id} className="bookmark-card">
-            <span className={`bookmark-tag link-${b.linkId}`}>{b.tag}</span>
+            {/* 🔹 상단에 고정된 Link 태그 */}
+            <div className={`bookmark-tag link-${b.linkId}`}>
+              {b.tag}
+            </div>
 
             <div className="bookmark-title">
-              <a href={b.url} target="_blank" rel="noopener noreferrer">
+              <a 
+                href={b.url} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                 onClick={(e) => e.stopPropagation()} //  클릭 전파 차단
+                >
                 {b.url}
               </a>
             </div>
@@ -153,7 +176,7 @@ function BookmarkList() {
         ))}
       </div>
 
-      {/* 🔹 삭제 확인 팝업 */}
+      {/* 삭제 확인 팝업 */}
       {deleteTarget && (
         <div className="delete-modal">
           <div className="delete-box">
