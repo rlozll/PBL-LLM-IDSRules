@@ -1,43 +1,15 @@
 // src/components/MainView.js
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef } from 'react';
 import { generateRule } from '../api';
 import './MainView.css';
-//import { FiUpload } from 'react-icons/fi';
-import userIcon from './icons/user.svg';
-import searchIcon from './icons/search.svg';
-import addURLIcon from './icons/addURL.svg';
-import profileIcon from './icons/profile.svg';
-import pdfIcon from './icons/pdf.svg';
-import linkIcon from './icons/Link1.svg';
-import { FiLogOut } from 'react-icons/fi'; 
-import profileMenuIcon from './icons/profileMenu.svg'; 
+import { FiUpload } from 'react-icons/fi';
 
-function MainView({ onLogout }) {
+function MainView() {
   const [url, setUrl] = useState('');
   const [file, setFile] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [result, setResult] = useState(null);
   const [error, setError] = useState('');
-  const [menuOpen, setMenuOpen] = useState(false);
-  const menuRef = useRef(null);
-
-  // 메뉴 바깥 클릭 시 닫기
-  useEffect(() => {
-    const handleClickOutside = (e) => {
-      if (menuRef.current && !menuRef.current.contains(e.target)) {
-        setMenuOpen(false);
-      }
-    };
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
-  }, []);
-
-  const handleLogout = () => {
-    //  로그아웃 처리 후 로그인 페이지로 이동
-    localStorage.removeItem('token'); // 토큰 등 세션 초기화
-    window.location.href = '/login';
-    onLogout(); // 부모(App.js)의 handleLogout 호출
-  };
 
   const fileInputRef = useRef(null);
 
@@ -123,84 +95,86 @@ function MainView({ onLogout }) {
   // --- ▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲ ---
 
 
-
-return (
-  <>
-    {/* ===== 인사말 + 메인 콘텐츠 ===== */}
-    <div className="main-container">
-      <div className="header-section">
-        <h1>Hello 👋</h1>
-        <p className="subtitle">Let's start CTI analysis</p>
+  return (
+    <div className="main-view-grid">
+      {/* === 1열: 입력 === */}
+      <div className="analysis-box input-column">
+        <h4>분석할 CTI URL 입력</h4>
+        <div className="url-input-wrapper">
+          <input
+            type="text"
+            value={url}
+            onChange={(e) => {
+                setUrl(e.target.value);
+                if (e.target.value) setFile(null);
+            }}
+            placeholder="https://..."
+            disabled={isLoading}
+          />
+          <button onClick={handleFileButtonClick} disabled={isLoading} className="upload-btn">
+            <FiUpload />
+          </button>
+          <input type="file" ref={fileInputRef} onChange={handleFileChange} style={{ display: 'none' }} accept=".pdf,.txt" />
+        </div>
+        <button onClick={handleAnalyze} disabled={isLoading || (!url && !file)} className="analyze-btn">
+          {isLoading ? '분석 중...' : '분석 시작'}
+        </button>
+        <div className="preview-box">
+          {file ? `File: ${file.name}` : (url ? `URL: ${url}` : 'url 페이지 or pdf 화면 출력')}
+        </div>
       </div>
 
-      {/* ===== 메인 3개 박스 ===== */}
-      <div className="main-box-grid">
-        {/* 1️⃣ Your Sources */}
-        <div className="main-box sources">  {/* 전체 카드 박스 */}
-          <h2>Your Sources</h2>
-          <div className="source-card">     {/* 내부 스크롤 되는 박스 */}
-            {(file || url) ? (
-              <div className="source-item">
-                <img
-                  src={file ? pdfIcon : linkIcon}
-                  alt={file ? "pdf icon" : "url icon"}
-                  className="source-icon"
-                />
-                <div>
-                  <p className="file-name">{file ? file.name : url}</p>
-                  <p className="file-desc">
-                    업로드된 CTI 리포트 또는 URL이 여기에 표시됩니다.
-                  </p>
-                </div>
+      {/* === 2열: IoCs === */}
+      <div className="analysis-box ioc-column">
+        <h3>[추출된 IoCs]</h3>
+        {isLoading && <p>IoC를 추출 중입니다...</p>}
+        {error && <p className="error-message">{error}</p>}
+        {result && (
+            <div className="ioc-grid">
+                <div className="ioc-item"><strong>Domain:</strong><pre>{JSON.stringify(result.extracted_ioc?.domain, null, 2)}</pre></div>
+                <div className="ioc-item"><strong>IP:</strong><pre>{JSON.stringify(result.extracted_ioc?.ip, null, 2)}</pre></div>
+                <div className="ioc-item"><strong>Hash (SHA256):</strong><pre>{JSON.stringify(result.extracted_ioc?.hash?.filter(h => h.length === 64), null, 2)}</pre></div>
+                <div className="ioc-item"><strong>Hash (MD5):</strong><pre>{JSON.stringify(result.extracted_ioc?.hash?.filter(h => h.length === 32), null, 2)}</pre></div>
+                <div className="ioc-item"><strong>CVE:</strong><pre>{JSON.stringify(result.extracted_ioc?.cve, null, 2)}</pre></div>
+            </div>
+        )}
+        {!isLoading && !result && !error && <p>분석을 시작하면 IoCs가 여기에 표시됩니다.</p>}
+      </div>
+
+      {/* === 3열: Rule === */}
+      <div className="analysis-box rule-column">
+        <h3>[Rule 생성]</h3>
+        {isLoading && <p>Rule을 생성 중입니다...</p>}
+        {error && <p className="error-message">Rule 생성 실패</p>}
+        {result && (
+            <>
+              <pre>{result.generated_rule}</pre>
+              <div className="validation-status">
+                <strong>검증: </strong>
+                <span style={{ color: result.validation_result.startsWith('Success') ? 'lightgreen' : (result.validation_result === 'Warning' ? 'orange' : '#ff6b6b') }}>
+                    {result.validation_result}
+                </span>
+                {result.validation_details && <pre className="validation-details">{result.validation_details}</pre>}
               </div>
-            ) : (
-              <p style={{ color: '#aaa', padding: '10px' }}>
-                업로드된 항목이 없습니다.
-              </p>
-            )}
-          </div>
-        </div>
 
-        {/* 2️⃣ Exported IoCs */}
-        <div className="main-box iocs">
-          <h2>Exported IoCs</h2>
-          <div className="ioc-list">
-            <div className="ioc-item">
-              <strong>Domain</strong> — 도메인 리스트
-            </div>
-            <div className="ioc-item">
-              <strong>IP</strong> — IP 주소 리스트
-            </div>
-            <div className="ioc-item">
-              <strong>Hash</strong> — 파일 해시 (MD5, SHA256 등)
-            </div>
-          </div>
-        </div>
+              {/* --- ▼▼▼▼▼ 여기가 수정되었습니다! ▼▼▼▼▼ --- */}
+              <div className="rule-explanation">
+                <p><strong>LLM 부연설명:</strong></p>
+                {/* 헬퍼 함수를 호출하여 객체를 렌더링 */}
+                {renderExplanation(result.rule_explanation)}
+              </div>
+              {/* --- ▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲ --- */}
 
-        {/* 3️⃣ Generated Rule & Explain */}
-        <div className="main-box rule">
-          <h2>Generated Rule & Explain</h2>
-          <div className="rule-box">
-            <div className="rule-section">
-              <h3>Generated Rule</h3>
-              <p>생성된 Rule 내용이 여기에 표시됩니다.</p>
-            </div>
-            <div className="explain-section">
-              <h3>Explain</h3>
-              <p>LLM이 생성한 부연 설명이 여기에 표시됩니다.</p>
-            </div>
-            <div className="rule-actions">
-              <button className="copy-btn">Copy</button>
-              <button className="deploy-btn">Deploy</button>
-            </div>
-          </div>
-        </div>
-      </div> {/* ✅ main-box-grid 닫힘 */}
-    </div> {/* ✅ main-container 닫힘 */}
-  </>
-);
+              <div className="rule-actions">
+                <button onClick={handleCopyRule}>Rule 복사</button>
+                <button onClick={handleDeployRule} className="deploy-btn">Rule 배포</button>
+              </div>
+            </>
+        )}
+        {!isLoading && !result && !error && <p>분석을 시작하면 Rule이 여기에 표시됩니다.</p>}
+      </div>
+    </div>
+  );
 }
-
-
 
 export default MainView;
