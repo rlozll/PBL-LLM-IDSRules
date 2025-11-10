@@ -80,6 +80,11 @@ body {
   color: #B1B1B1;
 }
 
+.sidebar .logo {
+  padding-top: 10px;
+  padding-bottom: 30px;
+}
+
 /* --- 로그인 화면 --- */
 .login-container {
   background-color: #ffffff;

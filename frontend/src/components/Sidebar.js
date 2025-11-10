@@ -5,6 +5,7 @@ import { ReactComponent as DashboardIcon } from "../assets/DashboardLogo.svg";
 import { ReactComponent as CtilistIcon } from "../assets/CtiListLogo.svg";
 import { ReactComponent as BookmarkedIcon } from "../assets/BookmarkLogo.svg";
 import { ReactComponent as HistoryIcon } from "../assets/HistoryLogo.svg";
+import { ReactComponent as Logo } from "../assets/LOGO.svg";
 import { FiHome, FiList, FiSettings, FiClock, FiLogOut } from 'react-icons/fi';
 
 function Sidebar({ currentView, setCurrentView, onLogout }) {
@@ -17,6 +18,7 @@ function Sidebar({ currentView, setCurrentView, onLogout }) {
 
   return (
     <nav className="sidebar">
+      <Logo className="logo"/>
       {menuItems.map((item) => (
         <button
           key={item.id}
