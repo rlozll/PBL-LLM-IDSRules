@@ -97,6 +97,8 @@ function App() {
               result={result}
               error={error}
               isLoading={isLoading}
+              url={url}
+              file={file}
             />
           )}
           {currentView === 'cti' && <CtiList setCurrentView={setCurrentView} />}

@@ -19,7 +19,7 @@
   gap: 0.5rem;
   border: 1.5px solid #ff4b00;
   border-radius: 8px;
-  padding: 0.25rem 0.75rem;
+  padding: 0.5rem 0.75rem;
   background-color: #fff;
   flex-grow: 1;
   max-width: 300px;
@@ -79,31 +79,86 @@
   height: 16px;
   cursor: pointer;
 }
+.logout-btn:hover {
+  background-color: #f5f5f5;
+}
 
+/*mainview.css에있던*/
+
+/* ▼▼▼ 드롭다운 메뉴 ▼▼▼ */
 .dropdown-menu {
   position: absolute;
-  top: 40px;
-  right: -30px;
-  background: white;
-  border: 1px solid #e5e5e5;
+  top: 55px; /* 프로필 아래로 */
+  right: 30px; /* 오른쪽 정렬 */
+  background: #fff;
+  border: 1px solid #e0e0e0;
   border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  z-index: 200;
-  min-width: 100px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+  padding: 6px 0;
+  z-index: 1000;
+  min-width: 120px;
+  animation: dropdownFade 0.2s ease-out;
+}
+
+@keyframes dropdownFade {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .logout-btn {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
-  padding: 5px 5px;
-  border: none;
-  background: transparent;
   width: 100%;
+  padding: 10px 14px;
+  border: none;
+  background: none;
+  color: #333;
+  font-size: 0.95rem;
   cursor: pointer;
+  transition: background 0.2s ease;
 }
 
 .logout-btn:hover {
-  background-color: #f5f5f5;
+  background: #f6f6f6;
+}
+
+.logout-icon {
+  margin-right: 8px;
+  font-size: 1.1rem;
+  color: #666;
+}
+
+/* ▼ 화살표 스타일 보정 */
+.menu-arrow {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+  margin-left: 4px;
+  transform: translateY(1px);
+  opacity: 0.8;
+}
+
+.menu-arrow:hover {
+  opacity: 1;
+}
+
+.user-click-area {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  padding: 6px 10px;
+  border-radius: 6px;
+  transition: background 0.2s ease;
+}
+
+.user-click-area:hover {
+  background: #f5f5f5;
 }

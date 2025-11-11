@@ -4,7 +4,7 @@ import './MainView.css';
 import { ReactComponent as GeneratedSvg } from './icons/GeneratedRule.svg';
 import { ReactComponent as ExplainSvg } from './icons/Explain.svg';
 
-function MainView({ result, error, isLoading }) {
+function MainView({ result, error, isLoading, url, file }) {
   const handleCopyRule = () => {
     if (result && result.generated_rule) {
       navigator.clipboard.writeText(result.generated_rule);
@@ -48,10 +48,46 @@ function MainView({ result, error, isLoading }) {
   };
   // --- ▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲ ---
 
+  const renderSources = () => {
+    if (file) {
+      return (
+        <div className="source-item">
+          <span className="source-icon">📄</span>
+          <div>
+            <h4 className="file-name">{file.name}</h4>
+          </div>
+        </div>
+      );
+    }
+    if (url) {
+      return (
+        <div className="source-item">
+          <span className="source-icon">🔗</span>
+          <div>
+            <h4 className="file-name">{url}</h4>
+          </div>
+        </div>
+      );
+    }
+    if (!isLoading) {
+      return <p>분석할 소스를 입력하세요.</p>
+    }
+    return null;
+  }
   return (
   <div className="main-container">
+    <div className="header-section">
+      <h1>Hello 👋</h1>
+      <p className="subtitle">Let's start CTI analysis</p>
+    </div>
     <div className="main-box-grid">
-      <div className="analysis-box ioc-column">
+      <div className="main-box sources">
+        <h3>Your Sources</h3>
+        <div className="source-card">
+          {renderSources()}
+        </div>
+      </div>
+      <div className="main-box iocs">
         <h3>Exported IoCs</h3>
         {isLoading && <p>IoC를 추출 중입니다...</p>}
         {error && <p className="error-message">{error}</p>}
@@ -97,8 +133,7 @@ function MainView({ result, error, isLoading }) {
       </div>
 
       {/* ▼ 오른쪽 열 (Rule & Explain) ▼ */}
-      <div className="analysis-box rule-column">
-        <div className="rule-outer-box">
+      <div className="main-box rule">
           <h3>Generated Rule & Explain</h3>
 
           {isLoading && <p>Rule을 생성 중입니다...</p>}
@@ -157,7 +192,6 @@ function MainView({ result, error, isLoading }) {
         </div>
       </div>
     </div>
-  </div>
 );
   
 

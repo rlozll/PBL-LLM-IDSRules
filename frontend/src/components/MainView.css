@@ -1,106 +1,5 @@
 /* src/components/MainView.css */
 
-.main-view-grid {
-  display: grid;
-  grid-template-columns: 30% 35% 35%;
-  gap: 20px;
-  height: calc(100vh - 60px); /* 헤더 제외한 전체 높이 */
-}
-
-.analysis-box {
-  background-color: #ffffff; /* 어두운 카드 배경 */
-  border-radius: 8px;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-}
-
-.analysis-box h3, .analysis-box h4 {
-  margin-top: 0;
-  border-bottom: 1px solid #444;
-  padding-bottom: 10px;
-  margin-bottom: 15px;
-}
-
-.input-column .url-textarea {
-  flex-grow: 1;
-  padding: 12px;
-  background-color: #E4E4E4;
-  border: 1px solid #444;
-  color: #e0e0e0;
-  border-radius: 4px 0 0 4px; /* 오른쪽 버튼과 붙이기 */
-  border-right: none;
-  resize: vertical; /* 세로 크기 조절만 허용 */
-  min-height: 100px; /* 최소 높이 확보 */
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif; /* 폰트 통일 */
-  font-size: 0.9rem;
-  line-height: 1.5;
-}
-
-/* textarea가 포커스될 때 테두리 (선택 사항) */
-.input-column .url-textarea:focus {
-  outline: none;
-  border-color: #61dafb; /* 포커스 색상 */
-}
-
-/* 1열: 입력 */
-.input-column .url-input-wrapper {
-  display: flex;
-  width: 100%;
-}
-.input-column input[type="text"] {
-  flex-grow: 1;
-  padding: 12px;
-  background-color: #3a3f4b;
-  border: 1px solid #444;
-  color: #e0e0e0;
-  border-radius: 4px 0 0 4px; /* 오른쪽 버튼과 붙이기 */
-  border-right: none;
-}
-.input-column .upload-btn {
-  padding: 0 12px;
-  border: 1px solid #444;
-  background-color: #3a3f4b;
-  color: #e0e0e0;
-  cursor: pointer;
-  border-radius: 0 4px 4px 0;
-}
-.input-column .analyze-btn {
-  width: 100%;
-  padding: 12px;
-  margin-top: 15px;
-  border: none;
-  background-color: #ff6b6b; /* 분석 시작 버튼 색 */
-  color: #e0e0e0;
-  font-size: 1rem;
-  font-weight: bold;
-  cursor: pointer;
-  border-radius: 4px;
-}
-.input-column .analyze-btn:hover {
-  background-color: #555;
-}
-.input-column .analyze-btn:disabled {
-  background-color: #333;
-  cursor: not-allowed;
-}
-.preview-box {
-  flex-grow: 1;
-  margin-top: 20px;
-  border: 1px dashed #444;
-  border-radius: 4px;
-  padding: 15px;
-  color: #888;
-  overflow-y: auto; /* 내용 길어지면 스크롤 */
-  word-wrap: break-word;
-}
-
-/* 2열: IoCs */
-.ioc-column {
-  overflow-y: auto; /* 내용 많으면 스크롤 */
-}
 .ioc-grid {
   display: flex;
   flex-direction: column;
@@ -139,140 +38,6 @@
   font-size: 0.9rem;
   line-height: 1.45;
 }
-
-/* 3열: Rule */
-.rule-column {
-  overflow-y: auto; /* 내용 많으면 스크롤 */
-  overflow: hidden !important;
-}
-.rule-column pre {
-  flex-grow: 1; /* Rule 텍스트 영역이 최대한 커지도록 */
-}
-.rule-explanation {
-  background: none !important;
-  box-shadow: none !important;
-  border: none !important;
-  padding: 0 !important;
-  margin: 0 !important;
-  color: #222;
-}
-
-.rule-explanation p {
-    white-space: pre-wrap; /* \n 줄바꿈을 그대로 렌더링 */
-    word-wrap: break-word; /* 긴 단어 자동 줄바꿈 */
-    color: #333 !important;
-    margin: 15px 0; /* 각 항목 간 여백 */
-}
-.validation-status pre.validation-details {
-    background-color: #3a3f4b;
-    border: 1px solid #555;
-    font-size: 0.8rem;
-    white-space: pre-wrap; /* Snort 출력도 줄바꿈 유지 */
-}
-
-/* === ▼▼▼ 검증 결과 색상 클래스 추가 ▼▼▼ === */
-.details-success {
-    color: lightgreen;
-}
-.details-warning {
-    color: orange;
-}
-.details-error {
-    color: #ff6b6b; /* 기존 빨간색 */
-}
-.rule-actions {
-  display: flex;
-  gap: 10px;
-  margin-top: auto; /* 버튼들을 맨 아래로 */
-}
-.rule-actions button {
-  flex-grow: 1;
-  padding: 10px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  font-weight: bold;
-}
-.rule-actions .deploy-btn {
-  background-color: #4CAF50; /* 초록색 */
-  color: white;
-}
-
-/* ===== 상단 바(topbar) 스타일 ===== */
-.topbar {
-  display: flex;
-  align-items: center;
-  background-color: #ffffff;
-  border-bottom: 1px solid #e5e5e5;
-  padding: 0.75rem 1.5rem;
-  height: 60px;
-  width: 100%;
-  box-sizing: border-box;
-  gap: 1.5rem; /* 왼쪽 아이콘과 검색창 사이 여백 */
-}
-
-.left-icons {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
-
-.topbar-icon {
-  width: 22px;
-  height: 22px;
-  cursor: pointer;
-  transition: transform 0.2s ease;
-}
-
-.topbar-icon:hover {
-  transform: scale(1.15);
-}
-
-.search-box {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  border: 1.5px solid #ff4b00;
-  border-radius: 8px;
-  padding: 0.25rem 0.75rem;
-  background-color: #fff;
-}
-
-.search-box input {
-  border: none;
-  outline: none;
-  font-size: 0.9rem;
-  width: 200px;
-}
-
-.search-btn {
-  background: none;
-  border: none;
-  color: #ff4b00;
-  font-size: 1.1rem;
-  cursor: pointer;
-}
-
-.user-info {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  margin-left: auto; /* 오른쪽 끝으로 밀기 */
-}
-
-
-.user-icon {
-  width: 28px;
-  height: 28px;
-  border-radius: 50%;
-  object-fit: cover;
-}
-
-.username {
-  font-weight: 500;
-  color: #211C37;
-}
-
 .main-container {
   display: flex;
   flex-direction: column;
@@ -294,15 +59,13 @@
 .main-box-grid {
   display: grid;
   grid-template-columns: 1.3fr 2fr; /* 왼쪽, 오른쪽 비율 */
-  grid-template-rows: auto auto;     /* 위:URL, 아래:IoC */
+  grid-template-rows: min-content 1fr;     /* 위:URL, 아래:IoC */
   grid-template-areas:
     "sources rule"
     "iocs rule";
   gap: 24px;
   align-items: stretch;
 }
-
-
 
 /* 각 구역 지정 */
 /* Your Sources 박스 */
@@ -324,7 +87,7 @@
   background: #fff;
   border-radius: 12px;
   padding: 24px;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+  /*box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);*/
   display: flex;
   flex-direction: column;
 }
@@ -334,28 +97,20 @@
   border-radius: 12px;
   padding: 20px;
   grid-area: iocs;
-  height: 640px; /* 하단 고정 */
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
 }
 
 .main-box.rule {
   grid-area: rule;
-  height: 950px; /* 왼쪽 두 박스 합과 동일 */
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+  gap: 18px;
 }
-
 
 .main-box > div {
   flex: 1;
-  overflow-y: auto; /*  내용 많으면 박스 내부에서 스크롤 */
-  overflow: visible !important;
-  min-height: 0;  /* 자식 요소가 스크롤 가능하도록 함 */
-
 }
 
-.rule-box,
-.source-card,
-.ioc-list {
+.source-card {
   background: #FFF;
   border-radius: 10px;
   padding: 16px;
@@ -363,31 +118,11 @@
   overflow-y: auto;
 }
 
-
-/*  Your Sources 제목 */
-.main-box.sources h2 {
-  color: #494A4A;
-  font-weight: 700;
-  font-size: 1.5rem;
-  margin: 0 0 4px 0;
-  border-bottom: none;
-}
-
-/* Exported IoCs 제목  */
-.main-box.iocs h2 {
-  color: #494A4A;
-}
-
-/* Generated Rule & Explain 제목  */
-.main-box.rule h2 {
-  color: #494A4A; 
-}
-
 /* ===== 내부 콘텐츠 영역 ===== */
 /* 내부 콘텐츠 */
 .source-card {
   flex: 1;
-  height: 220px; 
+  height: auto; 
   margin-top: 4px;
   overflow-y: auto; /*  스크롤 */
   padding-right: 8px; /* 스크롤 시 오른쪽 여백 */
@@ -420,53 +155,9 @@
 
 .file-name {
   color: #121212;
-  font-weight: 600;
-  font-size: 1rem;
+  font-weight: 300;
+  font-size: 15px;
   margin: 0 0 4px 0;
-}
-
-.file-desc {
-  color: #121212;
-  font-weight: 400;
-  font-size: 0.9rem;
-  margin: 0;
-  line-height: 1.4;
-}
-
-.ioc-list {
-  background: #f9f9f9;
-  border-radius: 10px;
-  padding: 16px;
-  flex: 1;
-  overflow-y: auto;
-}
-
-
-/* 오른쪽 박스 내부 스타일 */
-.rule-box {
-  background: #f9f9f9;
-  border-radius: 10px;
-  padding: 16px;
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-}
-
-
-.rule-actions {
-  display: flex;
-  justify-content: flex-end;
-  gap: 10px;
-  margin-top: auto;
-}
-
-.copy-btn {
-  background: #eee;
-  color: #333;
-  padding: 8px 18px;
-  border-radius: 6px;
-  border: none;
-  cursor: pointer;
 }
 
 .deploy-btn {
@@ -478,107 +169,13 @@
   cursor: pointer;
 }
 
-/* 전체 레이아웃이 화면 전체를 채우게 */
 html, body {
   height: 100%;
   margin: 0;
   
 }
 
-/* ▼▼▼ 드롭다운 메뉴 ▼▼▼ */
-.dropdown-menu {
-  position: absolute;
-  top: 55px; /* 프로필 아래로 */
-  right: 30px; /* 오른쪽 정렬 */
-  background: #fff;
-  border: 1px solid #e0e0e0;
-  border-radius: 8px;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
-  padding: 6px 0;
-  z-index: 1000;
-  min-width: 140px;
-  animation: dropdownFade 0.2s ease-out;
-}
-
-@keyframes dropdownFade {
-  from {
-    opacity: 0;
-    transform: translateY(-5px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.logout-btn {
-  display: flex;
-  align-items: center;
-  width: 100%;
-  padding: 10px 14px;
-  border: none;
-  background: none;
-  color: #333;
-  font-size: 0.95rem;
-  cursor: pointer;
-  transition: background 0.2s ease;
-}
-
-.logout-btn:hover {
-  background: #f6f6f6;
-}
-
-.logout-icon {
-  margin-right: 8px;
-  font-size: 1.1rem;
-  color: #666;
-}
-
-/* ▼ 화살표 스타일 보정 */
-.menu-arrow {
-  width: 16px;
-  height: 16px;
-  cursor: pointer;
-  margin-left: 4px;
-  transform: translateY(1px);
-  opacity: 0.8;
-}
-
-.menu-arrow:hover {
-  opacity: 1;
-}
-
-.user-click-area {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  cursor: pointer;
-  padding: 6px 10px;
-  border-radius: 6px;
-  transition: background 0.2s ease;
-}
-
-.user-click-area:hover {
-  background: #f5f5f5;
-}
-
-/* ====== Rule Section 카드형 박스 ====== */
-
-.rule-outer-box {
-  background: #ffffff;
-  border-radius: 14px;
-  padding: 24px 26px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.12);
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
-
-  min-height: 950px !important;  /*  원하는 높이 */
-  height: auto !important;       /*  자동 확장 허용 */
-
-}
-
-.rule-outer-box h3 {
+.main-box h3 {
   margin: 0 0 10px 0;
   color: #222;
   font-weight: 700;
@@ -590,7 +187,6 @@ html, body {
   padding: 20px;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
   min-width: 0;  /* flex 자식이 줄바꿈 가능하도록 */
-  overflow: hidden; /* 내부 스크롤이 필요할 경우 대비 */
 }
 
 /* 긴 룰 텍스트 자동 줄바꿈 */
@@ -624,10 +220,10 @@ html, body {
   color: #222;
 }
 
-.rule-icon {
+/*.rule-icon {
   font-size: 1.3rem;
   color: #ff4b00;
-}
+}*/
 
 .rule-explanation-scroll {
   max-height: 400px;
@@ -658,7 +254,7 @@ html, body {
   background: #f1f1f1;
   border: none;
   border-radius: 6px;
-  padding: 8px 18px;
+  padding: 6px 18px;
   font-weight: 600;
   color: #333;
   cursor: pointer;
