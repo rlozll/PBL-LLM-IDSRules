@@ -94,87 +94,163 @@ function MainView() {
   };
   // --- ▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲ ---
 
-
   return (
-    <div className="main-view-grid">
-      {/* === 1열: 입력 === */}
-      <div className="analysis-box input-column">
-        <h4>분석할 CTI URL 입력</h4>
-        <div className="url-input-wrapper">
-          <input
-            type="text"
-            value={url}
-            onChange={(e) => {
+  <div className="main-container">
+    <div className="main-box-grid">
+      
+      {/* ▼ 왼쪽 열 (URL 입력 + IoC) ▼ */}
+      <div className="left-column">
+        {/* === URL 입력 === */}
+        <div className="analysis-box input-column">
+          <h4>분석할 CTI URL 입력</h4>
+          <div className="url-input-wrapper">
+            <input
+              type="text"
+              value={url}
+              onChange={(e) => {
                 setUrl(e.target.value);
                 if (e.target.value) setFile(null);
-            }}
-            placeholder="https://..."
-            disabled={isLoading}
-          />
-          <button onClick={handleFileButtonClick} disabled={isLoading} className="upload-btn">
-            <FiUpload />
+              }}
+              placeholder="https://..."
+              disabled={isLoading}
+            />
+            <button onClick={handleFileButtonClick} disabled={isLoading} className="upload-btn">
+              <FiUpload />
+            </button>
+            <input
+              type="file"
+              ref={fileInputRef}
+              onChange={handleFileChange}
+              style={{ display: 'none' }}
+              accept=".pdf,.txt"
+            />
+          </div>
+          <button
+            onClick={handleAnalyze}
+            disabled={isLoading || (!url && !file)}
+            className="analyze-btn"
+          >
+            {isLoading ? '분석 중...' : '분석 시작'}
           </button>
-          <input type="file" ref={fileInputRef} onChange={handleFileChange} style={{ display: 'none' }} accept=".pdf,.txt" />
+          <div className="preview-box">
+            {file
+              ? `File: ${file.name}`
+              : url
+              ? `URL: ${url}`
+              : 'url 페이지 or pdf 화면 출력'}
+          </div>
         </div>
-        <button onClick={handleAnalyze} disabled={isLoading || (!url && !file)} className="analyze-btn">
-          {isLoading ? '분석 중...' : '분석 시작'}
-        </button>
-        <div className="preview-box">
-          {file ? `File: ${file.name}` : (url ? `URL: ${url}` : 'url 페이지 or pdf 화면 출력')}
-        </div>
-      </div>
 
-      {/* === 2열: IoCs === */}
-      <div className="analysis-box ioc-column">
-        <h3>[추출된 IoCs]</h3>
-        {isLoading && <p>IoC를 추출 중입니다...</p>}
-        {error && <p className="error-message">{error}</p>}
-        {result && (
+        {/* === IoC 박스 === */}
+        <div className="analysis-box ioc-column">
+          <h3>Exported IoCs</h3>
+          {isLoading && <p>IoC를 추출 중입니다...</p>}
+          {error && <p className="error-message">{error}</p>}
+          {result && (
             <div className="ioc-grid">
-                <div className="ioc-item"><strong>Domain:</strong><pre>{JSON.stringify(result.extracted_ioc?.domain, null, 2)}</pre></div>
-                <div className="ioc-item"><strong>IP:</strong><pre>{JSON.stringify(result.extracted_ioc?.ip, null, 2)}</pre></div>
-                <div className="ioc-item"><strong>Hash (SHA256):</strong><pre>{JSON.stringify(result.extracted_ioc?.hash?.filter(h => h.length === 64), null, 2)}</pre></div>
-                <div className="ioc-item"><strong>Hash (MD5):</strong><pre>{JSON.stringify(result.extracted_ioc?.hash?.filter(h => h.length === 32), null, 2)}</pre></div>
-                <div className="ioc-item"><strong>CVE:</strong><pre>{JSON.stringify(result.extracted_ioc?.cve, null, 2)}</pre></div>
+              <div className="ioc-item">
+                <strong>Domain:</strong>
+                <pre>{JSON.stringify(result.extracted_ioc?.domain, null, 2)}</pre>
+              </div>
+              <div className="ioc-item">
+                <strong>IP:</strong>
+                <pre>{JSON.stringify(result.extracted_ioc?.ip, null, 2)}</pre>
+              </div>
+              <div className="ioc-item">
+                <strong>Hash (SHA256):</strong>
+                <pre>
+                  {JSON.stringify(
+                    result.extracted_ioc?.hash?.filter((h) => h.length === 64),
+                    null,
+                    2
+                  )}
+                </pre>
+              </div>
+              <div className="ioc-item">
+                <strong>Hash (MD5):</strong>
+                <pre>
+                  {JSON.stringify(
+                    result.extracted_ioc?.hash?.filter((h) => h.length === 32),
+                    null,
+                    2
+                  )}
+                </pre>
+              </div>
+              <div className="ioc-item">
+                <strong>CVE:</strong>
+                <pre>{JSON.stringify(result.extracted_ioc?.cve, null, 2)}</pre>
+              </div>
             </div>
-        )}
-        {!isLoading && !result && !error && <p>분석을 시작하면 IoCs가 여기에 표시됩니다.</p>}
+          )}
+          {!isLoading && !result && !error && (
+            <p>분석을 시작하면 IoCs가 여기에 표시됩니다.</p>
+          )}
+        </div>
       </div>
 
-      {/* === 3열: Rule === */}
+      {/* ▼ 오른쪽 열 (Rule & Explain) ▼ */}
       <div className="analysis-box rule-column">
-        <h3>[Rule 생성]</h3>
-        {isLoading && <p>Rule을 생성 중입니다...</p>}
-        {error && <p className="error-message">Rule 생성 실패</p>}
-        {result && (
-            <>
-              <pre>{result.generated_rule}</pre>
-              <div className="validation-status">
-                <strong>검증: </strong>
-                <span style={{ color: result.validation_result.startsWith('Success') ? 'lightgreen' : (result.validation_result === 'Warning' ? 'orange' : '#ff6b6b') }}>
-                    {result.validation_result}
-                </span>
-                {result.validation_details && <pre className="validation-details">{result.validation_details}</pre>}
-              </div>
+        <div className="rule-outer-box">
+        <h3>Generated Rule & Explain</h3>
 
-              {/* --- ▼▼▼▼▼ 여기가 수정되었습니다! ▼▼▼▼▼ --- */}
-              <div className="rule-explanation">
-                <p><strong>LLM 부연설명:</strong></p>
-                {/* 헬퍼 함수를 호출하여 객체를 렌더링 */}
-                {renderExplanation(result.rule_explanation)}
-              </div>
-              {/* --- ▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲ --- */}
+          {isLoading && <p>Rule을 생성 중입니다...</p>}
+          {error && <p className="error-message">Rule 생성 실패</p>}
 
-              <div className="rule-actions">
-                <button onClick={handleCopyRule}>Rule 복사</button>
-                <button onClick={handleDeployRule} className="deploy-btn">Rule 배포</button>
-              </div>
-            </>
-        )}
-        {!isLoading && !result && !error && <p>분석을 시작하면 Rule이 여기에 표시됩니다.</p>}
+          {/* === Generated Rule 카드 === */}
+          <div className="rule-inner-card">
+            <div className="rule-card-header">
+              <span className="rule-icon">🧩</span>
+              <h3>Generated Rule</h3>
+            </div>
+            <pre>{result?.generated_rule || '생성된 룰이 여기에 표시됩니다.'}</pre>
+            <div className="validation-status">
+              <strong>검증: </strong>
+              <span
+                style={{
+                  color: result?.validation_result?.startsWith('Success')
+                    ? 'lightgreen'
+                    : result?.validation_result === 'Warning'
+                    ? 'orange'
+                    : '#ff6b6b',
+                }}
+              >
+                {result?.validation_result || '대기 중'}
+              </span>
+            </div>
+          </div>
+
+          {/* === Explain 카드 === */}
+          <div className="rule-inner-card">
+            <div className="rule-card-header">
+              <span className="rule-icon">💬</span>
+              <h3>Explain</h3>
+            </div>
+            <div className="rule-explanation-scroll">
+              {result
+                ? renderExplanation(result.rule_explanation)
+                : '분석 결과에 대한 설명이 여기에 표시됩니다.'}
+            </div>
+          </div>
+
+          {/* === 하단 버튼 === */}
+          <div className="rule-actions-v2">
+            <button onClick={handleCopyRule}>Copy</button>
+            <button onClick={handleDeployRule} className="deploy-btn">
+              Deploy
+            </button>
+          </div>
+
+          {/* === 분석 전 안내 메시지 === */}
+          {!isLoading && !result && !error && (
+            <p>분석을 시작하면 Rule이 여기에 표시됩니다.</p>
+          )}
+        </div>
       </div>
     </div>
-  );
+  </div>
+);
+  
+
 }
 
 export default MainView;
