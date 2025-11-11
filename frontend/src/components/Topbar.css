@@ -21,19 +21,30 @@
   border-radius: 8px;
   padding: 0.25rem 0.75rem;
   background-color: #fff;
+  flex-grow: 1;
+  max-width: 300px;
 }
 
 .search-box input {
   border: none;
   outline: none;
   font-size: 0.9rem;
-  width: 200px;
+  flex-grow: 1;
 }
 
 .topbar-icon {
+  background: transparent;
+  border: none;
+  cursor: pointer;  
+  display: flex;
+  align-items: center;
+  padding: 0;
+  color: #ff4b00;
+}
+
+.topbar-icon svg {
   width: 20px;
   height: 20px;
-  cursor: pointer;
 }
 
 .user-info {
@@ -41,8 +52,8 @@
   align-items: center;
   gap: 0.5rem;
   position: relative;
-  cursor: pointer; /*  클릭 커서 표시 */
-  padding: 0.25rem 0.5rem; /*  클릭 영역 살짝 넓혀줌 */
+  cursor: pointer; 
+  padding: 0.25rem 0.5rem;
   border-radius: 8px;
   transition: background 0.2s;
 }
@@ -52,8 +63,8 @@
 }
 
 .user-icon {
-  width: 28px;
-  height: 28px;
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
   object-fit: cover;
 }
@@ -72,19 +83,21 @@
 .dropdown-menu {
   position: absolute;
   top: 40px;
-  right: 0;
+  right: -30px;
   background: white;
   border: 1px solid #e5e5e5;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   z-index: 200;
+  min-width: 100px;
 }
 
 .logout-btn {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
-  padding: 8px 12px;
+  padding: 5px 5px;
   border: none;
   background: transparent;
   width: 100%;

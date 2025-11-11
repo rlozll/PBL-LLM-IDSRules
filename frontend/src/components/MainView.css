@@ -677,3 +677,8 @@ html, body {
 .rule-actions-v2 .deploy-btn:hover {
   background-color: #e24300 !important;
 }
+
+.right-icon {
+  width: 25px;
+  margin-bottom: 5px;
+}

@@ -1,62 +1,70 @@
 // src/components/Topbar.js
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef } from 'react';
 import './Topbar.css';
-import searchIcon from './icons/search.svg';
-import addURLIcon from './icons/addURL.svg';
-import profileIcon from './icons/profile.svg';
-import profileMenuIcon from './icons/profileMenu.svg';
+import { ReactComponent as SearchIcon } from './icons/search.svg';
+import { ReactComponent as AddURLIcon } from './icons/addURL.svg';
+import { ReactComponent as ProfileIcon } from './icons/profile.svg';
+import { ReactComponent as ProfileMenuIcon } from './icons/profileMenu.svg';
 import { FiLogOut } from 'react-icons/fi';
 
-function Topbar({ onLogout, onAddURL }) {  //  URL 등록 기능 상위 컴포넌트에서 받을 수도 있음
+function Topbar({ url, setUrl, setFile, isLoading, onAnalyze, onLogout }) {  //  URL 등록 기능 상위 컴포넌트에서 받을 수도 있음
   const [menuOpen, setMenuOpen] = useState(false);
-  const [inputValue, setInputValue] = useState('');
   const menuRef = useRef(null);
+  const fileInputRef = useRef(null);
 
-  useEffect(() => {
-    const handleClickOutside = (e) => {
-      if (menuRef.current && !menuRef.current.contains(e.target)) {
-        setMenuOpen(false);
-      }
-    };
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
-  }, []);
-
-  const handleAddURL = () => {
-    if (!inputValue.trim()) return;
-    console.log("등록된 URL:", inputValue);
-    window.dispatchEvent(new CustomEvent("addURL", { detail: inputValue }));
-    if (onAddURL) onAddURL(inputValue); // 상위에서 props로 처리할 수도 있음
-    setInputValue('');
+  const handleFileButtonClick = () => {
+    fileInputRef.current.click();
   };
+
+  const handleFileChange = (event) => {
+    const selectedFile = event.target.files[0];
+    if(selectedFile) {
+      setFile(selectedFile);
+      setUrl('');
+      console.log('File selected:', selectedFile.name);
+    }
+  };
+
+  const handleAnalyzeClick = () => {
+    onAnalyze();
+  }
 
   return (
     <div className="topbar">
       <div className="search-box">
-        <img src={searchIcon} alt="search" className="topbar-icon" />
+        <button onClick={handleAnalyzeClick} disabled={isLoading} className='topbar-icon'>
+          {isLoading ? '...' : <SearchIcon />}
+        </button>
         <input
           type="text"
-          placeholder="URL 입력"
-          value={inputValue}
-          onChange={(e) => setInputValue(e.target.value)}
+          placeholder="https://..."
+          value={url}
+          onChange={(e) => {
+            setUrl(e.target.value);
+            if (e.target.value) setFile(null);
+          }}
           onKeyDown={(e) => {
             if (e.key === 'Enter') {
-              handleAddURL(); //  엔터 눌러도 등록 실행
+              onAnalyze();
             }
           }}
         />
-        <img
-          src={addURLIcon}
-          alt="add-url"
-          className="topbar-icon"
-          onClick={handleAddURL} //  아이콘 클릭해도 등록
+        <button onClick={handleFileButtonClick} disabled={isLoading} className="topbar-icon">
+          <AddURLIcon />
+        </button>
+        <input
+          type="file"
+          ref={fileInputRef}
+          onChange={handleFileChange}
+          style={{ display: 'none' }}
+          accept=".pdf, .txt"
         />
       </div>
 
       <div className="user-info" ref={menuRef} onClick={() => setMenuOpen(!menuOpen)}>
-        <img src={profileIcon} alt="user" className="user-icon" />
+        <ProfileIcon alt="user" className="user-icon" />
         <span className="username">admin</span>
-        <img src={profileMenuIcon} alt="menu" className="menu-arrow" />
+        <ProfileMenuIcon alt="menu" className="menu-arrow" />
         {menuOpen && (
           <div className="dropdown-menu">
             <button className="logout-btn" onClick={onLogout}>

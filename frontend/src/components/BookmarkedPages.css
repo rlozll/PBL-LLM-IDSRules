@@ -1,0 +1,390 @@
+/* 버튼 영역 전체 */
+.link-buttons {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 24px;
+  position: relative;
+  flex-wrap: wrap;
+}
+
+/* 버튼 스타일 */
+.link-btn {
+  padding: 10px 22px;
+  border-radius: 6px !important;    /*  완전 각진 모서리 */
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 0.95rem;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+/* hover 효과 강화 */
+.link-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.08);
+}
+
+/* 각 버튼 컬러 (원본 유지) */
+.link-1 {
+  background-color: #EDEFFE;
+  color: #3083FF;
+}
+.link-1:hover {
+  background-color: #D8DCFB;
+}
+
+.link-2 {
+  background-color: #FBF4EC;
+  color: #D28E3D;
+}
+.link-2:hover {
+  background-color: #F5E6D8;
+}
+
+.link-3 {
+  background-color: #F7F7E8;
+  color: #B1AB1D;
+}
+.link-3:hover {
+  background-color: #ECECCD;
+}
+
+.link-4 {
+  background-color: #F4EDF7;
+  color: #954BAF;
+}
+.link-4:hover {
+  background-color: #E5D9F0;
+}
+
+.link-5 {
+  background-color: #EEF5F0;
+  color: #259800;
+}
+.link-5:hover {
+  background-color: #DBE8DE;
+}
+
+/* 말풍선 입력창 */
+.bubble-input {
+  position: absolute;
+  top: 50px;                       /*  버튼 바로 아래 자연스럽게 배치 */
+  left: 0;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 10px 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  z-index: 10;
+}
+
+/* 입력창 내부 input 스타일 */
+.bubble-input input {
+  border: 1px solid #E4E4E4;
+  border-radius: 4px;
+  padding: 6px 10px;
+  flex: 1;
+  font-size: 0.9rem;
+}
+
+.bookmark-container {
+  padding: 40px;
+  padding-top: 40px; /* 상단 간격 늘림 */
+  background-color: #fff;
+  color: #333;
+}
+
+/* 카드 레이아웃 (3열 고정 유지) */
+.bookmark-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+}
+
+.bookmark-card {
+  border: 1px solid #eee;
+  border-radius: 10px;
+  padding: 16px;
+  background: white;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+/* 카드 제목 (URL) */
+.bookmark-title a {
+  display: block;
+  color: #111;              /* 진한 블랙 */
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+  word-break: break-all;
+  margin-bottom: 6px;
+  line-height: 1.4;
+}
+
+.bookmark-title a:hover {
+  color: #111;
+  text-decoration: none;
+}
+
+/* 룰 텍스트 (2줄만 표시) */
+.bookmark-desc {
+  color: #727272;
+  font-weight: 400;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;   /* 2줄까지만 표시 */
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+  margin-bottom: 8px;
+}
+
+
+/* 정렬 토글 영역 */
+.sort-toggle {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 24px;
+  margin-top: 6px;
+}
+
+.sort-toggle button {
+  border: 1px solid #ddd;
+  background: #fff;
+  color: #555;
+  border-radius: 4px;
+  padding: 6px 14px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+}
+
+.sort-toggle button:hover {
+  background: #f5f5f5;
+}
+
+
+/* 클릭된(active) 버튼 상태 */
+.sort-toggle button.active {
+  background-color: #e9e9e9;      /* 회색 배경 고정 */
+  border-color: #bbb;
+  color: #333;
+  font-weight: 600;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+
+
+.bookmark-footer {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  gap: 8px !important;
+  border-top: 1px solid #eee;
+  padding-top: 8px;
+  margin-top: 8px;
+}
+
+.bookmark-date {
+  text-align: left !important;
+  margin-left: 1px !important;
+  color: #777 !important;
+}
+
+
+/* 휴지통 아이콘 */
+.trash-icon {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  filter: invert(45%) sepia(80%) saturate(2400%) hue-rotate(350deg);
+  transition: transform 0.2s;
+}
+
+.trash-icon:hover {
+  transform: scale(1.15);
+}
+
+/*  삭제 확인 모달 */
+.delete-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+}
+
+.delete-box {
+  background: white;
+  border-radius: 10px;
+  padding: 24px 28px;
+  text-align: center;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+  animation: fadeIn 0.2s ease;
+}
+
+.delete-box p {
+  font-size: 1.05rem;
+  color: #333;
+  margin-bottom: 16px;
+}
+
+.delete-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+.cancel-btn,
+.delete-btn {
+  padding: 8px 20px;
+  border-radius: 6px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.cancel-btn {
+  background-color: #eee;
+  color: #333;
+}
+
+.cancel-btn:hover {
+  background-color: #ddd;
+}
+
+.delete-btn {
+  background-color: #ff4b00;
+  color: white;
+}
+
+.delete-btn:hover {
+  background-color: #e44400;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* URL 입력창 스타일 */
+.bubble-input {
+  position: absolute;
+  top: 50px;
+  left: 0;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 10px 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  z-index: 10;
+}
+
+/* 내부 입력칸 (배경 채움 + 테두리 제거) */
+.bubble-input input {
+  flex: 1;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 6px;
+  background-color: #F7F9FB;   /*  배경색 추가 */
+  font-size: 0.9rem;
+  outline: none;
+  transition: background-color 0.2s ease;
+}
+
+.bubble-input input:focus {
+  background-color: #EEF3F7;   /*  살짝 밝은 회색으로 포커스 효과 */
+}
+
+/* 등록 버튼 대신 아이콘 */
+.add-url-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.add-url-btn img {
+  width: 22px;
+  height: 22px;
+  opacity: 0.8;
+  transition: opacity 0.2s ease, transform 0.15s ease;
+}
+
+.add-url-btn:hover img {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+/* 카드 상단 Link 태그 (둥근 라벨 스타일) */
+.bookmark-tag {
+  display: inline-block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 6px 14px; 
+  border-radius: 6px;       /* 둥글게 마감 */
+  margin-bottom: 12px;
+  color: #333;
+  background: rgba(0, 0, 0, 0.02);
+  align-self: flex-start;
+}
+
+/* 라벨을 카드 상단 왼쪽으로 고정 느낌 주기 */
+.bookmark-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+  border: 1px solid #eee;
+  border-radius: 10px;
+  padding: 16px;
+  background: white;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+/* 각 Link 컬러 (버튼과 동일, 살짝 연하게) */
+.link-1 {
+  background-color: #EDEFFE;
+  color: #3083FF;
+}
+
+.link-2 {
+  background-color: #FBF4EC;
+  color: #D28E3D;
+}
+
+.link-3 {
+  background-color: #F7F7E8;
+  color: #B1AB1D;
+}
+
+.link-4 {
+  background-color: #F4EDF7;
+  color: #954BAF;
+}
+
+.link-5 {
+  background-color: #EEF5F0;
+  color: #259800;
+}
