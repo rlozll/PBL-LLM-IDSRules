@@ -25,6 +25,7 @@ function Topbar({ onLogout, onAddURL }) {  //  URL 등록 기능 상위 컴포�
   const handleAddURL = () => {
     if (!inputValue.trim()) return;
     console.log("등록된 URL:", inputValue);
+    window.dispatchEvent(new CustomEvent("addURL", { detail: inputValue }));
     if (onAddURL) onAddURL(inputValue); // 상위에서 props로 처리할 수도 있음
     setInputValue('');
   };
@@ -52,15 +53,10 @@ function Topbar({ onLogout, onAddURL }) {  //  URL 등록 기능 상위 컴포�
         />
       </div>
 
-      <div 
-        className="user-info" 
-        ref={menuRef}
-        onClick={() => setMenuOpen(!menuOpen)}
-      >
+      <div className="user-info" ref={menuRef} onClick={() => setMenuOpen(!menuOpen)}>
         <img src={profileIcon} alt="user" className="user-icon" />
         <span className="username">admin</span>
         <img src={profileMenuIcon} alt="menu" className="menu-arrow" />
-
         {menuOpen && (
           <div className="dropdown-menu">
             <button className="logout-btn" onClick={onLogout}>

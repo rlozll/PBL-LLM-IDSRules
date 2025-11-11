@@ -48,22 +48,25 @@ function App() {
   return (
     <div className="dashboard-layout">
       <Sidebar currentView={currentView} setCurrentView={setCurrentView} onLogout={handleLogout} />
-      <main className="main-content">
-        {/* MainView에 상태와 상태 변경 함수를 props로 전달 */}
-        {currentView === 'main' && (
-          <MainView
-            result={analysisResult}
-            setResult={setAnalysisResult}
-            error={analysisError}
-            setError={setAnalysisError}
-            isLoading={analysisLoading}
-            setIsLoading={setAnalysisLoading}
-          />
-        )}
-        {currentView === 'cti' && <CtiList />}
-        {currentView === 'settings' && <IdsSettings />}
-        {currentView === 'history' && <History />}
-      </main>
+      <div className="main-top">
+        <Topbar />
+        <main className="main-content">
+          {/* MainView에 상태와 상태 변경 함수를 props로 전달 */}
+          {currentView === 'main' && (
+            <MainView
+              result={analysisResult}
+              setResult={setAnalysisResult}
+              error={analysisError}
+              setError={setAnalysisError}
+              isLoading={analysisLoading}
+              setIsLoading={setAnalysisLoading}
+            />
+          )}
+          {currentView === 'cti' && <CtiList />}
+          {currentView === 'settings' && <IdsSettings />}
+          {currentView === 'history' && <History />}
+        </main>
+      </div>
     </div>
   );
 }
