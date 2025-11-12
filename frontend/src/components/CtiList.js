@@ -1,71 +1,47 @@
 // src/components/CtiList.js
-import React from 'react';
+import React, { useState, useEffect } from 'react'; // useState, useEffect 임포트
 import './CtiList.css';
+import { getNewCtiList } from '../api'; // api.js에서 함수 가져오기
 
-function CtiList({ setCurrentView }) {
-  const ctiItems = [
-    {
-      title: "AgentTesla SMTP Credential Leak 탐지",
-      site: "malwarebazaar.com",
-      date: "2025-11-08",
-    },
-    {
-      title: "FakeUpdate phishing redirection 탐지 (가짜 브라우저 업데이트 유도)",
-      site: "threatfox.abuse.ch",
-      date: "2025-10-29",
-    },
-    {
-      title: "RedLine Stealer outbound connection 차단",
-      site: "anyrun.net",
-      date: "2025-10-10",
-    },
-    {
-      title: "Cobalt Strike Beacon activity detected in internal network",
-      site: "virustotal.com",
-      date: "2025-09-24",
-    },
-    {
-      title: "Emotet mail spam campaign 감염 시도",
-      site: "urlhaus.abuse.ch",
-      date: "2025-09-12",
-    },
-    {
-      title: "AsyncRAT C2 traffic observed (비정상 도메인 통신 탐지)",
-      site: "abuseipdb.com",
-      date: "2025-08-30",
-    },
-    {
-      title: "PowerShell obfuscated payload execution (명령 실행 시도)",
-      site: "tria.ge",
-      date: "2024-12-18",
-    },
-    {
-      title: "QakBot infection chain via Excel macro 탐지",
-      site: "broadcom.com",
-      date: "2024-11-05",
-    },
-    {
-      title: "Log4Shell exploit attempt (JNDI RCE) 탐지",
-      site: "cve.mitre.org",
-      date: "2023-12-28",
-    },
-    {
-      title: "Formbook C2 beacon pattern 탐지",
-      site: "malpedia.caad.fkie.fraunhofer.de",
-      date: "2023-07-10",
-    },
-  ];
+function CtiList({ setCurrentView }) { // (setCurrentView는 Bookmarked Pages용으로 남겨둘 수 있음)
 
-  // 클릭 시 Dashboard(HomeView)로 이동하는 함수
-  const handleRowClick = () => {
-    setCurrentView('main');
+  // --- ▼▼▼ 가짜 데이터 대신, DB에서 가져올 데이터 상태 추가 ▼▼▼ ---
+  const [ctiItems, setCtiItems] = useState([]); // 빈 배열로 초기화
+  const [isLoading, setIsLoading] = useState(true); // 로딩 상태
+  const [error, setError] = useState('');
+  // --- ▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲ ---
+
+  // --- ▼▼▼ 컴포넌트가 로드될 때 API를 호출하여 DB 데이터 가져오기 ▼▼▼ ---
+  useEffect(() => {
+    const fetchList = async () => {
+      setIsLoading(true);
+      setError('');
+      try {
+        const items = await getNewCtiList(); // 백엔드 /api/new_cti_list 호출
+        setCtiItems(items); // 성공 시 상태 업데이트
+      } catch (err) {
+        console.error("CTI List 로딩 실패:", err);
+        setError("CTI 목록을 불러오는 데 실패했습니다.");
+      }
+      setIsLoading(false);
+    };
+    fetchList();
+  }, []); // [] : 컴포넌트가 처음 렌더링될 때 1회만 실행
+  // --- ▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲ ---
+
+  // --- ▼▼▼ 디자인 시안의 요구사항 구현 (새 탭에서 링크 열기) ▼▼▼ ---
+  const handleRowClick = (e, link) => {
+    // 클릭 시 원본 CTI 사이트로 새 탭에서 이동
+    e.preventDefault();
+    window.open(link, '_blank', 'noopener,noreferrer');
   };
+  // --- ▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲ ---
 
   return (
     <div className="cti-list-container">
       <header className="cti-header">
         <h1>CTI Lists</h1>
-        <p className="subtitle">Check out the latest CTIs</p>
+        <p className="subtitle">Check out the latest CTIs (From RSS Feeds)</p>
       </header>
 
       <div className="cti-table">
@@ -76,16 +52,29 @@ function CtiList({ setCurrentView }) {
         </div>
 
         <div className="cti-table-body">
+          {isLoading && <p style={{textAlign: "center", padding: "20px"}}>Loading...</p>}
+          {error && <p style={{textAlign: "center", padding: "20px", color: "red"}}>{error}</p>}
+          
+          {!isLoading && ctiItems.length === 0 && (
+            <p style={{textAlign: "center", padding: "20px"}}>
+              새로운 CTI 정보가 없습니다. (백그라운드에서 `scripts/rss_collector.py`를 실행했는지 확인하세요.)
+            </p>
+          )}
+
           {ctiItems.map((item, idx) => (
             <div
-              key={idx}
+              key={item.id || idx} // DB의 id 사용
               className="cti-row"
-              onClick={handleRowClick}
+              onClick={(e) => handleRowClick(e, item.link)} // 박스 클릭 -> 새 탭
+              title={`새 탭에서 원본 글 보기: ${item.title}`}
               style={{ cursor: 'pointer' }}
             >
               <div className="cti-col-title">{item.title}</div>
-              <div className="cti-col-site">{item.site}</div>
-              <div className="cti-col-date">{item.date}</div>
+              <div className="cti-col-site">{item.site_name}</div>
+              <div className="cti-col-date">
+                {/* 날짜 형식 간단하게 변환 */}
+                {item.published_date ? new Date(item.published_date).toLocaleDateString() : 'N/A'}
+              </div>
             </div>
           ))}
         </div>
