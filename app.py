@@ -21,6 +21,9 @@ from core.vt_client import vt_fetch_url_report
 from fastapi.middleware.cors import CORSMiddleware
 import utils.db as db # <- DB 모듈 임포트
 
+from apscheduler.schedulers.background import BackgroundScheduler
+from scripts.rss_collector import collect_all_sources # rss_collector.py의 함수 임포트
+
 # ──────────────────────────────────────────────────────────────────────────────
 # 0) 환경 로드 및 인증 설정
 # ──────────────────────────────────────────────────────────────────────────────
@@ -290,6 +293,34 @@ async def get_bookmark_results():
     return [
         BookmarkResultItem(id=1, post_url="https://example.com/bookmark-post", post_title="임시 북마크 분석 결과", generated_rule="alert tcp ...", created_at=datetime.now())
     ]
+
+scheduler = BackgroundScheduler(daemon=True)
+
+@app.on_event("startup")
+def start_scheduler():
+    """
+    FastAPI 앱이 시작될 때 스케줄러를 함께 시작합니다.
+    """
+    try:
+        # 1. 앱 시작 시 CTI List 1회 즉시 실행
+        scheduler.add_job(collect_all_sources, 'date', run_date=datetime.now() + timedelta(seconds=5)) 
+        
+        # 2. 이후 1시간(3600초)마다 반복 실행
+        scheduler.add_job(collect_all_sources, 'interval', seconds=3600)
+        
+        # (필요시 북마크 수집기 작업도 여기에 추가)
+        
+        scheduler.start()
+        print("INFO: Background scheduler started. CTI List collection scheduled.")
+    except Exception as e:
+        print(f"ERROR: Failed to start scheduler - {e}")
+
+@app.on_event("shutdown")
+def shutdown_scheduler():
+    """FastAPI 앱이 종료될 때 스케줄러도 함께 종료합니다."""
+    scheduler.shutdown()
+    print("INFO: Background scheduler shut down.")
+
 
 # ──────────────────────────────────────────────────────────────────────────────
 # 6) 실행

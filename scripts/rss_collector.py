@@ -30,13 +30,29 @@ import utils.db as db
 # ============================================================
 RSS_FEEDS = {
     "NVD Analyzed": "https://nvd.nist.gov/feeds/xml/cve/misc/nvd-rss-analyzed.xml",
-    "ZDI All": "https://www.zerodayinitiative.com/rss/alladvisories/",
+    # "ZDI All": "https://www.zerodayinitiative.com/rss/alladvisories/",
     "Cloudflare Blog": "https://blog.cloudflare.com/rss/",
-    "DailySecu": "https://www.dailysecu.com/rss/all.xml",
+    # "DailySecu": "https://www.dailysecu.com/rss/all.xml",
+    # 1. 정부 기관 (필수)
+    "CISA Alerts": "https://www.cisa.gov/cybersecurity-advisories/all.xml",
+    "CERT-KR": "https://www.krcert.or.kr/rss.do?data_id=01",
+    
+    # 2. 주요 보안 업체 (강력 추천)
+    "Mandiant (Google)": "https://cloud.google.com/blog/topics/threat-intelligence/rss",
+    "Palo Alto (Unit 42)": "https://unit42.paloaltonetworks.com/feed/",
+    "CrowdStrike": "https://www.crowdstrike.com/blog/feed/",
+    "Microsoft Security": "https://www.microsoft.com/en-us/security/blog/feed/",
+    "Rapid7 (AttackerKB)": "https://attackerkb.com/rss",
+    
+    # 3. 유명 보안 뉴스/블로그
+    "The Hacker News": "https://feeds.feedburner.com/TheHackerNews",
+    "Krebs on Security": "https://krebsonsecurity.com/feed/",
+    "Bleeping Computer": "https://www.bleepingcomputer.com/feed/",
+    "Schneier on Security": "https://www.schneier.com/feed/",
 }
 LOG_DIR = "logs"
 LOG_FILE = os.path.join(LOG_DIR, "rss_collector.log")
-COLLECTION_INTERVAL = 3600
+COLLECTION_INTERVAL = 1800
 MAX_RETRIES = 3
 RETRY_DELAY = 5
 

@@ -88,7 +88,7 @@ def add_history_record(result: Dict[str, Any]):
     except Exception as e:
         print(f"ERROR: Failed to add history record - {e}")
 
-def get_history_list(limit: int = 20) -> List[Dict[str, Any]]:
+def get_history_list(limit: int = 50) -> List[Dict[str, Any]]:
     """History 페이지에 보여줄 최근 분석 목록을 반환합니다."""
     sql = "SELECT id, source_url, generated_rule, created_at FROM history ORDER BY created_at DESC LIMIT ?"
     try:
@@ -129,7 +129,7 @@ def add_cti_post(title: str, link: str, site_name: str, published_date: datetime
     except Exception as e:
         print(f"ERROR: Failed to add CTI post - {e}")
 
-def get_cti_list(limit: int = 20) -> List[Dict[str, Any]]:
+def get_cti_list(limit: int = 100) -> List[Dict[str, Any]]:
     """CTI List 페이지에 보여줄 최신 글 목록을 반환합니다."""
     
     # --- ▼▼▼▼▼ 여기가 수정되었습니다! ('id' 추가) ▼▼▼▼▼ ---
