@@ -114,5 +114,58 @@ export const getNewCtiList = async () => {
     }
 };
 
+// --- ▼▼▼ Bookmarked Pages용 API 함수 추가 ▼▼▼ ---
+
+// 1. 현재 등록된 북마크 사이트 목록 가져오기
+export const getBookmarkSites = async () => {
+  try {
+    const response = await fetchWithAuth('/api/bookmark-sites');
+    if (!response.ok) throw new Error('Failed to fetch bookmark sites');
+    return await response.json(); // 예: [{id: 1, url: "...", site_name: "..."}, ...]
+  } catch (error) {
+    console.error('Get bookmark sites API call failed:', error);
+    return [];
+  }
+};
+
+// 2. 새 북마크 사이트 등록하기
+export const addBookmarkSite = async (url, siteName, linkId) => {
+  try {
+    const response = await fetchWithAuth('/api/bookmark-sites', {
+      method: 'POST',
+      body: JSON.stringify({ url: url, site_name: siteName, link_id: linkId }), // linkId 등 필요한 정보 전달
+    });
+    return await response.json(); // 예: { status: "success", data: {...} }
+  } catch (error) {
+    console.error('Add bookmark site API call failed:', error);
+    return { status: "error", detail: error.message };
+  }
+};
+
+// 3. 북마크 자동 분석 결과 (피드) 목록 가져오기
+export const getBookmarkResults = async () => {
+    try {
+        const response = await fetchWithAuth('/api/bookmark-results');
+        if (!response.ok) throw new Error('Failed to fetch bookmark results');
+        return await response.json(); // 예: [{id: 1, post_url: "...", post_title: "...", ...}, ...]
+    } catch (error) {
+        console.error('Get bookmark results API call failed:', error);
+        return [];
+    }
+};
+
+// 4. 북마크 상세 결과 1개 가져오기 (Home 화면 재현용)
+export const getBookmarkResultDetail = async (recordId) => {
+    try {
+        const response = await fetchWithAuth(`/api/bookmark-results/${recordId}`);
+        if (!response.ok) throw new Error('Failed to fetch bookmark detail');
+        return await response.json(); // RuleResponse 스키마와 동일한 형식
+    } catch (error) {
+        console.error('Get bookmark detail API call failed:', error);
+        return null;
+    }
+};
+
+
 // --- (추가) Rule 배포 API (백엔드 /api/deploy 필요) ---
 // export const deployRule = async (ruleString) => { ... };
