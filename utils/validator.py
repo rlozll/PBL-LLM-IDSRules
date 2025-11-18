@@ -65,6 +65,59 @@ def analyze_rule_statically(rule_string: str) -> List[str]:
 
     return warnings
 
+def _remove_unsupported_snort2_options(rule_string: str) -> str:
+    """
+    Snort 2.9.x에서 미지원 옵션을 자동 제거하거나 안전하게 대체한다.
+    """
+
+    # 완전히 삭제해야 하는 옵션들 (Snort 2.x 미지원)
+    unsupported_keywords = [
+        "tls.", "http2_", "ssh_", "app_layer_protocol",
+        "http.request_body", "http.response_body", 
+        "http.method", "http.uri", "http.header", "http.raw_uri",
+        "filestore", "flowbits:setx", "flowbits:issetx",
+        "metadata:service "
+    ]
+
+    # 옵션을 제거
+    for key in unsupported_keywords:
+        # key: "tls."이면 이런 패턴 삭제됨: tls.sni_host:“abc”;
+        rule_string = re.sub(rf"{key}[^;]*;", "", rule_string, flags=re.IGNORECASE)
+
+    # Suricata 스타일 metadata 제거
+    rule_string = re.sub(r"metadata\s*:\s*[^;]+;", "", rule_string, flags=re.IGNORECASE)
+
+    # Snort 3.x 스타일 flowbits 표현 정리
+    rule_string = re.sub(r"flowbits\s*:\s*(setx|issetx)[^;]*;", "", rule_string, flags=re.IGNORECASE)
+
+    # TLS 기반 도메인 탐지는 Snort2에서는 content로 대체해야 함
+    # 예를 들어 'tls.sni_host:"example.com";' 제거 후, 도메인만 content로 넣어줌
+    domain_match = re.search(r"tls\.sni_host\s*:\s*\"([^\"]+)\"", rule_string, re.IGNORECASE)
+    if domain_match:
+        domain = domain_match.group(1)
+        # content로 추가 (case-insensitive)
+        replacement = f'content:"{domain}"; nocase;'
+        rule_string = rule_string + " " + replacement
+
+    return rule_string
+
+
+def _sanitize_snort_rule_for_2_9(rule_string: str) -> str:
+    """
+    Snort 2.9에서 지원하지 않는 옵션을 자동 변환하거나 제거한다.
+    """
+    replacements = {
+        'http_host': 'http_header',
+        'http_raw_host': 'http_raw_header',
+    }
+    for old, new in replacements.items():
+        rule_string = rule_string.replace(old, new)
+
+    rule_string = _remove_unsupported_snort2_options(rule_string)
+
+    return rule_string
+
+
 # --- 문법 검증 함수 (수정 없음, 이전 최종 버전과 동일) ---
 def validate_rule_syntax(rule_string: str) -> Tuple[bool, str]:
     """
@@ -73,7 +126,9 @@ def validate_rule_syntax(rule_string: str) -> Tuple[bool, str]:
     if not rule_string or rule_string.lower().startswith("error:"):
         return False, f"Invalid rule string input: {rule_string[:100]}..."
 
-    config_content = f"var HOME_NET any\n{rule_string}"
+    rule_string = _sanitize_snort_rule_for_2_9(rule_string)
+
+    config_content = f"var HOME_NET any\nvar HTTP_PORTS [80,443,8080]\n{rule_string}"
     windows_config_path = ""
     full_output = ""
 

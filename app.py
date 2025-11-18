@@ -14,6 +14,7 @@ from jose import JWTError, jwt
 from passlib.context import CryptContext
 from datetime import datetime, timedelta, timezone
 from typing import List, Dict, Any
+from fastapi.responses import JSONResponse
 
 # --- 백그라운드 작업(수집기) 모듈 ---
 from apscheduler.schedulers.background import BackgroundScheduler
@@ -343,6 +344,14 @@ async def get_result_detail(record_id: int):
     if not record:
         raise HTTPException(status_code=404, detail="Bookmark result not found") # (오류 수정됨)
     return RuleResponse(**record)
+
+@app.delete("/api/bookmark-results/{result_id}", dependencies=[Depends(get_current_user)])
+async def delete_bookmark_result_endpoint(result_id: int):
+    """북마크 분석 결과 삭제"""
+    success = db.delete_bookmark_result(result_id)
+    if success:
+        return {"status": "success", "deleted_id": result_id}
+    raise HTTPException(status_code=400, detail=f"Failed to delete bookmark result with id {result_id}")
 
 # ──────────────────────────────────────────────────────────────────────────────
 # 6) 스케줄러 (앱 시작 시 자동 실행)

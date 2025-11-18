@@ -244,3 +244,14 @@ def get_bookmark_result_detail(record_id: int) -> Dict[str, Any] | None:
     except Exception as e:
         print(f"ERROR: Failed to get bookmark detail (id={record_id}) - {e}")
         return None
+    
+def delete_bookmark_result(result_id: int) -> bool:
+    """bookmark_results 테이블에서 특정 ID를 삭제"""
+    sql = "DELETE FROM bookmark_results WHERE id = ?"
+    try:
+        with get_db_connection() as conn:
+            cursor = conn.execute(sql, (result_id,))
+            return cursor.rowcount > 0
+    except Exception as e:
+        print(f"ERROR: Failed to delete bookmark result (id={result_id}) - {e}")
+        return False

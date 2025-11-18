@@ -122,14 +122,29 @@ function BookmarkedPages({ setCurrentView, onSelectBookmark }) {
     const cancelDelete = () => setDeleteTarget(null);
 
     const confirmDelete = async () => {
-        // TODO: api.js에 deleteBookmarkResult(deleteTarget) 함수 구현 및 호출
-        // await deleteBookmarkResult(deleteTarget);
-        // 삭제 성공 후, 목록 새로고침
-        // const results = await getBookmarkResults();
-        // setBookmarkResults(results);
-        alert(`(구현 필요) ID: ${deleteTarget} 삭제 요청`);
-        setDeleteTarget(null);
-    };
+    try {
+        const response = await fetch(`/api/bookmark-results/${deleteTarget}`, {
+            method: "DELETE",
+            headers: {
+                "Authorization": `Bearer ${localStorage.getItem("token")}` // JWT 필요
+            }
+        });
+        const data = await response.json();
+
+        if (response.ok && data.status === "success") {
+            // 삭제 성공 후, 목록 새로고침
+            const results = await getBookmarkResults();
+            setBookmarkResults(results);
+        } else {
+            alert(`삭제 실패: ${data.detail || "서버 오류"}`);
+        }
+    } catch (e) {
+        console.error(e);
+        alert("삭제 요청 중 오류가 발생했습니다.");
+    }
+    setDeleteTarget(null);
+};
+
 
     // 정렬 로직 (DB에서 가져온 bookmarkResults 기준)
     const sortedBookmarks = [...bookmarkResults].sort((a, b) => {
