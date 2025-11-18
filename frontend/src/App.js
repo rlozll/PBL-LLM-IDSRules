@@ -71,6 +71,18 @@ function App() {
      setCurrentView('main');
   }
 
+  const handleBookmarkClick = (detailResult) => {
+      // 1. 상세 결과를 배열로 감싸서 상태 업데이트 (MainView는 배열을 기대함)
+      setResult(detailResult); 
+      
+      // 2. 에러 및 로딩 상태 초기화 (중요: 이전 상태가 남아있지 않도록)
+      setError('');
+      setIsLoading(false);
+      
+      // 3. 홈 화면으로 전환
+      setCurrentView('main');
+  };
+
   if (appIsLoading) return <div>Loading...</div>;
 
   if (!isLoggedIn) {
@@ -102,7 +114,12 @@ function App() {
             />
           )}
           {currentView === 'cti' && <CtiList setCurrentView={setCurrentView} />}
-          {currentView === 'settings' && <BookmarkedPages />}
+          {currentView === 'settings' && (
+            <BookmarkedPages 
+                setCurrentView={setCurrentView} 
+                onSelectBookmark={handleBookmarkClick} // <--- 새로 만든 함수 전달!
+            />
+          )}
           {currentView === 'history' && <History setCurrentView={setCurrentView} />}
         </main>
       </div>

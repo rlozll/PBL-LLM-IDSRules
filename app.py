@@ -19,7 +19,7 @@ from typing import List, Dict, Any
 from apscheduler.schedulers.background import BackgroundScheduler
 from scripts.rss_collector import collect_all_sources
 # (북마크 자동 분석 스크립트 - 나중에 구현 시 주석 해제)
-# from scripts.bookmark_processor import process_bookmarks
+from scripts.bookmark_processor import process_bookmarks
 
 # --- 내부 핵심 모듈 ---
 from core.parser import get_text_from_url
@@ -357,11 +357,16 @@ def start_scheduler():
         # (앱 시작 5초 후 1회 즉시 실행)
         scheduler.add_job(collect_all_sources, 'date', run_date=datetime.now(timezone.utc) + timedelta(seconds=5)) 
         
-        # (북마크 자동 분석 스크립트 - 나중에 구현)
-        # scheduler.add_job(process_bookmarks, 'interval', seconds=3600, id="bookmark_processor_job", ...)
+        # ▼▼▼▼▼ 주석 해제됨! (북마크 자동 분석 시작) ▼▼▼▼▼
+        
+        # 2. 북마크 자동 분석 (30분마다 반복)
+        scheduler.add_job(process_bookmarks, 'interval', seconds=1800, id="bookmark_processor_job", replace_existing=True)
+        
+        # (테스트용: 앱 켜자마자 10초 뒤에 즉시 1회 실행)
+        scheduler.add_job(process_bookmarks, 'date', run_date=datetime.now(timezone.utc) + timedelta(seconds=10))
         
         scheduler.start()
-        print("INFO: Background scheduler started. CTI List collection scheduled.")
+        print("INFO: Background scheduler started. CTI List & Bookmark analysis scheduled.")
     except Exception as e:
         print(f"ERROR: Failed to start scheduler - {e}")
 

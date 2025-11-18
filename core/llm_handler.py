@@ -109,6 +109,7 @@ async def generate_analysis_from_text(text: str) -> dict:
 다음 IoC를 기반으로 Snort 2.9 규칙 1개만 생성하여 출력하라. 코드블록/설명 금지, 규칙 한 줄만 출력.
 필수 항목: msg, sid(>=1000000), rev(>=1), reference(CVE). content 또는 pcre 사용.
 classtype 옵션은 포함하지 않아도 된다.
+프로토콜은 반드시 [tcp, udp, ip] 중 하나를 사용해야 한다. HTTP 트래픽 탐지 시에는 tcp를 사용해야 한다.
 IoC:
 {json.dumps(ioc_json, ensure_ascii=False, indent=2)}
 """

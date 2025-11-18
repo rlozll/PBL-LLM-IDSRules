@@ -13,8 +13,8 @@ import {
     // deleteBookmarkSite 
 } from "../api";
 
-// App.js로부터 탭 이동(setCurrentView)과 결과 주입(setAnalysisResult) 함수를 props로 받습니다.
-function BookmarkedPages({ setCurrentView, setAnalysisResult }) {
+// App.js로부터 탭 이동(setCurrentView)과 결과 주입(onBookmarkClick) 함수를 props로 받습니다.
+function BookmarkedPages({ setCurrentView, onSelectBookmark }) {
 
     // --- 상태(State) 정의 ---
     const [showInput, setShowInput] = useState(null); // URL 입력창 표시 여부 (Link 1~5)
@@ -92,21 +92,25 @@ function BookmarkedPages({ setCurrentView, setAnalysisResult }) {
         }
     };
 
-    // 카드 클릭 시 (Home 탭으로 상세 결과 이동)
     const handleCardClick = async (recordId) => {
-        setIsLoading(true); // 로딩 표시 (선택 사항)
-        const detailResult = await getBookmarkResultDetail(recordId);
+        // 1. 로딩 표시 (잠깐)
+        // setIsLoading(true); // (선택 사항: 화면 전환이 빠르면 생략 가능)
         
-        if (detailResult) {
-            // App.js의 상태를 업데이트 (Home 화면이 이 데이터를 표시)
-            setAnalysisResult([detailResult]); 
-            // Home 탭으로 이동
-            setCurrentView('main');
-        } else {
-            alert("상세 정보를 불러오는 데 실패했습니다.");
-            setIsLoading(false);
+        try {
+            // 2. 상세 데이터 가져오기
+            const detailResult = await getBookmarkResultDetail(recordId);
+            
+            if (detailResult) {
+                // 3. App.js에서 받은 핸들러 호출 (이 함수가 화면 전환까지 다 해줌)
+                onSelectBookmark(detailResult); 
+            } else {
+                alert("상세 정보를 불러오는 데 실패했습니다 (데이터 없음).");
+            }
+        } catch (e) {
+            console.error(e);
+            alert("상세 정보를 불러오는 중 오류가 발생했습니다.");
         }
-        // Home 탭으로 이동하면 MainView가 로딩하므로, 여기서는 로딩을 끌 필요 없음
+        // (로딩 끄기는 화면이 전환되므로 불필요)
     };
 
     // 삭제 버튼 클릭 시

@@ -121,7 +121,7 @@ export const getBookmarkSites = async () => {
   try {
     const response = await fetchWithAuth('/api/bookmark-sites');
     if (!response.ok) throw new Error('Failed to fetch bookmark sites');
-    return await response.json(); // 예: [{id: 1, url: "...", site_name: "..."}, ...]
+    return await response.json(); 
   } catch (error) {
     console.error('Get bookmark sites API call failed:', error);
     return [];
@@ -133,9 +133,9 @@ export const addBookmarkSite = async (url, siteName, linkId) => {
   try {
     const response = await fetchWithAuth('/api/bookmark-sites', {
       method: 'POST',
-      body: JSON.stringify({ url: url, site_name: siteName, link_id: linkId }), // linkId 등 필요한 정보 전달
+      body: JSON.stringify({ url: url, site_name: siteName, link_id: linkId }),
     });
-    return await response.json(); // 예: { status: "success", data: {...} }
+    return await response.json(); 
   } catch (error) {
     console.error('Add bookmark site API call failed:', error);
     return { status: "error", detail: error.message };
@@ -147,7 +147,7 @@ export const getBookmarkResults = async () => {
     try {
         const response = await fetchWithAuth('/api/bookmark-results');
         if (!response.ok) throw new Error('Failed to fetch bookmark results');
-        return await response.json(); // 예: [{id: 1, post_url: "...", post_title: "...", ...}, ...]
+        return await response.json(); 
     } catch (error) {
         console.error('Get bookmark results API call failed:', error);
         return [];
@@ -159,13 +159,9 @@ export const getBookmarkResultDetail = async (recordId) => {
     try {
         const response = await fetchWithAuth(`/api/bookmark-results/${recordId}`);
         if (!response.ok) throw new Error('Failed to fetch bookmark detail');
-        return await response.json(); // RuleResponse 스키마와 동일한 형식
+        return await response.json(); 
     } catch (error) {
         console.error('Get bookmark detail API call failed:', error);
         return null;
     }
 };
-
-
-// --- (추가) Rule 배포 API (백엔드 /api/deploy 필요) ---
-// export const deployRule = async (ruleString) => { ... };
