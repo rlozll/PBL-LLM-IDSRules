@@ -66,7 +66,7 @@ const History = ({ setCurrentView, onSelectHistory }) => {
               onClick={() => handleRowClick(item.id)}
               style={{ cursor: "pointer" }}
             >
-              <div className="col-title">{item.title || "제목 없음"}</div>
+              <div className="col-title">{item.title}</div>
               <div className="col-rule">{item.generated_rule || "분석 중..."}</div>
               <div className="col-date">
                 {new Date(item.created_at).toLocaleDateString("ko-KR")}
