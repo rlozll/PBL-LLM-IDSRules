@@ -128,7 +128,13 @@ def validate_rule_syntax(rule_string: str) -> Tuple[bool, str]:
 
     rule_string = _sanitize_snort_rule_for_2_9(rule_string)
 
-    config_content = f"var HOME_NET any\nvar HTTP_PORTS [80,443,8080]\n{rule_string}"
+    config_content = (
+    "var HOME_NET any\n"
+    "var EXTERNAL_NET any\n"
+    "var HTTP_PORTS [80,443,8080]\n"
+    f"{rule_string}"
+)
+
     windows_config_path = ""
     full_output = ""
 

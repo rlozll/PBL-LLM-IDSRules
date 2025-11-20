@@ -1,5 +1,5 @@
 // src/App.js
-import React, { useState, useEffect } from 'react'; // <-- React 임포트는 파일 당 딱 한 번만!
+import React, { useState, useEffect } from 'react';
 import Login from './components/Login';
 import Sidebar from './components/Sidebar';
 import MainView from './components/MainView';
@@ -7,8 +7,8 @@ import CtiList from './components/CtiList';
 import IdsSettings from './components/IdsSettings';
 import History from './components/History';
 import Topbar from './components/Topbar';
-import BookmarkedPages from './components/BookmarkedPages';  
-import "./components/BookmarkedPages.css";  
+import BookmarkedPages from './components/BookmarkedPages';
+import "./components/BookmarkedPages.css";
 
 import { checkLoginStatus, generateRule } from './api';
 import './App.css';
@@ -16,10 +16,9 @@ import './App.css';
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [currentView, setCurrentView] = useState('main'); // 현재 뷰
-  const [appIsLoading, setAppIsLoading] = useState(true); // 앱 로딩
+  const [appIsLoading, setAppIsLoading] = useState(true);
 
-  // --- MainView의 상태를 부모(App.js)로 이동 ---
-  // (탭을 전환해도 이 정보가 사라지지 않도록)
+  // --- MainView 상태 ---
   const [url, setUrl] = useState('');
   const [file, setFile] = useState(null);
   const [result, setResult] = useState(null);
@@ -52,7 +51,7 @@ function App() {
       setIsLoading(false);
       return;
     }
-    
+
     if (response && response.ok) {
       setResult(response.data);
     } else {
@@ -69,29 +68,38 @@ function App() {
      sessionStorage.removeItem('authToken');
      setIsLoggedIn(false);
      setCurrentView('main');
-  }
+  };
 
+  // --- 북마크 클릭 시 MainView로 결과 전달 ---
   const handleBookmarkClick = (detailResult) => {
-      // 1. 상세 결과를 배열로 감싸서 상태 업데이트 (MainView는 배열을 기대함)
-      setResult(detailResult); 
-      
-      // 2. 에러 및 로딩 상태 초기화 (중요: 이전 상태가 남아있지 않도록)
+      setResult(detailResult);
       setError('');
       setIsLoading(false);
-      
-      // 3. 홈 화면으로 전환
       setCurrentView('main');
   };
 
+  // --- 히스토리 클릭 시 MainView로 결과 전달 ---
+  const handleHistoryClick = (historyResult) => {
+      setResult(historyResult);
+      setUrl(historyResult.sources?.[0] || ""); // sources 배열의 첫 URL을 url로 넣음
+      setError('');
+      setIsLoading(false);
+      setCurrentView('main');
+  };
+
+
+
   if (appIsLoading) return <div>Loading...</div>;
 
-  if (!isLoggedIn) {
-    return <Login onLoginSuccess={handleLoginSuccess} />;
-  }
+  if (!isLoggedIn) return <Login onLoginSuccess={handleLoginSuccess} />;
 
   return (
     <div className="dashboard-layout">
-      <Sidebar currentView={currentView} setCurrentView={setCurrentView} onLogout={handleLogout} />
+      <Sidebar 
+        currentView={currentView} 
+        setCurrentView={setCurrentView} 
+        onLogout={handleLogout} 
+      />
       <div className="main-top">
         <Topbar 
           url={url}
@@ -103,7 +111,6 @@ function App() {
           onLogout={handleLogout}
         />
         <main className="main-content">
-          {/* MainView에 상태와 상태 변경 함수를 props로 전달 */}
           {currentView === 'main' && (
             <MainView
               result={result}
@@ -117,10 +124,15 @@ function App() {
           {currentView === 'settings' && (
             <BookmarkedPages 
                 setCurrentView={setCurrentView} 
-                onSelectBookmark={handleBookmarkClick} // <--- 새로 만든 함수 전달!
+                onSelectBookmark={handleBookmarkClick} 
             />
           )}
-          {currentView === 'history' && <History setCurrentView={setCurrentView} />}
+          {currentView === 'history' && (
+            <History 
+              setCurrentView={setCurrentView} 
+              onSelectHistory={handleHistoryClick} 
+            />
+          )}
         </main>
       </div>
     </div>

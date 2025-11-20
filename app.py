@@ -15,6 +15,11 @@ from passlib.context import CryptContext
 from datetime import datetime, timedelta, timezone
 from typing import List, Dict, Any
 from fastapi.responses import JSONResponse
+import httpx
+from bs4 import BeautifulSoup
+from pydantic import BaseModel
+from typing import List, Optional, Any
+from pydantic import BaseModel
 
 # --- 백그라운드 작업(수집기) 모듈 ---
 from apscheduler.schedulers.background import BackgroundScheduler
@@ -133,6 +138,18 @@ class BookmarkResultItem(BaseModel): # 피드 목록용
     link_id: int | None = None 
     site_name: str | None = None
 
+class HistoryResponse(BaseModel):
+    id: int
+    url: str
+    title: str
+    sources: List[str] = []
+    generated_rule: str
+    explanation: Any  # 기존 analysis['explanation'] 구조 그대로
+    created_at: Optional[str] = None  # DB에 저장되는 생성일
+
+class HistoryCreate(BaseModel):
+    url: str  # 클라이언트에서 전송할 URL
+
 # ──────────────────────────────────────────────────────────────────────────────
 # 3) 유틸: Snort 룰 1차 형태검사
 # ──────────────────────────────────────────────────────────────────────────────
@@ -207,7 +224,7 @@ async def login_for_access_token(form_data: OAuth2PasswordRequestForm = Depends(
     "/api/generate-rule",
     response_model=RuleResponse,
     summary="CTI URL로부터 IDS Rule 생성",
-    dependencies=[Depends(get_current_user)] # 인증 필수
+    dependencies=[Depends(get_current_user)]  # 인증 필수
 )
 async def create_rule_from_url(request: RuleRequest):
     """단일 URL을 받아 파싱, LLM 분석, 검증을 수행하고 History DB에 저장합니다."""
@@ -228,48 +245,46 @@ async def create_rule_from_url(request: RuleRequest):
     try:
         llm_output = await generate_analysis_from_text(text_for_llm)
     except Exception as e:
-         raise HTTPException(status_code=500, detail={"stage": "llm", "error": "Handler Exception", "detail": str(e)})
+        raise HTTPException(status_code=500, detail={"stage": "llm", "error": "Handler Exception", "detail": str(e)})
 
     if llm_output.get("error"):
         stage = "ioc" if "IOC" in llm_output["error"] else "rule" if "RULE" in llm_output["error"] else "llm"
         print(f"ERROR: LLM 처리 실패 - {llm_output['error']}")
         raise HTTPException(status_code=502, detail={"stage": stage, "error": llm_output["error"], "detail": llm_output.get("explanation", "")})
 
-    extracted_ioc = llm_output.get("ioc", {})
     rule_to_validate = (llm_output.get("rule") or "").strip()
-    explanation = llm_output.get("explanation", "설명 없음.")
+    extracted_ioc = llm_output.get("ioc", {})
+    explanation = llm_output.get("explanation", {})
 
     if not rule_to_validate:
         raise HTTPException(status_code=500, detail="LLM이 유효한 Rule을 생성하지 못했습니다.")
     if not _is_probably_snort_rule(rule_to_validate):
         raise HTTPException(status_code=400, detail={"stage": "validate", "error": "precheck failed", "rule": rule_to_validate[:300]})
 
-    # 4. 통합 검증
+    # 3. Validator 실행
     validation_status = "Skipped"
     validation_details = ""
     try:
-        if sys.platform == "darwin": # macOS 예외 처리
-            validation_status = "Skipped on macOS"
-        else:
-            validation_result_dict = validate_rule(rule_to_validate) # (오류 수정됨)
-            validation_status = validation_result_dict["overall_status"]
-            
+        if sys.platform != "darwin":
+            val_result = validate_rule(rule_to_validate)
+            validation_status = val_result.get("overall_status", "Unknown")
             if validation_status == "Failed":
-                 validation_details = f"Syntax Error Detail:\n{validation_result_dict['syntax_check_output']}"
+                validation_details = f"Syntax Error Detail:\n{val_result.get('syntax_check_output','')}"
             elif validation_status == "Warning":
-                 warnings_text = "\n".join([f"- {w}" for w in validation_result_dict["static_warnings"]])
-                 validation_details = f"Static Analysis Warnings:\n{warnings_text}"
+                warnings_text = "\n".join([f"- {w}" for w in val_result.get("static_warnings", [])])
+                validation_details = f"Static Analysis Warnings:\n{warnings_text}"
             else:
-                 validation_details = "Syntax OK. No static warnings found."
+                validation_details = "Syntax OK. No static warnings"
     except Exception as e:
+        validation_status = "ValidatorError"
+        validation_details = str(e)
         print(f"ERROR: validator 모듈 실행 중 충돌 - {e}")
-        validation_status = "ValidatorError"; validation_details = str(e)
 
     print(f"INFO: Rule 검증 결과: {validation_status}")
     if validation_details: print(f"INFO: 검증 상세:\n{validation_details}")
 
-    # 5. VirusTotal
-    vt_summary = None 
+    # 4. VirusTotal 조회
+    vt_summary = None
     try:
         if os.getenv("VT_API_KEY"):
             vt_summary = vt_fetch_url_report(request.url)
@@ -280,26 +295,32 @@ async def create_rule_from_url(request: RuleRequest):
     except Exception as e:
         print(f"ERROR: VirusTotal 조회 중 오류 - {e}")
         vt_summary = {"status": "error", "detail": str(e)}
-    
-    # 6. 최종 응답 객체 생성
-    response_data = RuleResponse(
+
+    # 5. DB에 History 저장
+    if validation_status not in ["Failed", "ValidatorError"]:
+        try:
+            db.add_history_record({
+                "source_url": request.url,
+                "generated_rule": rule_to_validate,
+                "validation_result": validation_status,
+                "validation_details": validation_details,
+                "extracted_ioc": extracted_ioc,
+                "rule_explanation": explanation
+            })
+        except Exception as e:
+            print(f"ERROR: History DB 저장 실패 - {e}")
+
+    # 6. 최종 응답 반환
+    return RuleResponse(
         source_url=request.url,
         extracted_ioc=extracted_ioc,
         generated_rule=rule_to_validate,
         validation_result=validation_status,
         validation_details=validation_details,
         rule_explanation=explanation,
-        vt_summary=vt_summary,
+        vt_summary=vt_summary
     )
-    
-    # 7. DB에 History 저장
-    if validation_status != "Failed" and validation_status != "ValidatorError":
-        try:
-            db.add_history_record(response_data.model_dump())
-        except Exception as e:
-            print(f"ERROR: History DB 저장 실패 - {e}")
 
-    return response_data
 
 # --- History: 목록 조회 ---
 @app.get("/api/history", response_model=List[HistoryListItem], dependencies=[Depends(get_current_user)])
@@ -313,6 +334,71 @@ async def get_history_detail_by_id(record_id: int):
     if not record:
         raise HTTPException(status_code=404, detail="History record not found")
     return RuleResponse(**record)
+
+@app.post("/api/history", response_model=HistoryResponse, dependencies=[Depends(get_current_user)])
+async def create_history(record: HistoryCreate):
+    url = record.url
+    page_title = "제목 없음"
+
+    try:
+        async with httpx.AsyncClient() as client:
+            resp = await client.get(url, timeout=5)
+            if resp.status_code == 200:
+                soup = BeautifulSoup(resp.text, "html.parser")
+                title_tag = soup.find("title")
+                if title_tag and title_tag.text.strip():
+                    page_title = title_tag.text.strip()
+    except Exception as e:
+        print(f"페이지 제목 추출 실패: {e}")
+
+    # LLM 분석
+    analysis = await generate_analysis_from_text(url)
+    rule_to_validate = (analysis.get("rule") or "").strip()
+    extracted_ioc = analysis.get("ioc", {})
+    explanation = analysis.get("explanation", {})
+
+    # Validator 실행
+    validation_status = "Skipped"
+    validation_details = ""
+    try:
+        if sys.platform != "darwin":
+            val_result = validate_rule(rule_to_validate)
+            validation_status = val_result.get("overall_status", "Unknown")
+            if validation_status == "Failed":
+                validation_details = f"Syntax Error Detail:\n{val_result.get('syntax_check_output','')}"
+            elif validation_status == "Warning":
+                validation_details = "\n".join([f"- {w}" for w in val_result.get("static_warnings", [])])
+            else:
+                validation_details = "Syntax OK. No static warnings"
+    except Exception as e:
+        validation_status = "ValidatorError"
+        validation_details = str(e)
+
+    # DB에 맞게 구조 생성
+    db_payload = {
+        "source_url": url,
+        "generated_rule": rule_to_validate,
+        "validation_result": validation_status,
+        "validation_details": validation_details,
+        "extracted_ioc": extracted_ioc,
+        "rule_explanation": explanation
+    }
+
+    # 저장 함수 호출
+    db.add_history_record(db_payload)
+
+    # 프론트에 반환
+    return HistoryResponse(
+        url=url,
+        title=page_title,
+        sources=[url],
+        generated_rule=rule_to_validate,
+        validation_result=validation_status,
+        validation_details=validation_details,
+        extracted_ioc=extracted_ioc,
+        rule_explanation=explanation,
+        vt_summary=None
+    )
 
 # --- CTI Lists: 목록 조회 ---
 @app.get("/api/new_cti_list", response_model=List[CtiListItem], dependencies=[Depends(get_current_user)])

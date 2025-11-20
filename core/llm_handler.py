@@ -167,7 +167,6 @@ IoC:
             explanation_json = {"error": f"설명 생성 중 오류 발생: {err}"}
     else:
         explanation_json = {"error": "Rule 생성 실패로 설명 생성 안 함."}
-    # ▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲
 
     # 4) 최종 결과 반환
     return {"ioc": ioc_json, "rule": rule_text, "explanation": explanation_json}

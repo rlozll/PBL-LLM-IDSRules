@@ -180,3 +180,44 @@ export const deleteBookmarkResult = async (resultId) => {
     return { ok: false, status: 500, data: { detail: error.message } };
   }
 };
+
+// ----------------- History API -----------------
+
+// 히스토리 목록 가져오기
+export const getHistoryRecords = async () => {
+  try {
+    const response = await fetchWithAuth('/api/history');
+    if (!response.ok) throw new Error('Failed to fetch history');
+    return await response.json();
+  } catch (error) {
+    console.error('Get history API call failed:', error);
+    return [];
+  }
+};
+
+// 특정 히스토리 상세 가져오기
+export const getHistoryDetail = async (id) => {
+  try {
+    const response = await fetchWithAuth(`/api/history/${id}`);
+    if (!response.ok) throw new Error('Failed to fetch history detail');
+    return await response.json();
+  } catch (error) {
+    console.error('Get history detail failed:', error);
+    return null;
+  }
+};
+
+// 새 히스토리 생성 (URL 입력 후 분석)
+export const addHistoryRecord = async (url) => {
+  try {
+    const response = await fetchWithAuth('/api/history', {
+      method: 'POST',
+      body: JSON.stringify({ url }),
+    });
+    const data = await response.json();
+    return { ok: response.ok, data };
+  } catch (error) {
+    console.error('Add history record failed:', error);
+    return { ok: false, data: { detail: error.message } };
+  }
+};
