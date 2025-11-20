@@ -8,9 +8,8 @@ import {
     getBookmarkSites,
     addBookmarkSite,
     getBookmarkResults,
-    getBookmarkResultDetail
-    // (api.js에 deleteBookmarkSite 함수 구현 필요)
-    // deleteBookmarkSite 
+    getBookmarkResultDetail,
+    deleteBookmarkResult
 } from "../api";
 
 // App.js로부터 탭 이동(setCurrentView)과 결과 주입(onBookmarkClick) 함수를 props로 받습니다.
@@ -119,22 +118,39 @@ function BookmarkedPages({ setCurrentView, onSelectBookmark }) {
         setDeleteTarget(id);
     };
 
+const fetchWithAuth = async (url, options = {}) => {
+    const token = localStorage.getItem("token");
+
+    // 백엔드는 FastAPI 8000번 포트 → 절대 경로로 고정
+    const fullUrl = `http://127.0.0.1:8000${url}`;
+
+    const defaultHeaders = {
+        "Content-Type": "application/json",
+        Authorization: token ? `Bearer ${token}` : "",
+    };
+
+    return fetch(fullUrl, {
+        ...options,
+        headers: {
+            ...defaultHeaders,
+            ...(options.headers || {}),
+        },
+    });
+};
+
     const cancelDelete = () => setDeleteTarget(null);
 
-    const confirmDelete = async () => {
+const confirmDelete = async () => {
     try {
-        const response = await fetch(`/api/bookmark-results/${deleteTarget}`, {
+        const response = await fetchWithAuth(`/api/bookmark-results/${deleteTarget}`, {
             method: "DELETE",
-            headers: {
-                "Authorization": `Bearer ${localStorage.getItem("token")}` // JWT 필요
-            }
         });
         const data = await response.json();
 
         if (response.ok && data.status === "success") {
-            // 삭제 성공 후, 목록 새로고침
-            const results = await getBookmarkResults();
-            setBookmarkResults(results);
+            // 삭제 성공 시 목록 재로딩
+            const updated = await getBookmarkResults();
+            setBookmarkResults(updated);
         } else {
             alert(`삭제 실패: ${data.detail || "서버 오류"}`);
         }
@@ -142,8 +158,10 @@ function BookmarkedPages({ setCurrentView, onSelectBookmark }) {
         console.error(e);
         alert("삭제 요청 중 오류가 발생했습니다.");
     }
+
     setDeleteTarget(null);
 };
+
 
 
     // 정렬 로직 (DB에서 가져온 bookmarkResults 기준)

@@ -1,74 +1,75 @@
-// src/api.js
-
 const API_BASE_URL = 'http://127.0.0.1:8000'; // FastAPI 서버 주소
 
 // --- 로그인 관련 ---
-export const login = async (password) => {
+export async function login(password) {
   try {
-    // 백엔드에 /api/login 엔드포인트가 필요합니다.
-    // 이 엔드포인트는 password를 받아 .env의 DASHBOARD_PASSWORD와 비교 후
-    // 성공 시 { "access_token": "your_jwt_token" } 형태의 응답을 반환해야 합니다.
-
-    const formData = new FormData();
-    formData.append('username', 'dashboard_user');
-    formData.append('password', password);
+    // FastAPI OAuth2PasswordRequestForm expects form-url-encoded with fields username,password
+    const form = new URLSearchParams();
+    form.append('username', 'dashboard_user'); // app.py에서 sub으로 사용중
+    form.append('password', password);
 
     const response = await fetch(`${API_BASE_URL}/api/login`, {
-        method: 'POST',
-//      headers: { 'Content-Type': 'application/json' },
-//      body: JSON.stringify({ password: password }),
-	body: formData,
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: form.toString(),
     });
 
-    if (!response.ok) return false;
+    if (!response.ok) {
+      return false;
+    }
+
     const data = await response.json();
-    if (data.access_token) {
-      sessionStorage.setItem('authToken', data.access_token); // 세션 스토리지에 토큰 저장
+
+    // app.py 리턴: { "access_token": "...", "token_type": "bearer" }
+    const token = data.access_token || data.token || data.accessToken;
+    if (token) {
+      // 통일: localStorage에 'token' 키로 저장
+      localStorage.setItem('token', token);
       return true;
     }
     return false;
   } catch (error) {
-    console.error('Login API call failed:', error);
+    console.error('Login error:', error);
     return false;
   }
-};
+}
 
+// 로그인 상태 체크 (localStorage 기준으로 통일)
 export const checkLoginStatus = async () => {
-    const token = sessionStorage.getItem('authToken');
-    // 실제로는 백엔드에 토큰 유효성 검사 요청을 보내는 것이 더 안전합니다.
-    // 여기서는 간단히 토큰 존재 여부만 확인합니다.
-    return !!token;
+  const token = localStorage.getItem('token');
+  return !!token;
 };
 
-// --- 인증 필요한 API 호출 헬퍼 ---
+// --- 인증 필요한 API 호출 헬퍼 (localStorage 기준) ---
 const fetchWithAuth = async (endpoint, options = {}) => {
-    const token = sessionStorage.getItem('authToken');
-    const headers = {
-        ...options.headers,
-        'Content-Type': 'application/json',
-    };
-    // JWT 토큰이 있으면 Authorization 헤더 추가
-    if (token) {
-        headers['Authorization'] = `Bearer ${token}`;
+  const token = localStorage.getItem('token'); // <-- 반드시 localStorage에서 읽음
+
+  // 기본 헤더 (options.headers가 있으면 merge)
+  const headers = {
+    'Content-Type': 'application/json',
+    ...(options.headers || {}),
+  };
+
+  if (token) headers['Authorization'] = `Bearer ${token}`;
+
+  try {
+    const response = await fetch(`${API_BASE_URL}${endpoint}`, {
+      ...options,
+      headers,
+    });
+
+    // 401 받으면 토큰 제거하고 에러 처리 (로그인 UI로 유도는 호출자에서)
+    if (response.status === 401) {
+      localStorage.removeItem('token');
+      // don't auto-reload here; let caller handle it (or you can reload if desired)
+      throw new Error('Unauthorized');
     }
 
-    try {
-        const response = await fetch(`${API_BASE_URL}${endpoint}`, {
-            ...options,
-            headers: headers,
-        });
-
-        // 401 Unauthorized 에러 시 자동 로그아웃 처리
-        if (response.status === 401) {
-            sessionStorage.removeItem('authToken');
-            window.location.reload(); // 페이지 새로고침하여 로그인 화면으로
-            throw new Error('Unauthorized');
-        }
-        return response; // response 객체 자체를 반환
-    } catch (error) {
-         console.error(`API call to ${endpoint} failed:`, error);
-         throw error; // 에러를 다시 던져서 호출한 곳에서 처리하도록 함
-    }
+    return response;
+  } catch (error) {
+    console.error(`API call to ${endpoint} failed:`, error);
+    throw error;
+  }
 };
 
 
@@ -164,4 +165,18 @@ export const getBookmarkResultDetail = async (recordId) => {
         console.error('Get bookmark detail API call failed:', error);
         return null;
     }
+};
+
+// 삭제: 북마크 분석 결과 하나 삭제
+export const deleteBookmarkResult = async (resultId) => {
+  try {
+    const response = await fetchWithAuth(`/api/bookmark-results/${resultId}`, {
+      method: 'DELETE',
+    });
+    const data = await response.json().catch(() => ({}));
+    return { ok: response.ok, status: response.status, data };
+  } catch (error) {
+    console.error('Delete bookmark result API call failed:', error);
+    return { ok: false, status: 500, data: { detail: error.message } };
+  }
 };

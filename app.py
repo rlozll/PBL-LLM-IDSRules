@@ -345,13 +345,18 @@ async def get_result_detail(record_id: int):
         raise HTTPException(status_code=404, detail="Bookmark result not found") # (오류 수정됨)
     return RuleResponse(**record)
 
-@app.delete("/api/bookmark-results/{result_id}", dependencies=[Depends(get_current_user)])
-async def delete_bookmark_result_endpoint(result_id: int):
-    """북마크 분석 결과 삭제"""
-    success = db.delete_bookmark_result(result_id)
-    if success:
-        return {"status": "success", "deleted_id": result_id}
-    raise HTTPException(status_code=400, detail=f"Failed to delete bookmark result with id {result_id}")
+# --- Bookmark Result 삭제 ---
+@app.delete("/api/bookmark-results/{record_id}")
+async def delete_bookmark_result(record_id: int, user=Depends(get_current_user)):
+    try:
+        deleted = db.delete_bookmark_result(record_id)  # DB 함수 호출
+        if not deleted:
+            raise HTTPException(status_code=404, detail="Record not found")
+
+        return {"status": "success", "detail": "Deleted successfully"}
+
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Delete failed: {e}")
 
 # ──────────────────────────────────────────────────────────────────────────────
 # 6) 스케줄러 (앱 시작 시 자동 실행)
