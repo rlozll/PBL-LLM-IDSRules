@@ -76,19 +76,19 @@ function MainView({ result, error, isLoading, url, file }) {
   }
   return (
   <div className="main-container">
-    <div className="header-section">
-      <h1>Hello 👋</h1>
+    {/*<div className="header-section">
+      <h1>Home</h1>
       <p className="subtitle">Let's start CTI analysis</p>
-    </div>
+    </div>*/}
     <div className="main-box-grid">
       <div className="main-box sources">
-        <h3>Your Sources</h3>
+        <h3>문서 목록</h3>
         <div className="source-card">
           {renderSources()}
         </div>
       </div>
       <div className="main-box iocs">
-        <h3>Exported IoCs</h3>
+        <h3>추출된 IoCs</h3>
         {isLoading && <p>IoC를 추출 중입니다...</p>}
         {error && <p className="error-message">{error}</p>}
         {result && (
@@ -134,7 +134,7 @@ function MainView({ result, error, isLoading, url, file }) {
 
       {/* ▼ 오른쪽 열 (Rule & Explain) ▼ */}
       <div className="main-box rule">
-          <h3>Generated Rule & Explain</h3>
+          <h3>Rule 생성 및 설명</h3>
 
           {isLoading && <p>Rule을 생성 중입니다...</p>}
           {error && <p className="error-message">Rule 생성 실패</p>}
@@ -144,7 +144,7 @@ function MainView({ result, error, isLoading, url, file }) {
             <div className="rule-card-header">
               {/*<span className="rule-icon">🧩</span>*/}
               <GeneratedSvg className="right-icon"/>
-              <h3>Generated Rule</h3>
+              <h3>Rule 생성</h3>
             </div>
             <pre>{result?.generated_rule || '생성된 룰이 여기에 표시됩니다.'}</pre>
             <div className="validation-status">
@@ -168,7 +168,7 @@ function MainView({ result, error, isLoading, url, file }) {
             <div className="rule-card-header">
               <ExplainSvg className="right-icon" />
               {/*<span className="rule-icon">💬</span>*/}
-              <h3>Explain</h3>
+              <h3>Rule 설명</h3>
             </div>
             <div className="rule-explanation-scroll">
               {result
