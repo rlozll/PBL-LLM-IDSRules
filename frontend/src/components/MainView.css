@@ -4,6 +4,19 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
+  max-height: 600px;
+  overflow-y: auto;
+  padding-right: 10px;
+}
+.ioc-grid::-webkit-scrollbar {
+  width: 6px;
+}
+.ioc-grid::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 10px;
+}
+.ioc-grid::-webkit-scrollbar-thumb:hover {
+  background: #999;
 }
 
 /* 각 IoC 항목 박스 */
@@ -235,6 +248,7 @@ html, body {
   color: #333;
   line-height: 1.5;
   font-size: 0.95rem;
+  padding-right: 10px;
 }
 
 .rule-explanation-scroll::-webkit-scrollbar {
