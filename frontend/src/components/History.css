@@ -50,6 +50,7 @@
   margin-top: 14px;
 }
 
+
 .history-row {
   display: grid;
   grid-template-columns: 3fr 4fr 1fr;
@@ -99,4 +100,19 @@
   justify-self: center !important;
   color: #777;
   white-space: nowrap;
+}
+
+
+.history-title {
+  color: #85878D;             
+  font-weight: 600;
+  text-decoration: none;
+  word-break: break-all;
+  line-height: 1.4;
+}
+
+.history-title:hover {
+  color: #0066cc !important; 
+  text-decoration: underline !important;
+  cursor: pointer;
 }

@@ -4,7 +4,18 @@ import './CtiList.css';
 import { getNewCtiList } from '../api'; // api.js에서 함수 가져오기
 import { ReactComponent as LinkCopyIcon } from './icons/Copy.svg';
 
-function CtiList({ setCurrentView, setUrl }) { // (setCurrentView는 Bookmarked Pages용으로 남겨둘 수 있음)
+const getLastReadTime = (site) => {
+  return localStorage.getItem(`cti_last_read_${site}`) || null;};
+const updateLastReadTime = (site) => {
+  localStorage.setItem(`cti_last_read_${site}`, new Date().toISOString()); };
+
+const RSS_SITE_NAMES = [
+  "NVD Analyzed", "Cloudflare Blog", "CISA Alerts", "CERT-KR",
+  "Mandiant (Google)", "Palo Alto (Unit 42)", "CrowdStrike", "Microsoft Security",
+  "Rapid7 (AttackerKB)", "The Hacker News", "Krebs on Security", "Bleeping Computer", "Schneier on Security",];
+
+
+function CtiList({ setCurrentView, setUrl: onCopyLink }) { // (setCurrentView는 Bookmarked Pages용으로 남겨둘 수 있음)
 
   // --- ▼▼▼ 가짜 데이터 대신, DB에서 가져올 데이터 상태 추가 ▼▼▼ ---
   const [ctiItems, setCtiItems] = useState([]); // 빈 배열로 초기화
@@ -13,6 +24,7 @@ function CtiList({ setCurrentView, setUrl }) { // (setCurrentView는 Bookmarked 
   // --- ▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲ ---
 
   const [copyMessage, setCopyMessage] = useState({ visible: false, text: '' })
+  const [selectedSite, setSelectedSite] = useState(null);
 
   // --- ▼▼▼ 컴포넌트가 로드될 때 API를 호출하여 DB 데이터 가져오기 ▼▼▼ ---
   useEffect(() => {
@@ -54,10 +66,10 @@ function CtiList({ setCurrentView, setUrl }) { // (setCurrentView는 Bookmarked 
 
     navigator.clipboard.writeText(link)
       .then(() => {
-        showCopyToast('링크 복사 완료');
+        showCopyToast('링크 복사 및 입력 완료');
 
-        if (setUrl) {
-          setUrl(link);
+        if (onCopyLink) {
+          onCopyLink(link);
         }
       })
       .catch(err => {
@@ -65,6 +77,26 @@ function CtiList({ setCurrentView, setUrl }) { // (setCurrentView는 Bookmarked 
         showCopyToast('링크 복사 실패');
       });
   };
+
+  // 사이트 업데이트 표시
+  const siteHasUpdate = (site) => {
+    const lastRead = getLastReadTime(site);
+    if (!lastRead) return true; 
+
+    const lastReadTime = new Date(lastRead);
+
+    return ctiItems.some(
+      (item) =>
+        item.site_name === site &&
+        item.published_date &&                       // ✅ 날짜 있는 애만 비교
+        new Date(item.published_date) > lastReadTime
+    );
+  };
+
+  // 선택된 사이트에 따라 목록 필터링
+  const filteredItems = selectedSite
+    ? ctiItems.filter(item => item.site_name === selectedSite)
+    : ctiItems;
 
   return (
     <div className="cti-list-container">
@@ -76,7 +108,32 @@ function CtiList({ setCurrentView, setUrl }) { // (setCurrentView는 Bookmarked 
 
       <header className="cti-header">
         <h1>CTI Lists</h1>
-        <p className="subtitle">Check out the latest CTIs (From RSS Feeds)</p>
+        <p className="subtitle">최신 CTI 피드를 확인하세요 (From RSS Feeds)</p>
+      
+        <div className="site-filter-bar">
+          {RSS_SITE_NAMES.map((name) => (
+            <span
+              key={name}
+              className={
+                "site-filter-text" +
+                (selectedSite === name ? " active" : "")
+              }
+              onClick={() => {
+                if (selectedSite === name) {
+                  setSelectedSite(null); // 전체보기
+                } else {
+                  setSelectedSite(name);
+                  updateLastReadTime(name); // 읽음 처리
+                }
+              }}
+            >
+              {name}
+              {siteHasUpdate(name) && (
+                <span className="site-update-dot" />
+              )}
+            </span>
+          ))}
+        </div>
       </header>
 
       <div className="cti-table">

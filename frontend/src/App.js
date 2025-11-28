@@ -1,5 +1,5 @@
 // src/App.js
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import Login from './components/Login';
 import Sidebar from './components/Sidebar';
 import MainView from './components/MainView';
@@ -12,6 +12,8 @@ import "./components/BookmarkedPages.css";
 
 import { checkLoginStatus, generateRule } from './api';
 import './App.css';
+
+const URL_DELIMITER = '\n'; 
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -36,7 +38,7 @@ function App() {
 
   const handleAnalyze = async () => {
     if (!url && !file) {
-      setError('URL을 입력하거나 PDF 파일을 업로드하세요.');
+      setError('URL을 입력하세요.');
       return;
     }
     setIsLoading(true);
@@ -46,10 +48,6 @@ function App() {
     let response;
     if (url) {
       response = await generateRule(url);
-    } else if (file) {
-      setError('PDF 파일 분석 기능은 아직 구현되지 않았습니다.');
-      setIsLoading(false);
-      return;
     }
 
     if (response && response.ok) {
@@ -87,7 +85,16 @@ function App() {
       setCurrentView('main');
   };
 
+  const addUrlToTopbar = useCallback((newUrl) => {
+    const urlsList = url ? url.split(URL_DELIMITER).map(u => u.trim()).filter(u => u.length > 0) : [];
+    const trimmedUrl = newUrl.trim();
 
+    if (trimmedUrl && !urlsList.includes(trimmedUrl)) {
+      const newList = [...urlsList, trimmedUrl];
+      // 업데이트된 리스트를 다시 직렬화하여 상태 업데이트 (덮어쓰기 방지)
+      setUrl(newList.join(URL_DELIMITER)); 
+    }
+  }, [url, setUrl])
 
   if (appIsLoading) return <div>Loading...</div>;
 
@@ -120,7 +127,7 @@ function App() {
               file={file}
             />
           )}
-          {currentView === 'cti' && <CtiList setCurrentView={setCurrentView} setUrl={setUrl} />}
+          {currentView === 'cti' && <CtiList setCurrentView={setCurrentView} setUrl={addUrlToTopbar} />}
           {currentView === 'settings' && (
             <BookmarkedPages 
                 setCurrentView={setCurrentView} 

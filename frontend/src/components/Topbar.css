@@ -13,6 +13,13 @@
   z-index: 100;
 }
 
+/* 검색 컨테이너 (드롭다운 위치 기준점) */
+.search-container {
+  position: relative;
+  flex-grow: 1;
+  max-width: 1230px;
+}
+
 .search-box {
   display: flex;
   align-items: center;
@@ -22,7 +29,7 @@
   padding: 0.5rem 0.75rem;
   background-color: #fff;
   flex-grow: 1;
-  max-width: 300px;
+  width: 100%;
 }
 
 .search-box input {
@@ -30,6 +37,8 @@
   outline: none;
   font-size: 0.9rem;
   flex-grow: 1;
+  order: 0;
+  min-width: 150px;
 }
 
 .topbar-icon {
@@ -40,11 +49,77 @@
   align-items: center;
   padding: 0;
   color: #ff4b00;
+  order: 1;
 }
 
 .topbar-icon svg {
   width: 20px;
   height: 20px;
+}
+
+/* URL 드롭다운 박스 스타일 */
+.url-dropdown-box {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100.7%;
+  background: #fff;
+  border: 1.5px solid #ff4b00;
+  border-radius: 0 0 8px 8px;
+  border-top: none;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+  padding: 8px 8px 0 8px;
+  z-index: 99;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+/* 개별 URL 항목 컨테이너 (URL 텍스트 + 삭제 버튼) */
+.url-item-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  margin-bottom: 8px;
+  font-size: 0.9rem;
+  overflow: hidden;
+  transition: box-shadow 0.2s;
+}
+
+.url-item-container:hover {
+  box-shadow: 0 0 0 1px #ff4b00;
+}
+
+/* URL 텍스트 박스 */
+.url-item-box {
+  flex-grow: 1;
+  padding: 0.5rem 0.75rem;
+  min-height: 20px;
+  color: #333;
+  word-break: break-all;
+  background-color: #fcfcfc;
+}
+
+/* 삭제 버튼 스타일 */
+.remove-url-btn {
+  background: none;
+  border: none;
+  color: #999;
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 0.5rem 0.75rem;
+  height: 100%;
+  transition: background 0.2s, color 0.2s;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+}
+
+.remove-url-btn:hover {
+  background-color: #ffe0d6;
+  color: #ff4b00;
 }
 
 .user-info {

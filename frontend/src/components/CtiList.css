@@ -24,6 +24,52 @@
   color: #85878D;
 }
 
+/* 사이트 필터 바 */
+.site-filter-bar {
+  margin-top: 8px;
+  margin-bottom: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+/* 기본 텍스트 스타일 */
+.site-filter-text {
+  font-size: 0.85rem;
+  color: #9a9ca2;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+/* hover  */
+.site-filter-text:hover {
+  color: #555;
+}
+
+/* active */
+.site-filter-text.active {
+  color: #211C37;       
+  font-weight: 700;
+}
+
+.site-filter-text {
+  position: relative;
+  margin-right: 14px;
+}
+
+/* 사이트 업데이트 표시 */ 
+.site-filter-badge::after {
+  content: "";
+  position: absolute;
+  top: -4px;
+  right: -6px;
+  width: 7px;
+  height: 7px;
+  background-color: #FF4B00;
+  border-radius: 50%;
+}
+
+
 /* --- 테이블 구조 --- */
 .cti-table {
   width: 100%;
@@ -33,21 +79,28 @@
 
 .cti-table-header {
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr;
-  background-color: #FF4B00;  /*  Figma 주황 */
-  color: #FFFFFF;             /*  텍스트 흰색 */
-  padding: 14px 20px;
-  border-radius: 8px;
-  font-weight: 700 !important;
-  letter-spacing: 0.3px; 
-  /*  전체 가운데 정렬 */
-  align-items: center; /* 세로 가운데 정렬 */
+  grid-template-columns: 3fr 4fr 1fr;
+  background-color: #f6f6f6;
+  color: #555;
+  font-weight: 600;
+  padding: 18px 28px;
+  border-radius: 10px;
+  align-items: center;
 }
 
-/* 테이블 헤더 글씨색 강제 흰색 적용 */
+
 .cti-table-header div {
-  color: #FFFFFF !important;   /*  강제 흰색 */
+  color: #555 !important;  
   font-weight: 600;
+}
+
+.cti-table-header div:nth-child(1) {
+  text-align: left;
+}
+
+.cti-table-header div:nth-child(2),
+.cti-table-header div:nth-child(3) {
+  text-align: center;
 }
 
 .cti-table-body {
@@ -79,6 +132,12 @@
   font-size: 1rem;
 }
 
+.cti-col-title:hover {
+  color: #0066cc;             
+  text-decoration: underline; 
+  cursor: pointer;           
+}
+
 .cti-col-site {
   text-align: center;
   color: #777;
@@ -86,23 +145,27 @@
 }
 
 .cti-col-date {
-  display: flex;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: 1fr auto;  
   align-items: center;
+  justify-content: center;
 
   color: #777;
   font-size: 0.95rem;
-  letter-spacing: 0.5px;
+  column-gap: 12px; 
 }
+
 
 .date-text {
-  margin-left: 100px;
+  margin: 0;        
+  text-align: center;
 }
 
+/* 버튼 정렬 */
 .copy-button {
   background: none;
   border: none;
-  padding: 4;
+  padding: 4px;
 
   cursor: pointer;
   display: flex;
@@ -111,8 +174,6 @@
 
   border-radius: 4px;
   transition: all 0.2s;
-
-  margin-left: 70px;
 }
 
 .copy-button:hover {
