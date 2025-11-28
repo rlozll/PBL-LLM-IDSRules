@@ -30,6 +30,7 @@
   border-spacing: 0;
   border-collapse: separate;
 }
+
 .cti-table-header {
   display: grid;
   grid-template-columns: 2fr 1fr 1fr;
@@ -85,8 +86,64 @@
 }
 
 .cti-col-date {
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   color: #777;
   font-size: 0.95rem;
-    letter-spacing: 0.5px;
+  letter-spacing: 0.5px;
+}
+
+.date-text {
+  margin-left: 100px;
+}
+
+.copy-button {
+  background: none;
+  border: none;
+  padding: 4;
+
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 4px;
+  transition: all 0.2s;
+
+  margin-left: 70px;
+}
+
+.copy-button:hover {
+  background-color: rgba(60, 55, 53, 0.1);
+  border-radius: 4px;
+}
+
+.copy-icon {
+  transition: fill 0.2s;
+}
+
+.copy-toast-message {
+    position: fixed; 
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    
+    background-color: #211C37; 
+    color: #FFFFFF; 
+    padding: 12px 25px; 
+    border-radius: 8px;
+    font-size: 1.1rem; 
+    font-weight: 500;
+    
+    animation: fade-out 2s forwards; 
+    z-index: 1000; 
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes fade-out {
+    0% { opacity: 1; }
+    50% { opacity: 1; } 
+    100% { opacity: 0; } 
 }

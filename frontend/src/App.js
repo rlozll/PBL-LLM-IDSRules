@@ -120,7 +120,7 @@ function App() {
               file={file}
             />
           )}
-          {currentView === 'cti' && <CtiList setCurrentView={setCurrentView} />}
+          {currentView === 'cti' && <CtiList setCurrentView={setCurrentView} setUrl={setUrl} />}
           {currentView === 'settings' && (
             <BookmarkedPages 
                 setCurrentView={setCurrentView} 

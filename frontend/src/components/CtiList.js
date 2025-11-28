@@ -2,14 +2,17 @@
 import React, { useState, useEffect } from 'react'; // useState, useEffect 임포트
 import './CtiList.css';
 import { getNewCtiList } from '../api'; // api.js에서 함수 가져오기
+import { ReactComponent as LinkCopyIcon } from './icons/Copy.svg';
 
-function CtiList({ setCurrentView }) { // (setCurrentView는 Bookmarked Pages용으로 남겨둘 수 있음)
+function CtiList({ setCurrentView, setUrl }) { // (setCurrentView는 Bookmarked Pages용으로 남겨둘 수 있음)
 
   // --- ▼▼▼ 가짜 데이터 대신, DB에서 가져올 데이터 상태 추가 ▼▼▼ ---
   const [ctiItems, setCtiItems] = useState([]); // 빈 배열로 초기화
   const [isLoading, setIsLoading] = useState(true); // 로딩 상태
   const [error, setError] = useState('');
   // --- ▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲ ---
+
+  const [copyMessage, setCopyMessage] = useState({ visible: false, text: '' })
 
   // --- ▼▼▼ 컴포넌트가 로드될 때 API를 호출하여 DB 데이터 가져오기 ▼▼▼ ---
   useEffect(() => {
@@ -37,8 +40,40 @@ function CtiList({ setCurrentView }) { // (setCurrentView는 Bookmarked Pages용
   };
   // --- ▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲ ---
 
+  const showCopyToast = (message) => {
+    setCopyMessage({ visible: true, text: message });
+
+    setTimeout(() => {
+      setCopyMessage({ visible: false, text: '' });
+    }, 2500);
+  };
+
+  const handleCopyLink = (e, link) => {
+    e.stopPropagation();
+    e.preventDefault();
+
+    navigator.clipboard.writeText(link)
+      .then(() => {
+        showCopyToast('링크 복사 완료');
+
+        if (setUrl) {
+          setUrl(link);
+        }
+      })
+      .catch(err => {
+        console.error('링크 복사 실패:', err);
+        showCopyToast('링크 복사 실패');
+      });
+  };
+
   return (
     <div className="cti-list-container">
+      {copyMessage.visible && (
+        <div className="copy-toast-message">
+          {copyMessage.text}
+        </div>
+      )}
+
       <header className="cti-header">
         <h1>CTI Lists</h1>
         <p className="subtitle">Check out the latest CTIs (From RSS Feeds)</p>
@@ -72,8 +107,19 @@ function CtiList({ setCurrentView }) { // (setCurrentView는 Bookmarked Pages용
               <div className="cti-col-title">{item.title}</div>
               <div className="cti-col-site">{item.site_name}</div>
               <div className="cti-col-date">
+                <span className="date-text">
                 {/* 날짜 형식 간단하게 변환 */}
                 {item.published_date ? new Date(item.published_date).toLocaleDateString() : 'N/A'}
+                </span>
+
+                <button
+                  className = "copy-button"
+                  onClick={(e) => handleCopyLink(e, item.link)}
+                  title="URL 복사"
+                  aria-label="Copy Link"
+                >
+                  <LinkCopyIcon className="copy-icon" />
+                </button>
               </div>
             </div>
           ))}

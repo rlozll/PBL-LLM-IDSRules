@@ -2,7 +2,6 @@
 import React, { useState, useRef } from 'react';
 import './Topbar.css';
 import { ReactComponent as SearchIcon } from './icons/search.svg';
-import { ReactComponent as AddURLIcon } from './icons/addURL.svg';
 import { ReactComponent as ProfileIcon } from './icons/profile.svg';
 import { ReactComponent as ProfileMenuIcon } from './icons/profileMenu.svg';
 import { FiLogOut } from 'react-icons/fi';
@@ -48,16 +47,6 @@ function Topbar({ url, setUrl, setFile, isLoading, onAnalyze, onLogout }) {  // 
               onAnalyze();
             }
           }}
-        />
-        <button onClick={handleFileButtonClick} disabled={isLoading} className="topbar-icon">
-          <AddURLIcon />
-        </button>
-        <input
-          type="file"
-          ref={fileInputRef}
-          onChange={handleFileChange}
-          style={{ display: 'none' }}
-          accept=".pdf, .txt"
         />
       </div>
 
