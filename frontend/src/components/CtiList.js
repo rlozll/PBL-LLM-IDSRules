@@ -4,15 +4,30 @@ import './CtiList.css';
 import { getNewCtiList } from '../api'; // api.js에서 함수 가져오기
 import { ReactComponent as LinkCopyIcon } from './icons/Copy.svg';
 
-function CtiList({ setCurrentView, setUrl }) { // (setCurrentView는 Bookmarked Pages용으로 남겨둘 수 있음)
 
+const getLastReadTime = (site) => {
+  return localStorage.getItem(`cti_last_read_${site}`) || null;};
+const updateLastReadTime = (site) => {
+  localStorage.setItem(`cti_last_read_${site}`, new Date().toISOString()); };
+
+const RSS_SITE_NAMES = [
+  "NVD Analyzed", "Cloudflare Blog", "CISA Alerts", "CERT-KR",
+  "Mandiant (Google)", "Palo Alto (Unit 42)", "CrowdStrike", "Microsoft Security",
+  "Rapid7 (AttackerKB)", "The Hacker News", "Krebs on Security", "Bleeping Computer", "Schneier on Security",];
+
+
+
+function CtiList({ setCurrentView, setUrl }) { // (setCurrentView는 Bookmarked Pages용으로 남겨둘 수 있음)
+  
   // --- ▼▼▼ 가짜 데이터 대신, DB에서 가져올 데이터 상태 추가 ▼▼▼ ---
   const [ctiItems, setCtiItems] = useState([]); // 빈 배열로 초기화
   const [isLoading, setIsLoading] = useState(true); // 로딩 상태
   const [error, setError] = useState('');
+  
   // --- ▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲ ---
 
   const [copyMessage, setCopyMessage] = useState({ visible: false, text: '' })
+  const [selectedSite, setSelectedSite] = useState(null);
 
   // --- ▼▼▼ 컴포넌트가 로드될 때 API를 호출하여 DB 데이터 가져오기 ▼▼▼ ---
   useEffect(() => {
@@ -66,6 +81,26 @@ function CtiList({ setCurrentView, setUrl }) { // (setCurrentView는 Bookmarked 
       });
   };
 
+  // 사이트 업데이트 표시
+  const siteHasUpdate = (site) => {
+    const lastRead = getLastReadTime(site);
+    if (!lastRead) return true; 
+
+    const lastReadTime = new Date(lastRead);
+
+    return ctiItems.some(
+      (item) =>
+        item.site_name === site &&
+        item.published_date &&                       // ✅ 날짜 있는 애만 비교
+        new Date(item.published_date) > lastReadTime
+    );
+  };
+
+    // 선택된 사이트에 따라 목록 필터링
+  const filteredItems = selectedSite
+    ? ctiItems.filter(item => item.site_name === selectedSite)
+    : ctiItems;
+  
   return (
     <div className="cti-list-container">
       {copyMessage.visible && (
@@ -77,6 +112,30 @@ function CtiList({ setCurrentView, setUrl }) { // (setCurrentView는 Bookmarked 
       <header className="cti-header">
         <h1>CTI Lists</h1>
         <p className="subtitle"> 최신 CTI 피드를 확인하세요 </p>
+        <div className="site-filter-bar">
+          {RSS_SITE_NAMES.map((name) => (
+            <span
+              key={name}
+              className={
+                "site-filter-text" +
+                (selectedSite === name ? " active" : "")
+              }
+              onClick={() => {
+                if (selectedSite === name) {
+                  setSelectedSite(null); // 전체보기
+                } else {
+                  setSelectedSite(name);
+                  updateLastReadTime(name);   // 읽음 처리
+                }
+              }}
+            >
+              {name}
+               {siteHasUpdate(name) && (
+                  <span className="site-update-dot" />
+               )}
+            </span>
+          ))}
+        </div>
       </header>
 
       <div className="cti-table">
@@ -90,13 +149,15 @@ function CtiList({ setCurrentView, setUrl }) { // (setCurrentView는 Bookmarked 
           {isLoading && <p style={{textAlign: "center", padding: "20px"}}>Loading...</p>}
           {error && <p style={{textAlign: "center", padding: "20px", color: "red"}}>{error}</p>}
           
-          {!isLoading && ctiItems.length === 0 && (
-            <p style={{textAlign: "center", padding: "20px"}}>
-              새로운 CTI 정보가 없습니다. (백그라운드에서 `scripts/rss_collector.py`를 실행했는지 확인하세요.)
+          {!isLoading && filteredItems.length === 0 && (
+            <p style={{ textAlign: "center", padding: "20px" }}>
+              {selectedSite
+                ? `해당 사이트에서 수집된 CTI가 아직 없습니다.`
+                : '새로운 CTI 정보가 없습니다. (백그라운드에서 `scripts/rss_collector.py`를 실행했는지 확인하세요.)'}
             </p>
           )}
 
-          {ctiItems.map((item, idx) => (
+          {filteredItems.map((item, idx) => (
             <div
               key={item.id || idx} // DB의 id 사용
               className="cti-row"
@@ -128,5 +189,6 @@ function CtiList({ setCurrentView, setUrl }) { // (setCurrentView는 Bookmarked 
     </div>
   );
 }
+
 
 export default CtiList;

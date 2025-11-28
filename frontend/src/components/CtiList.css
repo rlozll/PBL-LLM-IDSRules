@@ -24,6 +24,52 @@
   color: #85878D;
 }
 
+/* 사이트 필터 바 */
+.site-filter-bar {
+  margin-top: 8px;
+  margin-bottom: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+/* 기본 텍스트 스타일 */
+.site-filter-text {
+  font-size: 0.85rem;
+  color: #9a9ca2;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+/* hover  */
+.site-filter-text:hover {
+  color: #555;
+}
+
+/* active */
+.site-filter-text.active {
+  color: #211C37;       
+  font-weight: 700;
+}
+
+.site-filter-text {
+  position: relative;
+  margin-right: 14px;
+}
+
+/* 사이트 업데이트 표시 */ 
+.site-filter-badge::after {
+  content: "";
+  position: absolute;
+  top: -4px;
+  right: -6px;
+  width: 7px;
+  height: 7px;
+  background-color: #FF4B00;
+  border-radius: 50%;
+}
+
+
 /* --- 테이블 구조 --- */
 .cti-table {
   width: 100%;
