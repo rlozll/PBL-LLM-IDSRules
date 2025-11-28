@@ -183,9 +183,9 @@
   background: #fff;
   color: #555;
   border-radius: 4px;
-  padding: 6px 14px;
+  padding: 4.5px 10px;
   cursor: pointer;
-  font-size: 0.9rem;
+  font-size: 0.77rem;
   transition: all 0.2s ease;
 }
 
