@@ -10809,3 +10809,8 @@ AttributeError: type object 'datetime.datetime' has no attribute 'UTC'
 2025-11-28 18:51:16,691 [INFO] 총 645개 항목 발견, 645개 DB 저장 성공(중복 포함), 0개 실패
 2025-11-28 18:51:16,691 [INFO] ================================================================================
 2025-11-28 18:51:16,691 [INFO] Job "collect_all_sources (trigger: interval[1:00:00], next run at: 2025-11-28 19:51:07 KST)" executed successfully
+2025-11-28 19:21:07,981 [INFO] Running job "process_bookmarks (trigger: interval[0:30:00], next run at: 2025-11-28 19:51:07 KST)" (scheduled at 2025-11-28 19:21:07.889508+09:00)
+2025-11-28 19:21:07,983 [INFO] --- 북마크 자동 분석 작업 시작 ---
+2025-11-28 19:21:07,984 [INFO] CHECKING: https://www.microsoft.com/en-us/security/blog/feed/ (ID: 1)
+2025-11-28 19:21:08,248 [INFO] --- 북마크 자동 분석 작업 완료 ---
+2025-11-28 19:21:08,248 [INFO] Job "process_bookmarks (trigger: interval[0:30:00], next run at: 2025-11-28 19:51:07 KST)" executed successfully
