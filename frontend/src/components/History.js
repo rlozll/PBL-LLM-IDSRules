@@ -42,6 +42,9 @@ const History = ({ setCurrentView, onSelectHistory }) => {
     (a, b) => new Date(b.created_at) - new Date(a.created_at)
   );
 
+  const limitedHistory = sortedHistory.slice(0, 20);
+
+
   return (
     <div className="history-container">
       <div className="history-header">
@@ -59,14 +62,24 @@ const History = ({ setCurrentView, onSelectHistory }) => {
           <div>Date</div>
         </div>
         <div className="history-table-body">
-          {sortedHistory.map((item) => (
+          {limitedHistory.map((item) => (
             <div
               className="history-row"
               key={item.id}
               onClick={() => handleRowClick(item.id)}
               style={{ cursor: "pointer" }}
             >
-              <div className="col-title">{item.title}</div>
+              <div className="col-title">
+                <a 
+                  href={item.source_url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={(e) => e.stopPropagation()}  
+                  className="history-link"
+                >
+                  {item.source_url}
+                </a>
+              </div>
               <div className="col-rule">{item.generated_rule || "분석 중..."}</div>
               <div className="col-date">
                 {new Date(item.created_at).toLocaleDateString("ko-KR")}
@@ -74,8 +87,8 @@ const History = ({ setCurrentView, onSelectHistory }) => {
             </div>
           ))}
         </div>
+       </div> 
       </div>
-    </div>
   );
 };
 

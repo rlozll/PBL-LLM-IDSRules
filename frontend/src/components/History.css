@@ -50,6 +50,7 @@
   margin-top: 14px;
 }
 
+
 .history-row {
   display: grid;
   grid-template-columns: 3fr 4fr 1fr;
@@ -100,3 +101,5 @@
   color: #777;
   white-space: nowrap;
 }
+
+
