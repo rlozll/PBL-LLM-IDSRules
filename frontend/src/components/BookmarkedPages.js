@@ -207,6 +207,9 @@ const confirmDelete = async () => {
     return (
         <div className="bookmark-container">
             <h1 className="bookmark-header">Bookmarked Pages</h1>
+            <p className="bookmark-subtitle">
+                등록한 소스 기반 CTI와 자동 생성된 탐지 룰을 확인하세요
+            </p>
 
             {/* 링크 버튼 */}
             <div className="link-buttons">
@@ -280,11 +283,11 @@ const confirmDelete = async () => {
                         onClick={() => handleCardClick(b.id)}
                         title="클릭하여 상세 분석 결과 보기"
                     >
-                        {/* b.site_id (DB에 저장된 link_id)를 기반으로 
-                          해당 Link 버튼의 클래스(link-1, link-2 등)를 찾아서 태그 스타일링
-                        */}
-                        <div className={`bookmark-tag ${linkButtons.find(btn => btn.id === b.site_id)?.class || 'link-1'}`}>
-                           {linkButtons.find(btn => btn.id === b.site_id)?.name || 'Link'}
+                    
+                        <div className={`bookmark-tag ${linkButtons.find(btn => btn.id === b.link_id)?.class || 'link-1'}`}>
+                            {bookmarkSites.find(site => site.link_id === b.link_id)
+                                ? new URL(bookmarkSites.find(site => site.link_id === b.link_id).url).hostname.replace("www.", "")
+                                : "Link"}
                         </div>
                         
                         <div className="bookmark-title">

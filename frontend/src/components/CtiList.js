@@ -76,13 +76,13 @@ function CtiList({ setCurrentView, setUrl }) { // (setCurrentView는 Bookmarked 
 
       <header className="cti-header">
         <h1>CTI Lists</h1>
-        <p className="subtitle">Check out the latest CTIs (From RSS Feeds)</p>
+        <p className="subtitle"> 최신 CTI 피드를 확인하세요 </p>
       </header>
 
       <div className="cti-table">
         <div className="cti-table-header">
-          <div className="cti-col-title">Post Titles</div>
-          <div className="cti-col-site">Site Names</div>
+          <div className="cti-col-title">Title</div>
+          <div className="cti-col-site">Site</div>
           <div className="cti-col-date">Date</div>
         </div>
 

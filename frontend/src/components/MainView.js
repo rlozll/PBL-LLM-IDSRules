@@ -70,7 +70,7 @@ function MainView({ result, error, isLoading, url, file }) {
       );
     }
     if (!isLoading) {
-      return <p>분석할 소스를 입력하세요.</p>
+      return <p>분석할 URL을 입력하세요.</p>
     }
     return null;
   }
@@ -82,7 +82,7 @@ function MainView({ result, error, isLoading, url, file }) {
     </div>*/}
     <div className="main-box-grid">
       <div className="main-box sources">
-        <h3>문서 목록</h3>
+        <h3>URL 입력</h3>
         <div className="source-card">
           {renderSources()}
         </div>

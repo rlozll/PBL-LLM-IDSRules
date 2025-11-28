@@ -103,3 +103,17 @@
 }
 
 
+.history-title {
+  color: #85878D;             
+  font-weight: 600;
+  text-decoration: none;
+  word-break: break-all;
+  line-height: 1.4;
+}
+
+.history-title:hover {
+  color: #0066cc !important; 
+  text-decoration: underline !important;
+  cursor: pointer;
+}
+
