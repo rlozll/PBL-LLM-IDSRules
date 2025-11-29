@@ -98,6 +98,8 @@ function CtiList({ setCurrentView, setUrl: onCopyLink }) { // (setCurrentView는
     ? ctiItems.filter(item => item.site_name === selectedSite)
     : ctiItems;
 
+  const limitedfiltered = filteredItems.slice(0, 20);
+
   return (
     <div className="cti-list-container">
       {copyMessage.visible && (
@@ -153,7 +155,7 @@ function CtiList({ setCurrentView, setUrl: onCopyLink }) { // (setCurrentView는
             </p>
           )}
 
-          {filteredItems.map((item, idx) => (
+          {limitedfiltered.map((item, idx) => (
             <div
               key={item.id || idx} // DB의 id 사용
               className="cti-row"

@@ -4,7 +4,7 @@ import './MainView.css';
 import { ReactComponent as GeneratedSvg } from './icons/GeneratedRule.svg';
 import { ReactComponent as ExplainSvg } from './icons/Explain.svg';
 
-function MainView({ result, error, isLoading, url, file }) {
+function MainView({ result, error, isLoading, url }) {
   const handleCopyRule = () => {
     if (result && result.generated_rule) {
       navigator.clipboard.writeText(result.generated_rule);
@@ -30,11 +30,11 @@ function MainView({ result, error, isLoading, url, file }) {
     if (typeof explanation === 'object' && explanation !== null && !explanation.error) {
       return (
         <div>
-          <h4>규칙 분석 (전문가용)</h4>
+          <h4>① 규칙 분석 (전문가용)</h4>
           <p>{explanation.rule_analysis}</p>
-          <h4>IDS 설정 권장 사항</h4>
+          <h4>② IDS 설정 권장 사항</h4>
           <p>{explanation.ids_recommendation}</p>
-          <h4>일반 사용자/개발자 조치 사항</h4>
+          <h4>③ 일반 사용자/개발자 조치 사항</h4>
           <p>{explanation.user_action}</p>
         </div>
       );
@@ -49,7 +49,7 @@ function MainView({ result, error, isLoading, url, file }) {
   // --- ▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲ ---
 
   const renderSources = () => {
-    if (file) {
+    {/*if (file) {
       return (
         <div className="source-item">
           <span className="source-icon">📄</span>
@@ -58,16 +58,17 @@ function MainView({ result, error, isLoading, url, file }) {
           </div>
         </div>
       );
-    }
+    }*/}
     if (url) {
-      return (
-        <div className="source-item">
+      const urlList = url.split('\n').filter(u => u.trim() !== '');
+      return urlList.map((url, index) => (
+        <div key={index} className="source-item">
           <span className="source-icon">🔗</span>
           <div>
             <h4 className="file-name">{url}</h4>
           </div>
         </div>
-      );
+      ));
     }
     if (!isLoading) {
       return <p>분석할 URL을 입력하세요.</p>
@@ -82,13 +83,13 @@ function MainView({ result, error, isLoading, url, file }) {
     </div>*/}
     <div className="main-box-grid">
       <div className="main-box sources">
-        <h3>URL 입력</h3>
+        <h3>1. 소스 목록</h3>
         <div className="source-card">
           {renderSources()}
         </div>
       </div>
       <div className="main-box iocs">
-        <h3>추출된 IoCs</h3>
+        <h3>2. 추출된 IoCs</h3>
         {isLoading && <p>IoC를 추출 중입니다...</p>}
         {error && <p className="error-message">{error}</p>}
         {result && (
@@ -134,7 +135,7 @@ function MainView({ result, error, isLoading, url, file }) {
 
       {/* ▼ 오른쪽 열 (Rule & Explain) ▼ */}
       <div className="main-box rule">
-          <h3>Rule 생성 및 설명</h3>
+          <h3>3. Rule 생성 및 설명</h3>
 
           {isLoading && <p>Rule을 생성 중입니다...</p>}
           {error && <p className="error-message">Rule 생성 실패</p>}
@@ -144,7 +145,7 @@ function MainView({ result, error, isLoading, url, file }) {
             <div className="rule-card-header">
               {/*<span className="rule-icon">🧩</span>*/}
               <GeneratedSvg className="right-icon"/>
-              <h3>Rule 생성</h3>
+              <h3>3-1. Rule 생성</h3>
             </div>
             <pre>{result?.generated_rule || '생성된 룰이 여기에 표시됩니다.'}</pre>
             <div className="validation-status">
@@ -168,7 +169,7 @@ function MainView({ result, error, isLoading, url, file }) {
             <div className="rule-card-header">
               <ExplainSvg className="right-icon" />
               {/*<span className="rule-icon">💬</span>*/}
-              <h3>Rule 설명</h3>
+              <h3>3-2. Rule 설명</h3>
             </div>
             <div className="rule-explanation-scroll">
               {result

@@ -112,7 +112,7 @@ function Topbar({ url, setUrl, isLoading, onAnalyze, onLogout }) {  //  URL 등�
           </button>
           <input
             type="text"
-            placeholder="URL 입력 및 입력된 URL 확인"
+            placeholder="https://..."
             value={currentInput}
             onChange={(e) => setCurrentInput(e.target.value)}
             onKeyDown={handleInputKeyDown}

@@ -30,6 +30,9 @@
   white-space: pre-wrap;
   word-wrap: break-word;
   box-shadow: 0 2px 6px rgba(0,0,0,0.08); /* 살짝 그림자 */
+  white-space: pre-wrap;
+  word-break: break-all;
+  line-height: 1.45;
 }
 
 /* IoC 제목 */
@@ -49,6 +52,8 @@
   border: none !important;
   color: #444;
   font-size: 0.9rem;
+  white-space: pre-wrap;
+  word-break: break-all;
   line-height: 1.45;
 }
 
@@ -72,7 +77,7 @@
 
 .main-box-grid {
   display: grid;
-  grid-template-columns: 1.3fr 2fr; /* 왼쪽, 오른쪽 비율 */
+  grid-template-columns: minmax(0, 1.3fr) 2fr; /* 왼쪽, 오른쪽 비율 */
   grid-template-rows: min-content 1fr;     /* 위:URL, 아래:IoC */
   grid-template-areas:
     "sources rule"
@@ -86,7 +91,6 @@
 .main-box.sources {
   background: #fff;
   border-radius: 12px;
-  padding: 14px 18px 16px 18px;
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12); /*  음영 확실히 보이게 */
   border: none;
   display: flex;

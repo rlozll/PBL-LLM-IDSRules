@@ -77,7 +77,7 @@ const History = ({ setCurrentView, onSelectHistory }) => {
                   onClick={(e) => e.stopPropagation()}  
                   className="history-title"
                 >
-                   {item.page_title || item.source_url}
+                   {item.title || item.source_url}
                 </a>
               </div>
               <div className="col-rule">{item.generated_rule || "분석 중..."}</div>

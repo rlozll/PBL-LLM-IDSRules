@@ -81,7 +81,7 @@ function App() {
   // --- 히스토리 클릭 시 MainView로 결과 전달 ---
   const handleHistoryClick = (historyResult) => {
       setResult(historyResult);
-      setUrl(historyResult.sources?.[0] || ""); // sources 배열의 첫 URL을 url로 넣음
+      setUrl(historyResult.source_url || ""); // sources 배열의 첫 URL을 url로 넣음
       setError('');
       setIsLoading(false);
       setCurrentView('main');
