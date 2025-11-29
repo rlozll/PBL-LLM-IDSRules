@@ -4,7 +4,6 @@ import Login from './components/Login';
 import Sidebar from './components/Sidebar';
 import MainView from './components/MainView';
 import CtiList from './components/CtiList';
-import IdsSettings from './components/IdsSettings';
 import History from './components/History';
 import Topbar from './components/Topbar';
 import BookmarkedPages from './components/BookmarkedPages';

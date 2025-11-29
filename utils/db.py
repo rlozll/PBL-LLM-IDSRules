@@ -22,6 +22,7 @@ def init_db():
     CREATE TABLE IF NOT EXISTS history (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         source_url TEXT NOT NULL,
+        page_title TEXT NOT NULL,
         generated_rule TEXT,
         validation_result TEXT,
         validation_details TEXT,
@@ -71,27 +72,31 @@ def add_history_record(result: Dict[str, Any]):
     """Home 페이지의 수동 분석 결과를 history 테이블에 저장합니다."""
     sql = """
     INSERT INTO history (
-        source_url, generated_rule, validation_result, 
+        source_url, page_title, generated_rule, validation_result, 
         validation_details, extracted_ioc, rule_explanation
-    ) VALUES (?, ?, ?, ?, ?, ?)
+    ) VALUES (?, ?, ?, ?, ?, ?, ?)
     """
     try:
         with get_db_connection() as conn:
-            conn.execute(sql, (
+            cursor = conn.cursor()
+            cursor.execute(sql, (
                 result.get("source_url"),
+                result.get("page_title"),
                 result.get("generated_rule"),
                 result.get("validation_result"),
                 result.get("validation_details"),
                 json.dumps(result.get("extracted_ioc", {})),
                 json.dumps(result.get("rule_explanation", {}))
             ))
+            conn.commit()
+            return cursor.lastrowid
         print(f"INFO: New history record added for {result.get('source_url')}")
     except Exception as e:
         print(f"ERROR: Failed to add history record - {e}")
 
 def get_history_list(limit: int = 100) -> List[Dict[str, Any]]:
     """History 페이지에 보여줄 최근 분석 목록을 반환합니다."""
-    sql = "SELECT id, source_url, generated_rule, created_at FROM history ORDER BY created_at DESC LIMIT ?"
+    sql = "SELECT id, source_url, page_title, generated_rule, created_at FROM history ORDER BY created_at DESC LIMIT ?"
     try:
         with get_db_connection() as conn:
             rows = conn.execute(sql, (limit,)).fetchall()

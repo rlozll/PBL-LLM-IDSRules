@@ -106,6 +106,7 @@ class Token(BaseModel):
 class HistoryListItem(BaseModel):
     id: int
     source_url: str
+    page_title: str | None = None
     generated_rule: str
     created_at: datetime
 
@@ -141,7 +142,7 @@ class BookmarkResultItem(BaseModel): # 피드 목록용
 class HistoryResponse(BaseModel):
     id: int
     url: str
-    title: str
+    page_title: str | None = None
     sources: List[str] = []
     generated_rule: str
     explanation: Any  # 기존 analysis['explanation'] 구조 그대로
@@ -229,7 +230,19 @@ async def login_for_access_token(form_data: OAuth2PasswordRequestForm = Depends(
 async def create_rule_from_url(request: RuleRequest):
     """단일 URL을 받아 파싱, LLM 분석, 검증을 수행하고 History DB에 저장합니다."""
     print(f"INFO: URL 수신: {request.url}")
+    page_title = request.url
 
+    try:
+        async with httpx.AsyncClient() as client:
+            resp = await client.get(request.url)
+            if resp.status_code == 200:
+                soup = BeautifulSoup(resp.text, "html.parser")
+                title_tag = soup.find("title")
+                if title_tag and title_tag.text.strip():
+                    page_title = title_tag.text.strip()
+    except Exception as e:
+        print(f"페이지 제목 추출 실패: {e}")
+    
     # 1. 파싱
     try:
         parsed_text = get_text_from_url(request.url)
@@ -297,18 +310,19 @@ async def create_rule_from_url(request: RuleRequest):
         vt_summary = {"status": "error", "detail": str(e)}
 
     # 5. DB에 History 저장
-    if validation_status not in ["Failed", "ValidatorError"]:
-        try:
-            db.add_history_record({
-                "source_url": request.url,
-                "generated_rule": rule_to_validate,
-                "validation_result": validation_status,
-                "validation_details": validation_details,
-                "extracted_ioc": extracted_ioc,
-                "rule_explanation": explanation
-            })
-        except Exception as e:
-            print(f"ERROR: History DB 저장 실패 - {e}")
+    #if validation_status not in ["Failed", "ValidatorError"]:
+    try:
+        db.add_history_record({
+            "source_url": request.url,
+            "page_title": page_title,
+            "generated_rule": rule_to_validate,
+            "validation_result": validation_status,
+            "validation_details": validation_details,
+            "extracted_ioc": extracted_ioc,
+            "rule_explanation": explanation
+        })
+    except Exception as e:
+        print(f"ERROR: History DB 저장 실패 - {e}")
 
     # 6. 최종 응답 반환
     return RuleResponse(
@@ -377,6 +391,7 @@ async def create_history(record: HistoryCreate):
     # DB에 맞게 구조 생성
     db_payload = {
         "source_url": url,
+        "page_title": page_title,
         "generated_rule": rule_to_validate,
         "validation_result": validation_status,
         "validation_details": validation_details,
@@ -385,10 +400,12 @@ async def create_history(record: HistoryCreate):
     }
 
     # 저장 함수 호출
-    db.add_history_record(db_payload)
+    #db.add_history_record(db_payload)
+    new_record_id = db.add_history_record(db_payload)
 
     # 프론트에 반환
     return HistoryResponse(
+        id = new_record_id,
         url=url,
         title=page_title,
         sources=[url],
