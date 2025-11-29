@@ -49,7 +49,7 @@ const History = ({ setCurrentView, onSelectHistory }) => {
     <div className="history-container">
       <div className="history-header">
         <h1>History</h1>
-        <p className="subtitle">과거 분석 기록을 확인하세요.</p>
+        <p className="subtitle">과거 분석 기록을 확인하세요</p>
       </div>
 
       {isLoading && <p>Loading...</p>}

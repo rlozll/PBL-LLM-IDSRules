@@ -153,7 +153,7 @@ function CtiList({ setCurrentView, setUrl: onCopyLink }) { // (setCurrentView는
             </p>
           )}
 
-          {ctiItems.map((item, idx) => (
+          {filteredItems.map((item, idx) => (
             <div
               key={item.id || idx} // DB의 id 사용
               className="cti-row"

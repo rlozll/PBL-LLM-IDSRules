@@ -37,6 +37,8 @@ function App() {
   }, []);
 
   const handleAnalyze = async () => {
+    setCurrentView('main');
+
     if (!url && !file) {
       setError('URL을 입력하세요.');
       return;
