@@ -93,6 +93,7 @@ async def generate_analysis_from_text(text: str) -> dict:
 반드시 JSON 형식만 응답해야 한다.
 본문:
 {text[:12000]}
+유효하고 도움이 되는 정보에 대해 IoC(침해 지표)를 추출하라. 
 """
     ioc_text, err = await call_gemini(ioc_prompt, json_mode=True)
     if err:
@@ -112,6 +113,11 @@ classtype 옵션은 포함하지 않아도 된다.
 프로토콜은 반드시 [tcp, udp, ip] 중 하나를 사용해야 한다. HTTP 트래픽 탐지 시에는 tcp를 사용해야 한다.
 IoC:
 {json.dumps(ioc_json, ensure_ascii=False, indent=2)}
+무조건 Snort 2.9 버전에 맞춘 규칙이어야 한다. 그리고 성능이 좋고 뛰어난, 실제 IDS에 배포했을 때 적용 가능할만한 Rule이어야 한다. 
+그리고 검증 가능한 Rule이어야 한다. 현재 이 시스템은 정적 검증과 실제 Snort 2.9 엔진을 호출해 문법적 검증도 진행한다. 이 검증 단계에 통과해야 하는 Rule이어야 한다. 
+또한 Behavior 기반으로 도메인이나 파일명이 아닌, 공격 코드가 실행될 때 나오는 패턴을 잡아서 생성되는 Rule이어야 한다. PCRE 방식을 활용해라.
+입력한 문서에만 해당하는 Rule이 아니라, 해당 사건에 대해서는 모두 탐지해야 할 줄 아는 Rule이어야 한다. 
+그리고 마지막으로 강조하지만, 검증에 꼭 성공해야 한다.
 """
     rule_text, err = await call_gemini(rule_prompt, json_mode=False)
     if err:
