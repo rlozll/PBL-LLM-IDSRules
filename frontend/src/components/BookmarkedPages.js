@@ -101,7 +101,7 @@ function BookmarkedPages({ setCurrentView, onSelectBookmark }) {
             
             if (detailResult) {
                 // 3. App.js에서 받은 핸들러 호출 (이 함수가 화면 전환까지 다 해줌)
-                onSelectBookmark(detailResult); 
+                onSelectBookmark(detailResult, detailResult.source_url); 
             } else {
                 alert("상세 정보를 불러오는 데 실패했습니다 (데이터 없음).");
             }

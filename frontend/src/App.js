@@ -70,8 +70,9 @@ function App() {
   };
 
   // --- 북마크 클릭 시 MainView로 결과 전달 ---
-  const handleBookmarkClick = (detailResult) => {
+  const handleBookmarkClick = (detailResult, detailUrl) => {
       setResult(detailResult);
+      setUrl(detailUrl);
       setError('');
       setIsLoading(false);
       setCurrentView('main');

@@ -105,7 +105,6 @@
   background: #fff;
   border-radius: 12px;
   padding: 24px;
-  /*box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);*/
   display: flex;
   flex-direction: column;
 }
@@ -113,7 +112,6 @@
 .main-box.iocs {
   background: #ffffff;
   border-radius: 12px;
-  padding: 20px;
   grid-area: iocs;
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
 }
@@ -136,7 +134,7 @@
 .source-card {
   background: #FFF;
   border-radius: 10px;
-  padding: 16px;
+  padding: 0px;
   flex: 1;
   overflow-y: auto;
 }
@@ -181,6 +179,10 @@
   font-weight: 300;
   font-size: 15px;
   margin: 0 0 4px 0;
+  white-space: normal;
+  word-break: break-all; 
+  overflow-wrap: break-word;
+  max-width: 100%;
 }
 
 .deploy-btn {
