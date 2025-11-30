@@ -6,13 +6,12 @@ import { ReactComponent as CtilistIcon } from "../assets/CtiListLogo.svg";
 import { ReactComponent as BookmarkedIcon } from "../assets/BookmarkLogo.svg";
 import { ReactComponent as HistoryIcon } from "../assets/HistoryLogo.svg";
 import { ReactComponent as Logo } from "../assets/LOGO.svg";
-import { FiHome, FiList, FiSettings, FiClock, FiLogOut } from 'react-icons/fi';
 
 function Sidebar({ currentView, setCurrentView, onLogout }) {
   const menuItems = [
     { id: 'main', label: 'Dashboard Home', icon: <DashboardIcon className="icon icon2"/> },
     { id: 'cti', label: 'CTI List', icon: <CtilistIcon className="icon"/> },
-    { id: 'settings', label: 'Bookmarked Lists', icon: <BookmarkedIcon className="icon"/> },
+    { id: 'settings', label: 'Bookmarked Page', icon: <BookmarkedIcon className="icon"/> },
     { id: 'history', label: 'History', icon: <HistoryIcon className="icon icon2"/> },
   ];
 

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import "./BookmarkedPages.css";
 import trashIcon from "./icons/Trash2.svg"; // 아이콘 경로는 실제 파일 위치에 맞게 조정하세요
 import linkIcon from "./icons/Link3.svg";  // 아이콘 경로는 실제 파일 위치에 맞게 조정하세요
@@ -8,8 +8,7 @@ import {
     getBookmarkSites,
     addBookmarkSite,
     getBookmarkResults,
-    getBookmarkResultDetail,
-    deleteBookmarkResult
+    getBookmarkResultDetail
 } from "../api";
 
 // App.js로부터 탭 이동(setCurrentView)과 결과 주입(onBookmarkClick) 함수를 props로 받습니다.
@@ -206,7 +205,7 @@ const confirmDelete = async () => {
 
     return (
         <div className="bookmark-container">
-            <h1 className="bookmark-header">Bookmarked Pages</h1>
+            <h1 className="bookmark-header">Bookmarked Page</h1>
             <p className="bookmark-subtitle">
                 등록한 소스 기반 CTI와 자동 생성된 탐지 룰을 확인하세요
             </p>

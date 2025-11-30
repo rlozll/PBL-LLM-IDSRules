@@ -1,9 +1,8 @@
 .history-container {
-  padding: 40px 60px;
+  padding: 40px;
+  padding-top: 40px; 
   background-color: #fff;
   color: #333;
-  max-width: 1400px;
-  margin: 0 auto;
 }
 
 .history-header h1 {

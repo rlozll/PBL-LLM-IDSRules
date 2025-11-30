@@ -109,7 +109,7 @@ function CtiList({ setCurrentView, setUrl: onCopyLink }) { // (setCurrentView는
       )}
 
       <header className="cti-header">
-        <h1>CTI Lists</h1>
+        <h1>CTI List</h1>
         <p className="subtitle">최신 CTI 피드를 확인하세요 (From RSS Feeds)</p>
       
         <div className="site-filter-bar">
