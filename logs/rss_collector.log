@@ -21646,3 +21646,1156 @@ AttributeError: type object 'datetime.datetime' has no attribute 'UTC'
 2025-12-01 07:16:43,219 [INFO] HTTP Request: GET https://blog.cloudflare.com/inside-the-log4j2-vulnerability-cve-2021-44228/ "HTTP/1.1 200 OK"
 2025-12-01 07:18:56,003 [INFO] HTTP Request: GET https://www.rapid7.com/blog/post/2021/10/06/apache-http-server-cve-2021-41773-exploited-in-the-wild/ "HTTP/1.1 200 OK"
 2025-12-01 07:22:04,041 [INFO] Scheduler has been shut down
+2025-12-01 23:08:00,020 [INFO] Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-12-01 23:08:00,036 [INFO] Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-12-01 23:08:00,036 [INFO] Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-12-01 23:08:00,036 [INFO] Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-12-01 23:08:00,052 [INFO] Added job "collect_all_sources" to job store "default"
+2025-12-01 23:08:00,052 [INFO] Added job "collect_all_sources" to job store "default"
+2025-12-01 23:08:00,052 [INFO] Added job "process_bookmarks" to job store "default"
+2025-12-01 23:08:00,052 [INFO] Added job "process_bookmarks" to job store "default"
+2025-12-01 23:08:00,067 [INFO] Scheduler started
+2025-12-01 23:08:00,093 [INFO] 5 changes detected
+2025-12-01 23:08:05,037 [INFO] Running job "collect_all_sources (trigger: date[2025-12-01 14:08:05 UTC], next run at: 2025-12-01 14:08:05 UTC)" (scheduled at 2025-12-01 14:08:05.020190+00:00)
+2025-12-01 23:08:05,037 [INFO] Removed job 527c81e351ff4b2c9af9eb14219ca715
+2025-12-01 23:08:05,037 [INFO] 
+================================================================================
+2025-12-01 23:08:05,037 [INFO] RSS (CTI List) 수집 시작
+2025-12-01 23:08:05,037 [INFO] 시작 시간: 2025-12-01T14:08:05.037923+00:00
+2025-12-01 23:08:05,037 [INFO] ================================================================================
+2025-12-01 23:08:05,037 [INFO] 
+============================================================
+2025-12-01 23:08:05,037 [INFO] 처리 시작: NVD Analyzed (https://nvd.nist.gov/feeds/xml/cve/misc/nvd-rss-analyzed.xml)
+2025-12-01 23:08:05,037 [INFO] ============================================================
+2025-12-01 23:08:05,037 [INFO] 피드 가져오는 중: https://nvd.nist.gov/feeds/xml/cve/misc/nvd-rss-analyzed.xml (시도 1/3)
+2025-12-01 23:08:06,200 [INFO] 발견된 엔트리 수: 528
+2025-12-01 23:08:06,315 [INFO] 3 changes detected
+2025-12-01 23:08:06,666 [INFO] 4 changes detected
+2025-12-01 23:08:07,031 [INFO] 4 changes detected
+2025-12-01 23:08:07,397 [INFO] 3 changes detected
+2025-12-01 23:08:07,750 [INFO] 4 changes detected
+2025-12-01 23:08:08,113 [INFO] 3 changes detected
+2025-12-01 23:08:08,479 [INFO] 4 changes detected
+2025-12-01 23:08:08,692 [INFO] 피드 처리 완료: NVD Analyzed
+2025-12-01 23:08:08,692 [INFO]   총 528개 중 528개 처리 (성공/중복 포함), 0개 실패
+2025-12-01 23:08:08,697 [INFO] 
+============================================================
+2025-12-01 23:08:08,701 [INFO] 처리 시작: Cloudflare Blog (https://blog.cloudflare.com/rss/)
+2025-12-01 23:08:08,701 [INFO] ============================================================
+2025-12-01 23:08:08,702 [INFO] 피드 가져오는 중: https://blog.cloudflare.com/rss/ (시도 1/3)
+2025-12-01 23:08:08,831 [INFO] 3 changes detected
+2025-12-01 23:08:09,751 [INFO] 발견된 엔트리 수: 20
+2025-12-01 23:08:09,815 [INFO] 피드 처리 완료: Cloudflare Blog
+2025-12-01 23:08:09,815 [INFO]   총 20개 중 20개 처리 (성공/중복 포함), 0개 실패
+2025-12-01 23:08:09,815 [INFO] 
+============================================================
+2025-12-01 23:08:09,815 [INFO] 처리 시작: CISA Alerts (https://www.cisa.gov/cybersecurity-advisories/all.xml)
+2025-12-01 23:08:09,815 [INFO] ============================================================
+2025-12-01 23:08:09,815 [INFO] 피드 가져오는 중: https://www.cisa.gov/cybersecurity-advisories/all.xml (시도 1/3)
+2025-12-01 23:08:09,852 [INFO] 3 changes detected
+2025-12-01 23:08:10,078 [INFO] Running job "process_bookmarks (trigger: date[2025-12-01 14:08:10 UTC], next run at: 2025-12-01 14:08:10 UTC)" (scheduled at 2025-12-01 14:08:10.036321+00:00)
+2025-12-01 23:08:10,094 [INFO] Removed job 461d9d85d3a84bd388f7d7c076448e36
+2025-12-01 23:08:10,116 [INFO] 발견된 엔트리 수: 30
+2025-12-01 23:08:10,119 [INFO] --- 북마크 자동 분석 작업 시작 ---
+2025-12-01 23:08:10,173 [INFO] CHECKING: https://www.microsoft.com/en-us/security/blog/feed/ (ID: 1)
+2025-12-01 23:08:10,210 [INFO] 3 changes detected
+2025-12-01 23:08:10,236 [INFO] 피드 처리 완료: CISA Alerts
+2025-12-01 23:08:10,236 [INFO]   총 30개 중 30개 처리 (성공/중복 포함), 0개 실패
+2025-12-01 23:08:10,236 [INFO] 
+============================================================
+2025-12-01 23:08:10,236 [INFO] 처리 시작: CERT-KR (https://www.krcert.or.kr/rss.do?data_id=01)
+2025-12-01 23:08:10,236 [INFO] ============================================================
+2025-12-01 23:08:10,236 [INFO] 피드 가져오는 중: https://www.krcert.or.kr/rss.do?data_id=01 (시도 1/3)
+2025-12-01 23:08:10,352 [WARNING] 피드 파싱 경고: <unknown>:2:0: syntax error
+2025-12-01 23:08:10,355 [INFO] 발견된 엔트리 수: 0
+2025-12-01 23:08:10,355 [INFO] 
+============================================================
+2025-12-01 23:08:10,355 [INFO] 처리 시작: Mandiant (Google) (https://cloud.google.com/blog/topics/threat-intelligence/rss)
+2025-12-01 23:08:10,355 [INFO] ============================================================
+2025-12-01 23:08:10,355 [INFO] 피드 가져오는 중: https://cloud.google.com/blog/topics/threat-intelligence/rss (시도 1/3)
+2025-12-01 23:08:10,426 [INFO] --- 북마크 자동 분석 작업 완료 ---
+2025-12-01 23:08:10,438 [INFO] Job "process_bookmarks (trigger: date[2025-12-01 14:08:10 UTC], next run at: 2025-12-01 14:08:10 UTC)" executed successfully
+2025-12-01 23:08:10,575 [INFO] 4 changes detected
+2025-12-01 23:08:12,216 [WARNING] 피드 파싱 경고: <unknown>:2:0: syntax error
+2025-12-01 23:08:12,216 [INFO] 발견된 엔트리 수: 0
+2025-12-01 23:08:12,216 [INFO] 
+============================================================
+2025-12-01 23:08:12,216 [INFO] 처리 시작: Palo Alto (Unit 42) (https://unit42.paloaltonetworks.com/feed/)
+2025-12-01 23:08:12,216 [INFO] ============================================================
+2025-12-01 23:08:12,216 [INFO] 피드 가져오는 중: https://unit42.paloaltonetworks.com/feed/ (시도 1/3)
+2025-12-01 23:08:12,359 [INFO] 발견된 엔트리 수: 15
+2025-12-01 23:08:12,439 [INFO] 피드 처리 완료: Palo Alto (Unit 42)
+2025-12-01 23:08:12,439 [INFO]   총 15개 중 15개 처리 (성공/중복 포함), 0개 실패
+2025-12-01 23:08:12,439 [INFO] 
+============================================================
+2025-12-01 23:08:12,439 [INFO] 처리 시작: CrowdStrike (https://www.crowdstrike.com/blog/feed/)
+2025-12-01 23:08:12,439 [INFO] ============================================================
+2025-12-01 23:08:12,439 [INFO] 피드 가져오는 중: https://www.crowdstrike.com/blog/feed/ (시도 1/3)
+2025-12-01 23:08:12,456 [INFO] 3 changes detected
+2025-12-01 23:08:12,790 [INFO] 발견된 엔트리 수: 10
+2025-12-01 23:08:12,838 [INFO] 피드 처리 완료: CrowdStrike
+2025-12-01 23:08:12,838 [INFO]   총 10개 중 10개 처리 (성공/중복 포함), 0개 실패
+2025-12-01 23:08:12,838 [INFO] 
+============================================================
+2025-12-01 23:08:12,838 [INFO] 처리 시작: Microsoft Security (https://www.microsoft.com/en-us/security/blog/feed/)
+2025-12-01 23:08:12,838 [INFO] ============================================================
+2025-12-01 23:08:12,838 [INFO] 피드 가져오는 중: https://www.microsoft.com/en-us/security/blog/feed/ (시도 1/3)
+2025-12-01 23:08:12,862 [INFO] 3 changes detected
+2025-12-01 23:08:12,965 [INFO] 발견된 엔트리 수: 10
+2025-12-01 23:08:13,000 [INFO] 피드 처리 완료: Microsoft Security
+2025-12-01 23:08:13,000 [INFO]   총 10개 중 10개 처리 (성공/중복 포함), 0개 실패
+2025-12-01 23:08:13,000 [INFO] 
+============================================================
+2025-12-01 23:08:13,000 [INFO] 처리 시작: Rapid7 (AttackerKB) (https://attackerkb.com/rss)
+2025-12-01 23:08:13,000 [INFO] ============================================================
+2025-12-01 23:08:13,000 [INFO] 피드 가져오는 중: https://attackerkb.com/rss (시도 1/3)
+2025-12-01 23:08:13,109 [WARNING] 피드 파싱 경고: <unknown>:5:2: mismatched tag
+2025-12-01 23:08:13,109 [INFO] 발견된 엔트리 수: 0
+2025-12-01 23:08:13,109 [INFO] 
+============================================================
+2025-12-01 23:08:13,109 [INFO] 처리 시작: The Hacker News (https://feeds.feedburner.com/TheHackerNews)
+2025-12-01 23:08:13,109 [INFO] ============================================================
+2025-12-01 23:08:13,109 [INFO] 피드 가져오는 중: https://feeds.feedburner.com/TheHackerNews (시도 1/3)
+2025-12-01 23:08:13,227 [INFO] 3 changes detected
+2025-12-01 23:08:13,906 [WARNING] 피드 파싱 경고: <unknown>:8:11: not well-formed (invalid token)
+2025-12-01 23:08:13,906 [INFO] 발견된 엔트리 수: 0
+2025-12-01 23:08:13,906 [INFO] 
+============================================================
+2025-12-01 23:08:13,906 [INFO] 처리 시작: Krebs on Security (https://krebsonsecurity.com/feed/)
+2025-12-01 23:08:13,906 [INFO] ============================================================
+2025-12-01 23:08:13,906 [INFO] 피드 가져오는 중: https://krebsonsecurity.com/feed/ (시도 1/3)
+2025-12-01 23:08:15,908 [INFO] 발견된 엔트리 수: 10
+2025-12-01 23:08:15,951 [INFO] 피드 처리 완료: Krebs on Security
+2025-12-01 23:08:15,951 [INFO]   총 10개 중 10개 처리 (성공/중복 포함), 0개 실패
+2025-12-01 23:08:15,951 [INFO] 
+============================================================
+2025-12-01 23:08:15,951 [INFO] 처리 시작: Bleeping Computer (https://www.bleepingcomputer.com/feed/)
+2025-12-01 23:08:15,951 [INFO] ============================================================
+2025-12-01 23:08:15,965 [INFO] 피드 가져오는 중: https://www.bleepingcomputer.com/feed/ (시도 1/3)
+2025-12-01 23:08:16,016 [INFO] 3 changes detected
+2025-12-01 23:08:16,158 [INFO] 발견된 엔트리 수: 11
+2025-12-01 23:08:16,221 [INFO] 피드 처리 완료: Bleeping Computer
+2025-12-01 23:08:16,221 [INFO]   총 11개 중 11개 처리 (성공/중복 포함), 0개 실패
+2025-12-01 23:08:16,221 [INFO] 
+============================================================
+2025-12-01 23:08:16,221 [INFO] 처리 시작: Schneier on Security (https://www.schneier.com/feed/)
+2025-12-01 23:08:16,221 [INFO] ============================================================
+2025-12-01 23:08:16,221 [INFO] 피드 가져오는 중: https://www.schneier.com/feed/ (시도 1/3)
+2025-12-01 23:08:16,371 [INFO] 3 changes detected
+2025-12-01 23:08:16,891 [INFO] 발견된 엔트리 수: 10
+2025-12-01 23:08:16,940 [INFO] 피드 처리 완료: Schneier on Security
+2025-12-01 23:08:16,940 [INFO]   총 10개 중 10개 처리 (성공/중복 포함), 0개 실패
+2025-12-01 23:08:16,940 [INFO] 
+================================================================================
+2025-12-01 23:08:16,940 [INFO] RSS 수집 완료
+2025-12-01 23:08:16,940 [INFO] 종료 시간: 2025-12-01T14:08:16.940238+00:00
+2025-12-01 23:08:16,940 [INFO] 총 644개 항목 발견, 644개 DB 저장 성공(중복 포함), 0개 실패
+2025-12-01 23:08:16,940 [INFO] ================================================================================
+2025-12-01 23:08:16,940 [INFO] Job "collect_all_sources (trigger: date[2025-12-01 14:08:05 UTC], next run at: 2025-12-01 14:08:05 UTC)" executed successfully
+2025-12-01 23:08:16,990 [INFO] 3 changes detected
+2025-12-01 23:08:57,238 [INFO] 3 changes detected
+2025-12-01 23:08:57,598 [INFO] 3 changes detected
+2025-12-01 23:09:22,623 [INFO] 1 change detected
+2025-12-01 23:09:23,239 [INFO] 1 change detected
+2025-12-01 23:09:24,355 [INFO] 19 changes detected
+2025-12-01 23:12:43,634 [INFO] HTTP Request: GET https://www.rapid7.com/blog/post/2021/10/06/apache-http-server-cve-2021-41773-exploited-in-the-wild/ "HTTP/1.1 200 OK"
+2025-12-01 23:13:56,866 [INFO] 3 changes detected
+2025-12-01 23:17:20,435 [INFO] Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-12-01 23:17:20,441 [INFO] Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-12-01 23:17:20,441 [INFO] Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-12-01 23:17:20,441 [INFO] Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-12-01 23:17:20,441 [INFO] Added job "collect_all_sources" to job store "default"
+2025-12-01 23:17:20,441 [INFO] Added job "collect_all_sources" to job store "default"
+2025-12-01 23:17:20,444 [INFO] Added job "process_bookmarks" to job store "default"
+2025-12-01 23:17:20,444 [INFO] Added job "process_bookmarks" to job store "default"
+2025-12-01 23:17:20,444 [INFO] Scheduler started
+2025-12-01 23:17:25,451 [INFO] Running job "collect_all_sources (trigger: date[2025-12-01 14:17:25 UTC], next run at: 2025-12-01 14:17:25 UTC)" (scheduled at 2025-12-01 14:17:25.435491+00:00)
+2025-12-01 23:17:25,451 [INFO] Removed job 1076cbc57e024a9bb5583c918e08db82
+2025-12-01 23:17:25,451 [INFO] 
+================================================================================
+2025-12-01 23:17:25,451 [INFO] RSS (CTI List) 수집 시작
+2025-12-01 23:17:25,451 [INFO] 시작 시간: 2025-12-01T14:17:25.451177+00:00
+2025-12-01 23:17:25,451 [INFO] ================================================================================
+2025-12-01 23:17:25,451 [INFO] 
+============================================================
+2025-12-01 23:17:25,451 [INFO] 처리 시작: NVD Analyzed (https://nvd.nist.gov/feeds/xml/cve/misc/nvd-rss-analyzed.xml)
+2025-12-01 23:17:25,451 [INFO] ============================================================
+2025-12-01 23:17:25,451 [INFO] 피드 가져오는 중: https://nvd.nist.gov/feeds/xml/cve/misc/nvd-rss-analyzed.xml (시도 1/3)
+2025-12-01 23:17:26,856 [INFO] 발견된 엔트리 수: 528
+2025-12-01 23:17:26,931 [INFO] 3 changes detected
+2025-12-01 23:17:27,291 [INFO] 3 changes detected
+2025-12-01 23:17:27,654 [INFO] 4 changes detected
+2025-12-01 23:17:28,005 [INFO] 4 changes detected
+2025-12-01 23:17:28,365 [INFO] 4 changes detected
+2025-12-01 23:17:28,729 [INFO] 3 changes detected
+2025-12-01 23:17:29,080 [INFO] 4 changes detected
+2025-12-01 23:17:29,194 [INFO] 피드 처리 완료: NVD Analyzed
+2025-12-01 23:17:29,194 [INFO]   총 528개 중 528개 처리 (성공/중복 포함), 0개 실패
+2025-12-01 23:17:29,194 [INFO] 
+============================================================
+2025-12-01 23:17:29,194 [INFO] 처리 시작: Cloudflare Blog (https://blog.cloudflare.com/rss/)
+2025-12-01 23:17:29,194 [INFO] ============================================================
+2025-12-01 23:17:29,194 [INFO] 피드 가져오는 중: https://blog.cloudflare.com/rss/ (시도 1/3)
+2025-12-01 23:17:29,445 [INFO] 4 changes detected
+2025-12-01 23:17:30,445 [INFO] Running job "process_bookmarks (trigger: date[2025-12-01 14:17:30 UTC], next run at: 2025-12-01 14:17:30 UTC)" (scheduled at 2025-12-01 14:17:30.441681+00:00)
+2025-12-01 23:17:30,445 [INFO] Removed job e99c2474343d48aaa56795c9f6cd23d0
+2025-12-01 23:17:30,448 [INFO] --- 북마크 자동 분석 작업 시작 ---
+2025-12-01 23:17:30,448 [INFO] CHECKING: https://www.microsoft.com/en-us/security/blog/feed/ (ID: 1)
+2025-12-01 23:17:30,675 [INFO] 발견된 엔트리 수: 20
+2025-12-01 23:17:30,826 [INFO] 3 changes detected
+2025-12-01 23:17:30,832 [INFO] 피드 처리 완료: Cloudflare Blog
+2025-12-01 23:17:30,832 [INFO]   총 20개 중 20개 처리 (성공/중복 포함), 0개 실패
+2025-12-01 23:17:30,834 [INFO] 
+============================================================
+2025-12-01 23:17:30,834 [INFO] 처리 시작: CISA Alerts (https://www.cisa.gov/cybersecurity-advisories/all.xml)
+2025-12-01 23:17:30,834 [INFO] ============================================================
+2025-12-01 23:17:30,834 [INFO] 피드 가져오는 중: https://www.cisa.gov/cybersecurity-advisories/all.xml (시도 1/3)
+2025-12-01 23:17:30,860 [INFO] --- 북마크 자동 분석 작업 완료 ---
+2025-12-01 23:17:30,860 [INFO] Job "process_bookmarks (trigger: date[2025-12-01 14:17:30 UTC], next run at: 2025-12-01 14:17:30 UTC)" executed successfully
+2025-12-01 23:17:31,057 [INFO] 발견된 엔트리 수: 30
+2025-12-01 23:17:31,179 [INFO] 3 changes detected
+2025-12-01 23:17:31,179 [INFO] 피드 처리 완료: CISA Alerts
+2025-12-01 23:17:31,179 [INFO]   총 30개 중 30개 처리 (성공/중복 포함), 0개 실패
+2025-12-01 23:17:31,179 [INFO] 
+============================================================
+2025-12-01 23:17:31,179 [INFO] 처리 시작: CERT-KR (https://www.krcert.or.kr/rss.do?data_id=01)
+2025-12-01 23:17:31,179 [INFO] ============================================================
+2025-12-01 23:17:31,179 [INFO] 피드 가져오는 중: https://www.krcert.or.kr/rss.do?data_id=01 (시도 1/3)
+2025-12-01 23:17:31,315 [WARNING] 피드 파싱 경고: <unknown>:2:0: syntax error
+2025-12-01 23:17:31,315 [INFO] 발견된 엔트리 수: 0
+2025-12-01 23:17:31,315 [INFO] 
+============================================================
+2025-12-01 23:17:31,315 [INFO] 처리 시작: Mandiant (Google) (https://cloud.google.com/blog/topics/threat-intelligence/rss)
+2025-12-01 23:17:31,315 [INFO] ============================================================
+2025-12-01 23:17:31,315 [INFO] 피드 가져오는 중: https://cloud.google.com/blog/topics/threat-intelligence/rss (시도 1/3)
+2025-12-01 23:17:31,543 [INFO] 3 changes detected
+2025-12-01 23:17:33,060 [WARNING] 피드 파싱 경고: <unknown>:2:0: syntax error
+2025-12-01 23:17:33,060 [INFO] 발견된 엔트리 수: 0
+2025-12-01 23:17:33,060 [INFO] 
+============================================================
+2025-12-01 23:17:33,060 [INFO] 처리 시작: Palo Alto (Unit 42) (https://unit42.paloaltonetworks.com/feed/)
+2025-12-01 23:17:33,060 [INFO] ============================================================
+2025-12-01 23:17:33,060 [INFO] 피드 가져오는 중: https://unit42.paloaltonetworks.com/feed/ (시도 1/3)
+2025-12-01 23:17:34,249 [INFO] 발견된 엔트리 수: 15
+2025-12-01 23:17:34,332 [INFO] 피드 처리 완료: Palo Alto (Unit 42)
+2025-12-01 23:17:34,332 [INFO]   총 15개 중 15개 처리 (성공/중복 포함), 0개 실패
+2025-12-01 23:17:34,332 [INFO] 
+============================================================
+2025-12-01 23:17:34,332 [INFO] 처리 시작: CrowdStrike (https://www.crowdstrike.com/blog/feed/)
+2025-12-01 23:17:34,332 [INFO] ============================================================
+2025-12-01 23:17:34,332 [INFO] 피드 가져오는 중: https://www.crowdstrike.com/blog/feed/ (시도 1/3)
+2025-12-01 23:17:34,344 [INFO] 3 changes detected
+2025-12-01 23:17:34,800 [INFO] 발견된 엔트리 수: 10
+2025-12-01 23:17:34,868 [INFO] 피드 처리 완료: CrowdStrike
+2025-12-01 23:17:34,870 [INFO]   총 10개 중 10개 처리 (성공/중복 포함), 0개 실패
+2025-12-01 23:17:34,870 [INFO] 
+============================================================
+2025-12-01 23:17:34,870 [INFO] 처리 시작: Microsoft Security (https://www.microsoft.com/en-us/security/blog/feed/)
+2025-12-01 23:17:34,870 [INFO] ============================================================
+2025-12-01 23:17:34,870 [INFO] 피드 가져오는 중: https://www.microsoft.com/en-us/security/blog/feed/ (시도 1/3)
+2025-12-01 23:17:34,898 [INFO] 3 changes detected
+2025-12-01 23:17:35,037 [INFO] 발견된 엔트리 수: 10
+2025-12-01 23:17:35,096 [INFO] 피드 처리 완료: Microsoft Security
+2025-12-01 23:17:35,096 [INFO]   총 10개 중 10개 처리 (성공/중복 포함), 0개 실패
+2025-12-01 23:17:35,096 [INFO] 
+============================================================
+2025-12-01 23:17:35,096 [INFO] 처리 시작: Rapid7 (AttackerKB) (https://attackerkb.com/rss)
+2025-12-01 23:17:35,096 [INFO] ============================================================
+2025-12-01 23:17:35,100 [INFO] 피드 가져오는 중: https://attackerkb.com/rss (시도 1/3)
+2025-12-01 23:17:35,179 [WARNING] 피드 파싱 경고: <unknown>:5:2: mismatched tag
+2025-12-01 23:17:35,179 [INFO] 발견된 엔트리 수: 0
+2025-12-01 23:17:35,179 [INFO] 
+============================================================
+2025-12-01 23:17:35,179 [INFO] 처리 시작: The Hacker News (https://feeds.feedburner.com/TheHackerNews)
+2025-12-01 23:17:35,179 [INFO] ============================================================
+2025-12-01 23:17:35,179 [INFO] 피드 가져오는 중: https://feeds.feedburner.com/TheHackerNews (시도 1/3)
+2025-12-01 23:17:35,264 [INFO] 3 changes detected
+2025-12-01 23:17:35,974 [WARNING] 피드 파싱 경고: <unknown>:8:11: not well-formed (invalid token)
+2025-12-01 23:17:35,980 [INFO] 발견된 엔트리 수: 0
+2025-12-01 23:17:35,980 [INFO] 
+============================================================
+2025-12-01 23:17:35,980 [INFO] 처리 시작: Krebs on Security (https://krebsonsecurity.com/feed/)
+2025-12-01 23:17:35,980 [INFO] ============================================================
+2025-12-01 23:17:35,980 [INFO] 피드 가져오는 중: https://krebsonsecurity.com/feed/ (시도 1/3)
+2025-12-01 23:17:38,180 [INFO] 발견된 엔트리 수: 10
+2025-12-01 23:17:38,234 [INFO] 피드 처리 완료: Krebs on Security
+2025-12-01 23:17:38,234 [INFO]   총 10개 중 10개 처리 (성공/중복 포함), 0개 실패
+2025-12-01 23:17:38,234 [INFO] 
+============================================================
+2025-12-01 23:17:38,234 [INFO] 처리 시작: Bleeping Computer (https://www.bleepingcomputer.com/feed/)
+2025-12-01 23:17:38,234 [INFO] ============================================================
+2025-12-01 23:17:38,234 [INFO] 피드 가져오는 중: https://www.bleepingcomputer.com/feed/ (시도 1/3)
+2025-12-01 23:17:38,272 [INFO] 3 changes detected
+2025-12-01 23:17:38,347 [INFO] 발견된 엔트리 수: 11
+2025-12-01 23:17:38,416 [INFO] 피드 처리 완료: Bleeping Computer
+2025-12-01 23:17:38,423 [INFO]   총 11개 중 11개 처리 (성공/중복 포함), 0개 실패
+2025-12-01 23:17:38,423 [INFO] 
+============================================================
+2025-12-01 23:17:38,423 [INFO] 처리 시작: Schneier on Security (https://www.schneier.com/feed/)
+2025-12-01 23:17:38,423 [INFO] ============================================================
+2025-12-01 23:17:38,424 [INFO] 피드 가져오는 중: https://www.schneier.com/feed/ (시도 1/3)
+2025-12-01 23:17:38,635 [INFO] 3 changes detected
+2025-12-01 23:17:38,757 [INFO] 발견된 엔트리 수: 10
+2025-12-01 23:17:38,807 [INFO] 피드 처리 완료: Schneier on Security
+2025-12-01 23:17:38,807 [INFO]   총 10개 중 10개 처리 (성공/중복 포함), 0개 실패
+2025-12-01 23:17:38,807 [INFO] 
+================================================================================
+2025-12-01 23:17:38,807 [INFO] RSS 수집 완료
+2025-12-01 23:17:38,820 [INFO] 종료 시간: 2025-12-01T14:17:38.807892+00:00
+2025-12-01 23:17:38,820 [INFO] 총 644개 항목 발견, 644개 DB 저장 성공(중복 포함), 0개 실패
+2025-12-01 23:17:38,820 [INFO] ================================================================================
+2025-12-01 23:17:38,820 [INFO] Job "collect_all_sources (trigger: date[2025-12-01 14:17:25 UTC], next run at: 2025-12-01 14:17:25 UTC)" executed successfully
+2025-12-01 23:17:39,001 [INFO] 3 changes detected
+2025-12-01 23:18:16,925 [INFO] HTTP Request: GET https://www.rapid7.com/blog/post/2021/10/06/apache-http-server-cve-2021-41773-exploited-in-the-wild/ "HTTP/1.1 200 OK"
+2025-12-01 23:19:24,271 [INFO] 3 changes detected
+2025-12-01 23:20:48,099 [INFO] HTTP Request: GET https://blog.cloudflare.com/inside-the-log4j2-vulnerability-cve-2021-44228/ "HTTP/1.1 200 OK"
+2025-12-01 23:21:22,258 [INFO] 3 changes detected
+2025-12-01 23:24:24,538 [INFO] 1 change detected
+2025-12-01 23:25:16,392 [INFO] 3 changes detected
+2025-12-01 23:29:29,833 [INFO] 1 change detected
+2025-12-01 23:29:31,060 [INFO] 3 changes detected
+2025-12-01 23:31:23,699 [INFO] 1 change detected
+2025-12-01 23:31:37,792 [INFO] Scheduler has been shut down
+2025-12-01 23:31:40,467 [INFO] 2 changes detected
+2025-12-01 23:31:43,022 [INFO] Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-12-01 23:31:43,024 [INFO] Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-12-01 23:31:43,024 [INFO] Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-12-01 23:31:43,028 [INFO] Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-12-01 23:31:43,028 [INFO] Added job "collect_all_sources" to job store "default"
+2025-12-01 23:31:43,028 [INFO] Added job "collect_all_sources" to job store "default"
+2025-12-01 23:31:43,028 [INFO] Added job "process_bookmarks" to job store "default"
+2025-12-01 23:31:43,028 [INFO] Added job "process_bookmarks" to job store "default"
+2025-12-01 23:31:43,028 [INFO] Scheduler started
+2025-12-01 23:31:43,099 [INFO] 6 changes detected
+2025-12-01 23:31:43,462 [INFO] 1 change detected
+2025-12-01 23:31:43,878 [INFO] 1 change detected
+2025-12-01 23:31:44,291 [INFO] 1 change detected
+2025-12-01 23:31:44,655 [INFO] 1 change detected
+2025-12-01 23:31:45,063 [INFO] 1 change detected
+2025-12-01 23:31:45,475 [INFO] 1 change detected
+2025-12-01 23:31:45,887 [INFO] 1 change detected
+2025-12-01 23:31:46,291 [INFO] 1 change detected
+2025-12-01 23:31:46,647 [INFO] 1 change detected
+2025-12-01 23:31:47,064 [INFO] 1 change detected
+2025-12-01 23:31:47,477 [INFO] 1 change detected
+2025-12-01 23:31:47,843 [INFO] 1 change detected
+2025-12-01 23:31:48,045 [INFO] Running job "collect_all_sources (trigger: date[2025-12-01 14:31:48 UTC], next run at: 2025-12-01 14:31:48 UTC)" (scheduled at 2025-12-01 14:31:48.024383+00:00)
+2025-12-01 23:31:48,045 [INFO] Removed job 03d505e3a8324851aab0527800f927bc
+2025-12-01 23:31:48,045 [INFO] 
+================================================================================
+2025-12-01 23:31:48,045 [INFO] RSS (CTI List) 수집 시작
+2025-12-01 23:31:48,045 [INFO] 시작 시간: 2025-12-01T14:31:48.045504+00:00
+2025-12-01 23:31:48,045 [INFO] ================================================================================
+2025-12-01 23:31:48,054 [INFO] 
+============================================================
+2025-12-01 23:31:48,054 [INFO] 처리 시작: NVD Analyzed (https://nvd.nist.gov/feeds/xml/cve/misc/nvd-rss-analyzed.xml)
+2025-12-01 23:31:48,054 [INFO] ============================================================
+2025-12-01 23:31:48,054 [INFO] 피드 가져오는 중: https://nvd.nist.gov/feeds/xml/cve/misc/nvd-rss-analyzed.xml (시도 1/3)
+2025-12-01 23:31:48,245 [INFO] 1 change detected
+2025-12-01 23:31:48,659 [INFO] 1 change detected
+2025-12-01 23:31:49,076 [INFO] 1 change detected
+2025-12-01 23:31:49,258 [INFO] 발견된 엔트리 수: 528
+2025-12-01 23:31:49,488 [INFO] 4 changes detected
+2025-12-01 23:31:49,850 [INFO] 3 changes detected
+2025-12-01 23:31:50,213 [INFO] 5 changes detected
+2025-12-01 23:31:50,575 [INFO] 4 changes detected
+2025-12-01 23:31:50,981 [INFO] 4 changes detected
+2025-12-01 23:31:51,344 [INFO] 4 changes detected
+2025-12-01 23:31:51,709 [INFO] 4 changes detected
+2025-12-01 23:31:51,862 [INFO] 피드 처리 완료: NVD Analyzed
+2025-12-01 23:31:51,862 [INFO]   총 528개 중 528개 처리 (성공/중복 포함), 0개 실패
+2025-12-01 23:31:51,862 [INFO] 
+============================================================
+2025-12-01 23:31:51,862 [INFO] 처리 시작: Cloudflare Blog (https://blog.cloudflare.com/rss/)
+2025-12-01 23:31:51,878 [INFO] ============================================================
+2025-12-01 23:31:51,878 [INFO] 피드 가져오는 중: https://blog.cloudflare.com/rss/ (시도 1/3)
+2025-12-01 23:31:52,074 [INFO] 4 changes detected
+2025-12-01 23:31:52,428 [INFO] 1 change detected
+2025-12-01 23:31:52,794 [INFO] 1 change detected
+2025-12-01 23:31:53,043 [INFO] Running job "process_bookmarks (trigger: date[2025-12-01 14:31:53 UTC], next run at: 2025-12-01 14:31:53 UTC)" (scheduled at 2025-12-01 14:31:53.028158+00:00)
+2025-12-01 23:31:53,043 [INFO] Removed job 0e3f7e7f7f86466486ba289cc5be410e
+2025-12-01 23:31:53,048 [INFO] --- 북마크 자동 분석 작업 시작 ---
+2025-12-01 23:31:53,048 [INFO] CHECKING: https://www.microsoft.com/en-us/security/blog/feed/ (ID: 1)
+2025-12-01 23:31:53,160 [INFO] 1 change detected
+2025-12-01 23:31:53,415 [INFO] 발견된 엔트리 수: 20
+2025-12-01 23:31:53,415 [INFO] --- 북마크 자동 분석 작업 완료 ---
+2025-12-01 23:31:53,415 [INFO] Job "process_bookmarks (trigger: date[2025-12-01 14:31:53 UTC], next run at: 2025-12-01 14:31:53 UTC)" executed successfully
+2025-12-01 23:31:53,513 [INFO] 피드 처리 완료: Cloudflare Blog
+2025-12-01 23:31:53,514 [INFO]   총 20개 중 20개 처리 (성공/중복 포함), 0개 실패
+2025-12-01 23:31:53,514 [INFO] 
+============================================================
+2025-12-01 23:31:53,514 [INFO] 처리 시작: CISA Alerts (https://www.cisa.gov/cybersecurity-advisories/all.xml)
+2025-12-01 23:31:53,521 [INFO] ============================================================
+2025-12-01 23:31:53,521 [INFO] 피드 가져오는 중: https://www.cisa.gov/cybersecurity-advisories/all.xml (시도 1/3)
+2025-12-01 23:31:53,563 [INFO] 4 changes detected
+2025-12-01 23:31:53,713 [INFO] 발견된 엔트리 수: 30
+2025-12-01 23:31:53,868 [INFO] 피드 처리 완료: CISA Alerts
+2025-12-01 23:31:53,868 [INFO]   총 30개 중 30개 처리 (성공/중복 포함), 0개 실패
+2025-12-01 23:31:53,868 [INFO] 
+============================================================
+2025-12-01 23:31:53,868 [INFO] 처리 시작: CERT-KR (https://www.krcert.or.kr/rss.do?data_id=01)
+2025-12-01 23:31:53,876 [INFO] ============================================================
+2025-12-01 23:31:53,876 [INFO] 피드 가져오는 중: https://www.krcert.or.kr/rss.do?data_id=01 (시도 1/3)
+2025-12-01 23:31:53,979 [INFO] 4 changes detected
+2025-12-01 23:31:54,001 [WARNING] 피드 파싱 경고: <unknown>:2:0: syntax error
+2025-12-01 23:31:54,001 [INFO] 발견된 엔트리 수: 0
+2025-12-01 23:31:54,001 [INFO] 
+============================================================
+2025-12-01 23:31:54,001 [INFO] 처리 시작: Mandiant (Google) (https://cloud.google.com/blog/topics/threat-intelligence/rss)
+2025-12-01 23:31:54,001 [INFO] ============================================================
+2025-12-01 23:31:54,001 [INFO] 피드 가져오는 중: https://cloud.google.com/blog/topics/threat-intelligence/rss (시도 1/3)
+2025-12-01 23:31:54,382 [INFO] 1 change detected
+2025-12-01 23:31:54,739 [INFO] 1 change detected
+2025-12-01 23:31:55,155 [INFO] 1 change detected
+2025-12-01 23:31:55,570 [INFO] 1 change detected
+2025-12-01 23:31:55,769 [WARNING] 피드 파싱 경고: <unknown>:2:0: syntax error
+2025-12-01 23:31:55,769 [INFO] 발견된 엔트리 수: 0
+2025-12-01 23:31:55,769 [INFO] 
+============================================================
+2025-12-01 23:31:55,769 [INFO] 처리 시작: Palo Alto (Unit 42) (https://unit42.paloaltonetworks.com/feed/)
+2025-12-01 23:31:55,769 [INFO] ============================================================
+2025-12-01 23:31:55,769 [INFO] 피드 가져오는 중: https://unit42.paloaltonetworks.com/feed/ (시도 1/3)
+2025-12-01 23:31:55,934 [INFO] 1 change detected
+2025-12-01 23:31:56,351 [INFO] 1 change detected
+2025-12-01 23:31:56,766 [INFO] 1 change detected
+2025-12-01 23:31:56,885 [INFO] 발견된 엔트리 수: 15
+2025-12-01 23:31:56,981 [INFO] 피드 처리 완료: Palo Alto (Unit 42)
+2025-12-01 23:31:56,981 [INFO]   총 15개 중 15개 처리 (성공/중복 포함), 0개 실패
+2025-12-01 23:31:56,981 [INFO] 
+============================================================
+2025-12-01 23:31:56,981 [INFO] 처리 시작: CrowdStrike (https://www.crowdstrike.com/blog/feed/)
+2025-12-01 23:31:56,997 [INFO] ============================================================
+2025-12-01 23:31:56,997 [INFO] 피드 가져오는 중: https://www.crowdstrike.com/blog/feed/ (시도 1/3)
+2025-12-01 23:31:57,130 [INFO] 4 changes detected
+2025-12-01 23:31:57,305 [INFO] 발견된 엔트리 수: 10
+2025-12-01 23:31:57,361 [INFO] 피드 처리 완료: CrowdStrike
+2025-12-01 23:31:57,361 [INFO]   총 10개 중 10개 처리 (성공/중복 포함), 0개 실패
+2025-12-01 23:31:57,361 [INFO] 
+============================================================
+2025-12-01 23:31:57,361 [INFO] 처리 시작: Microsoft Security (https://www.microsoft.com/en-us/security/blog/feed/)
+2025-12-01 23:31:57,361 [INFO] ============================================================
+2025-12-01 23:31:57,370 [INFO] 피드 가져오는 중: https://www.microsoft.com/en-us/security/blog/feed/ (시도 1/3)
+2025-12-01 23:31:57,543 [INFO] 4 changes detected
+2025-12-01 23:31:57,614 [INFO] 발견된 엔트리 수: 10
+2025-12-01 23:31:57,671 [INFO] 피드 처리 완료: Microsoft Security
+2025-12-01 23:31:57,671 [INFO]   총 10개 중 10개 처리 (성공/중복 포함), 0개 실패
+2025-12-01 23:31:57,671 [INFO] 
+============================================================
+2025-12-01 23:31:57,678 [INFO] 처리 시작: Rapid7 (AttackerKB) (https://attackerkb.com/rss)
+2025-12-01 23:31:57,678 [INFO] ============================================================
+2025-12-01 23:31:57,678 [INFO] 피드 가져오는 중: https://attackerkb.com/rss (시도 1/3)
+2025-12-01 23:31:57,781 [WARNING] 피드 파싱 경고: <unknown>:5:2: mismatched tag
+2025-12-01 23:31:57,781 [INFO] 발견된 엔트리 수: 0
+2025-12-01 23:31:57,781 [INFO] 
+============================================================
+2025-12-01 23:31:57,781 [INFO] 처리 시작: The Hacker News (https://feeds.feedburner.com/TheHackerNews)
+2025-12-01 23:31:57,789 [INFO] ============================================================
+2025-12-01 23:31:57,790 [INFO] 피드 가져오는 중: https://feeds.feedburner.com/TheHackerNews (시도 1/3)
+2025-12-01 23:31:57,900 [INFO] 3 changes detected
+2025-12-01 23:31:58,253 [INFO] 1 change detected
+2025-12-01 23:31:58,617 [INFO] 1 change detected
+2025-12-01 23:31:58,835 [WARNING] 피드 파싱 경고: <unknown>:8:11: not well-formed (invalid token)
+2025-12-01 23:31:58,835 [INFO] 발견된 엔트리 수: 0
+2025-12-01 23:31:58,835 [INFO] 
+============================================================
+2025-12-01 23:31:58,835 [INFO] 처리 시작: Krebs on Security (https://krebsonsecurity.com/feed/)
+2025-12-01 23:31:58,837 [INFO] ============================================================
+2025-12-01 23:31:58,837 [INFO] 피드 가져오는 중: https://krebsonsecurity.com/feed/ (시도 1/3)
+2025-12-01 23:31:58,980 [INFO] 1 change detected
+2025-12-01 23:31:59,346 [INFO] 1 change detected
+2025-12-01 23:31:59,712 [INFO] 1 change detected
+2025-12-01 23:32:00,078 [INFO] 1 change detected
+2025-12-01 23:32:00,495 [INFO] 1 change detected
+2025-12-01 23:32:00,828 [INFO] 발견된 엔트리 수: 10
+2025-12-01 23:32:00,890 [INFO] 피드 처리 완료: Krebs on Security
+2025-12-01 23:32:00,890 [INFO]   총 10개 중 10개 처리 (성공/중복 포함), 0개 실패
+2025-12-01 23:32:00,890 [INFO] 
+============================================================
+2025-12-01 23:32:00,890 [INFO] 처리 시작: Bleeping Computer (https://www.bleepingcomputer.com/feed/)
+2025-12-01 23:32:00,890 [INFO] ============================================================
+2025-12-01 23:32:00,890 [INFO] 피드 가져오는 중: https://www.bleepingcomputer.com/feed/ (시도 1/3)
+2025-12-01 23:32:00,909 [INFO] 4 changes detected
+2025-12-01 23:32:01,088 [INFO] 발견된 엔트리 수: 11
+2025-12-01 23:32:01,155 [INFO] 피드 처리 완료: Bleeping Computer
+2025-12-01 23:32:01,155 [INFO]   총 11개 중 11개 처리 (성공/중복 포함), 0개 실패
+2025-12-01 23:32:01,155 [INFO] 
+============================================================
+2025-12-01 23:32:01,155 [INFO] 처리 시작: Schneier on Security (https://www.schneier.com/feed/)
+2025-12-01 23:32:01,155 [INFO] ============================================================
+2025-12-01 23:32:01,155 [INFO] 피드 가져오는 중: https://www.schneier.com/feed/ (시도 1/3)
+2025-12-01 23:32:01,271 [INFO] 3 changes detected
+2025-12-01 23:32:01,362 [INFO] 발견된 엔트리 수: 10
+2025-12-01 23:32:01,410 [INFO] 피드 처리 완료: Schneier on Security
+2025-12-01 23:32:01,410 [INFO]   총 10개 중 10개 처리 (성공/중복 포함), 0개 실패
+2025-12-01 23:32:01,427 [INFO] 
+================================================================================
+2025-12-01 23:32:01,427 [INFO] RSS 수집 완료
+2025-12-01 23:32:01,427 [INFO] 종료 시간: 2025-12-01T14:32:01.427093+00:00
+2025-12-01 23:32:01,427 [INFO] 총 644개 항목 발견, 644개 DB 저장 성공(중복 포함), 0개 실패
+2025-12-01 23:32:01,427 [INFO] ================================================================================
+2025-12-01 23:32:01,427 [INFO] Job "collect_all_sources (trigger: date[2025-12-01 14:31:48 UTC], next run at: 2025-12-01 14:31:48 UTC)" executed successfully
+2025-12-01 23:32:01,624 [INFO] 4 changes detected
+2025-12-01 23:32:01,978 [INFO] 1 change detected
+2025-12-01 23:32:02,337 [INFO] 1 change detected
+2025-12-01 23:32:02,694 [INFO] 1 change detected
+2025-12-01 23:32:03,111 [INFO] 1 change detected
+2025-12-01 23:32:03,521 [INFO] 1 change detected
+2025-12-01 23:32:03,878 [INFO] 1 change detected
+2025-12-01 23:32:04,284 [INFO] 1 change detected
+2025-12-01 23:32:04,687 [INFO] 1 change detected
+2025-12-01 23:32:05,104 [INFO] 1 change detected
+2025-12-01 23:32:05,465 [INFO] 1 change detected
+2025-12-01 23:32:05,872 [INFO] 1 change detected
+2025-12-01 23:32:06,276 [INFO] 1 change detected
+2025-12-01 23:32:06,684 [INFO] 1 change detected
+2025-12-01 23:32:07,096 [INFO] 1 change detected
+2025-12-01 23:32:07,460 [INFO] 1 change detected
+2025-12-01 23:32:07,913 [INFO] 1 change detected
+2025-12-01 23:32:08,266 [INFO] 1 change detected
+2025-12-01 23:32:08,676 [INFO] 1 change detected
+2025-12-01 23:32:09,090 [INFO] 1 change detected
+2025-12-01 23:32:09,495 [INFO] 1 change detected
+2025-12-01 23:32:09,855 [INFO] 1 change detected
+2025-12-01 23:32:10,269 [INFO] 1 change detected
+2025-12-01 23:32:10,623 [INFO] 1 change detected
+2025-12-01 23:32:11,037 [INFO] 1 change detected
+2025-12-01 23:32:11,448 [INFO] 1 change detected
+2025-12-01 23:32:11,860 [INFO] 1 change detected
+2025-12-01 23:32:12,233 [INFO] 1 change detected
+2025-12-01 23:32:12,639 [INFO] 1 change detected
+2025-12-01 23:32:13,046 [INFO] 1 change detected
+2025-12-01 23:32:13,399 [INFO] 1 change detected
+2025-12-01 23:32:13,803 [INFO] 1 change detected
+2025-12-01 23:32:14,222 [INFO] 1 change detected
+2025-12-01 23:32:14,631 [INFO] 1 change detected
+2025-12-01 23:32:15,040 [INFO] 1 change detected
+2025-12-01 23:32:15,452 [INFO] 1 change detected
+2025-12-01 23:32:15,807 [INFO] 1 change detected
+2025-12-01 23:32:16,224 [INFO] 1 change detected
+2025-12-01 23:32:16,585 [INFO] 1 change detected
+2025-12-01 23:32:17,002 [INFO] 1 change detected
+2025-12-01 23:32:17,411 [INFO] 1 change detected
+2025-12-01 23:32:17,775 [INFO] 1 change detected
+2025-12-01 23:32:18,186 [INFO] 1 change detected
+2025-12-01 23:32:18,591 [INFO] 1 change detected
+2025-12-01 23:32:19,003 [INFO] 1 change detected
+2025-12-01 23:32:19,412 [INFO] 1 change detected
+2025-12-01 23:32:19,768 [INFO] 1 change detected
+2025-12-01 23:32:20,227 [INFO] 1 change detected
+2025-12-01 23:32:20,589 [INFO] 1 change detected
+2025-12-01 23:32:20,997 [INFO] 1 change detected
+2025-12-01 23:32:21,422 [INFO] 1 change detected
+2025-12-01 23:32:21,789 [INFO] 1 change detected
+2025-12-01 23:32:22,198 [INFO] 1 change detected
+2025-12-01 23:32:22,616 [INFO] 1 change detected
+2025-12-01 23:32:22,980 [INFO] 1 change detected
+2025-12-01 23:32:23,396 [INFO] 1 change detected
+2025-12-01 23:32:23,755 [INFO] 1 change detected
+2025-12-01 23:32:24,168 [INFO] 1 change detected
+2025-12-01 23:32:24,577 [INFO] 1 change detected
+2025-12-01 23:32:24,989 [INFO] 1 change detected
+2025-12-01 23:32:25,403 [INFO] 1 change detected
+2025-12-01 23:32:25,767 [INFO] 1 change detected
+2025-12-01 23:32:26,225 [INFO] 1 change detected
+2025-12-01 23:32:26,580 [INFO] 1 change detected
+2025-12-01 23:32:26,989 [INFO] 1 change detected
+2025-12-01 23:32:27,398 [INFO] 1 change detected
+2025-12-01 23:32:27,812 [INFO] 1 change detected
+2025-12-01 23:32:28,176 [INFO] 1 change detected
+2025-12-01 23:32:28,593 [INFO] 1 change detected
+2025-12-01 23:32:28,995 [INFO] 1 change detected
+2025-12-01 23:32:29,413 [INFO] 1 change detected
+2025-12-01 23:32:29,776 [INFO] 1 change detected
+2025-12-01 23:32:30,180 [INFO] 1 change detected
+2025-12-01 23:32:30,591 [INFO] 1 change detected
+2025-12-01 23:32:31,007 [INFO] 1 change detected
+2025-12-01 23:32:31,374 [INFO] 1 change detected
+2025-12-01 23:32:31,791 [INFO] 1 change detected
+2025-12-01 23:32:32,207 [INFO] 1 change detected
+2025-12-01 23:32:32,623 [INFO] 1 change detected
+2025-12-01 23:32:32,989 [INFO] 1 change detected
+2025-12-01 23:32:33,392 [INFO] 1 change detected
+2025-12-01 23:32:33,807 [INFO] 1 change detected
+2025-12-01 23:32:34,218 [INFO] 1 change detected
+2025-12-01 23:32:34,579 [INFO] 1 change detected
+2025-12-01 23:32:34,981 [INFO] 1 change detected
+2025-12-01 23:32:35,390 [INFO] 1 change detected
+2025-12-01 23:32:35,804 [INFO] 1 change detected
+2025-12-01 23:32:36,218 [INFO] 1 change detected
+2025-12-01 23:32:36,630 [INFO] 1 change detected
+2025-12-01 23:32:36,990 [INFO] 1 change detected
+2025-12-01 23:32:37,399 [INFO] 1 change detected
+2025-12-01 23:32:37,766 [INFO] 1 change detected
+2025-12-01 23:32:38,181 [INFO] 1 change detected
+2025-12-01 23:32:38,588 [INFO] 1 change detected
+2025-12-01 23:32:38,998 [INFO] 1 change detected
+2025-12-01 23:32:39,414 [INFO] 1 change detected
+2025-12-01 23:32:39,831 [INFO] 1 change detected
+2025-12-01 23:32:40,193 [INFO] 1 change detected
+2025-12-01 23:32:40,596 [INFO] 1 change detected
+2025-12-01 23:32:41,007 [INFO] 1 change detected
+2025-12-01 23:32:41,374 [INFO] 1 change detected
+2025-12-01 23:32:41,780 [INFO] 1 change detected
+2025-12-01 23:32:42,239 [INFO] 1 change detected
+2025-12-01 23:32:42,594 [INFO] 1 change detected
+2025-12-01 23:32:42,997 [INFO] 1 change detected
+2025-12-01 23:32:43,412 [INFO] 1 change detected
+2025-12-01 23:32:43,830 [INFO] 1 change detected
+2025-12-01 23:32:44,194 [INFO] 1 change detected
+2025-12-01 23:32:44,606 [INFO] 1 change detected
+2025-12-01 23:32:45,024 [INFO] 1 change detected
+2025-12-01 23:32:45,439 [INFO] 1 change detected
+2025-12-01 23:32:45,805 [INFO] 1 change detected
+2025-12-01 23:32:46,209 [INFO] 1 change detected
+2025-12-01 23:32:46,613 [INFO] 1 change detected
+2025-12-01 23:32:47,031 [INFO] 1 change detected
+2025-12-01 23:32:47,436 [INFO] 1 change detected
+2025-12-01 23:32:47,791 [INFO] 1 change detected
+2025-12-01 23:32:48,203 [INFO] 1 change detected
+2025-12-01 23:32:48,621 [INFO] 1 change detected
+2025-12-01 23:32:49,030 [INFO] 1 change detected
+2025-12-01 23:32:49,386 [INFO] 1 change detected
+2025-12-01 23:32:49,789 [INFO] 1 change detected
+2025-12-01 23:32:50,197 [INFO] 1 change detected
+2025-12-01 23:32:50,619 [INFO] 1 change detected
+2025-12-01 23:32:50,979 [INFO] 1 change detected
+2025-12-01 23:32:51,382 [INFO] 1 change detected
+2025-12-01 23:32:51,798 [INFO] 1 change detected
+2025-12-01 23:32:52,214 [INFO] 1 change detected
+2025-12-01 23:32:52,583 [INFO] 1 change detected
+2025-12-01 23:32:53,001 [INFO] 1 change detected
+2025-12-01 23:32:53,419 [INFO] 1 change detected
+2025-12-01 23:32:53,783 [INFO] 1 change detected
+2025-12-01 23:32:54,237 [INFO] 1 change detected
+2025-12-01 23:32:54,602 [INFO] 1 change detected
+2025-12-01 23:32:55,008 [INFO] 1 change detected
+2025-12-01 23:32:55,422 [INFO] 1 change detected
+2025-12-01 23:32:55,787 [INFO] 1 change detected
+2025-12-01 23:32:56,204 [INFO] 1 change detected
+2025-12-01 23:32:56,621 [INFO] 1 change detected
+2025-12-01 23:32:56,987 [INFO] 1 change detected
+2025-12-01 23:32:57,404 [INFO] 1 change detected
+2025-12-01 23:32:57,817 [INFO] 1 change detected
+2025-12-01 23:32:58,222 [INFO] 1 change detected
+2025-12-01 23:32:58,628 [INFO] 1 change detected
+2025-12-01 23:32:58,984 [INFO] 1 change detected
+2025-12-01 23:32:59,402 [INFO] 1 change detected
+2025-12-01 23:32:59,817 [INFO] 1 change detected
+2025-12-01 23:33:00,182 [INFO] 1 change detected
+2025-12-01 23:33:00,585 [INFO] 1 change detected
+2025-12-01 23:33:00,999 [INFO] 1 change detected
+2025-12-01 23:33:01,414 [INFO] 1 change detected
+2025-12-01 23:33:01,780 [INFO] 1 change detected
+2025-12-01 23:33:02,182 [INFO] 1 change detected
+2025-12-01 23:33:02,589 [INFO] 1 change detected
+2025-12-01 23:33:03,003 [INFO] 1 change detected
+2025-12-01 23:33:03,417 [INFO] 1 change detected
+2025-12-01 23:33:03,830 [INFO] 1 change detected
+2025-12-01 23:33:04,195 [INFO] 1 change detected
+2025-12-01 23:33:04,649 [INFO] 1 change detected
+2025-12-01 23:33:05,062 [INFO] 1 change detected
+2025-12-01 23:33:05,429 [INFO] 1 change detected
+2025-12-01 23:33:05,843 [INFO] 1 change detected
+2025-12-01 23:33:06,253 [INFO] 1 change detected
+2025-12-01 23:33:06,614 [INFO] 1 change detected
+2025-12-01 23:33:07,017 [INFO] 1 change detected
+2025-12-01 23:33:07,430 [INFO] 1 change detected
+2025-12-01 23:33:07,843 [INFO] 1 change detected
+2025-12-01 23:33:08,207 [INFO] 1 change detected
+2025-12-01 23:33:08,611 [INFO] 1 change detected
+2025-12-01 23:33:09,025 [INFO] 1 change detected
+2025-12-01 23:33:09,428 [INFO] 1 change detected
+2025-12-01 23:33:09,842 [INFO] 1 change detected
+2025-12-01 23:33:10,249 [INFO] 1 change detected
+2025-12-01 23:33:10,620 [INFO] 1 change detected
+2025-12-01 23:33:11,033 [INFO] 1 change detected
+2025-12-01 23:33:11,442 [INFO] 1 change detected
+2025-12-01 23:33:11,795 [INFO] 1 change detected
+2025-12-01 23:33:12,209 [INFO] 1 change detected
+2025-12-01 23:33:12,625 [INFO] 1 change detected
+2025-12-01 23:33:12,990 [INFO] 1 change detected
+2025-12-01 23:33:13,395 [INFO] 1 change detected
+2025-12-01 23:33:13,812 [INFO] 1 change detected
+2025-12-01 23:33:14,222 [INFO] 1 change detected
+2025-12-01 23:33:14,631 [INFO] 1 change detected
+2025-12-01 23:33:14,987 [INFO] 1 change detected
+2025-12-01 23:33:15,392 [INFO] 1 change detected
+2025-12-01 23:33:15,806 [INFO] 1 change detected
+2025-12-01 23:33:16,220 [INFO] 1 change detected
+2025-12-01 23:33:16,586 [INFO] 1 change detected
+2025-12-01 23:33:16,988 [INFO] 1 change detected
+2025-12-01 23:33:17,443 [INFO] 1 change detected
+2025-12-01 23:33:17,799 [INFO] 1 change detected
+2025-12-01 23:33:18,256 [INFO] 1 change detected
+2025-12-01 23:33:18,621 [INFO] 1 change detected
+2025-12-01 23:33:19,038 [INFO] 1 change detected
+2025-12-01 23:33:19,454 [INFO] 1 change detected
+2025-12-01 23:33:19,820 [INFO] 1 change detected
+2025-12-01 23:33:20,225 [INFO] 1 change detected
+2025-12-01 23:33:20,637 [INFO] 1 change detected
+2025-12-01 23:33:21,053 [INFO] 1 change detected
+2025-12-01 23:33:21,415 [INFO] 1 change detected
+2025-12-01 23:33:21,832 [INFO] 1 change detected
+2025-12-01 23:33:22,247 [INFO] 1 change detected
+2025-12-01 23:33:22,654 [INFO] 1 change detected
+2025-12-01 23:33:23,061 [INFO] 1 change detected
+2025-12-01 23:33:23,413 [INFO] 1 change detected
+2025-12-01 23:33:23,827 [INFO] 1 change detected
+2025-12-01 23:33:24,233 [INFO] 1 change detected
+2025-12-01 23:33:24,639 [INFO] 1 change detected
+2025-12-01 23:33:25,049 [INFO] 1 change detected
+2025-12-01 23:33:25,417 [INFO] 1 change detected
+2025-12-01 23:33:25,833 [INFO] 1 change detected
+2025-12-01 23:33:26,239 [INFO] 1 change detected
+2025-12-01 23:33:26,647 [INFO] 1 change detected
+2025-12-01 23:33:27,010 [INFO] 1 change detected
+2025-12-01 23:33:27,411 [INFO] 1 change detected
+2025-12-01 23:33:27,827 [INFO] 1 change detected
+2025-12-01 23:33:28,230 [INFO] 1 change detected
+2025-12-01 23:33:28,647 [INFO] 1 change detected
+2025-12-01 23:33:29,014 [INFO] 1 change detected
+2025-12-01 23:33:29,418 [INFO] 1 change detected
+2025-12-01 23:33:29,834 [INFO] 1 change detected
+2025-12-01 23:33:30,250 [INFO] 1 change detected
+2025-12-01 23:33:30,654 [INFO] 1 change detected
+2025-12-01 23:33:31,019 [INFO] 1 change detected
+2025-12-01 23:33:31,436 [INFO] 1 change detected
+2025-12-01 23:33:31,849 [INFO] 1 change detected
+2025-12-01 23:33:32,212 [INFO] 1 change detected
+2025-12-01 23:33:32,629 [INFO] 1 change detected
+2025-12-01 23:33:33,044 [INFO] 1 change detected
+2025-12-01 23:33:33,411 [INFO] 1 change detected
+2025-12-01 23:33:33,827 [INFO] 1 change detected
+2025-12-01 23:33:34,232 [INFO] 1 change detected
+2025-12-01 23:33:34,642 [INFO] 1 change detected
+2025-12-01 23:33:35,045 [INFO] 1 change detected
+2025-12-01 23:33:35,463 [INFO] 1 change detected
+2025-12-01 23:33:35,827 [INFO] 1 change detected
+2025-12-01 23:33:36,245 [INFO] 1 change detected
+2025-12-01 23:33:36,663 [INFO] 1 change detected
+2025-12-01 23:33:37,080 [INFO] 1 change detected
+2025-12-01 23:33:37,487 [INFO] 1 change detected
+2025-12-01 23:33:37,848 [INFO] 1 change detected
+2025-12-01 23:33:38,254 [INFO] 1 change detected
+2025-12-01 23:33:38,663 [INFO] 1 change detected
+2025-12-01 23:33:39,070 [INFO] 1 change detected
+2025-12-01 23:33:39,485 [INFO] 1 change detected
+2025-12-01 23:33:39,903 [INFO] 1 change detected
+2025-12-01 23:33:40,267 [INFO] 1 change detected
+2025-12-01 23:33:40,679 [INFO] 1 change detected
+2025-12-01 23:33:41,087 [INFO] 1 change detected
+2025-12-01 23:33:41,492 [INFO] 1 change detected
+2025-12-01 23:33:41,897 [INFO] 1 change detected
+2025-12-01 23:33:42,299 [INFO] 1 change detected
+2025-12-01 23:33:42,653 [INFO] 1 change detected
+2025-12-01 23:33:43,006 [INFO] 1 change detected
+2025-12-01 23:33:43,363 [INFO] 1 change detected
+2025-12-01 23:33:43,716 [INFO] 4 changes detected
+2025-12-01 23:33:44,075 [INFO] 1 change detected
+2025-12-01 23:33:44,428 [INFO] 1 change detected
+2025-12-01 23:33:44,790 [INFO] 1 change detected
+2025-12-01 23:33:45,148 [INFO] 1 change detected
+2025-12-01 23:33:45,604 [INFO] 1 change detected
+2025-12-01 23:33:45,964 [INFO] 1 change detected
+2025-12-01 23:33:46,374 [INFO] 1 change detected
+2025-12-01 23:33:46,777 [INFO] 1 change detected
+2025-12-01 23:33:47,193 [INFO] 1 change detected
+2025-12-01 23:33:47,596 [INFO] 1 change detected
+2025-12-01 23:33:48,013 [INFO] 1 change detected
+2025-12-01 23:33:48,415 [INFO] 1 change detected
+2025-12-01 23:33:48,823 [INFO] 1 change detected
+2025-12-01 23:33:49,235 [INFO] 1 change detected
+2025-12-01 23:33:49,641 [INFO] 1 change detected
+2025-12-01 23:33:50,054 [INFO] 1 change detected
+2025-12-01 23:33:50,411 [INFO] 1 change detected
+2025-12-01 23:33:50,825 [INFO] 1 change detected
+2025-12-01 23:33:51,228 [INFO] 1 change detected
+2025-12-01 23:33:51,635 [INFO] 1 change detected
+2025-12-01 23:33:51,992 [INFO] 1 change detected
+2025-12-01 23:33:52,406 [INFO] 1 change detected
+2025-12-01 23:33:52,811 [INFO] 1 change detected
+2025-12-01 23:33:53,224 [INFO] 1 change detected
+2025-12-01 23:33:53,629 [INFO] 1 change detected
+2025-12-01 23:33:54,044 [INFO] 1 change detected
+2025-12-01 23:33:54,450 [INFO] 1 change detected
+2025-12-01 23:33:54,852 [INFO] 1 change detected
+2025-12-01 23:33:55,257 [INFO] 1 change detected
+2025-12-01 23:33:55,665 [INFO] 1 change detected
+2025-12-01 23:33:56,072 [INFO] 1 change detected
+2025-12-01 23:33:56,477 [INFO] 1 change detected
+2025-12-01 23:33:56,884 [INFO] 1 change detected
+2025-12-01 23:33:57,299 [INFO] 1 change detected
+2025-12-01 23:33:57,703 [INFO] 1 change detected
+2025-12-01 23:33:58,107 [INFO] 1 change detected
+2025-12-01 23:33:58,516 [INFO] 1 change detected
+2025-12-01 23:33:58,930 [INFO] 1 change detected
+2025-12-01 23:33:59,340 [INFO] 1 change detected
+2025-12-01 23:33:59,695 [INFO] 1 change detected
+2025-12-01 23:34:00,097 [INFO] 1 change detected
+2025-12-01 23:34:00,554 [INFO] 1 change detected
+2025-12-01 23:34:00,917 [INFO] 1 change detected
+2025-12-01 23:34:01,334 [INFO] 1 change detected
+2025-12-01 23:34:01,752 [INFO] 1 change detected
+2025-12-01 23:34:02,114 [INFO] 1 change detected
+2025-12-01 23:34:02,527 [INFO] 1 change detected
+2025-12-01 23:34:02,939 [INFO] 1 change detected
+2025-12-01 23:34:03,342 [INFO] 1 change detected
+2025-12-01 23:34:03,745 [INFO] 1 change detected
+2025-12-01 23:34:04,158 [INFO] 1 change detected
+2025-12-01 23:34:04,519 [INFO] 1 change detected
+2025-12-01 23:34:04,924 [INFO] 1 change detected
+2025-12-01 23:34:05,333 [INFO] 1 change detected
+2025-12-01 23:34:05,734 [INFO] 1 change detected
+2025-12-01 23:34:06,138 [INFO] 1 change detected
+2025-12-01 23:34:06,552 [INFO] 1 change detected
+2025-12-01 23:34:06,959 [INFO] 1 change detected
+2025-12-01 23:34:07,367 [INFO] 1 change detected
+2025-12-01 23:34:07,724 [INFO] 1 change detected
+2025-12-01 23:34:08,133 [INFO] 1 change detected
+2025-12-01 23:34:08,549 [INFO] 1 change detected
+2025-12-01 23:34:08,963 [INFO] 1 change detected
+2025-12-01 23:34:09,366 [INFO] 1 change detected
+2025-12-01 23:34:09,727 [INFO] 1 change detected
+2025-12-01 23:34:10,131 [INFO] 1 change detected
+2025-12-01 23:34:10,538 [INFO] 1 change detected
+2025-12-01 23:34:10,964 [INFO] 1 change detected
+2025-12-01 23:34:11,330 [INFO] 1 change detected
+2025-12-01 23:34:11,741 [INFO] 1 change detected
+2025-12-01 23:34:12,146 [INFO] 1 change detected
+2025-12-01 23:34:12,552 [INFO] 1 change detected
+2025-12-01 23:34:12,956 [INFO] 1 change detected
+2025-12-01 23:34:13,361 [INFO] 1 change detected
+2025-12-01 23:34:13,773 [INFO] 1 change detected
+2025-12-01 23:34:14,185 [INFO] 1 change detected
+2025-12-01 23:34:14,596 [INFO] 1 change detected
+2025-12-01 23:34:14,955 [INFO] 1 change detected
+2025-12-01 23:34:15,370 [INFO] 1 change detected
+2025-12-01 23:34:15,786 [INFO] 1 change detected
+2025-12-01 23:34:16,149 [INFO] 1 change detected
+2025-12-01 23:34:16,559 [INFO] 1 change detected
+2025-12-01 23:34:16,972 [INFO] 1 change detected
+2025-12-01 23:34:17,381 [INFO] 1 change detected
+2025-12-01 23:34:17,789 [INFO] 1 change detected
+2025-12-01 23:34:18,152 [INFO] 1 change detected
+2025-12-01 23:34:18,555 [INFO] 1 change detected
+2025-12-01 23:34:18,967 [INFO] 1 change detected
+2025-12-01 23:34:19,382 [INFO] 1 change detected
+2025-12-01 23:34:19,787 [INFO] 1 change detected
+2025-12-01 23:34:20,153 [INFO] 1 change detected
+2025-12-01 23:34:20,609 [INFO] 1 change detected
+2025-12-01 23:34:20,963 [INFO] 1 change detected
+2025-12-01 23:34:21,373 [INFO] 1 change detected
+2025-12-01 23:34:21,786 [INFO] 1 change detected
+2025-12-01 23:34:22,192 [INFO] 1 change detected
+2025-12-01 23:34:22,609 [INFO] 1 change detected
+2025-12-01 23:34:22,979 [INFO] 1 change detected
+2025-12-01 23:34:23,387 [INFO] 1 change detected
+2025-12-01 23:34:23,794 [INFO] 1 change detected
+2025-12-01 23:34:24,200 [INFO] 1 change detected
+2025-12-01 23:34:24,552 [INFO] 1 change detected
+2025-12-01 23:34:24,957 [INFO] 1 change detected
+2025-12-01 23:34:25,365 [INFO] 1 change detected
+2025-12-01 23:34:25,783 [INFO] 1 change detected
+2025-12-01 23:34:26,187 [INFO] 1 change detected
+2025-12-01 23:34:26,591 [INFO] 1 change detected
+2025-12-01 23:34:27,001 [INFO] 1 change detected
+2025-12-01 23:34:27,360 [INFO] 1 change detected
+2025-12-01 23:34:27,763 [INFO] 1 change detected
+2025-12-01 23:34:28,178 [INFO] 1 change detected
+2025-12-01 23:34:28,591 [INFO] 1 change detected
+2025-12-01 23:34:28,999 [INFO] 1 change detected
+2025-12-01 23:34:29,402 [INFO] 1 change detected
+2025-12-01 23:34:29,807 [INFO] 1 change detected
+2025-12-01 23:34:30,216 [INFO] 1 change detected
+2025-12-01 23:34:30,623 [INFO] 1 change detected
+2025-12-01 23:34:30,985 [INFO] 1 change detected
+2025-12-01 23:34:31,387 [INFO] 1 change detected
+2025-12-01 23:34:31,797 [INFO] 1 change detected
+2025-12-01 23:34:32,165 [INFO] 1 change detected
+2025-12-01 23:34:32,585 [INFO] 1 change detected
+2025-12-01 23:34:32,939 [INFO] 1 change detected
+2025-12-01 23:34:33,345 [INFO] 1 change detected
+2025-12-01 23:34:33,747 [INFO] 1 change detected
+2025-12-01 23:34:34,155 [INFO] 1 change detected
+2025-12-01 23:34:34,571 [INFO] 1 change detected
+2025-12-01 23:34:34,928 [INFO] 1 change detected
+2025-12-01 23:34:35,332 [INFO] 2 changes detected
+2025-12-01 23:34:35,687 [INFO] 2 changes detected
+2025-12-01 23:34:36,049 [INFO] 1 change detected
+2025-12-01 23:34:36,409 [INFO] 1 change detected
+2025-12-01 23:34:36,764 [INFO] 1 change detected
+2025-12-01 23:34:37,119 [INFO] 1 change detected
+2025-12-01 23:34:37,536 [INFO] 1 change detected
+2025-12-01 23:34:37,945 [INFO] 1 change detected
+2025-12-01 23:34:38,305 [INFO] 1 change detected
+2025-12-01 23:34:38,666 [INFO] 1 change detected
+2025-12-01 23:34:39,019 [INFO] 1 change detected
+2025-12-01 23:34:39,374 [INFO] 1 change detected
+2025-12-01 23:34:39,732 [INFO] 16 changes detected
+2025-12-01 23:34:40,141 [INFO] 1 change detected
+2025-12-01 23:34:40,543 [INFO] 1 change detected
+2025-12-01 23:34:40,953 [INFO] 1 change detected
+2025-12-01 23:34:41,361 [INFO] 1 change detected
+2025-12-01 23:34:41,774 [INFO] 1 change detected
+2025-12-01 23:34:42,179 [INFO] 1 change detected
+2025-12-01 23:34:42,585 [INFO] 1 change detected
+2025-12-01 23:34:42,988 [INFO] 1 change detected
+2025-12-01 23:34:43,391 [INFO] 1 change detected
+2025-12-01 23:34:43,794 [INFO] 1 change detected
+2025-12-01 23:34:44,196 [INFO] 1 change detected
+2025-12-01 23:34:44,551 [INFO] 1 change detected
+2025-12-01 23:34:44,967 [INFO] 1 change detected
+2025-12-01 23:34:45,374 [INFO] 1 change detected
+2025-12-01 23:34:45,783 [INFO] 1 change detected
+2025-12-01 23:34:46,196 [INFO] 1 change detected
+2025-12-01 23:34:46,600 [INFO] 1 change detected
+2025-12-01 23:34:47,008 [INFO] 1 change detected
+2025-12-01 23:34:47,419 [INFO] 1 change detected
+2025-12-01 23:34:47,775 [INFO] 1 change detected
+2025-12-01 23:34:48,188 [INFO] 1 change detected
+2025-12-01 23:34:48,596 [INFO] 1 change detected
+2025-12-01 23:34:49,012 [INFO] 1 change detected
+2025-12-01 23:34:49,421 [INFO] 1 change detected
+2025-12-01 23:34:49,828 [INFO] 1 change detected
+2025-12-01 23:34:50,239 [INFO] 1 change detected
+2025-12-01 23:34:50,644 [INFO] 1 change detected
+2025-12-01 23:34:51,052 [INFO] 1 change detected
+2025-12-01 23:34:51,409 [INFO] 1 change detected
+2025-12-01 23:34:51,814 [INFO] 1 change detected
+2025-12-01 23:34:52,226 [INFO] 1 change detected
+2025-12-01 23:34:52,635 [INFO] 1 change detected
+2025-12-01 23:34:53,043 [INFO] 1 change detected
+2025-12-01 23:34:53,447 [INFO] 1 change detected
+2025-12-01 23:34:53,865 [INFO] 1 change detected
+2025-12-01 23:34:54,223 [INFO] 1 change detected
+2025-12-01 23:34:54,628 [INFO] 1 change detected
+2025-12-01 23:34:55,033 [INFO] 1 change detected
+2025-12-01 23:34:55,448 [INFO] 1 change detected
+2025-12-01 23:34:55,813 [INFO] 1 change detected
+2025-12-01 23:34:56,220 [INFO] 1 change detected
+2025-12-01 23:34:56,633 [INFO] 1 change detected
+2025-12-01 23:34:57,043 [INFO] 1 change detected
+2025-12-01 23:34:57,400 [INFO] 1 change detected
+2025-12-01 23:34:57,817 [INFO] 1 change detected
+2025-12-01 23:34:58,224 [INFO] 1 change detected
+2025-12-01 23:34:58,582 [INFO] 1 change detected
+2025-12-01 23:34:58,990 [INFO] 1 change detected
+2025-12-01 23:34:59,401 [INFO] 1 change detected
+2025-12-01 23:34:59,804 [INFO] 1 change detected
+2025-12-01 23:35:00,210 [INFO] 1 change detected
+2025-12-01 23:35:00,622 [INFO] 1 change detected
+2025-12-01 23:35:01,027 [INFO] 1 change detected
+2025-12-01 23:35:01,433 [INFO] 1 change detected
+2025-12-01 23:35:01,848 [INFO] 1 change detected
+2025-12-01 23:35:02,213 [INFO] 1 change detected
+2025-12-01 23:35:02,619 [INFO] 1 change detected
+2025-12-01 23:35:03,036 [INFO] 1 change detected
+2025-12-01 23:35:03,403 [INFO] 1 change detected
+2025-12-01 23:35:03,814 [INFO] 1 change detected
+2025-12-01 23:35:04,230 [INFO] 1 change detected
+2025-12-01 23:35:04,648 [INFO] 1 change detected
+2025-12-01 23:35:05,010 [INFO] 1 change detected
+2025-12-01 23:35:05,416 [INFO] 1 change detected
+2025-12-01 23:35:05,827 [INFO] 1 change detected
+2025-12-01 23:35:06,242 [INFO] 1 change detected
+2025-12-01 23:35:06,607 [INFO] 1 change detected
+2025-12-01 23:35:07,060 [INFO] 1 change detected
+2025-12-01 23:35:07,417 [INFO] 1 change detected
+2025-12-01 23:35:07,875 [INFO] 1 change detected
+2025-12-01 23:35:08,282 [INFO] 1 change detected
+2025-12-01 23:35:08,688 [INFO] 1 change detected
+2025-12-01 23:35:09,045 [INFO] 1 change detected
+2025-12-01 23:35:09,457 [INFO] 1 change detected
+2025-12-01 23:35:09,873 [INFO] 1 change detected
+2025-12-01 23:35:10,238 [INFO] 1 change detected
+2025-12-01 23:35:10,650 [INFO] 1 change detected
+2025-12-01 23:35:11,069 [INFO] 1 change detected
+2025-12-01 23:35:11,474 [INFO] 1 change detected
+2025-12-01 23:35:11,889 [INFO] 1 change detected
+2025-12-01 23:35:12,291 [INFO] 1 change detected
+2025-12-01 23:35:12,647 [INFO] 1 change detected
+2025-12-01 23:35:13,104 [INFO] 1 change detected
+2025-12-01 23:35:13,521 [INFO] 1 change detected
+2025-12-01 23:35:13,925 [INFO] 1 change detected
+2025-12-01 23:35:14,329 [INFO] 1 change detected
+2025-12-01 23:35:14,739 [INFO] 1 change detected
+2025-12-01 23:35:15,101 [INFO] 1 change detected
+2025-12-01 23:35:15,507 [INFO] 1 change detected
+2025-12-01 23:35:15,918 [INFO] 1 change detected
+2025-12-01 23:35:16,331 [INFO] 1 change detected
+2025-12-01 23:35:16,741 [INFO] 1 change detected
+2025-12-01 23:35:17,098 [INFO] 1 change detected
+2025-12-01 23:35:17,503 [INFO] 1 change detected
+2025-12-01 23:35:17,909 [INFO] 1 change detected
+2025-12-01 23:35:18,315 [INFO] 1 change detected
+2025-12-01 23:35:18,721 [INFO] 1 change detected
+2025-12-01 23:35:19,124 [INFO] 1 change detected
+2025-12-01 23:35:19,530 [INFO] 1 change detected
+2025-12-01 23:35:19,946 [INFO] 1 change detected
+2025-12-01 23:35:20,355 [INFO] 1 change detected
+2025-12-01 23:35:20,721 [INFO] 1 change detected
+2025-12-01 23:35:21,125 [INFO] 1 change detected
+2025-12-01 23:35:21,531 [INFO] 1 change detected
+2025-12-01 23:35:21,986 [INFO] 1 change detected
+2025-12-01 23:35:22,388 [INFO] 1 change detected
+2025-12-01 23:35:22,803 [INFO] 1 change detected
+2025-12-01 23:35:23,166 [INFO] 1 change detected
+2025-12-01 23:35:23,584 [INFO] 1 change detected
+2025-12-01 23:35:23,951 [INFO] 1 change detected
+2025-12-01 23:35:24,362 [INFO] 1 change detected
+2025-12-01 23:35:24,769 [INFO] 1 change detected
+2025-12-01 23:35:25,181 [INFO] 1 change detected
+2025-12-01 23:35:25,592 [INFO] 1 change detected
+2025-12-01 23:35:25,996 [INFO] 1 change detected
+2025-12-01 23:35:26,400 [INFO] 1 change detected
+2025-12-01 23:35:26,753 [INFO] 1 change detected
+2025-12-01 23:35:27,162 [INFO] 1 change detected
+2025-12-01 23:35:27,578 [INFO] 1 change detected
+2025-12-01 23:35:27,933 [INFO] 1 change detected
+2025-12-01 23:35:28,386 [INFO] 1 change detected
+2025-12-01 23:35:28,747 [INFO] 1 change detected
+2025-12-01 23:35:29,154 [INFO] 1 change detected
+2025-12-01 23:35:29,561 [INFO] 1 change detected
+2025-12-01 23:35:29,964 [INFO] 1 change detected
+2025-12-01 23:35:30,367 [INFO] 1 change detected
+2025-12-01 23:35:30,778 [INFO] 1 change detected
+2025-12-01 23:35:31,132 [INFO] 1 change detected
+2025-12-01 23:35:31,548 [INFO] 1 change detected
+2025-12-01 23:35:31,952 [INFO] 1 change detected
+2025-12-01 23:35:32,361 [INFO] 1 change detected
+2025-12-01 23:35:32,777 [INFO] 1 change detected
+2025-12-01 23:35:33,194 [INFO] 1 change detected
+2025-12-01 23:35:33,557 [INFO] 1 change detected
+2025-12-01 23:35:33,974 [INFO] 1 change detected
+2025-12-01 23:35:34,386 [INFO] 1 change detected
+2025-12-01 23:35:34,752 [INFO] 1 change detected
+2025-12-01 23:35:35,168 [INFO] 1 change detected
+2025-12-01 23:35:35,578 [INFO] 1 change detected
+2025-12-01 23:35:35,985 [INFO] 1 change detected
+2025-12-01 23:35:36,394 [INFO] 1 change detected
+2025-12-01 23:35:36,760 [INFO] 1 change detected
+2025-12-01 23:35:37,218 [INFO] 1 change detected
+2025-12-01 23:35:37,582 [INFO] 1 change detected
+2025-12-01 23:35:37,987 [INFO] 1 change detected
+2025-12-01 23:35:38,401 [INFO] 1 change detected
+2025-12-01 23:35:38,804 [INFO] 1 change detected
+2025-12-01 23:35:39,211 [INFO] 1 change detected
+2025-12-01 23:35:39,625 [INFO] 1 change detected
+2025-12-01 23:35:40,041 [INFO] 1 change detected
+2025-12-01 23:35:40,404 [INFO] 1 change detected
+2025-12-01 23:35:40,810 [INFO] 1 change detected
+2025-12-01 23:35:41,219 [INFO] 1 change detected
+2025-12-01 23:35:41,635 [INFO] 1 change detected
+2025-12-01 23:35:42,038 [INFO] 1 change detected
+2025-12-01 23:35:42,447 [INFO] 1 change detected
+2025-12-01 23:35:42,858 [INFO] 1 change detected
+2025-12-01 23:35:43,266 [INFO] 1 change detected
+2025-12-01 23:35:43,686 [INFO] 1 change detected
+2025-12-01 23:35:44,094 [INFO] 1 change detected
+2025-12-01 23:35:44,501 [INFO] 1 change detected
+2025-12-01 23:35:44,908 [INFO] 1 change detected
+2025-12-01 23:35:45,274 [INFO] 1 change detected
+2025-12-01 23:35:45,687 [INFO] 1 change detected
+2025-12-01 23:35:46,098 [INFO] 1 change detected
+2025-12-01 23:35:46,501 [INFO] 1 change detected
+2025-12-01 23:35:46,865 [INFO] 1 change detected
+2025-12-01 23:35:47,272 [INFO] 1 change detected
+2025-12-01 23:35:47,686 [INFO] 1 change detected
+2025-12-01 23:35:48,048 [INFO] 1 change detected
+2025-12-01 23:35:48,464 [INFO] 1 change detected
+2025-12-01 23:35:48,877 [INFO] 1 change detected
+2025-12-01 23:35:49,289 [INFO] 1 change detected
+2025-12-01 23:35:49,655 [INFO] 1 change detected
+2025-12-01 23:35:50,058 [INFO] 1 change detected
+2025-12-01 23:35:50,470 [INFO] 1 change detected
+2025-12-01 23:35:50,878 [INFO] 1 change detected
+2025-12-01 23:35:51,435 [INFO] 51 changes detected
+2025-12-01 23:35:51,841 [INFO] 1 change detected
+2025-12-01 23:35:52,248 [INFO] 1 change detected
+2025-12-01 23:35:52,614 [INFO] 1 change detected
+2025-12-01 23:35:53,033 [INFO] 1 change detected
+2025-12-01 23:35:53,448 [INFO] 4 changes detected
+2025-12-01 23:35:53,864 [INFO] 2 changes detected
+2025-12-01 23:35:54,231 [INFO] 1 change detected
+2025-12-01 23:35:54,639 [INFO] 1 change detected
+2025-12-01 23:35:55,097 [INFO] 1 change detected
+2025-12-01 23:35:55,460 [INFO] 1 change detected
+2025-12-01 23:35:55,863 [INFO] 1 change detected
+2025-12-01 23:35:56,280 [INFO] 1 change detected
+2025-12-01 23:35:56,643 [INFO] 1 change detected
+2025-12-01 23:35:57,047 [INFO] 1 change detected
+2025-12-01 23:35:57,462 [INFO] 1 change detected
+2025-12-01 23:35:57,880 [INFO] 1 change detected
+2025-12-01 23:35:58,244 [INFO] 1 change detected
+2025-12-01 23:35:58,700 [INFO] 1 change detected
+2025-12-01 23:35:59,060 [INFO] 1 change detected
+2025-12-01 23:35:59,463 [INFO] 1 change detected
+2025-12-01 23:35:59,874 [INFO] 1 change detected
+2025-12-01 23:36:00,237 [INFO] 1 change detected
+2025-12-01 23:36:00,654 [INFO] 1 change detected
+2025-12-01 23:36:01,072 [INFO] 1 change detected
+2025-12-01 23:36:01,438 [INFO] 1 change detected
+2025-12-01 23:36:01,842 [INFO] 1 change detected
+2025-12-01 23:36:02,258 [INFO] 1 change detected
+2025-12-01 23:36:02,669 [INFO] 1 change detected
+2025-12-01 23:36:03,034 [INFO] 1 change detected
+2025-12-01 23:36:03,451 [INFO] 1 change detected
+2025-12-01 23:36:03,871 [INFO] 1 change detected
+2025-12-01 23:36:04,234 [INFO] 1 change detected
+2025-12-01 23:36:04,651 [INFO] 1 change detected
+2025-12-01 23:36:05,067 [INFO] 1 change detected
+2025-12-01 23:36:05,433 [INFO] 1 change detected
+2025-12-01 23:36:05,836 [INFO] 1 change detected
+2025-12-01 23:36:06,239 [INFO] 1 change detected
+2025-12-01 23:36:06,648 [INFO] 1 change detected
+2025-12-01 23:36:07,074 [INFO] 1 change detected
+2025-12-01 23:36:07,489 [INFO] 1 change detected
+2025-12-01 23:36:07,855 [INFO] 1 change detected
+2025-12-01 23:36:08,259 [INFO] 1 change detected
+2025-12-01 23:36:08,676 [INFO] 1 change detected
+2025-12-01 23:36:09,094 [INFO] 1 change detected
+2025-12-01 23:36:09,458 [INFO] 1 change detected
+2025-12-01 23:36:09,861 [INFO] 1 change detected
+2025-12-01 23:36:10,277 [INFO] 1 change detected
+2025-12-01 23:36:10,691 [INFO] 1 change detected
+2025-12-01 23:36:11,098 [INFO] 1 change detected
+2025-12-01 23:36:11,465 [INFO] 1 change detected
+2025-12-01 23:36:11,867 [INFO] 1 change detected
+2025-12-01 23:36:12,284 [INFO] 1 change detected
+2025-12-01 23:36:12,702 [INFO] 1 change detected
+2025-12-01 23:36:13,069 [INFO] 1 change detected
+2025-12-01 23:36:13,485 [INFO] 1 change detected
+2025-12-01 23:36:13,902 [INFO] 1 change detected
+2025-12-01 23:36:14,267 [INFO] 1 change detected
+2025-12-01 23:36:14,678 [INFO] 1 change detected
+2025-12-01 23:36:15,085 [INFO] 1 change detected
+2025-12-01 23:36:15,499 [INFO] 1 change detected
+2025-12-01 23:36:15,914 [INFO] 1 change detected
+2025-12-01 23:36:16,280 [INFO] 1 change detected
+2025-12-01 23:36:16,689 [INFO] 1 change detected
+2025-12-01 23:36:17,098 [INFO] 1 change detected
+2025-12-01 23:36:17,503 [INFO] 1 change detected
+2025-12-01 23:36:17,908 [INFO] 1 change detected
+2025-12-01 23:36:18,313 [INFO] 1 change detected
+2025-12-01 23:36:18,717 [INFO] 1 change detected
+2025-12-01 23:36:19,120 [INFO] 1 change detected
+2025-12-01 23:36:19,538 [INFO] 1 change detected
+2025-12-01 23:36:19,900 [INFO] 1 change detected
+2025-12-01 23:36:20,315 [INFO] 1 change detected
+2025-12-01 23:36:20,729 [INFO] 1 change detected
+2025-12-01 23:36:21,093 [INFO] 1 change detected
+2025-12-01 23:36:21,510 [INFO] 1 change detected
+2025-12-01 23:36:21,928 [INFO] 1 change detected
+2025-12-01 23:36:22,289 [INFO] 1 change detected
+2025-12-01 23:36:22,697 [INFO] 1 change detected
+2025-12-01 23:36:23,112 [INFO] 1 change detected
+2025-12-01 23:36:23,523 [INFO] 1 change detected
+2025-12-01 23:36:23,887 [INFO] 1 change detected
+2025-12-01 23:36:24,301 [INFO] 1 change detected
+2025-12-01 23:36:24,712 [INFO] 1 change detected
+2025-12-01 23:36:25,118 [INFO] 1 change detected
+2025-12-01 23:36:25,482 [INFO] 1 change detected
+2025-12-01 23:36:25,894 [INFO] 1 change detected
+2025-12-01 23:36:26,302 [INFO] 1 change detected
+2025-12-01 23:36:26,716 [INFO] 1 change detected
+2025-12-01 23:36:26,905 [INFO] Scheduler has been shut down

@@ -310,19 +310,19 @@ async def create_rule_from_url(request: RuleRequest):
         vt_summary = {"status": "error", "detail": str(e)}
 
     # 5. DB에 History 저장
-    #if validation_status not in ["Failed", "ValidatorError"]:
-    try:
-        db.add_history_record({
-            "source_url": request.url,
-            "page_title": page_title,
-            "generated_rule": rule_to_validate,
-            "validation_result": validation_status,
-            "validation_details": validation_details,
-            "extracted_ioc": extracted_ioc,
-            "rule_explanation": explanation
-        })
-    except Exception as e:
-        print(f"ERROR: History DB 저장 실패 - {e}")
+    if validation_status not in ["Failed", "ValidatorError"]:
+        try:
+            db.add_history_record({
+                "source_url": request.url,
+                "page_title": page_title,
+                "generated_rule": rule_to_validate,
+                "validation_result": validation_status,
+                "validation_details": validation_details,
+                "extracted_ioc": extracted_ioc,
+                "rule_explanation": explanation
+            })
+        except Exception as e:
+            print(f"ERROR: History DB 저장 실패 - {e}")
 
     # 6. 최종 응답 반환
     return RuleResponse(

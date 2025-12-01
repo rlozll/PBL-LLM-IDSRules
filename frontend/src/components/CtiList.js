@@ -98,7 +98,7 @@ function CtiList({ setCurrentView, setUrl: onCopyLink }) { // (setCurrentView는
     ? ctiItems.filter(item => item.site_name === selectedSite)
     : ctiItems;
 
-  const limitedfiltered = filteredItems.slice(0, 20);
+  const limitedfiltered = filteredItems.slice(0, 50);
 
   return (
     <div className="cti-list-container">
