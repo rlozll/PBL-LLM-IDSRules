@@ -31,6 +31,7 @@ from scripts.bookmark_processor import process_bookmarks
 from core.parser import get_text_from_url
 from core.llm_handler import generate_analysis_from_text
 from utils.validator import validate_rule # 통합 검증 함수
+from utils.deploy import deploy_rule_sync
 from core.vt_client import vt_fetch_url_report
 from fastapi.middleware.cors import CORSMiddleware
 import utils.db as db # DB 유틸리티 모듈
@@ -96,6 +97,9 @@ class RuleResponse(BaseModel):
     validation_details: str | None = None
     rule_explanation: dict | str
     vt_summary: dict | None = None
+
+class RuleDeploy(BaseModel):
+    rule: str
 
 # --- 인증 ---
 class Token(BaseModel):
@@ -335,6 +339,16 @@ async def create_rule_from_url(request: RuleRequest):
         vt_summary=vt_summary
     )
 
+@app.post("/api/deploy-rule", dependencies=[Depends(get_current_user)])
+async def deploy_rule(request: RuleDeploy):
+    rule_deploy = request.rule.strip()
+    if not rule_deploy:
+        raise HTTPException(status_code=400, detail="배포할 Rule 내용이 없습니다.")
+    deploy_result = deploy_rule_sync(rule_deploy)
+    if deploy_result["status"] == "Failed":
+        raise HTTPException(status_code=500, detail=deploy_result["detail"])
+    print(f"INFO: Rule 배포 최종 결과: {deploy_result['status']}")
+    return JSONResponse(content=deploy_result)
 
 # --- History: 목록 조회 ---
 @app.get("/api/history", response_model=List[HistoryListItem], dependencies=[Depends(get_current_user)])

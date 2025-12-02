@@ -3,6 +3,7 @@ import React from 'react';
 import './MainView.css';
 import { ReactComponent as GeneratedSvg } from './icons/GeneratedRule.svg';
 import { ReactComponent as ExplainSvg } from './icons/Explain.svg';
+import { deployRule } from '../api';
 
 function MainView({ result, error, isLoading, url }) {
   const handleCopyRule = () => {
@@ -12,9 +13,20 @@ function MainView({ result, error, isLoading, url }) {
     }
   };
 
-  const handleDeployRule = () => {
+  const handleDeployRule = async () => {
+    const ruleContent = result?.generated_rule;
     if (result && result.validation_result.startsWith("Success")) {
-      alert('배포 기능 호출 (구현 필요)');
+      try {
+        const response = await deployRule(ruleContent);
+        if(response.ok) {
+          alert('Rule을 성공적으로 배포했습니다.');
+        } else {
+          const detail = response.data.detail;
+          alert(`Rule 배포에 실패했습니다. ${detail}`);
+        }
+      } catch (error) {
+        alert('네트워크 오류로 배포에 실패했습니다.');
+      }
     } else {
       alert('검증에 성공한 Rule만 배포할 수 있습니다.');
     }

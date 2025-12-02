@@ -1,1 +1,2 @@
 data/nvd_cve/*.json filter=lfs diff=lfs merge=lfs -text
+*.sh text eol=lf

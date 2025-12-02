@@ -91,6 +91,20 @@ export const generateRule = async (url) => {
   }
 };
 
+export const deployRule = async (rule_string) => {
+  try {
+    const response = await fetchWithAuth('/api/deploy-rule', {
+      method: 'POST',
+      body: JSON.stringify({ rule: rule_string }),
+    });
+    const data = await response.json().catch(() => ({}));
+    return { ok: response.ok, status: response.status, data: data };
+  } catch (error) {
+    console.error('Deploy rule API call failed:', error);
+    return { ok: false, status: 500, data: {detail: `네트워크 오류: ${error.message}`}};
+  }
+};
+
 // --- 히스토리 API (백엔드 /api/history 필요) ---
 export const getHistory = async () => {
   try {
