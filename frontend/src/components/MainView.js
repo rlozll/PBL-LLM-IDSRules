@@ -15,6 +15,7 @@ function MainView({ result, error, isLoading, url }) {
 
   const handleDeployRule = async () => {
     const ruleContent = result?.generated_rule;
+    // eslint-disable-next-line no-lone-blocks 
     if (result && result.validation_result.startsWith("Success")) {
       try {
         const response = await deployRule(ruleContent);
@@ -197,11 +198,6 @@ function MainView({ result, error, isLoading, url }) {
               Deploy
             </button>
           </div>
-
-          {/* === 분석 전 안내 메시지 === */}
-          {!isLoading && !result && !error && (
-            <p>분석을 시작하면 Rule이 여기에 표시됩니다.</p>
-          )}
         </div>
       </div>
     </div>
