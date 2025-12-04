@@ -4,6 +4,42 @@ import './CtiList.css';
 import { getNewCtiList } from '../api'; // api.js에서 함수 가져오기
 import { ReactComponent as LinkCopyIcon } from './icons/Copy.svg';
 
+{/*시연 때 보여줄 링크 넣기 */}
+const MANUAL_RULE_LINKS = [
+    {
+        id: 90001,
+        title: "Snort 2.9 Rule Writing Guide (Official)",
+        link: "https://www.snort.org/documents",
+        site_name: "IDS Rule Related",
+        site_name_view: "Snort Rule",
+        published_date: null,
+    },
+    {
+        id: 90002,
+        title: "PCRE Regex Cheatsheet for Snort",
+        link: "https://www.snort.org/faq/snort-29-pcre-cheatsheet",
+        site_name: "IDS Rule Related",        
+        site_name_view: "Snort Rule",
+        published_date: null,
+    },
+    {
+        id: 90003,
+        title: "Rule Options Quick Reference (Community)",
+        link: "https://www.sans.org/security-resources/snort/snort_rule_options_cheatsheet.pdf",
+        site_name: "IDS Rule Related",
+        site_name_view: "sans",
+        published_date: null,
+    },
+    {
+        id: 90004,
+        title: "SNORT Rules - Sourcefire Documentation",
+        link: "https://www.cisco.com/c/en/us/td/docs/security/firepower/snort-40/rules-guide/c_snort_rules.html",
+        site_name: "IDS Rule Related",
+        site_name_view: "cisco",
+        published_date: null,
+    },
+];
+
 const getLastReadTime = (site) => {
   return localStorage.getItem(`cti_last_read_${site}`) || null;};
 const updateLastReadTime = (site) => {
@@ -12,7 +48,7 @@ const updateLastReadTime = (site) => {
 const RSS_SITE_NAMES = [
   "NVD Analyzed", "Cloudflare Blog", "CISA Alerts", "CERT-KR",
   "Mandiant (Google)", "Palo Alto (Unit 42)", "CrowdStrike", "Microsoft Security",
-  "Rapid7 (AttackerKB)", "The Hacker News", "Krebs on Security", "Bleeping Computer", "Schneier on Security",];
+  "Rapid7 (AttackerKB)", "The Hacker News", "Krebs on Security", "Bleeping Computer", "Schneier on Security", "IDS Rule Related"];
 
 
 function CtiList({ setCurrentView, setUrl: onCopyLink }) { // (setCurrentView는 Bookmarked Pages용으로 남겨둘 수 있음)
@@ -80,6 +116,7 @@ function CtiList({ setCurrentView, setUrl: onCopyLink }) { // (setCurrentView는
 
   // 사이트 업데이트 표시
   const siteHasUpdate = (site) => {
+    if (site === "IDS Rule Related") return false;
     const lastRead = getLastReadTime(site);
     if (!lastRead) return true; 
 
@@ -93,10 +130,19 @@ function CtiList({ setCurrentView, setUrl: onCopyLink }) { // (setCurrentView는
     );
   };
 
+  let filteredItems;
+
+  if (selectedSite === "IDS Rule Related") {
+    filteredItems = MANUAL_RULE_LINKS;
+  } else if (selectedSite) {
+    filteredItems = ctiItems.filter(item => item.site_name === selectedSite);
+  } else {
+    filteredItems = ctiItems;
+  }
   // 선택된 사이트에 따라 목록 필터링
-  const filteredItems = selectedSite
+  {/*const filteredItems = selectedSite
     ? ctiItems.filter(item => item.site_name === selectedSite)
-    : ctiItems;
+    : ctiItems;*/}
 
   const limitedfiltered = filteredItems.slice(0, 50);
 
@@ -143,6 +189,7 @@ function CtiList({ setCurrentView, setUrl: onCopyLink }) { // (setCurrentView는
           <div className="cti-col-title">Post Titles</div>
           <div className="cti-col-site">Site Names</div>
           <div className="cti-col-date">Date</div>
+          <div className="cti-col-copy">Copy</div>
         </div>
 
         <div className="cti-table-body">
@@ -164,7 +211,7 @@ function CtiList({ setCurrentView, setUrl: onCopyLink }) { // (setCurrentView는
               style={{ cursor: 'pointer' }}
             >
               <div className="cti-col-title">{item.title}</div>
-              <div className="cti-col-site">{item.site_name}</div>
+              <div className="cti-col-site">{item.site_name_view || item.site_name}</div>
               <div className="cti-col-date">
                 <span className="date-text">
                 {/* 날짜 형식 간단하게 변환 */}

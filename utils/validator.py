@@ -132,6 +132,7 @@ def validate_rule_syntax(rule_string: str) -> Tuple[bool, str]:
     "var HOME_NET any\n"
     "var EXTERNAL_NET any\n"
     "var HTTP_PORTS [80,443,8080]\n"
+    "var HTTP_SERVERS $HOME_NET\n"
     f"{rule_string}"
 )
 
